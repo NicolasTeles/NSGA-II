@@ -1,10 +1,11 @@
 import random
 import matplotlib.pyplot as plt
+import time
 
 random.seed(42)
 
-NUM_INDIVIDUOS = 2000
-GERACOES = 4
+NUM_INDIVIDUOS = 1000
+GERACOES = 100
 
 class Solucao:
     def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
@@ -197,10 +198,11 @@ def resetar_valores(pop: list[Solucao]):
         ind.front = 0
         ind.crowding_distance = -1
 
+start = time.process_time()
+
 populacao_inicial = gerar_individuos(NUM_INDIVIDUOS)
 for i, ind in enumerate(populacao_inicial):
     print(f"Indivíduo {i+1}: diametro_roda={ind.diametro_roda:.2f}, potencia_motor={ind.potencia_motor:.2f}, capacidade_bateria={ind.capacidade_bateria:.2f}")
-plot(populacao_inicial, "populacao inicial")
 
 populacao = populacao_inicial[:]
 nova_populacao = None
@@ -214,5 +216,11 @@ for i in range(GERACOES):
     frentes = non_dominated_sorting(populacao)
     nova_populacao = gerar_prox_geracao(frentes, len(populacao_inicial))
     populacao = nova_populacao[:]
-# plot(populacao, "populacao original")
+    print(f"\nFIM DA GERAÇÃO {i+1}\n")
+
+end = time.process_time()
+
+print(f"CPU time: {end - start:.6f} seconds")
+
+plot(populacao_inicial, "populacao inicial")
 plot(nova_populacao, "nova populacao")
