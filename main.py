@@ -4,8 +4,11 @@ import time
 
 random.seed(42)
 
-NUM_INDIVIDUOS = 1000
-GERACOES = 100
+NUM_INDIVIDUOS = 500
+GERACOES = 20
+
+CHANCE_CROSSOVER = 1.0
+CHANCE_MUTACAO = 0.5
 
 class Solucao:
     def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
@@ -32,23 +35,23 @@ def gerar_individuos(n=10):
         individuos.append(individuo)
     return individuos
 
-def crossover(populacao, parents) -> Solucao:
+def crossover(parents) -> Solucao:
     parent1, parent2 = parents[:]
-    if random.random() < 0.05:
+    if random.random() < CHANCE_MUTACAO:
         capacidade = random.uniform(100, 500)
     elif(random.random() < 0.5):
         capacidade = parent1.capacidade_bateria
     else:
         capacidade = parent2.capacidade_bateria
     
-    if random.random() < 0.05:
+    if random.random() < CHANCE_MUTACAO:
         potencia = random.uniform(50, 200)
     elif(random.random() < 0.5):
         potencia = parent1.potencia_motor
     else:
         potencia = parent2.potencia_motor
     
-    if random.random() < 0.05:
+    if random.random() < CHANCE_MUTACAO:
         diametro = random.uniform(10, 30)
     elif(random.random() < 0.5):
         diametro = parent1.diametro_roda
@@ -62,7 +65,10 @@ def offspring_aleatoria(populacao: list[Solucao]):
     for _ in range(len(populacao)):
         index1, index2 = random.sample(range(len(populacao)), 2)
         parents = [populacao[index1], populacao[index2]]
-        novo_ind = crossover(populacao, parents)
+        if random.random() <= CHANCE_CROSSOVER:
+            novo_ind = crossover(parents)
+        else:
+            novo_ind = random.choice(parents).copy()
         nova_pop.append(novo_ind)
     return nova_pop
 
@@ -83,7 +89,10 @@ def offspring(populacao: list[Solucao]):
                 parents.append(candidate1)
             else:
                 parents.append(candidate2)
-        novo_ind = crossover(populacao, parents)
+        if random.random() <= CHANCE_CROSSOVER:
+            novo_ind = crossover(parents)
+        else:
+            novo_ind = random.choice(parents).copy()
         nova_pop.append(novo_ind)
     return nova_pop
 
