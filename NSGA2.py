@@ -1,14 +1,9 @@
 import random
 import matplotlib.pyplot as plt
 import time
-
-random.seed(42)
-
-NUM_INDIVIDUOS = 500
-GERACOES = 20
-
-CHANCE_CROSSOVER = 1.0
-CHANCE_MUTACAO = 0.5
+import copy
+import numpy as np
+import os
 
 class Solucao:
     def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
@@ -35,23 +30,23 @@ def gerar_individuos(n=10):
         individuos.append(individuo)
     return individuos
 
-def crossover(parents) -> Solucao:
+def crossover(parents, chance_mutacao: float) -> Solucao:
     parent1, parent2 = parents[:]
-    if random.random() < CHANCE_MUTACAO:
+    if random.random() < chance_mutacao:
         capacidade = random.uniform(100, 500)
     elif(random.random() < 0.5):
         capacidade = parent1.capacidade_bateria
     else:
         capacidade = parent2.capacidade_bateria
     
-    if random.random() < CHANCE_MUTACAO:
+    if random.random() < chance_mutacao:
         potencia = random.uniform(50, 200)
     elif(random.random() < 0.5):
         potencia = parent1.potencia_motor
     else:
         potencia = parent2.potencia_motor
     
-    if random.random() < CHANCE_MUTACAO:
+    if random.random() < chance_mutacao:
         diametro = random.uniform(10, 30)
     elif(random.random() < 0.5):
         diametro = parent1.diametro_roda
@@ -60,19 +55,19 @@ def crossover(parents) -> Solucao:
     
     return Solucao(diametro, potencia, capacidade)
 
-def offspring_aleatoria(populacao: list[Solucao]):
+def offspring_aleatoria(populacao: list[Solucao], chance_crossover: float, chance_mutacao: float):
     nova_pop = populacao[:]
     for _ in range(len(populacao)):
         index1, index2 = random.sample(range(len(populacao)), 2)
         parents = [populacao[index1], populacao[index2]]
-        if random.random() <= CHANCE_CROSSOVER:
-            novo_ind = crossover(parents)
+        if random.random() <= chance_crossover:
+            novo_ind = crossover(parents, chance_mutacao)
         else:
-            novo_ind = random.choice(parents).copy()
+            novo_ind = copy.deepcopy(random.choice(parents))
         nova_pop.append(novo_ind)
     return nova_pop
 
-def offspring(populacao: list[Solucao]):
+def offspring(populacao: list[Solucao], chance_crossover: float, chance_mutacao: float):
     nova_pop = populacao[:]
     for i in range(len(populacao)):
         parents = []
@@ -89,10 +84,10 @@ def offspring(populacao: list[Solucao]):
                 parents.append(candidate1)
             else:
                 parents.append(candidate2)
-        if random.random() <= CHANCE_CROSSOVER:
-            novo_ind = crossover(parents)
+        if random.random() <= chance_crossover:
+            novo_ind = crossover(parents, chance_mutacao)
         else:
-            novo_ind = random.choice(parents).copy()
+            novo_ind = copy.deepcopy(random.choice(parents))
         nova_pop.append(novo_ind)
     return nova_pop
 
@@ -207,29 +202,104 @@ def resetar_valores(pop: list[Solucao]):
         ind.front = 0
         ind.crowding_distance = -1
 
-start = time.process_time()
+def calcular_estatisticas(pop: list[Solucao]):
+    autonomias = np.array([ind.autonomia for ind in pop])
+    aceleracoes = np.array([ind.tempo_aceleracao for ind in pop])
+    
+    media_autonomia = autonomias.mean()
+    desvio_autonomia = autonomias.std(ddof=1)
+    media_aceleracao = aceleracoes.mean()
+    desvio_aceleracao = aceleracoes.std(ddof=1)
 
-populacao_inicial = gerar_individuos(NUM_INDIVIDUOS)
-for i, ind in enumerate(populacao_inicial):
-    print(f"Indivíduo {i+1}: diametro_roda={ind.diametro_roda:.2f}, potencia_motor={ind.potencia_motor:.2f}, capacidade_bateria={ind.capacidade_bateria:.2f}")
+    return {
+        "media_autonomia": media_autonomia,
+        "desvio_autonomia": desvio_autonomia,
+        "media_aceleracao": media_aceleracao,
+        "desvio_aceleracao": desvio_aceleracao
+    }
 
-populacao = populacao_inicial[:]
-nova_populacao = None
-populacao = offspring_aleatoria(populacao_inicial)
+def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0.05, SEED=42):
+    random.seed(SEED)
+    
+    medias_autonomia = []
+    desvios_autonomia = []
+    medias_aceleracao = []
+    desvios_aceleracao = []
+    
+    arquivo_texto = open(f"./stats/stats{SEED}.txt", "a")
+    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes {CHANCE_CROSSOVER} chance de crossover e {CHANCE_MUTACAO} chance de mutacao\n")
+    
+    start = time.process_time()
 
-for i in range(GERACOES):
-    if i != 0:
-        populacao = offspring(populacao)
-        resetar_valores(populacao)
-    # print(len(populacao))
-    frentes = non_dominated_sorting(populacao)
-    nova_populacao = gerar_prox_geracao(frentes, len(populacao_inicial))
-    populacao = nova_populacao[:]
-    print(f"\nFIM DA GERAÇÃO {i+1}\n")
+    populacao_inicial = gerar_individuos(NUM_INDIVIDUOS)
+    for i, ind in enumerate(populacao_inicial):
+        print(f"Indivíduo {i+1}: diametro_roda={ind.diametro_roda:.2f}, potencia_motor={ind.potencia_motor:.2f}, capacidade_bateria={ind.capacidade_bateria:.2f}")
 
-end = time.process_time()
+    populacao = populacao_inicial[:]
+    nova_populacao = None
+    populacao = offspring_aleatoria(populacao_inicial, CHANCE_CROSSOVER, CHANCE_MUTACAO)
 
-print(f"CPU time: {end - start:.6f} seconds")
+    for i in range(GERACOES):
+        if i != 0:
+            populacao = offspring(populacao, CHANCE_CROSSOVER, CHANCE_MUTACAO)
+            resetar_valores(populacao)
+        # print(len(populacao))
+        frentes = non_dominated_sorting(populacao)
+        nova_populacao = gerar_prox_geracao(frentes, len(populacao_inicial))
+        populacao = nova_populacao[:]
+        print(f"\nFIM DA GERAÇÃO {i+1}\n")
+        stats = calcular_estatisticas(populacao)
+        
+        arquivo_texto.write(f"Geração {i+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
+        arquivo_texto.write(f"Geração {i+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n\n")
+        
+        medias_autonomia.append(stats["media_autonomia"])
+        desvios_autonomia.append(stats["desvio_autonomia"])
+        medias_aceleracao.append(stats["media_aceleracao"])
+        desvios_aceleracao.append(stats["desvio_aceleracao"])
 
-plot(populacao_inicial, "populacao inicial")
-plot(nova_populacao, "nova populacao")
+    end = time.process_time()
+
+    print(f"CPU time: {end - start:.6f} seconds")
+    
+    arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
+    
+    folder_path = f"./img/seed{SEED}"
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+
+    plot(populacao_inicial, f"./img/seed{SEED}/populacao inicial")
+    plot(nova_populacao, f"./img/seed{SEED}/pop{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}")
+    
+    folder_path = f"./stats/seed{SEED}"
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+    
+    plt.figure()
+    plt.plot(range(GERACOES), medias_autonomia, label="Autonomia média")
+    plt.fill_between(range(GERACOES),
+                    np.array(medias_autonomia) - np.array(desvios_autonomia),
+                    np.array(medias_autonomia) + np.array(desvios_autonomia),
+                    alpha=0.2)
+    plt.legend()
+    plt.xlabel("Geração")
+    plt.ylabel("Autonomia")
+    plt.title("Evolução da média e desvio padrão da autonomia")
+    plt.savefig(f"./stats/seed{SEED}/autonomia{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+    
+    plt.figure()
+    plt.plot(range(GERACOES), medias_aceleracao, label="Tempo de aceleracao médio")
+    plt.fill_between(range(GERACOES),
+                    np.array(medias_aceleracao) - np.array(desvios_aceleracao),
+                    np.array(medias_aceleracao) + np.array(desvios_aceleracao),
+                    alpha=0.2)
+    plt.legend()
+    plt.xlabel("Geração")
+    plt.ylabel("Tempo de aceleracao")
+    plt.title("Evolução da média e desvio padrão da aceleracao")
+    plt.savefig(f"./stats/seed{SEED}/aceleracao{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+    
+    plt.close('all')
+
+if __name__ == '__main__':
+    main()
