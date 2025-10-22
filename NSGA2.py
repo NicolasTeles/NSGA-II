@@ -4,6 +4,7 @@ import time
 import copy
 import numpy as np
 import os
+import math
 
 class Solucao:
     def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
@@ -11,8 +12,9 @@ class Solucao:
         self.potencia_motor = potencia_motor
         self.capacidade_bateria = capacidade_bateria
         
-        self.autonomia = capacidade_bateria / (potencia_motor * diametro_roda)
-        self.tempo_aceleracao = (capacidade_bateria + diametro_roda) / potencia_motor
+        EPS = 1e-6  # evitar divisao por 0
+        self.autonomia = math.sqrt(capacidade_bateria) / (potencia_motor * abs(math.sin(diametro_roda) + EPS) )
+        self.tempo_aceleracao = math.log1p(capacidade_bateria + abs(math.cos(diametro_roda) )) / math.sqrt(potencia_motor)
         
         self.domination_count = 0
         self.dominates = []
@@ -180,19 +182,19 @@ def plot(pop, filename: str):
     autonomias = [ind.autonomia for ind in pop]
     tempos = [ind.tempo_aceleracao for ind in pop]
 
-    autonomia_range = max(autonomias) - min(autonomias) if len(autonomias) > 1 else 1
-    tempo_range = max(tempos) - min(tempos) if len(tempos) > 1 else 1
-    fig_width = max(6, autonomia_range)
-    fig_height = max(4, tempo_range)
-
-    plt.figure(figsize=(fig_width, fig_height))
+    plt.figure(figsize=(10, 6))
     plt.scatter(autonomias, tempos, color='blue', label='Indivíduos')
     plt.xlabel('Autonomia')
     plt.ylabel('Tempo de Aceleração')
     plt.title('Indivíduos: Autonomia vs Tempo de Aceleração')
     plt.legend()
     plt.grid(True)
-    plt.savefig(filename+".png")
+
+    plt.xlim(min(autonomias), max(autonomias))
+    plt.ylim(min(tempos), max(tempos))
+
+    plt.savefig(filename + ".png")
+    plt.close()
 
 def resetar_valores(pop: list[Solucao]):
     for ind in pop:
@@ -265,15 +267,13 @@ def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0
     arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
     
     folder_path = f"./img/seed{SEED}"
-    if not os.path.exists(folder_path):
-        os.mkdir(folder_path)
+    os.makedirs(folder_path, exist_ok=True)
 
     plot(populacao_inicial, f"./img/seed{SEED}/populacao inicial")
     plot(nova_populacao, f"./img/seed{SEED}/pop{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}")
     
     folder_path = f"./stats/seed{SEED}"
-    if not os.path.exists(folder_path):
-        os.mkdir(folder_path)
+    os.makedirs(folder_path, exist_ok=True)
     
     plt.figure()
     plt.plot(range(GERACOES), medias_autonomia, label="Autonomia média")

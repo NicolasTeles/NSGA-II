@@ -1,3078 +1,3078 @@
 50 individuos, 5 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2133 ± 0.1455
-Geração 1: Aceleração média = 3.6676 ± 2.4028
+Geração 1: Autonomia média = 1.3069 ± 3.0733
+Geração 1: Aceleração média = 0.5347 ± 0.1370
 
-Geração 2: Autonomia média = 0.2202 ± 0.1817
-Geração 2: Aceleração média = 2.9220 ± 2.2125
+Geração 2: Autonomia média = 3.8382 ± 5.3736
+Geração 2: Aceleração média = 0.4854 ± 0.1066
 
-Geração 3: Autonomia média = 0.2989 ± 0.2224
-Geração 3: Aceleração média = 3.6147 ± 2.7182
+Geração 3: Autonomia média = 6.5720 ± 6.4681
+Geração 3: Aceleração média = 0.4781 ± 0.1164
 
-Geração 4: Autonomia média = 0.2289 ± 0.1889
-Geração 4: Aceleração média = 2.5757 ± 2.0918
+Geração 4: Autonomia média = 11.4618 ± 5.9547
+Geração 4: Aceleração média = 0.5340 ± 0.1283
 
-Geração 5: Autonomia média = 0.2712 ± 0.1960
-Geração 5: Aceleração média = 2.9890 ± 2.2443
+Geração 5: Autonomia média = 9.7453 ± 5.8149
+Geração 5: Aceleração média = 0.4702 ± 0.1319
 
-CPU time: 0.105194 seconds
+CPU time: 0.023172 seconds
 
 50 individuos, 5 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2111 ± 0.1457
-Geração 1: Aceleração média = 3.6067 ± 2.3779
+Geração 1: Autonomia média = 1.3126 ± 3.0712
+Geração 1: Aceleração média = 0.5428 ± 0.1406
 
-Geração 2: Autonomia média = 0.2495 ± 0.1919
-Geração 2: Aceleração média = 3.5499 ± 2.5902
+Geração 2: Autonomia média = 3.6771 ± 5.3058
+Geração 2: Aceleração média = 0.4722 ± 0.0985
 
-Geração 3: Autonomia média = 0.2811 ± 0.2409
-Geração 3: Aceleração média = 3.4439 ± 2.7853
+Geração 3: Autonomia média = 6.9138 ± 6.8238
+Geração 3: Aceleração média = 0.4920 ± 0.1253
 
-Geração 4: Autonomia média = 0.2430 ± 0.1788
-Geração 4: Aceleração média = 2.6839 ± 1.9327
+Geração 4: Autonomia média = 11.8050 ± 5.0577
+Geração 4: Aceleração média = 0.5537 ± 0.1277
 
-Geração 5: Autonomia média = 0.2854 ± 0.1814
-Geração 5: Aceleração média = 3.1046 ± 1.9862
+Geração 5: Autonomia média = 10.5138 ± 5.9863
+Geração 5: Aceleração média = 0.4959 ± 0.1275
 
-CPU time: 0.093123 seconds
+CPU time: 0.025689 seconds
 
 50 individuos, 5 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2200 ± 0.1439
-Geração 1: Aceleração média = 3.7417 ± 2.4408
+Geração 1: Autonomia média = 1.3190 ± 3.0684
+Geração 1: Aceleração média = 0.5372 ± 0.1345
 
-Geração 2: Autonomia média = 0.2465 ± 0.1747
-Geração 2: Aceleração média = 3.2463 ± 2.1361
+Geração 2: Autonomia média = 3.5737 ± 5.2224
+Geração 2: Aceleração média = 0.4671 ± 0.0912
 
-Geração 3: Autonomia média = 0.3442 ± 0.2224
-Geração 3: Aceleração média = 4.0019 ± 2.5979
+Geração 3: Autonomia média = 6.3937 ± 6.1858
+Geração 3: Aceleração média = 0.4806 ± 0.1121
 
-Geração 4: Autonomia média = 0.2608 ± 0.1475
-Geração 4: Aceleração média = 2.8586 ± 1.6605
+Geração 4: Autonomia média = 11.9236 ± 5.1740
+Geração 4: Aceleração média = 0.5445 ± 0.1146
 
-Geração 5: Autonomia média = 0.2948 ± 0.1962
-Geração 5: Aceleração média = 3.1637 ± 2.0836
+Geração 5: Autonomia média = 12.4434 ± 6.0862
+Geração 5: Aceleração média = 0.5454 ± 0.1275
 
-CPU time: 0.103395 seconds
+CPU time: 0.022034 seconds
 
 50 individuos, 5 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2154 ± 0.1556
-Geração 1: Aceleração média = 3.6137 ± 2.4481
+Geração 1: Autonomia média = 1.2917 ± 3.1283
+Geração 1: Aceleração média = 0.5330 ± 0.1371
 
-Geração 2: Autonomia média = 0.2869 ± 0.2191
-Geração 2: Aceleração média = 3.7493 ± 2.7119
+Geração 2: Autonomia média = 2.8851 ± 4.5805
+Geração 2: Aceleração média = 0.4727 ± 0.0951
 
-Geração 3: Autonomia média = 0.3133 ± 0.2477
-Geração 3: Aceleração média = 3.5060 ± 2.7478
+Geração 3: Autonomia média = 5.0515 ± 5.0759
+Geração 3: Aceleração média = 0.4612 ± 0.1059
 
-Geração 4: Autonomia média = 0.2216 ± 0.1888
-Geração 4: Aceleração média = 2.4302 ± 2.0569
+Geração 4: Autonomia média = 8.3628 ± 6.6903
+Geração 4: Aceleração média = 0.4745 ± 0.1241
 
-Geração 5: Autonomia média = 0.2574 ± 0.2177
-Geração 5: Aceleração média = 2.7514 ± 2.2777
+Geração 5: Autonomia média = 9.0979 ± 6.7604
+Geração 5: Aceleração média = 0.4551 ± 0.1283
 
-CPU time: 0.085774 seconds
+CPU time: 0.024193 seconds
 
 50 individuos, 5 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2161 ± 0.1543
-Geração 1: Aceleração média = 3.6059 ± 2.4218
+Geração 1: Autonomia média = 1.2814 ± 3.1315
+Geração 1: Aceleração média = 0.5264 ± 0.1375
 
-Geração 2: Autonomia média = 0.2945 ± 0.2124
-Geração 2: Aceleração média = 3.6938 ± 2.5185
+Geração 2: Autonomia média = 2.8957 ± 4.5935
+Geração 2: Aceleração média = 0.4657 ± 0.0936
 
-Geração 3: Autonomia média = 0.3298 ± 0.2130
-Geração 3: Aceleração média = 3.7781 ± 2.4294
+Geração 3: Autonomia média = 4.8700 ± 5.4755
+Geração 3: Aceleração média = 0.4495 ± 0.0998
 
-Geração 4: Autonomia média = 0.3563 ± 0.2064
-Geração 4: Aceleração média = 3.9297 ± 2.2902
+Geração 4: Autonomia média = 9.2936 ± 5.6219
+Geração 4: Aceleração média = 0.4833 ± 0.1254
 
-Geração 5: Autonomia média = 0.3685 ± 0.2180
-Geração 5: Aceleração média = 3.9837 ± 2.3617
+Geração 5: Autonomia média = 7.0275 ± 5.8895
+Geração 5: Aceleração média = 0.4128 ± 0.1227
 
-CPU time: 0.060309 seconds
+CPU time: 0.020285 seconds
 
 50 individuos, 5 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2182 ± 0.1545
-Geração 1: Aceleração média = 3.6747 ± 2.4906
+Geração 1: Autonomia média = 1.2853 ± 3.1297
+Geração 1: Aceleração média = 0.5329 ± 0.1401
 
-Geração 2: Autonomia média = 0.2861 ± 0.2131
-Geração 2: Aceleração média = 3.6031 ± 2.4929
+Geração 2: Autonomia média = 2.8766 ± 4.5356
+Geração 2: Aceleração média = 0.4834 ± 0.1045
 
-Geração 3: Autonomia média = 0.3000 ± 0.2425
-Geração 3: Aceleração média = 3.3780 ± 2.7371
+Geração 3: Autonomia média = 6.5420 ± 5.6624
+Geração 3: Aceleração média = 0.4551 ± 0.1097
 
-Geração 4: Autonomia média = 0.2754 ± 0.2097
-Geração 4: Aceleração média = 2.9926 ± 2.2626
+Geração 4: Autonomia média = 10.1977 ± 6.1903
+Geração 4: Aceleração média = 0.4768 ± 0.1320
 
-Geração 5: Autonomia média = 0.3362 ± 0.2163
-Geração 5: Aceleração média = 3.6015 ± 2.3214
+Geração 5: Autonomia média = 9.6083 ± 6.9806
+Geração 5: Aceleração média = 0.4507 ± 0.1339
 
-CPU time: 0.091120 seconds
+CPU time: 0.026167 seconds
 
 50 individuos, 5 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2083 ± 0.1409
-Geração 1: Aceleração média = 3.4598 ± 2.1890
+Geração 1: Autonomia média = 1.0950 ± 2.7834
+Geração 1: Aceleração média = 0.5171 ± 0.1249
 
-Geração 2: Autonomia média = 0.2421 ± 0.1891
-Geração 2: Aceleração média = 3.0994 ± 2.3300
+Geração 2: Autonomia média = 3.8215 ± 5.6910
+Geração 2: Aceleração média = 0.4830 ± 0.1030
 
-Geração 3: Autonomia média = 0.2618 ± 0.1843
-Geração 3: Aceleração média = 3.0561 ± 2.1610
+Geração 3: Autonomia média = 7.5781 ± 5.8136
+Geração 3: Aceleração média = 0.4859 ± 0.1079
 
-Geração 4: Autonomia média = 0.2217 ± 0.1781
-Geração 4: Aceleração média = 2.3839 ± 1.9146
+Geração 4: Autonomia média = 11.8292 ± 7.1562
+Geração 4: Aceleração média = 0.5194 ± 0.1413
 
-Geração 5: Autonomia média = 0.2774 ± 0.2001
-Geração 5: Aceleração média = 2.9233 ± 2.0687
+Geração 5: Autonomia média = 12.3432 ± 8.5326
+Geração 5: Aceleração média = 0.5163 ± 0.1579
 
-CPU time: 0.057227 seconds
+CPU time: 0.007162 seconds
 
 50 individuos, 5 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2106 ± 0.1412
-Geração 1: Aceleração média = 3.5028 ± 2.1973
+Geração 1: Autonomia média = 1.0912 ± 2.7843
+Geração 1: Aceleração média = 0.5180 ± 0.1306
 
-Geração 2: Autonomia média = 0.2402 ± 0.1895
-Geração 2: Aceleração média = 3.0615 ± 2.3514
+Geração 2: Autonomia média = 3.8260 ± 5.7058
+Geração 2: Aceleração média = 0.4841 ± 0.1046
 
-Geração 3: Autonomia média = 0.2785 ± 0.2158
-Geração 3: Aceleração média = 3.3083 ± 2.5884
+Geração 3: Autonomia média = 7.4488 ± 6.1949
+Geração 3: Aceleração média = 0.4801 ± 0.1103
 
-Geração 4: Autonomia média = 0.2795 ± 0.2088
-Geração 4: Aceleração média = 3.0586 ± 2.3203
+Geração 4: Autonomia média = 11.4564 ± 6.9024
+Geração 4: Aceleração média = 0.5143 ± 0.1305
 
-Geração 5: Autonomia média = 0.3042 ± 0.2047
-Geração 5: Aceleração média = 3.2572 ± 2.2310
+Geração 5: Autonomia média = 11.4217 ± 7.5230
+Geração 5: Aceleração média = 0.4906 ± 0.1412
 
-CPU time: 0.063768 seconds
+CPU time: 0.007481 seconds
 
 50 individuos, 5 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2039 ± 0.1434
-Geração 1: Aceleração média = 3.3647 ± 2.2042
+Geração 1: Autonomia média = 1.0890 ± 2.7844
+Geração 1: Aceleração média = 0.5173 ± 0.1303
 
-Geração 2: Autonomia média = 0.2204 ± 0.1546
-Geração 2: Aceleração média = 2.9117 ± 2.1052
+Geração 2: Autonomia média = 3.5755 ± 5.4794
+Geração 2: Aceleração média = 0.4864 ± 0.1035
 
-Geração 3: Autonomia média = 0.2526 ± 0.1860
-Geração 3: Aceleração média = 2.8412 ± 2.0683
+Geração 3: Autonomia média = 6.8058 ± 5.9372
+Geração 3: Aceleração média = 0.4774 ± 0.1203
 
-Geração 4: Autonomia média = 0.2743 ± 0.1819
-Geração 4: Aceleração média = 2.9586 ± 1.9858
+Geração 4: Autonomia média = 10.7166 ± 7.2458
+Geração 4: Aceleração média = 0.4883 ± 0.1425
 
-Geração 5: Autonomia média = 0.2991 ± 0.1788
-Geração 5: Aceleração média = 3.1948 ± 1.9120
+Geração 5: Autonomia média = 11.6511 ± 8.0030
+Geração 5: Aceleração média = 0.4959 ± 0.1547
 
-CPU time: 0.069460 seconds
+CPU time: 0.006428 seconds
 
 50 individuos, 10 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2133 ± 0.1455
-Geração 1: Aceleração média = 3.6676 ± 2.4028
+Geração 1: Autonomia média = 1.3069 ± 3.0733
+Geração 1: Aceleração média = 0.5347 ± 0.1370
 
-Geração 2: Autonomia média = 0.2202 ± 0.1817
-Geração 2: Aceleração média = 2.9220 ± 2.2125
+Geração 2: Autonomia média = 3.8382 ± 5.3736
+Geração 2: Aceleração média = 0.4854 ± 0.1066
 
-Geração 3: Autonomia média = 0.2989 ± 0.2224
-Geração 3: Aceleração média = 3.6147 ± 2.7182
+Geração 3: Autonomia média = 6.5720 ± 6.4681
+Geração 3: Aceleração média = 0.4781 ± 0.1164
 
-Geração 4: Autonomia média = 0.2289 ± 0.1889
-Geração 4: Aceleração média = 2.5757 ± 2.0918
+Geração 4: Autonomia média = 11.4618 ± 5.9547
+Geração 4: Aceleração média = 0.5340 ± 0.1283
 
-Geração 5: Autonomia média = 0.2712 ± 0.1960
-Geração 5: Aceleração média = 2.9890 ± 2.2443
+Geração 5: Autonomia média = 9.7453 ± 5.8149
+Geração 5: Aceleração média = 0.4702 ± 0.1319
 
-Geração 6: Autonomia média = 0.2894 ± 0.1839
-Geração 6: Aceleração média = 3.1572 ± 2.1072
+Geração 6: Autonomia média = 10.1411 ± 7.5006
+Geração 6: Aceleração média = 0.4706 ± 0.1567
 
-Geração 7: Autonomia média = 0.2995 ± 0.1963
-Geração 7: Aceleração média = 3.1773 ± 2.0914
+Geração 7: Autonomia média = 10.8105 ± 7.9711
+Geração 7: Aceleração média = 0.4846 ± 0.1636
 
-Geração 8: Autonomia média = 0.3154 ± 0.2061
-Geração 8: Aceleração média = 3.3376 ± 2.1855
+Geração 8: Autonomia média = 10.9928 ± 7.9853
+Geração 8: Aceleração média = 0.4881 ± 0.1658
 
-Geração 9: Autonomia média = 0.3297 ± 0.2030
-Geração 9: Aceleração média = 3.4597 ± 2.0974
+Geração 9: Autonomia média = 11.1330 ± 7.8995
+Geração 9: Aceleração média = 0.4915 ± 0.1636
 
-Geração 10: Autonomia média = 0.3414 ± 0.2173
-Geração 10: Aceleração média = 3.5749 ± 2.2351
+Geração 10: Autonomia média = 11.2444 ± 7.8424
+Geração 10: Aceleração média = 0.4942 ± 0.1621
 
-CPU time: 0.172236 seconds
+CPU time: 0.043065 seconds
 
 50 individuos, 10 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2111 ± 0.1457
-Geração 1: Aceleração média = 3.6067 ± 2.3779
+Geração 1: Autonomia média = 1.3126 ± 3.0712
+Geração 1: Aceleração média = 0.5428 ± 0.1406
 
-Geração 2: Autonomia média = 0.2495 ± 0.1919
-Geração 2: Aceleração média = 3.5499 ± 2.5902
+Geração 2: Autonomia média = 3.6771 ± 5.3058
+Geração 2: Aceleração média = 0.4722 ± 0.0985
 
-Geração 3: Autonomia média = 0.2811 ± 0.2409
-Geração 3: Aceleração média = 3.4439 ± 2.7853
+Geração 3: Autonomia média = 6.9138 ± 6.8238
+Geração 3: Aceleração média = 0.4920 ± 0.1253
 
-Geração 4: Autonomia média = 0.2430 ± 0.1788
-Geração 4: Aceleração média = 2.6839 ± 1.9327
+Geração 4: Autonomia média = 11.8050 ± 5.0577
+Geração 4: Aceleração média = 0.5537 ± 0.1277
 
-Geração 5: Autonomia média = 0.2854 ± 0.1814
-Geração 5: Aceleração média = 3.1046 ± 1.9862
+Geração 5: Autonomia média = 10.5138 ± 5.9863
+Geração 5: Aceleração média = 0.4959 ± 0.1275
 
-Geração 6: Autonomia média = 0.3273 ± 0.1848
-Geração 6: Aceleração média = 3.5368 ± 2.0167
+Geração 6: Autonomia média = 11.7798 ± 7.0234
+Geração 6: Aceleração média = 0.5127 ± 0.1495
 
-Geração 7: Autonomia média = 0.3279 ± 0.1868
-Geração 7: Aceleração média = 3.5169 ± 1.9986
+Geração 7: Autonomia média = 13.0918 ± 7.2926
+Geração 7: Aceleração média = 0.5424 ± 0.1489
 
-Geração 8: Autonomia média = 0.3499 ± 0.1871
-Geração 8: Aceleração média = 3.7219 ± 1.9516
+Geração 8: Autonomia média = 13.5949 ± 7.1564
+Geração 8: Aceleração média = 0.5535 ± 0.1456
 
-Geração 9: Autonomia média = 0.3597 ± 0.1984
-Geração 9: Aceleração média = 3.8151 ± 2.0664
+Geração 9: Autonomia média = 13.2569 ± 7.3970
+Geração 9: Aceleração média = 0.5445 ± 0.1501
 
-Geração 10: Autonomia média = 0.3866 ± 0.2101
-Geração 10: Aceleração média = 4.0854 ± 2.1829
+Geração 10: Autonomia média = 13.1095 ± 7.2157
+Geração 10: Aceleração média = 0.5399 ± 0.1438
 
-CPU time: 0.133428 seconds
+CPU time: 0.037638 seconds
 
 50 individuos, 10 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2200 ± 0.1439
-Geração 1: Aceleração média = 3.7417 ± 2.4408
+Geração 1: Autonomia média = 1.3190 ± 3.0684
+Geração 1: Aceleração média = 0.5372 ± 0.1345
 
-Geração 2: Autonomia média = 0.2465 ± 0.1747
-Geração 2: Aceleração média = 3.2463 ± 2.1361
+Geração 2: Autonomia média = 3.5737 ± 5.2224
+Geração 2: Aceleração média = 0.4671 ± 0.0912
 
-Geração 3: Autonomia média = 0.3442 ± 0.2224
-Geração 3: Aceleração média = 4.0019 ± 2.5979
+Geração 3: Autonomia média = 6.3937 ± 6.1858
+Geração 3: Aceleração média = 0.4806 ± 0.1121
 
-Geração 4: Autonomia média = 0.2608 ± 0.1475
-Geração 4: Aceleração média = 2.8586 ± 1.6605
+Geração 4: Autonomia média = 11.9236 ± 5.1740
+Geração 4: Aceleração média = 0.5445 ± 0.1146
 
-Geração 5: Autonomia média = 0.2948 ± 0.1962
-Geração 5: Aceleração média = 3.1637 ± 2.0836
+Geração 5: Autonomia média = 12.4434 ± 6.0862
+Geração 5: Aceleração média = 0.5454 ± 0.1275
 
-Geração 6: Autonomia média = 0.3219 ± 0.1968
-Geração 6: Aceleração média = 3.4126 ± 2.0494
+Geração 6: Autonomia média = 10.6262 ± 6.3535
+Geração 6: Aceleração média = 0.4843 ± 0.1360
 
-Geração 7: Autonomia média = 0.3600 ± 0.2042
-Geração 7: Aceleração média = 3.7994 ± 2.1192
+Geração 7: Autonomia média = 11.0523 ± 7.3691
+Geração 7: Aceleração média = 0.4883 ± 0.1509
 
-Geração 8: Autonomia média = 0.4068 ± 0.2031
-Geração 8: Aceleração média = 4.2803 ± 2.1053
+Geração 8: Autonomia média = 12.2924 ± 7.1499
+Geração 8: Aceleração média = 0.5163 ± 0.1453
 
-Geração 9: Autonomia média = 0.3898 ± 0.2232
-Geração 9: Aceleração média = 4.0962 ± 2.3024
+Geração 9: Autonomia média = 11.8804 ± 7.5611
+Geração 9: Aceleração média = 0.5036 ± 0.1550
 
-Geração 10: Autonomia média = 0.4238 ± 0.2353
-Geração 10: Aceleração média = 4.4491 ± 2.4236
+Geração 10: Autonomia média = 12.9417 ± 7.7617
+Geração 10: Aceleração média = 0.5211 ± 0.1549
 
-CPU time: 0.168241 seconds
+CPU time: 0.033010 seconds
 
 50 individuos, 10 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2154 ± 0.1556
-Geração 1: Aceleração média = 3.6137 ± 2.4481
+Geração 1: Autonomia média = 1.2917 ± 3.1283
+Geração 1: Aceleração média = 0.5330 ± 0.1371
 
-Geração 2: Autonomia média = 0.2869 ± 0.2191
-Geração 2: Aceleração média = 3.7493 ± 2.7119
+Geração 2: Autonomia média = 2.8851 ± 4.5805
+Geração 2: Aceleração média = 0.4727 ± 0.0951
 
-Geração 3: Autonomia média = 0.3133 ± 0.2477
-Geração 3: Aceleração média = 3.5060 ± 2.7478
+Geração 3: Autonomia média = 5.0515 ± 5.0759
+Geração 3: Aceleração média = 0.4612 ± 0.1059
 
-Geração 4: Autonomia média = 0.2216 ± 0.1888
-Geração 4: Aceleração média = 2.4302 ± 2.0569
+Geração 4: Autonomia média = 8.3628 ± 6.6903
+Geração 4: Aceleração média = 0.4745 ± 0.1241
 
-Geração 5: Autonomia média = 0.2574 ± 0.2177
-Geração 5: Aceleração média = 2.7514 ± 2.2777
+Geração 5: Autonomia média = 9.0979 ± 6.7604
+Geração 5: Aceleração média = 0.4551 ± 0.1283
 
-Geração 6: Autonomia média = 0.3322 ± 0.2278
-Geração 6: Aceleração média = 3.5277 ± 2.3969
+Geração 6: Autonomia média = 8.3919 ± 6.9619
+Geração 6: Aceleração média = 0.4340 ± 0.1326
 
-Geração 7: Autonomia média = 0.3671 ± 0.2132
-Geração 7: Aceleração média = 3.8587 ± 2.1949
+Geração 7: Autonomia média = 7.4722 ± 7.3887
+Geração 7: Aceleração média = 0.4156 ± 0.1399
 
-Geração 8: Autonomia média = 0.3882 ± 0.2179
-Geração 8: Aceleração média = 4.0545 ± 2.2419
+Geração 8: Autonomia média = 7.1475 ± 7.0587
+Geração 8: Aceleração média = 0.4101 ± 0.1311
 
-Geração 9: Autonomia média = 0.4141 ± 0.2428
-Geração 9: Aceleração média = 4.3264 ± 2.4929
+Geração 9: Autonomia média = 7.4382 ± 8.3159
+Geração 9: Aceleração média = 0.4292 ± 0.1463
 
-Geração 10: Autonomia média = 0.4141 ± 0.2331
-Geração 10: Aceleração média = 4.3225 ± 2.3971
+Geração 10: Autonomia média = 8.1621 ± 8.1875
+Geração 10: Aceleração média = 0.4442 ± 0.1446
 
-CPU time: 0.151792 seconds
+CPU time: 0.033132 seconds
 
 50 individuos, 10 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2161 ± 0.1543
-Geração 1: Aceleração média = 3.6059 ± 2.4218
+Geração 1: Autonomia média = 1.2814 ± 3.1315
+Geração 1: Aceleração média = 0.5264 ± 0.1375
 
-Geração 2: Autonomia média = 0.2945 ± 0.2124
-Geração 2: Aceleração média = 3.6938 ± 2.5185
+Geração 2: Autonomia média = 2.8957 ± 4.5935
+Geração 2: Aceleração média = 0.4657 ± 0.0936
 
-Geração 3: Autonomia média = 0.3298 ± 0.2130
-Geração 3: Aceleração média = 3.7781 ± 2.4294
+Geração 3: Autonomia média = 4.8700 ± 5.4755
+Geração 3: Aceleração média = 0.4495 ± 0.0998
 
-Geração 4: Autonomia média = 0.3563 ± 0.2064
-Geração 4: Aceleração média = 3.9297 ± 2.2902
+Geração 4: Autonomia média = 9.2936 ± 5.6219
+Geração 4: Aceleração média = 0.4833 ± 0.1254
 
-Geração 5: Autonomia média = 0.3685 ± 0.2180
-Geração 5: Aceleração média = 3.9837 ± 2.3617
+Geração 5: Autonomia média = 7.0275 ± 5.8895
+Geração 5: Aceleração média = 0.4128 ± 0.1227
 
-Geração 6: Autonomia média = 0.3741 ± 0.2109
-Geração 6: Aceleração média = 4.0286 ± 2.2612
+Geração 6: Autonomia média = 9.0833 ± 7.2819
+Geração 6: Aceleração média = 0.4581 ± 0.1437
 
-Geração 7: Autonomia média = 0.3968 ± 0.2181
-Geração 7: Aceleração média = 4.2355 ± 2.3178
+Geração 7: Autonomia média = 11.1852 ± 7.1927
+Geração 7: Aceleração média = 0.4966 ± 0.1496
 
-Geração 8: Autonomia média = 0.3946 ± 0.2207
-Geração 8: Aceleração média = 4.1574 ± 2.2886
+Geração 8: Autonomia média = 11.4957 ± 7.9197
+Geração 8: Aceleração média = 0.4953 ± 0.1519
 
-Geração 9: Autonomia média = 0.4409 ± 0.2283
-Geração 9: Aceleração média = 4.6273 ± 2.3509
+Geração 9: Autonomia média = 12.0436 ± 8.3040
+Geração 9: Aceleração média = 0.5069 ± 0.1563
 
-Geração 10: Autonomia média = 0.4355 ± 0.2313
-Geração 10: Aceleração média = 4.5534 ± 2.3859
+Geração 10: Autonomia média = 12.5375 ± 8.2967
+Geração 10: Aceleração média = 0.5160 ± 0.1524
 
-CPU time: 0.120293 seconds
+CPU time: 0.030117 seconds
 
 50 individuos, 10 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2182 ± 0.1545
-Geração 1: Aceleração média = 3.6747 ± 2.4906
+Geração 1: Autonomia média = 1.2853 ± 3.1297
+Geração 1: Aceleração média = 0.5329 ± 0.1401
 
-Geração 2: Autonomia média = 0.2861 ± 0.2131
-Geração 2: Aceleração média = 3.6031 ± 2.4929
+Geração 2: Autonomia média = 2.8766 ± 4.5356
+Geração 2: Aceleração média = 0.4834 ± 0.1045
 
-Geração 3: Autonomia média = 0.3000 ± 0.2425
-Geração 3: Aceleração média = 3.3780 ± 2.7371
+Geração 3: Autonomia média = 6.5420 ± 5.6624
+Geração 3: Aceleração média = 0.4551 ± 0.1097
 
-Geração 4: Autonomia média = 0.2754 ± 0.2097
-Geração 4: Aceleração média = 2.9926 ± 2.2626
+Geração 4: Autonomia média = 10.1977 ± 6.1903
+Geração 4: Aceleração média = 0.4768 ± 0.1320
 
-Geração 5: Autonomia média = 0.3362 ± 0.2163
-Geração 5: Aceleração média = 3.6015 ± 2.3214
+Geração 5: Autonomia média = 9.6083 ± 6.9806
+Geração 5: Aceleração média = 0.4507 ± 0.1339
 
-Geração 6: Autonomia média = 0.3628 ± 0.2179
-Geração 6: Aceleração média = 3.8233 ± 2.2791
+Geração 6: Autonomia média = 10.8739 ± 7.7300
+Geração 6: Aceleração média = 0.4771 ± 0.1460
 
-Geração 7: Autonomia média = 0.4139 ± 0.2317
-Geração 7: Aceleração média = 4.3356 ± 2.4048
+Geração 7: Autonomia média = 13.1988 ± 8.1749
+Geração 7: Aceleração média = 0.5244 ± 0.1521
 
-Geração 8: Autonomia média = 0.4419 ± 0.2368
-Geração 8: Aceleração média = 4.6102 ± 2.4478
+Geração 8: Autonomia média = 12.7868 ± 8.2870
+Geração 8: Aceleração média = 0.5125 ± 0.1473
 
-Geração 9: Autonomia média = 0.4720 ± 0.2266
-Geração 9: Aceleração média = 4.9231 ± 2.3384
+Geração 9: Autonomia média = 14.2191 ± 9.0348
+Geração 9: Aceleração média = 0.5393 ± 0.1581
 
-Geração 10: Autonomia média = 0.4861 ± 0.2250
-Geração 10: Aceleração média = 5.0626 ± 2.3274
+Geração 10: Autonomia média = 15.9465 ± 8.9569
+Geração 10: Aceleração média = 0.5728 ± 0.1568
 
-CPU time: 0.145263 seconds
+CPU time: 0.033273 seconds
 
 50 individuos, 10 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2083 ± 0.1409
-Geração 1: Aceleração média = 3.4598 ± 2.1890
+Geração 1: Autonomia média = 1.0950 ± 2.7834
+Geração 1: Aceleração média = 0.5171 ± 0.1249
 
-Geração 2: Autonomia média = 0.2421 ± 0.1891
-Geração 2: Aceleração média = 3.0994 ± 2.3300
+Geração 2: Autonomia média = 3.8215 ± 5.6910
+Geração 2: Aceleração média = 0.4830 ± 0.1030
 
-Geração 3: Autonomia média = 0.2618 ± 0.1843
-Geração 3: Aceleração média = 3.0561 ± 2.1610
+Geração 3: Autonomia média = 7.5781 ± 5.8136
+Geração 3: Aceleração média = 0.4859 ± 0.1079
 
-Geração 4: Autonomia média = 0.2217 ± 0.1781
-Geração 4: Aceleração média = 2.3839 ± 1.9146
+Geração 4: Autonomia média = 11.8292 ± 7.1562
+Geração 4: Aceleração média = 0.5194 ± 0.1413
 
-Geração 5: Autonomia média = 0.2774 ± 0.2001
-Geração 5: Aceleração média = 2.9233 ± 2.0687
+Geração 5: Autonomia média = 12.3432 ± 8.5326
+Geração 5: Aceleração média = 0.5163 ± 0.1579
 
-Geração 6: Autonomia média = 0.3774 ± 0.2350
-Geração 6: Aceleração média = 3.9677 ± 2.4056
+Geração 6: Autonomia média = 13.7231 ± 8.4323
+Geração 6: Aceleração média = 0.5409 ± 0.1543
 
-Geração 7: Autonomia média = 0.4099 ± 0.2491
-Geração 7: Aceleração média = 4.2866 ± 2.5704
+Geração 7: Autonomia média = 14.2415 ± 8.9816
+Geração 7: Aceleração média = 0.5459 ± 0.1600
 
-Geração 8: Autonomia média = 0.4061 ± 0.2465
-Geração 8: Aceleração média = 4.2441 ± 2.5470
+Geração 8: Autonomia média = 14.3352 ± 8.8806
+Geração 8: Aceleração média = 0.5473 ± 0.1578
 
-Geração 9: Autonomia média = 0.4594 ± 0.2422
-Geração 9: Aceleração média = 4.7823 ± 2.4921
+Geração 9: Autonomia média = 14.8472 ± 9.0616
+Geração 9: Aceleração média = 0.5551 ± 0.1597
 
-Geração 10: Autonomia média = 0.4623 ± 0.2470
-Geração 10: Aceleração média = 4.8123 ± 2.5426
+Geração 10: Autonomia média = 14.8230 ± 8.8928
+Geração 10: Aceleração média = 0.5540 ± 0.1572
 
-CPU time: 0.118824 seconds
+CPU time: 0.012509 seconds
 
 50 individuos, 10 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2106 ± 0.1412
-Geração 1: Aceleração média = 3.5028 ± 2.1973
+Geração 1: Autonomia média = 1.0912 ± 2.7843
+Geração 1: Aceleração média = 0.5180 ± 0.1306
 
-Geração 2: Autonomia média = 0.2402 ± 0.1895
-Geração 2: Aceleração média = 3.0615 ± 2.3514
+Geração 2: Autonomia média = 3.8260 ± 5.7058
+Geração 2: Aceleração média = 0.4841 ± 0.1046
 
-Geração 3: Autonomia média = 0.2785 ± 0.2158
-Geração 3: Aceleração média = 3.3083 ± 2.5884
+Geração 3: Autonomia média = 7.4488 ± 6.1949
+Geração 3: Aceleração média = 0.4801 ± 0.1103
 
-Geração 4: Autonomia média = 0.2795 ± 0.2088
-Geração 4: Aceleração média = 3.0586 ± 2.3203
+Geração 4: Autonomia média = 11.4564 ± 6.9024
+Geração 4: Aceleração média = 0.5143 ± 0.1305
 
-Geração 5: Autonomia média = 0.3042 ± 0.2047
-Geração 5: Aceleração média = 3.2572 ± 2.2310
+Geração 5: Autonomia média = 11.4217 ± 7.5230
+Geração 5: Aceleração média = 0.4906 ± 0.1412
 
-Geração 6: Autonomia média = 0.3045 ± 0.1948
-Geração 6: Aceleração média = 3.2100 ± 2.0327
+Geração 6: Autonomia média = 13.2135 ± 8.5365
+Geração 6: Aceleração média = 0.5254 ± 0.1572
 
-Geração 7: Autonomia média = 0.3755 ± 0.2277
-Geração 7: Aceleração média = 3.9323 ± 2.3608
+Geração 7: Autonomia média = 14.5656 ± 8.4756
+Geração 7: Aceleração média = 0.5517 ± 0.1517
 
-Geração 8: Autonomia média = 0.3936 ± 0.2390
-Geração 8: Aceleração média = 4.1087 ± 2.4690
+Geração 8: Autonomia média = 15.0636 ± 8.8096
+Geração 8: Aceleração média = 0.5595 ± 0.1556
 
-Geração 9: Autonomia média = 0.4310 ± 0.2416
-Geração 9: Aceleração média = 4.4906 ± 2.4807
+Geração 9: Autonomia média = 16.1727 ± 9.1572
+Geração 9: Aceleração média = 0.5781 ± 0.1597
 
-Geração 10: Autonomia média = 0.4324 ± 0.2496
-Geração 10: Aceleração média = 4.5019 ± 2.5642
+Geração 10: Autonomia média = 16.2121 ± 9.2573
+Geração 10: Aceleração média = 0.5762 ± 0.1619
 
-CPU time: 0.122995 seconds
+CPU time: 0.013136 seconds
 
 50 individuos, 10 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2039 ± 0.1434
-Geração 1: Aceleração média = 3.3647 ± 2.2042
+Geração 1: Autonomia média = 1.0890 ± 2.7844
+Geração 1: Aceleração média = 0.5173 ± 0.1303
 
-Geração 2: Autonomia média = 0.2204 ± 0.1546
-Geração 2: Aceleração média = 2.9117 ± 2.1052
+Geração 2: Autonomia média = 3.5755 ± 5.4794
+Geração 2: Aceleração média = 0.4864 ± 0.1035
 
-Geração 3: Autonomia média = 0.2526 ± 0.1860
-Geração 3: Aceleração média = 2.8412 ± 2.0683
+Geração 3: Autonomia média = 6.8058 ± 5.9372
+Geração 3: Aceleração média = 0.4774 ± 0.1203
 
-Geração 4: Autonomia média = 0.2743 ± 0.1819
-Geração 4: Aceleração média = 2.9586 ± 1.9858
+Geração 4: Autonomia média = 10.7166 ± 7.2458
+Geração 4: Aceleração média = 0.4883 ± 0.1425
 
-Geração 5: Autonomia média = 0.2991 ± 0.1788
-Geração 5: Aceleração média = 3.1948 ± 1.9120
+Geração 5: Autonomia média = 11.6511 ± 8.0030
+Geração 5: Aceleração média = 0.4959 ± 0.1547
 
-Geração 6: Autonomia média = 0.3167 ± 0.1980
-Geração 6: Aceleração média = 3.3637 ± 2.1020
+Geração 6: Autonomia média = 13.7648 ± 8.2904
+Geração 6: Aceleração média = 0.5405 ± 0.1556
 
-Geração 7: Autonomia média = 0.3659 ± 0.2186
-Geração 7: Aceleração média = 3.8470 ± 2.2606
+Geração 7: Autonomia média = 15.7329 ± 8.9505
+Geração 7: Aceleração média = 0.5736 ± 0.1586
 
-Geração 8: Autonomia média = 0.4182 ± 0.2414
-Geração 8: Aceleração média = 4.3939 ± 2.5057
+Geração 8: Autonomia média = 15.9410 ± 9.1148
+Geração 8: Aceleração média = 0.5762 ± 0.1568
 
-Geração 9: Autonomia média = 0.4464 ± 0.2440
-Geração 9: Aceleração média = 4.6890 ± 2.5335
+Geração 9: Autonomia média = 15.9156 ± 9.3865
+Geração 9: Aceleração média = 0.5749 ± 0.1617
 
-Geração 10: Autonomia média = 0.4569 ± 0.2396
-Geração 10: Aceleração média = 4.7851 ± 2.4935
+Geração 10: Autonomia média = 15.5918 ± 9.3158
+Geração 10: Aceleração média = 0.5674 ± 0.1622
 
-CPU time: 0.117295 seconds
+CPU time: 0.013438 seconds
 
 50 individuos, 20 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2133 ± 0.1455
-Geração 1: Aceleração média = 3.6676 ± 2.4028
+Geração 1: Autonomia média = 1.3069 ± 3.0733
+Geração 1: Aceleração média = 0.5347 ± 0.1370
 
-Geração 2: Autonomia média = 0.2202 ± 0.1817
-Geração 2: Aceleração média = 2.9220 ± 2.2125
+Geração 2: Autonomia média = 3.8382 ± 5.3736
+Geração 2: Aceleração média = 0.4854 ± 0.1066
 
-Geração 3: Autonomia média = 0.2989 ± 0.2224
-Geração 3: Aceleração média = 3.6147 ± 2.7182
+Geração 3: Autonomia média = 6.5720 ± 6.4681
+Geração 3: Aceleração média = 0.4781 ± 0.1164
 
-Geração 4: Autonomia média = 0.2289 ± 0.1889
-Geração 4: Aceleração média = 2.5757 ± 2.0918
+Geração 4: Autonomia média = 11.4618 ± 5.9547
+Geração 4: Aceleração média = 0.5340 ± 0.1283
 
-Geração 5: Autonomia média = 0.2712 ± 0.1960
-Geração 5: Aceleração média = 2.9890 ± 2.2443
+Geração 5: Autonomia média = 9.7453 ± 5.8149
+Geração 5: Aceleração média = 0.4702 ± 0.1319
 
-Geração 6: Autonomia média = 0.2894 ± 0.1839
-Geração 6: Aceleração média = 3.1572 ± 2.1072
+Geração 6: Autonomia média = 10.1411 ± 7.5006
+Geração 6: Aceleração média = 0.4706 ± 0.1567
 
-Geração 7: Autonomia média = 0.2995 ± 0.1963
-Geração 7: Aceleração média = 3.1773 ± 2.0914
+Geração 7: Autonomia média = 10.8105 ± 7.9711
+Geração 7: Aceleração média = 0.4846 ± 0.1636
 
-Geração 8: Autonomia média = 0.3154 ± 0.2061
-Geração 8: Aceleração média = 3.3376 ± 2.1855
+Geração 8: Autonomia média = 10.9928 ± 7.9853
+Geração 8: Aceleração média = 0.4881 ± 0.1658
 
-Geração 9: Autonomia média = 0.3297 ± 0.2030
-Geração 9: Aceleração média = 3.4597 ± 2.0974
+Geração 9: Autonomia média = 11.1330 ± 7.8995
+Geração 9: Aceleração média = 0.4915 ± 0.1636
 
-Geração 10: Autonomia média = 0.3414 ± 0.2173
-Geração 10: Aceleração média = 3.5749 ± 2.2351
+Geração 10: Autonomia média = 11.2444 ± 7.8424
+Geração 10: Aceleração média = 0.4942 ± 0.1621
 
-Geração 11: Autonomia média = 0.3540 ± 0.2077
-Geração 11: Aceleração média = 3.6932 ± 2.1317
+Geração 11: Autonomia média = 11.3281 ± 7.8031
+Geração 11: Aceleração média = 0.4961 ± 0.1612
 
-Geração 12: Autonomia média = 0.3688 ± 0.2175
-Geração 12: Aceleração média = 3.8446 ± 2.2322
+Geração 12: Autonomia média = 11.3519 ± 7.7932
+Geração 12: Aceleração média = 0.4961 ± 0.1611
 
-Geração 13: Autonomia média = 0.3820 ± 0.2160
-Geração 13: Aceleração média = 3.9808 ± 2.2174
+Geração 13: Autonomia média = 12.2015 ± 8.1189
+Geração 13: Aceleração média = 0.5132 ± 0.1656
 
-Geração 14: Autonomia média = 0.3690 ± 0.2163
-Geração 14: Aceleração média = 3.8460 ± 2.2231
+Geração 14: Autonomia média = 12.2475 ± 8.0901
+Geração 14: Aceleração média = 0.5139 ± 0.1652
 
-Geração 15: Autonomia média = 0.3778 ± 0.2150
-Geração 15: Aceleração média = 3.9372 ± 2.2101
+Geração 15: Autonomia média = 12.7831 ± 8.2619
+Geração 15: Aceleração média = 0.5245 ± 0.1661
 
-Geração 16: Autonomia média = 0.3726 ± 0.2159
-Geração 16: Aceleração média = 3.8858 ± 2.2179
+Geração 16: Autonomia média = 13.2446 ± 8.4656
+Geração 16: Aceleração média = 0.5330 ± 0.1684
 
-Geração 17: Autonomia média = 0.3832 ± 0.2139
-Geração 17: Aceleração média = 3.9936 ± 2.1984
+Geração 17: Autonomia média = 13.1876 ± 8.5133
+Geração 17: Aceleração média = 0.5317 ± 0.1697
 
-Geração 18: Autonomia média = 0.3854 ± 0.2127
-Geração 18: Aceleração média = 4.0151 ± 2.1861
+Geração 18: Autonomia média = 13.0282 ± 8.4961
+Geração 18: Aceleração média = 0.5288 ± 0.1704
 
-Geração 19: Autonomia média = 0.3778 ± 0.2173
-Geração 19: Aceleração média = 3.9351 ± 2.2342
+Geração 19: Autonomia média = 13.4608 ± 8.3907
+Geração 19: Aceleração média = 0.5387 ± 0.1677
 
-Geração 20: Autonomia média = 0.3864 ± 0.2082
-Geração 20: Aceleração média = 4.0232 ± 2.1402
+Geração 20: Autonomia média = 13.4183 ± 8.4222
+Geração 20: Aceleração média = 0.5378 ± 0.1684
 
-CPU time: 0.198039 seconds
+CPU time: 0.054956 seconds
 
 50 individuos, 20 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2111 ± 0.1457
-Geração 1: Aceleração média = 3.6067 ± 2.3779
+Geração 1: Autonomia média = 1.3126 ± 3.0712
+Geração 1: Aceleração média = 0.5428 ± 0.1406
 
-Geração 2: Autonomia média = 0.2495 ± 0.1919
-Geração 2: Aceleração média = 3.5499 ± 2.5902
+Geração 2: Autonomia média = 3.6771 ± 5.3058
+Geração 2: Aceleração média = 0.4722 ± 0.0985
 
-Geração 3: Autonomia média = 0.2811 ± 0.2409
-Geração 3: Aceleração média = 3.4439 ± 2.7853
+Geração 3: Autonomia média = 6.9138 ± 6.8238
+Geração 3: Aceleração média = 0.4920 ± 0.1253
 
-Geração 4: Autonomia média = 0.2430 ± 0.1788
-Geração 4: Aceleração média = 2.6839 ± 1.9327
+Geração 4: Autonomia média = 11.8050 ± 5.0577
+Geração 4: Aceleração média = 0.5537 ± 0.1277
 
-Geração 5: Autonomia média = 0.2854 ± 0.1814
-Geração 5: Aceleração média = 3.1046 ± 1.9862
+Geração 5: Autonomia média = 10.5138 ± 5.9863
+Geração 5: Aceleração média = 0.4959 ± 0.1275
 
-Geração 6: Autonomia média = 0.3273 ± 0.1848
-Geração 6: Aceleração média = 3.5368 ± 2.0167
+Geração 6: Autonomia média = 11.7798 ± 7.0234
+Geração 6: Aceleração média = 0.5127 ± 0.1495
 
-Geração 7: Autonomia média = 0.3279 ± 0.1868
-Geração 7: Aceleração média = 3.5169 ± 1.9986
+Geração 7: Autonomia média = 13.0918 ± 7.2926
+Geração 7: Aceleração média = 0.5424 ± 0.1489
 
-Geração 8: Autonomia média = 0.3499 ± 0.1871
-Geração 8: Aceleração média = 3.7219 ± 1.9516
+Geração 8: Autonomia média = 13.5949 ± 7.1564
+Geração 8: Aceleração média = 0.5535 ± 0.1456
 
-Geração 9: Autonomia média = 0.3597 ± 0.1984
-Geração 9: Aceleração média = 3.8151 ± 2.0664
+Geração 9: Autonomia média = 13.2569 ± 7.3970
+Geração 9: Aceleração média = 0.5445 ± 0.1501
 
-Geração 10: Autonomia média = 0.3866 ± 0.2101
-Geração 10: Aceleração média = 4.0854 ± 2.1829
+Geração 10: Autonomia média = 13.1095 ± 7.2157
+Geração 10: Aceleração média = 0.5399 ± 0.1438
 
-Geração 11: Autonomia média = 0.3689 ± 0.2063
-Geração 11: Aceleração média = 3.8963 ± 2.1349
+Geração 11: Autonomia média = 13.3536 ± 7.1241
+Geração 11: Aceleração média = 0.5456 ± 0.1417
 
-Geração 12: Autonomia média = 0.3866 ± 0.2216
-Geração 12: Aceleração média = 4.0723 ± 2.2874
+Geração 12: Autonomia média = 13.8336 ± 6.8870
+Geração 12: Aceleração média = 0.5574 ± 0.1355
 
-Geração 13: Autonomia média = 0.4121 ± 0.2246
-Geração 13: Aceleração média = 4.3241 ± 2.3182
+Geração 13: Autonomia média = 13.9399 ± 7.4876
+Geração 13: Aceleração média = 0.5546 ± 0.1436
 
-Geração 14: Autonomia média = 0.4357 ± 0.2140
-Geração 14: Aceleração média = 4.5562 ± 2.2024
+Geração 14: Autonomia média = 14.2462 ± 7.9265
+Geração 14: Aceleração média = 0.5566 ± 0.1485
 
-Geração 15: Autonomia média = 0.4361 ± 0.2275
-Geração 15: Aceleração média = 4.5569 ± 2.3419
+Geração 15: Autonomia média = 15.1975 ± 8.0687
+Geração 15: Aceleração média = 0.5738 ± 0.1490
 
-Geração 16: Autonomia média = 0.4403 ± 0.2238
-Geração 16: Aceleração média = 4.5925 ± 2.3057
+Geração 16: Autonomia média = 15.8349 ± 8.3640
+Geração 16: Aceleração média = 0.5840 ± 0.1537
 
-Geração 17: Autonomia média = 0.4411 ± 0.2271
-Geração 17: Aceleração média = 4.6014 ± 2.3383
+Geração 17: Autonomia média = 16.0632 ± 8.2423
+Geração 17: Aceleração média = 0.5890 ± 0.1517
 
-Geração 18: Autonomia média = 0.4424 ± 0.2258
-Geração 18: Aceleração média = 4.6107 ± 2.3228
+Geração 18: Autonomia média = 15.2724 ± 8.3462
+Geração 18: Aceleração média = 0.5717 ± 0.1548
 
-Geração 19: Autonomia média = 0.4437 ± 0.2315
-Geração 19: Aceleração média = 4.6249 ± 2.3811
+Geração 19: Autonomia média = 14.6358 ± 8.3225
+Geração 19: Aceleração média = 0.5574 ± 0.1527
 
-Geração 20: Autonomia média = 0.4503 ± 0.2378
-Geração 20: Aceleração média = 4.6888 ± 2.4457
+Geração 20: Autonomia média = 15.6029 ± 8.3528
+Geração 20: Aceleração média = 0.5755 ± 0.1514
 
-CPU time: 0.187127 seconds
+CPU time: 0.061932 seconds
 
 50 individuos, 20 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2200 ± 0.1439
-Geração 1: Aceleração média = 3.7417 ± 2.4408
+Geração 1: Autonomia média = 1.3190 ± 3.0684
+Geração 1: Aceleração média = 0.5372 ± 0.1345
 
-Geração 2: Autonomia média = 0.2465 ± 0.1747
-Geração 2: Aceleração média = 3.2463 ± 2.1361
+Geração 2: Autonomia média = 3.5737 ± 5.2224
+Geração 2: Aceleração média = 0.4671 ± 0.0912
 
-Geração 3: Autonomia média = 0.3442 ± 0.2224
-Geração 3: Aceleração média = 4.0019 ± 2.5979
+Geração 3: Autonomia média = 6.3937 ± 6.1858
+Geração 3: Aceleração média = 0.4806 ± 0.1121
 
-Geração 4: Autonomia média = 0.2608 ± 0.1475
-Geração 4: Aceleração média = 2.8586 ± 1.6605
+Geração 4: Autonomia média = 11.9236 ± 5.1740
+Geração 4: Aceleração média = 0.5445 ± 0.1146
 
-Geração 5: Autonomia média = 0.2948 ± 0.1962
-Geração 5: Aceleração média = 3.1637 ± 2.0836
+Geração 5: Autonomia média = 12.4434 ± 6.0862
+Geração 5: Aceleração média = 0.5454 ± 0.1275
 
-Geração 6: Autonomia média = 0.3219 ± 0.1968
-Geração 6: Aceleração média = 3.4126 ± 2.0494
+Geração 6: Autonomia média = 10.6262 ± 6.3535
+Geração 6: Aceleração média = 0.4843 ± 0.1360
 
-Geração 7: Autonomia média = 0.3600 ± 0.2042
-Geração 7: Aceleração média = 3.7994 ± 2.1192
+Geração 7: Autonomia média = 11.0523 ± 7.3691
+Geração 7: Aceleração média = 0.4883 ± 0.1509
 
-Geração 8: Autonomia média = 0.4068 ± 0.2031
-Geração 8: Aceleração média = 4.2803 ± 2.1053
+Geração 8: Autonomia média = 12.2924 ± 7.1499
+Geração 8: Aceleração média = 0.5163 ± 0.1453
 
-Geração 9: Autonomia média = 0.3898 ± 0.2232
-Geração 9: Aceleração média = 4.0962 ± 2.3024
+Geração 9: Autonomia média = 11.8804 ± 7.5611
+Geração 9: Aceleração média = 0.5036 ± 0.1550
 
-Geração 10: Autonomia média = 0.4238 ± 0.2353
-Geração 10: Aceleração média = 4.4491 ± 2.4236
+Geração 10: Autonomia média = 12.9417 ± 7.7617
+Geração 10: Aceleração média = 0.5211 ± 0.1549
 
-Geração 11: Autonomia média = 0.4433 ± 0.2313
-Geração 11: Aceleração média = 4.6463 ± 2.3849
+Geração 11: Autonomia média = 14.4732 ± 7.2570
+Geração 11: Aceleração média = 0.5534 ± 0.1430
 
-Geração 12: Autonomia média = 0.4561 ± 0.2386
-Geração 12: Aceleração média = 4.7786 ± 2.4573
+Geração 12: Autonomia média = 14.4660 ± 7.5296
+Geração 12: Aceleração média = 0.5537 ± 0.1431
 
-Geração 13: Autonomia média = 0.4726 ± 0.2410
-Geração 13: Aceleração média = 4.9496 ± 2.4869
+Geração 13: Autonomia média = 14.3322 ± 7.6332
+Geração 13: Aceleração média = 0.5484 ± 0.1420
 
-Geração 14: Autonomia média = 0.4500 ± 0.2616
-Geração 14: Aceleração média = 4.7144 ± 2.7034
+Geração 14: Autonomia média = 14.7159 ± 8.4305
+Geração 14: Aceleração média = 0.5520 ± 0.1487
 
-Geração 15: Autonomia média = 0.4651 ± 0.2554
-Geração 15: Aceleração média = 4.8587 ± 2.6370
+Geração 15: Autonomia média = 14.8852 ± 8.4402
+Geração 15: Aceleração média = 0.5538 ± 0.1487
 
-Geração 16: Autonomia média = 0.4613 ± 0.2487
-Geração 16: Aceleração média = 4.8083 ± 2.5645
+Geração 16: Autonomia média = 15.6440 ± 8.5677
+Geração 16: Aceleração média = 0.5668 ± 0.1511
 
-Geração 17: Autonomia média = 0.4779 ± 0.2464
-Geração 17: Aceleração média = 4.9820 ± 2.5363
+Geração 17: Autonomia média = 16.5370 ± 9.1348
+Geração 17: Aceleração média = 0.5823 ± 0.1591
 
-Geração 18: Autonomia média = 0.4950 ± 0.2509
-Geração 18: Aceleração média = 5.1531 ± 2.5843
+Geração 18: Autonomia média = 16.6848 ± 9.0626
+Geração 18: Aceleração média = 0.5843 ± 0.1550
 
-Geração 19: Autonomia média = 0.4862 ± 0.2593
-Geração 19: Aceleração média = 5.0582 ± 2.6705
+Geração 19: Autonomia média = 17.5682 ± 9.6074
+Geração 19: Aceleração média = 0.5983 ± 0.1614
 
-Geração 20: Autonomia média = 0.5147 ± 0.2598
-Geração 20: Aceleração média = 5.3552 ± 2.6747
+Geração 20: Autonomia média = 17.5541 ± 9.6464
+Geração 20: Aceleração média = 0.5985 ± 0.1620
 
-CPU time: 0.195799 seconds
+CPU time: 0.055137 seconds
 
 50 individuos, 20 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2154 ± 0.1556
-Geração 1: Aceleração média = 3.6137 ± 2.4481
+Geração 1: Autonomia média = 1.2917 ± 3.1283
+Geração 1: Aceleração média = 0.5330 ± 0.1371
 
-Geração 2: Autonomia média = 0.2869 ± 0.2191
-Geração 2: Aceleração média = 3.7493 ± 2.7119
+Geração 2: Autonomia média = 2.8851 ± 4.5805
+Geração 2: Aceleração média = 0.4727 ± 0.0951
 
-Geração 3: Autonomia média = 0.3133 ± 0.2477
-Geração 3: Aceleração média = 3.5060 ± 2.7478
+Geração 3: Autonomia média = 5.0515 ± 5.0759
+Geração 3: Aceleração média = 0.4612 ± 0.1059
 
-Geração 4: Autonomia média = 0.2216 ± 0.1888
-Geração 4: Aceleração média = 2.4302 ± 2.0569
+Geração 4: Autonomia média = 8.3628 ± 6.6903
+Geração 4: Aceleração média = 0.4745 ± 0.1241
 
-Geração 5: Autonomia média = 0.2574 ± 0.2177
-Geração 5: Aceleração média = 2.7514 ± 2.2777
+Geração 5: Autonomia média = 9.0979 ± 6.7604
+Geração 5: Aceleração média = 0.4551 ± 0.1283
 
-Geração 6: Autonomia média = 0.3322 ± 0.2278
-Geração 6: Aceleração média = 3.5277 ± 2.3969
+Geração 6: Autonomia média = 8.3919 ± 6.9619
+Geração 6: Aceleração média = 0.4340 ± 0.1326
 
-Geração 7: Autonomia média = 0.3671 ± 0.2132
-Geração 7: Aceleração média = 3.8587 ± 2.1949
+Geração 7: Autonomia média = 7.4722 ± 7.3887
+Geração 7: Aceleração média = 0.4156 ± 0.1399
 
-Geração 8: Autonomia média = 0.3882 ± 0.2179
-Geração 8: Aceleração média = 4.0545 ± 2.2419
+Geração 8: Autonomia média = 7.1475 ± 7.0587
+Geração 8: Aceleração média = 0.4101 ± 0.1311
 
-Geração 9: Autonomia média = 0.4141 ± 0.2428
-Geração 9: Aceleração média = 4.3264 ± 2.4929
+Geração 9: Autonomia média = 7.4382 ± 8.3159
+Geração 9: Aceleração média = 0.4292 ± 0.1463
 
-Geração 10: Autonomia média = 0.4141 ± 0.2331
-Geração 10: Aceleração média = 4.3225 ± 2.3971
+Geração 10: Autonomia média = 8.1621 ± 8.1875
+Geração 10: Aceleração média = 0.4442 ± 0.1446
 
-Geração 11: Autonomia média = 0.4246 ± 0.2433
-Geração 11: Aceleração média = 4.4289 ± 2.5019
+Geração 11: Autonomia média = 8.7669 ± 8.7599
+Geração 11: Aceleração média = 0.4539 ± 0.1535
 
-Geração 12: Autonomia média = 0.4480 ± 0.2268
-Geração 12: Aceleração média = 4.6739 ± 2.3280
+Geração 12: Autonomia média = 9.3359 ± 8.7098
+Geração 12: Aceleração média = 0.4630 ± 0.1543
 
-Geração 13: Autonomia média = 0.4327 ± 0.2360
-Geração 13: Aceleração média = 4.5106 ± 2.4253
+Geração 13: Autonomia média = 9.8095 ± 8.5343
+Geração 13: Aceleração média = 0.4708 ± 0.1531
 
-Geração 14: Autonomia média = 0.4308 ± 0.2317
-Geração 14: Aceleração média = 4.4877 ± 2.3817
+Geração 14: Autonomia média = 10.4410 ± 8.1594
+Geração 14: Aceleração média = 0.4772 ± 0.1500
 
-Geração 15: Autonomia média = 0.4373 ± 0.2317
-Geração 15: Aceleração média = 4.5525 ± 2.3824
+Geração 15: Autonomia média = 11.2117 ± 7.6337
+Geração 15: Aceleração média = 0.4883 ± 0.1445
 
-Geração 16: Autonomia média = 0.4420 ± 0.2378
-Geração 16: Aceleração média = 4.6028 ± 2.4420
+Geração 16: Autonomia média = 11.2168 ± 7.6340
+Geração 16: Aceleração média = 0.4880 ± 0.1445
 
-Geração 17: Autonomia média = 0.4292 ± 0.2397
-Geração 17: Aceleração média = 4.4663 ± 2.4644
+Geração 17: Autonomia média = 11.6103 ± 7.8204
+Geração 17: Aceleração média = 0.4955 ± 0.1473
 
-Geração 18: Autonomia média = 0.4271 ± 0.2420
-Geração 18: Aceleração média = 4.4444 ± 2.4893
+Geração 18: Autonomia média = 11.9642 ± 7.9734
+Geração 18: Aceleração média = 0.5022 ± 0.1493
 
-Geração 19: Autonomia média = 0.4336 ± 0.2337
-Geração 19: Aceleração média = 4.5110 ± 2.4028
+Geração 19: Autonomia média = 11.9642 ± 7.9734
+Geração 19: Aceleração média = 0.5022 ± 0.1493
 
-Geração 20: Autonomia média = 0.4230 ± 0.2360
-Geração 20: Aceleração média = 4.4016 ± 2.4268
+Geração 20: Autonomia média = 12.2303 ± 7.9736
+Geração 20: Aceleração média = 0.5080 ± 0.1495
 
-CPU time: 0.196408 seconds
+CPU time: 0.050720 seconds
 
 50 individuos, 20 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2161 ± 0.1543
-Geração 1: Aceleração média = 3.6059 ± 2.4218
+Geração 1: Autonomia média = 1.2814 ± 3.1315
+Geração 1: Aceleração média = 0.5264 ± 0.1375
 
-Geração 2: Autonomia média = 0.2945 ± 0.2124
-Geração 2: Aceleração média = 3.6938 ± 2.5185
+Geração 2: Autonomia média = 2.8957 ± 4.5935
+Geração 2: Aceleração média = 0.4657 ± 0.0936
 
-Geração 3: Autonomia média = 0.3298 ± 0.2130
-Geração 3: Aceleração média = 3.7781 ± 2.4294
+Geração 3: Autonomia média = 4.8700 ± 5.4755
+Geração 3: Aceleração média = 0.4495 ± 0.0998
 
-Geração 4: Autonomia média = 0.3563 ± 0.2064
-Geração 4: Aceleração média = 3.9297 ± 2.2902
+Geração 4: Autonomia média = 9.2936 ± 5.6219
+Geração 4: Aceleração média = 0.4833 ± 0.1254
 
-Geração 5: Autonomia média = 0.3685 ± 0.2180
-Geração 5: Aceleração média = 3.9837 ± 2.3617
+Geração 5: Autonomia média = 7.0275 ± 5.8895
+Geração 5: Aceleração média = 0.4128 ± 0.1227
 
-Geração 6: Autonomia média = 0.3741 ± 0.2109
-Geração 6: Aceleração média = 4.0286 ± 2.2612
+Geração 6: Autonomia média = 9.0833 ± 7.2819
+Geração 6: Aceleração média = 0.4581 ± 0.1437
 
-Geração 7: Autonomia média = 0.3968 ± 0.2181
-Geração 7: Aceleração média = 4.2355 ± 2.3178
+Geração 7: Autonomia média = 11.1852 ± 7.1927
+Geração 7: Aceleração média = 0.4966 ± 0.1496
 
-Geração 8: Autonomia média = 0.3946 ± 0.2207
-Geração 8: Aceleração média = 4.1574 ± 2.2886
+Geração 8: Autonomia média = 11.4957 ± 7.9197
+Geração 8: Aceleração média = 0.4953 ± 0.1519
 
-Geração 9: Autonomia média = 0.4409 ± 0.2283
-Geração 9: Aceleração média = 4.6273 ± 2.3509
+Geração 9: Autonomia média = 12.0436 ± 8.3040
+Geração 9: Aceleração média = 0.5069 ± 0.1563
 
-Geração 10: Autonomia média = 0.4355 ± 0.2313
-Geração 10: Aceleração média = 4.5534 ± 2.3859
+Geração 10: Autonomia média = 12.5375 ± 8.2967
+Geração 10: Aceleração média = 0.5160 ± 0.1524
 
-Geração 11: Autonomia média = 0.4620 ± 0.2251
-Geração 11: Aceleração média = 4.8227 ± 2.3256
+Geração 11: Autonomia média = 13.8344 ± 8.6399
+Geração 11: Aceleração média = 0.5395 ± 0.1562
 
-Geração 12: Autonomia média = 0.4357 ± 0.2313
-Geração 12: Aceleração média = 4.5470 ± 2.3848
+Geração 12: Autonomia média = 14.2244 ± 8.6913
+Geração 12: Aceleração média = 0.5456 ± 0.1552
 
-Geração 13: Autonomia média = 0.4617 ± 0.2246
-Geração 13: Aceleração média = 4.8229 ± 2.3103
+Geração 13: Autonomia média = 13.4097 ± 8.1919
+Geração 13: Aceleração média = 0.5301 ± 0.1483
 
-Geração 14: Autonomia média = 0.4716 ± 0.2284
-Geração 14: Aceleração média = 4.9250 ± 2.3532
+Geração 14: Autonomia média = 14.5258 ± 8.4682
+Geração 14: Aceleração média = 0.5508 ± 0.1527
 
-Geração 15: Autonomia média = 0.4454 ± 0.2305
-Geração 15: Aceleração média = 4.6491 ± 2.3723
+Geração 15: Autonomia média = 14.5056 ± 8.3190
+Geração 15: Aceleração média = 0.5505 ± 0.1492
 
-Geração 16: Autonomia média = 0.4764 ± 0.2364
-Geração 16: Aceleração média = 4.9658 ± 2.4342
+Geração 16: Autonomia média = 15.2208 ± 8.6599
+Geração 16: Aceleração média = 0.5629 ± 0.1537
 
-Geração 17: Autonomia média = 0.4793 ± 0.2395
-Geração 17: Aceleração média = 4.9908 ± 2.4762
+Geração 17: Autonomia média = 16.1237 ± 8.6743
+Geração 17: Aceleração média = 0.5789 ± 0.1504
 
-Geração 18: Autonomia média = 0.4544 ± 0.2415
-Geração 18: Aceleração média = 4.7274 ± 2.4897
+Geração 18: Autonomia média = 16.3603 ± 9.2176
+Geração 18: Aceleração média = 0.5804 ± 0.1582
 
-Geração 19: Autonomia média = 0.4816 ± 0.2423
-Geração 19: Aceleração média = 5.0094 ± 2.4947
+Geração 19: Autonomia média = 16.4757 ± 9.1380
+Geração 19: Aceleração média = 0.5831 ± 0.1561
 
-Geração 20: Autonomia média = 0.4693 ± 0.2388
-Geração 20: Aceleração média = 4.8808 ± 2.4631
+Geração 20: Autonomia média = 16.8763 ± 8.9880
+Geração 20: Aceleração média = 0.5893 ± 0.1551
 
-CPU time: 0.156055 seconds
+CPU time: 0.050814 seconds
 
 50 individuos, 20 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2182 ± 0.1545
-Geração 1: Aceleração média = 3.6747 ± 2.4906
+Geração 1: Autonomia média = 1.2853 ± 3.1297
+Geração 1: Aceleração média = 0.5329 ± 0.1401
 
-Geração 2: Autonomia média = 0.2861 ± 0.2131
-Geração 2: Aceleração média = 3.6031 ± 2.4929
+Geração 2: Autonomia média = 2.8766 ± 4.5356
+Geração 2: Aceleração média = 0.4834 ± 0.1045
 
-Geração 3: Autonomia média = 0.3000 ± 0.2425
-Geração 3: Aceleração média = 3.3780 ± 2.7371
+Geração 3: Autonomia média = 6.5420 ± 5.6624
+Geração 3: Aceleração média = 0.4551 ± 0.1097
 
-Geração 4: Autonomia média = 0.2754 ± 0.2097
-Geração 4: Aceleração média = 2.9926 ± 2.2626
+Geração 4: Autonomia média = 10.1977 ± 6.1903
+Geração 4: Aceleração média = 0.4768 ± 0.1320
 
-Geração 5: Autonomia média = 0.3362 ± 0.2163
-Geração 5: Aceleração média = 3.6015 ± 2.3214
+Geração 5: Autonomia média = 9.6083 ± 6.9806
+Geração 5: Aceleração média = 0.4507 ± 0.1339
 
-Geração 6: Autonomia média = 0.3628 ± 0.2179
-Geração 6: Aceleração média = 3.8233 ± 2.2791
+Geração 6: Autonomia média = 10.8739 ± 7.7300
+Geração 6: Aceleração média = 0.4771 ± 0.1460
 
-Geração 7: Autonomia média = 0.4139 ± 0.2317
-Geração 7: Aceleração média = 4.3356 ± 2.4048
+Geração 7: Autonomia média = 13.1988 ± 8.1749
+Geração 7: Aceleração média = 0.5244 ± 0.1521
 
-Geração 8: Autonomia média = 0.4419 ± 0.2368
-Geração 8: Aceleração média = 4.6102 ± 2.4478
+Geração 8: Autonomia média = 12.7868 ± 8.2870
+Geração 8: Aceleração média = 0.5125 ± 0.1473
 
-Geração 9: Autonomia média = 0.4720 ± 0.2266
-Geração 9: Aceleração média = 4.9231 ± 2.3384
+Geração 9: Autonomia média = 14.2191 ± 9.0348
+Geração 9: Aceleração média = 0.5393 ± 0.1581
 
-Geração 10: Autonomia média = 0.4861 ± 0.2250
-Geração 10: Aceleração média = 5.0626 ± 2.3274
+Geração 10: Autonomia média = 15.9465 ± 8.9569
+Geração 10: Aceleração média = 0.5728 ± 0.1568
 
-Geração 11: Autonomia média = 0.4876 ± 0.2365
-Geração 11: Aceleração média = 5.0760 ± 2.4411
+Geração 11: Autonomia média = 16.8313 ± 9.4405
+Geração 11: Aceleração média = 0.5864 ± 0.1636
 
-Geração 12: Autonomia média = 0.4412 ± 0.2328
-Geração 12: Aceleração média = 4.5850 ± 2.4028
+Geração 12: Autonomia média = 17.4814 ± 8.8736
+Geração 12: Aceleração média = 0.6008 ± 0.1514
 
-Geração 13: Autonomia média = 0.4729 ± 0.2365
-Geração 13: Aceleração média = 4.9177 ± 2.4346
+Geração 13: Autonomia média = 17.3041 ± 8.6925
+Geração 13: Aceleração média = 0.5978 ± 0.1492
 
-Geração 14: Autonomia média = 0.4538 ± 0.2385
-Geração 14: Aceleração média = 4.7180 ± 2.4556
+Geração 14: Autonomia média = 16.5938 ± 8.8714
+Geração 14: Aceleração média = 0.5838 ± 0.1541
 
-Geração 15: Autonomia média = 0.4769 ± 0.2270
-Geração 15: Aceleração média = 4.9643 ± 2.3220
+Geração 15: Autonomia média = 17.0179 ± 9.1116
+Geração 15: Aceleração média = 0.5907 ± 0.1574
 
-Geração 16: Autonomia média = 0.4785 ± 0.2439
-Geração 16: Aceleração média = 4.9777 ± 2.4980
+Geração 16: Autonomia média = 17.2436 ± 9.1530
+Geração 16: Aceleração média = 0.5942 ± 0.1578
 
-Geração 17: Autonomia média = 0.4640 ± 0.2362
-Geração 17: Aceleração média = 4.8238 ± 2.4295
+Geração 17: Autonomia média = 17.3583 ± 9.2499
+Geração 17: Aceleração média = 0.5953 ± 0.1595
 
-Geração 18: Autonomia média = 0.4666 ± 0.2442
-Geração 18: Aceleração média = 4.8464 ± 2.5132
+Geração 18: Autonomia média = 17.1288 ± 9.3782
+Geração 18: Aceleração média = 0.5896 ± 0.1618
 
-Geração 19: Autonomia média = 0.4524 ± 0.2454
-Geração 19: Aceleração média = 4.7051 ± 2.5217
+Geração 19: Autonomia média = 16.8974 ± 9.1634
+Geração 19: Aceleração média = 0.5849 ± 0.1572
 
-Geração 20: Autonomia média = 0.4852 ± 0.2441
-Geração 20: Aceleração média = 5.0434 ± 2.5101
+Geração 20: Autonomia média = 17.3469 ± 9.4137
+Geração 20: Aceleração média = 0.5916 ± 0.1618
 
-CPU time: 0.157506 seconds
+CPU time: 0.054888 seconds
 
 50 individuos, 20 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.2083 ± 0.1409
-Geração 1: Aceleração média = 3.4598 ± 2.1890
+Geração 1: Autonomia média = 1.0950 ± 2.7834
+Geração 1: Aceleração média = 0.5171 ± 0.1249
 
-Geração 2: Autonomia média = 0.2421 ± 0.1891
-Geração 2: Aceleração média = 3.0994 ± 2.3300
+Geração 2: Autonomia média = 3.8215 ± 5.6910
+Geração 2: Aceleração média = 0.4830 ± 0.1030
 
-Geração 3: Autonomia média = 0.2618 ± 0.1843
-Geração 3: Aceleração média = 3.0561 ± 2.1610
+Geração 3: Autonomia média = 7.5781 ± 5.8136
+Geração 3: Aceleração média = 0.4859 ± 0.1079
 
-Geração 4: Autonomia média = 0.2217 ± 0.1781
-Geração 4: Aceleração média = 2.3839 ± 1.9146
+Geração 4: Autonomia média = 11.8292 ± 7.1562
+Geração 4: Aceleração média = 0.5194 ± 0.1413
 
-Geração 5: Autonomia média = 0.2774 ± 0.2001
-Geração 5: Aceleração média = 2.9233 ± 2.0687
+Geração 5: Autonomia média = 12.3432 ± 8.5326
+Geração 5: Aceleração média = 0.5163 ± 0.1579
 
-Geração 6: Autonomia média = 0.3774 ± 0.2350
-Geração 6: Aceleração média = 3.9677 ± 2.4056
+Geração 6: Autonomia média = 13.7231 ± 8.4323
+Geração 6: Aceleração média = 0.5409 ± 0.1543
 
-Geração 7: Autonomia média = 0.4099 ± 0.2491
-Geração 7: Aceleração média = 4.2866 ± 2.5704
+Geração 7: Autonomia média = 14.2415 ± 8.9816
+Geração 7: Aceleração média = 0.5459 ± 0.1600
 
-Geração 8: Autonomia média = 0.4061 ± 0.2465
-Geração 8: Aceleração média = 4.2441 ± 2.5470
+Geração 8: Autonomia média = 14.3352 ± 8.8806
+Geração 8: Aceleração média = 0.5473 ± 0.1578
 
-Geração 9: Autonomia média = 0.4594 ± 0.2422
-Geração 9: Aceleração média = 4.7823 ± 2.4921
+Geração 9: Autonomia média = 14.8472 ± 9.0616
+Geração 9: Aceleração média = 0.5551 ± 0.1597
 
-Geração 10: Autonomia média = 0.4623 ± 0.2470
-Geração 10: Aceleração média = 4.8123 ± 2.5426
+Geração 10: Autonomia média = 14.8230 ± 8.8928
+Geração 10: Aceleração média = 0.5540 ± 0.1572
 
-Geração 11: Autonomia média = 0.4774 ± 0.2434
-Geração 11: Aceleração média = 4.9709 ± 2.5095
+Geração 11: Autonomia média = 14.8560 ± 8.8439
+Geração 11: Aceleração média = 0.5544 ± 0.1556
 
-Geração 12: Autonomia média = 0.4635 ± 0.2435
-Geração 12: Aceleração média = 4.8239 ± 2.5067
+Geração 12: Autonomia média = 16.0498 ± 8.8872
+Geração 12: Aceleração média = 0.5762 ± 0.1537
 
-Geração 13: Autonomia média = 0.4518 ± 0.2477
-Geração 13: Aceleração média = 4.7004 ± 2.5427
+Geração 13: Autonomia média = 16.0557 ± 8.8513
+Geração 13: Aceleração média = 0.5762 ± 0.1534
 
-Geração 14: Autonomia média = 0.4503 ± 0.2552
-Geração 14: Aceleração média = 4.6833 ± 2.6230
+Geração 14: Autonomia média = 15.8312 ± 9.0085
+Geração 14: Aceleração média = 0.5716 ± 0.1570
 
-Geração 15: Autonomia média = 0.4878 ± 0.2474
-Geração 15: Aceleração média = 5.0706 ± 2.5447
+Geração 15: Autonomia média = 16.1130 ± 8.9772
+Geração 15: Aceleração média = 0.5758 ± 0.1563
 
-Geração 16: Autonomia média = 0.4662 ± 0.2421
-Geração 16: Aceleração média = 4.8479 ± 2.4893
+Geração 16: Autonomia média = 16.2577 ± 8.9822
+Geração 16: Aceleração média = 0.5794 ± 0.1560
 
-Geração 17: Autonomia média = 0.4812 ± 0.2441
-Geração 17: Aceleração média = 4.9994 ± 2.5144
+Geração 17: Autonomia média = 16.4447 ± 8.8729
+Geração 17: Aceleração média = 0.5834 ± 0.1535
 
-Geração 18: Autonomia média = 0.4496 ± 0.2475
-Geração 18: Aceleração média = 4.6776 ± 2.5471
+Geração 18: Autonomia média = 16.8280 ± 9.0617
+Geração 18: Aceleração média = 0.5881 ± 0.1559
 
-Geração 19: Autonomia média = 0.4774 ± 0.2502
-Geração 19: Aceleração média = 4.9651 ± 2.5725
+Geração 19: Autonomia média = 16.8897 ± 9.2372
+Geração 19: Aceleração média = 0.5883 ± 0.1594
 
-Geração 20: Autonomia média = 0.4583 ± 0.2390
-Geração 20: Aceleração média = 4.7676 ± 2.4563
+Geração 20: Autonomia média = 16.7770 ± 9.3533
+Geração 20: Aceleração média = 0.5850 ± 0.1622
 
-CPU time: 0.063421 seconds
+CPU time: 0.025099 seconds
 
 50 individuos, 20 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.2106 ± 0.1412
-Geração 1: Aceleração média = 3.5028 ± 2.1973
+Geração 1: Autonomia média = 1.0912 ± 2.7843
+Geração 1: Aceleração média = 0.5180 ± 0.1306
 
-Geração 2: Autonomia média = 0.2402 ± 0.1895
-Geração 2: Aceleração média = 3.0615 ± 2.3514
+Geração 2: Autonomia média = 3.8260 ± 5.7058
+Geração 2: Aceleração média = 0.4841 ± 0.1046
 
-Geração 3: Autonomia média = 0.2785 ± 0.2158
-Geração 3: Aceleração média = 3.3083 ± 2.5884
+Geração 3: Autonomia média = 7.4488 ± 6.1949
+Geração 3: Aceleração média = 0.4801 ± 0.1103
 
-Geração 4: Autonomia média = 0.2795 ± 0.2088
-Geração 4: Aceleração média = 3.0586 ± 2.3203
+Geração 4: Autonomia média = 11.4564 ± 6.9024
+Geração 4: Aceleração média = 0.5143 ± 0.1305
 
-Geração 5: Autonomia média = 0.3042 ± 0.2047
-Geração 5: Aceleração média = 3.2572 ± 2.2310
+Geração 5: Autonomia média = 11.4217 ± 7.5230
+Geração 5: Aceleração média = 0.4906 ± 0.1412
 
-Geração 6: Autonomia média = 0.3045 ± 0.1948
-Geração 6: Aceleração média = 3.2100 ± 2.0327
+Geração 6: Autonomia média = 13.2135 ± 8.5365
+Geração 6: Aceleração média = 0.5254 ± 0.1572
 
-Geração 7: Autonomia média = 0.3755 ± 0.2277
-Geração 7: Aceleração média = 3.9323 ± 2.3608
+Geração 7: Autonomia média = 14.5656 ± 8.4756
+Geração 7: Aceleração média = 0.5517 ± 0.1517
 
-Geração 8: Autonomia média = 0.3936 ± 0.2390
-Geração 8: Aceleração média = 4.1087 ± 2.4690
+Geração 8: Autonomia média = 15.0636 ± 8.8096
+Geração 8: Aceleração média = 0.5595 ± 0.1556
 
-Geração 9: Autonomia média = 0.4310 ± 0.2416
-Geração 9: Aceleração média = 4.4906 ± 2.4807
+Geração 9: Autonomia média = 16.1727 ± 9.1572
+Geração 9: Aceleração média = 0.5781 ± 0.1597
 
-Geração 10: Autonomia média = 0.4324 ± 0.2496
-Geração 10: Aceleração média = 4.5019 ± 2.5642
+Geração 10: Autonomia média = 16.2121 ± 9.2573
+Geração 10: Aceleração média = 0.5762 ± 0.1619
 
-Geração 11: Autonomia média = 0.4735 ± 0.2385
-Geração 11: Aceleração média = 4.9242 ± 2.4482
+Geração 11: Autonomia média = 16.6749 ± 9.2503
+Geração 11: Aceleração média = 0.5844 ± 0.1605
 
-Geração 12: Autonomia média = 0.4680 ± 0.2453
-Geração 12: Aceleração média = 4.8714 ± 2.5172
+Geração 12: Autonomia média = 17.2218 ± 9.3247
+Geração 12: Aceleração média = 0.5943 ± 0.1613
 
-Geração 13: Autonomia média = 0.4244 ± 0.2384
-Geração 13: Aceleração média = 4.4174 ± 2.4501
+Geração 13: Autonomia média = 17.3579 ± 9.1551
+Geração 13: Aceleração média = 0.5975 ± 0.1602
 
-Geração 14: Autonomia média = 0.4526 ± 0.2418
-Geração 14: Aceleração média = 4.7130 ± 2.4824
+Geração 14: Autonomia média = 17.9990 ± 9.3739
+Geração 14: Aceleração média = 0.6067 ± 0.1607
 
-Geração 15: Autonomia média = 0.4682 ± 0.2483
-Geração 15: Aceleração média = 4.8658 ± 2.5517
+Geração 15: Autonomia média = 16.6523 ± 9.4126
+Geração 15: Aceleração média = 0.5815 ± 0.1628
 
-Geração 16: Autonomia média = 0.4593 ± 0.2606
-Geração 16: Aceleração média = 4.7792 ± 2.6745
+Geração 16: Autonomia média = 16.6083 ± 9.3295
+Geração 16: Aceleração média = 0.5820 ± 0.1621
 
-Geração 17: Autonomia média = 0.4519 ± 0.2417
-Geração 17: Aceleração média = 4.7015 ± 2.4823
+Geração 17: Autonomia média = 17.8514 ± 9.2025
+Geração 17: Aceleração média = 0.6038 ± 0.1575
 
-Geração 18: Autonomia média = 0.4362 ± 0.2516
-Geração 18: Aceleração média = 4.5348 ± 2.5863
+Geração 18: Autonomia média = 16.9623 ± 9.3808
+Geração 18: Aceleração média = 0.5876 ± 0.1615
 
-Geração 19: Autonomia média = 0.4847 ± 0.2484
-Geração 19: Aceleração média = 5.0327 ± 2.5520
+Geração 19: Autonomia média = 16.9196 ± 8.9523
+Geração 19: Aceleração média = 0.5885 ± 0.1550
 
-Geração 20: Autonomia média = 0.4771 ± 0.2495
-Geração 20: Aceleração média = 4.9555 ± 2.5633
+Geração 20: Autonomia média = 15.9950 ± 8.9774
+Geração 20: Aceleração média = 0.5717 ± 0.1574
 
-CPU time: 0.142412 seconds
+CPU time: 0.025029 seconds
 
 50 individuos, 20 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.2039 ± 0.1434
-Geração 1: Aceleração média = 3.3647 ± 2.2042
+Geração 1: Autonomia média = 1.0890 ± 2.7844
+Geração 1: Aceleração média = 0.5173 ± 0.1303
 
-Geração 2: Autonomia média = 0.2204 ± 0.1546
-Geração 2: Aceleração média = 2.9117 ± 2.1052
+Geração 2: Autonomia média = 3.5755 ± 5.4794
+Geração 2: Aceleração média = 0.4864 ± 0.1035
 
-Geração 3: Autonomia média = 0.2526 ± 0.1860
-Geração 3: Aceleração média = 2.8412 ± 2.0683
+Geração 3: Autonomia média = 6.8058 ± 5.9372
+Geração 3: Aceleração média = 0.4774 ± 0.1203
 
-Geração 4: Autonomia média = 0.2743 ± 0.1819
-Geração 4: Aceleração média = 2.9586 ± 1.9858
+Geração 4: Autonomia média = 10.7166 ± 7.2458
+Geração 4: Aceleração média = 0.4883 ± 0.1425
 
-Geração 5: Autonomia média = 0.2991 ± 0.1788
-Geração 5: Aceleração média = 3.1948 ± 1.9120
+Geração 5: Autonomia média = 11.6511 ± 8.0030
+Geração 5: Aceleração média = 0.4959 ± 0.1547
 
-Geração 6: Autonomia média = 0.3167 ± 0.1980
-Geração 6: Aceleração média = 3.3637 ± 2.1020
+Geração 6: Autonomia média = 13.7648 ± 8.2904
+Geração 6: Aceleração média = 0.5405 ± 0.1556
 
-Geração 7: Autonomia média = 0.3659 ± 0.2186
-Geração 7: Aceleração média = 3.8470 ± 2.2606
+Geração 7: Autonomia média = 15.7329 ± 8.9505
+Geração 7: Aceleração média = 0.5736 ± 0.1586
 
-Geração 8: Autonomia média = 0.4182 ± 0.2414
-Geração 8: Aceleração média = 4.3939 ± 2.5057
+Geração 8: Autonomia média = 15.9410 ± 9.1148
+Geração 8: Aceleração média = 0.5762 ± 0.1568
 
-Geração 9: Autonomia média = 0.4464 ± 0.2440
-Geração 9: Aceleração média = 4.6890 ± 2.5335
+Geração 9: Autonomia média = 15.9156 ± 9.3865
+Geração 9: Aceleração média = 0.5749 ± 0.1617
 
-Geração 10: Autonomia média = 0.4569 ± 0.2396
-Geração 10: Aceleração média = 4.7851 ± 2.4935
+Geração 10: Autonomia média = 15.5918 ± 9.3158
+Geração 10: Aceleração média = 0.5674 ± 0.1622
 
-Geração 11: Autonomia média = 0.4753 ± 0.2537
-Geração 11: Aceleração média = 4.9595 ± 2.6190
+Geração 11: Autonomia média = 16.5756 ± 9.6202
+Geração 11: Aceleração média = 0.5845 ± 0.1641
 
-Geração 12: Autonomia média = 0.4594 ± 0.2794
-Geração 12: Aceleração média = 4.7907 ± 2.8782
+Geração 12: Autonomia média = 16.7504 ± 10.1557
+Geração 12: Aceleração média = 0.5849 ± 0.1708
 
-Geração 13: Autonomia média = 0.5054 ± 0.2807
-Geração 13: Aceleração média = 5.2613 ± 2.8837
+Geração 13: Autonomia média = 16.3669 ± 10.5628
+Geração 13: Aceleração média = 0.5745 ± 0.1788
 
-Geração 14: Autonomia média = 0.5230 ± 0.2674
-Geração 14: Aceleração média = 5.4425 ± 2.7492
+Geração 14: Autonomia média = 17.4369 ± 10.4466
+Geração 14: Aceleração média = 0.5932 ± 0.1766
 
-Geração 15: Autonomia média = 0.5249 ± 0.2680
-Geração 15: Aceleração média = 5.4593 ± 2.7545
+Geração 15: Autonomia média = 17.8151 ± 10.1942
+Geração 15: Aceleração média = 0.6011 ± 0.1708
 
-Geração 16: Autonomia média = 0.5025 ± 0.2776
-Geração 16: Aceleração média = 5.2343 ± 2.8475
+Geração 16: Autonomia média = 16.7459 ± 10.2149
+Geração 16: Aceleração média = 0.5828 ± 0.1725
 
-Geração 17: Autonomia média = 0.5189 ± 0.2795
-Geração 17: Aceleração média = 5.4015 ± 2.8680
+Geração 17: Autonomia média = 17.5730 ± 10.6905
+Geração 17: Aceleração média = 0.5923 ± 0.1812
 
-Geração 18: Autonomia média = 0.5327 ± 0.2729
-Geração 18: Aceleração média = 5.5383 ± 2.8073
+Geração 18: Autonomia média = 18.5199 ± 10.9018
+Geração 18: Aceleração média = 0.6058 ± 0.1866
 
-Geração 19: Autonomia média = 0.4881 ± 0.2655
-Geração 19: Aceleração média = 5.0812 ± 2.7358
+Geração 19: Autonomia média = 18.6553 ± 10.4483
+Geração 19: Aceleração média = 0.6079 ± 0.1801
 
-Geração 20: Autonomia média = 0.5067 ± 0.2775
-Geração 20: Aceleração média = 5.2652 ± 2.8617
+Geração 20: Autonomia média = 19.2322 ± 11.3137
+Geração 20: Aceleração média = 0.6003 ± 0.2015
 
-CPU time: 0.160420 seconds
+CPU time: 0.025915 seconds
 
 100 individuos, 5 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1737 ± 0.1279
-Geração 1: Aceleração média = 2.7482 ± 1.8328
+Geração 1: Autonomia média = 8.4909 ± 71.1839
+Geração 1: Aceleração média = 0.4763 ± 0.0901
 
-Geração 2: Autonomia média = 0.2077 ± 0.1626
-Geração 2: Aceleração média = 2.7557 ± 2.2299
+Geração 2: Autonomia média = 24.1677 ± 121.5834
+Geração 2: Aceleração média = 0.4672 ± 0.0901
 
-Geração 3: Autonomia média = 0.2510 ± 0.1738
-Geração 3: Aceleração média = 2.8311 ± 1.9301
+Geração 3: Autonomia média = 59.8963 ± 175.0098
+Geração 3: Aceleração média = 0.4627 ± 0.1004
 
-Geração 4: Autonomia média = 0.2313 ± 0.1547
-Geração 4: Aceleração média = 2.5271 ± 1.7232
+Geração 4: Autonomia média = 157.5508 ± 257.2185
+Geração 4: Aceleração média = 0.4779 ± 0.1057
 
-Geração 5: Autonomia média = 0.2334 ± 0.1705
-Geração 5: Aceleração média = 2.5338 ± 1.8818
+Geração 5: Autonomia média = 352.6209 ± 286.2190
+Geração 5: Aceleração média = 0.4741 ± 0.1143
 
-CPU time: 0.205843 seconds
+CPU time: 0.130311 seconds
 
 100 individuos, 5 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1756 ± 0.1273
-Geração 1: Aceleração média = 2.8078 ± 1.8328
+Geração 1: Autonomia média = 8.5010 ± 71.1828
+Geração 1: Aceleração média = 0.4783 ± 0.0908
 
-Geração 2: Autonomia média = 0.2198 ± 0.1741
-Geração 2: Aceleração média = 2.7629 ± 2.0778
+Geração 2: Autonomia média = 23.6372 ± 121.6549
+Geração 2: Aceleração média = 0.4572 ± 0.0841
 
-Geração 3: Autonomia média = 0.2514 ± 0.1811
-Geração 3: Aceleração média = 2.8662 ± 2.0800
+Geração 3: Autonomia média = 53.8086 ± 181.2051
+Geração 3: Aceleração média = 0.4492 ± 0.0866
 
-Geração 4: Autonomia média = 0.2920 ± 0.2100
-Geração 4: Aceleração média = 3.1983 ± 2.2930
+Geração 4: Autonomia média = 136.5782 ± 257.1904
+Geração 4: Aceleração média = 0.4574 ± 0.0953
 
-Geração 5: Autonomia média = 0.2435 ± 0.1806
-Geração 5: Aceleração média = 2.6197 ± 1.9354
+Geração 5: Autonomia média = 309.3584 ± 307.5035
+Geração 5: Aceleração média = 0.4774 ± 0.1066
 
-CPU time: 0.198445 seconds
+CPU time: 0.151009 seconds
 
 100 individuos, 5 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1815 ± 0.1314
-Geração 1: Aceleração média = 2.8760 ± 1.8860
+Geração 1: Autonomia média = 8.5290 ± 71.1801
+Geração 1: Aceleração média = 0.4835 ± 0.0964
 
-Geração 2: Autonomia média = 0.2218 ± 0.1730
-Geração 2: Aceleração média = 2.7829 ± 2.1480
+Geração 2: Autonomia média = 20.4222 ± 104.2530
+Geração 2: Aceleração média = 0.4589 ± 0.0877
 
-Geração 3: Autonomia média = 0.2734 ± 0.1946
-Geração 3: Aceleração média = 3.0447 ± 2.2146
+Geração 3: Autonomia média = 38.1036 ± 135.2404
+Geração 3: Aceleração média = 0.4545 ± 0.0984
 
-Geração 4: Autonomia média = 0.2467 ± 0.1774
-Geração 4: Aceleração média = 2.6922 ± 2.0343
+Geração 4: Autonomia média = 94.0262 ± 203.8110
+Geração 4: Aceleração média = 0.4472 ± 0.0896
 
-Geração 5: Autonomia média = 0.2347 ± 0.1824
-Geração 5: Aceleração média = 2.5367 ± 2.0326
+Geração 5: Autonomia média = 210.2239 ± 285.9688
+Geração 5: Aceleração média = 0.4247 ± 0.1057
 
-CPU time: 0.209799 seconds
+CPU time: 0.118401 seconds
 
 100 individuos, 5 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1709 ± 0.1214
-Geração 1: Aceleração média = 2.9287 ± 2.1181
+Geração 1: Autonomia média = 20.3222 ± 97.2242
+Geração 1: Aceleração média = 0.4728 ± 0.0893
 
-Geração 2: Autonomia média = 0.2037 ± 0.1495
-Geração 2: Aceleração média = 2.5907 ± 1.8585
+Geração 2: Autonomia média = 50.9778 ± 142.6342
+Geração 2: Aceleração média = 0.4407 ± 0.0838
 
-Geração 3: Autonomia média = 0.2502 ± 0.1598
-Geração 3: Aceleração média = 2.8023 ± 1.7813
+Geração 3: Autonomia média = 106.4336 ± 176.6745
+Geração 3: Aceleração média = 0.4338 ± 0.0908
 
-Geração 4: Autonomia média = 0.2452 ± 0.1465
-Geração 4: Aceleração média = 2.6726 ± 1.5921
+Geração 4: Autonomia média = 255.5099 ± 205.4419
+Geração 4: Aceleração média = 0.4189 ± 0.0766
 
-Geração 5: Autonomia média = 0.2586 ± 0.1772
-Geração 5: Aceleração média = 2.8049 ± 1.9081
+Geração 5: Autonomia média = 313.0451 ± 140.2063
+Geração 5: Aceleração média = 0.4045 ± 0.0619
 
-CPU time: 0.168216 seconds
+CPU time: 0.092733 seconds
 
 100 individuos, 5 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1774 ± 0.1220
-Geração 1: Aceleração média = 3.1078 ± 2.1862
+Geração 1: Autonomia média = 20.3700 ± 97.2146
+Geração 1: Aceleração média = 0.4833 ± 0.0980
 
-Geração 2: Autonomia média = 0.2276 ± 0.1514
-Geração 2: Aceleração média = 2.9881 ± 2.0262
+Geração 2: Autonomia média = 54.9272 ± 155.2601
+Geração 2: Aceleração média = 0.4458 ± 0.0807
 
-Geração 3: Autonomia média = 0.2658 ± 0.1681
-Geração 3: Aceleração média = 3.0300 ± 1.9638
+Geração 3: Autonomia média = 128.5311 ± 206.5724
+Geração 3: Aceleração média = 0.4343 ± 0.0801
 
-Geração 4: Autonomia média = 0.2640 ± 0.1767
-Geração 4: Aceleração média = 2.8739 ± 1.9284
+Geração 4: Autonomia média = 316.8619 ± 288.7814
+Geração 4: Aceleração média = 0.4419 ± 0.1023
 
-Geração 5: Autonomia média = 0.2526 ± 0.1772
-Geração 5: Aceleração média = 2.7077 ± 1.8852
+Geração 5: Autonomia média = 464.9157 ± 279.0365
+Geração 5: Aceleração média = 0.4748 ± 0.1221
 
-CPU time: 0.201094 seconds
+CPU time: 0.082502 seconds
 
 100 individuos, 5 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1813 ± 0.1239
-Geração 1: Aceleração média = 3.1500 ± 2.1404
+Geração 1: Autonomia média = 20.3801 ± 97.2126
+Geração 1: Aceleração média = 0.4811 ± 0.0972
 
-Geração 2: Autonomia média = 0.2153 ± 0.1706
-Geração 2: Aceleração média = 2.7333 ± 2.0432
+Geração 2: Autonomia média = 54.8230 ± 156.4243
+Geração 2: Aceleração média = 0.4507 ± 0.0888
 
-Geração 3: Autonomia média = 0.2542 ± 0.2029
-Geração 3: Aceleração média = 2.9177 ± 2.2508
+Geração 3: Autonomia média = 103.0146 ± 194.8146
+Geração 3: Aceleração média = 0.4342 ± 0.0844
 
-Geração 4: Autonomia média = 0.3229 ± 0.2314
-Geração 4: Aceleração média = 3.5672 ± 2.5856
+Geração 4: Autonomia média = 247.9616 ± 265.3328
+Geração 4: Aceleração média = 0.4482 ± 0.0909
 
-Geração 5: Autonomia média = 0.2806 ± 0.2156
-Geração 5: Aceleração média = 3.0149 ± 2.2761
+Geração 5: Autonomia média = 399.6224 ± 212.0463
+Geração 5: Aceleração média = 0.4469 ± 0.0849
 
-CPU time: 0.176651 seconds
+CPU time: 0.079532 seconds
 
 100 individuos, 5 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1218
-Geração 1: Aceleração média = 2.9275 ± 2.0247
+Geração 1: Autonomia média = 13.1187 ± 82.1401
+Geração 1: Aceleração média = 0.4744 ± 0.0900
 
-Geração 2: Autonomia média = 0.2249 ± 0.1579
-Geração 2: Aceleração média = 2.9955 ± 2.1268
+Geração 2: Autonomia média = 18.9624 ± 87.5521
+Geração 2: Aceleração média = 0.4569 ± 0.0942
 
-Geração 3: Autonomia média = 0.2654 ± 0.1795
-Geração 3: Aceleração média = 3.0424 ± 2.0157
+Geração 3: Autonomia média = 43.0969 ± 127.5751
+Geração 3: Aceleração média = 0.4629 ± 0.1066
 
-Geração 4: Autonomia média = 0.3044 ± 0.1952
-Geração 4: Aceleração média = 3.3146 ± 2.1297
+Geração 4: Autonomia média = 115.8592 ± 190.4767
+Geração 4: Aceleração média = 0.4583 ± 0.0937
 
-Geração 5: Autonomia média = 0.2878 ± 0.1950
-Geração 5: Aceleração média = 3.0992 ± 2.0776
+Geração 5: Autonomia média = 267.3610 ± 212.2824
+Geração 5: Aceleração média = 0.4136 ± 0.0786
 
-CPU time: 0.189813 seconds
+CPU time: 0.022275 seconds
 
 100 individuos, 5 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1690 ± 0.1198
-Geração 1: Aceleração média = 2.8574 ± 1.9200
+Geração 1: Autonomia média = 12.9437 ± 82.1469
+Geração 1: Aceleração média = 0.4780 ± 0.0928
 
-Geração 2: Autonomia média = 0.2052 ± 0.1634
-Geração 2: Aceleração média = 2.6110 ± 2.0288
+Geração 2: Autonomia média = 15.3099 ± 81.9951
+Geração 2: Aceleração média = 0.4615 ± 0.0983
 
-Geração 3: Autonomia média = 0.2619 ± 0.1974
-Geração 3: Aceleração média = 2.9392 ± 2.1799
+Geração 3: Autonomia média = 42.3382 ± 140.2983
+Geração 3: Aceleração média = 0.4593 ± 0.0988
 
-Geração 4: Autonomia média = 0.2852 ± 0.2110
-Geração 4: Aceleração média = 3.1116 ± 2.3026
+Geração 4: Autonomia média = 126.5612 ± 244.7803
+Geração 4: Aceleração média = 0.4612 ± 0.1147
 
-Geração 5: Autonomia média = 0.2645 ± 0.1841
-Geração 5: Aceleração média = 2.8403 ± 1.9639
+Geração 5: Autonomia média = 273.6605 ± 327.5493
+Geração 5: Aceleração média = 0.4527 ± 0.1230
 
-CPU time: 0.161482 seconds
+CPU time: 0.024678 seconds
 
 100 individuos, 5 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1226
-Geração 1: Aceleração média = 2.7935 ± 1.8704
+Geração 1: Autonomia média = 13.2434 ± 82.1640
+Geração 1: Aceleração média = 0.4799 ± 0.0948
 
-Geração 2: Autonomia média = 0.2293 ± 0.1586
-Geração 2: Aceleração média = 2.8836 ± 2.0407
+Geração 2: Autonomia média = 14.9766 ± 82.0056
+Geração 2: Aceleração média = 0.4577 ± 0.0968
 
-Geração 3: Autonomia média = 0.2499 ± 0.1648
-Geração 3: Aceleração média = 2.8579 ± 1.9520
+Geração 3: Autonomia média = 18.3839 ± 81.6306
+Geração 3: Aceleração média = 0.4595 ± 0.1099
 
-Geração 4: Autonomia média = 0.2707 ± 0.1852
-Geração 4: Aceleração média = 2.9529 ± 2.0600
+Geração 4: Autonomia média = 26.7181 ± 90.6242
+Geração 4: Aceleração média = 0.4261 ± 0.0936
 
-Geração 5: Autonomia média = 0.2544 ± 0.1861
-Geração 5: Aceleração média = 2.7248 ± 1.9967
+Geração 5: Autonomia média = 44.1051 ± 113.0080
+Geração 5: Aceleração média = 0.4482 ± 0.1084
 
-CPU time: 0.151514 seconds
+CPU time: 0.022113 seconds
 
 100 individuos, 10 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1737 ± 0.1279
-Geração 1: Aceleração média = 2.7482 ± 1.8328
+Geração 1: Autonomia média = 8.4909 ± 71.1839
+Geração 1: Aceleração média = 0.4763 ± 0.0901
 
-Geração 2: Autonomia média = 0.2077 ± 0.1626
-Geração 2: Aceleração média = 2.7557 ± 2.2299
+Geração 2: Autonomia média = 24.1677 ± 121.5834
+Geração 2: Aceleração média = 0.4672 ± 0.0901
 
-Geração 3: Autonomia média = 0.2510 ± 0.1738
-Geração 3: Aceleração média = 2.8311 ± 1.9301
+Geração 3: Autonomia média = 59.8963 ± 175.0098
+Geração 3: Aceleração média = 0.4627 ± 0.1004
 
-Geração 4: Autonomia média = 0.2313 ± 0.1547
-Geração 4: Aceleração média = 2.5271 ± 1.7232
+Geração 4: Autonomia média = 157.5508 ± 257.2185
+Geração 4: Aceleração média = 0.4779 ± 0.1057
 
-Geração 5: Autonomia média = 0.2334 ± 0.1705
-Geração 5: Aceleração média = 2.5338 ± 1.8818
+Geração 5: Autonomia média = 352.6209 ± 286.2190
+Geração 5: Aceleração média = 0.4741 ± 0.1143
 
-Geração 6: Autonomia média = 0.2388 ± 0.1665
-Geração 6: Aceleração média = 2.5616 ± 1.8073
+Geração 6: Autonomia média = 327.9786 ± 185.8184
+Geração 6: Aceleração média = 0.4207 ± 0.0848
 
-Geração 7: Autonomia média = 0.2670 ± 0.1596
-Geração 7: Aceleração média = 2.8068 ± 1.6545
+Geração 7: Autonomia média = 292.1512 ± 199.5743
+Geração 7: Aceleração média = 0.4043 ± 0.0885
 
-Geração 8: Autonomia média = 0.2972 ± 0.1835
-Geração 8: Aceleração média = 3.1143 ± 1.9044
+Geração 8: Autonomia média = 351.4345 ± 169.5130
+Geração 8: Aceleração média = 0.4182 ± 0.0921
 
-Geração 9: Autonomia média = 0.3043 ± 0.1818
-Geração 9: Aceleração média = 3.1807 ± 1.8791
+Geração 9: Autonomia média = 355.9206 ± 177.6196
+Geração 9: Aceleração média = 0.4194 ± 0.0961
 
-Geração 10: Autonomia média = 0.3173 ± 0.1867
-Geração 10: Aceleração média = 3.3076 ± 1.9230
+Geração 10: Autonomia média = 352.2856 ± 175.8939
+Geração 10: Aceleração média = 0.4169 ± 0.0950
 
-CPU time: 0.289843 seconds
+CPU time: 0.188417 seconds
 
 100 individuos, 10 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1756 ± 0.1273
-Geração 1: Aceleração média = 2.8078 ± 1.8328
+Geração 1: Autonomia média = 8.5010 ± 71.1828
+Geração 1: Aceleração média = 0.4783 ± 0.0908
 
-Geração 2: Autonomia média = 0.2198 ± 0.1741
-Geração 2: Aceleração média = 2.7629 ± 2.0778
+Geração 2: Autonomia média = 23.6372 ± 121.6549
+Geração 2: Aceleração média = 0.4572 ± 0.0841
 
-Geração 3: Autonomia média = 0.2514 ± 0.1811
-Geração 3: Aceleração média = 2.8662 ± 2.0800
+Geração 3: Autonomia média = 53.8086 ± 181.2051
+Geração 3: Aceleração média = 0.4492 ± 0.0866
 
-Geração 4: Autonomia média = 0.2920 ± 0.2100
-Geração 4: Aceleração média = 3.1983 ± 2.2930
+Geração 4: Autonomia média = 136.5782 ± 257.1904
+Geração 4: Aceleração média = 0.4574 ± 0.0953
 
-Geração 5: Autonomia média = 0.2435 ± 0.1806
-Geração 5: Aceleração média = 2.6197 ± 1.9354
+Geração 5: Autonomia média = 309.3584 ± 307.5035
+Geração 5: Aceleração média = 0.4774 ± 0.1066
 
-Geração 6: Autonomia média = 0.2613 ± 0.1939
-Geração 6: Aceleração média = 2.7709 ± 2.0477
+Geração 6: Autonomia média = 425.8320 ± 240.5493
+Geração 6: Aceleração média = 0.4686 ± 0.1003
 
-Geração 7: Autonomia média = 0.2918 ± 0.1883
-Geração 7: Aceleração média = 3.0702 ± 1.9575
+Geração 7: Autonomia média = 389.6272 ± 149.5197
+Geração 7: Aceleração média = 0.4400 ± 0.0773
 
-Geração 8: Autonomia média = 0.3179 ± 0.2015
-Geração 8: Aceleração média = 3.3373 ± 2.0928
+Geração 8: Autonomia média = 356.5905 ± 180.5752
+Geração 8: Aceleração média = 0.4167 ± 0.0874
 
-Geração 9: Autonomia média = 0.3430 ± 0.2066
-Geração 9: Aceleração média = 3.5958 ± 2.1447
+Geração 9: Autonomia média = 365.1464 ± 210.1271
+Geração 9: Aceleração média = 0.4186 ± 0.1016
 
-Geração 10: Autonomia média = 0.3674 ± 0.2173
-Geração 10: Aceleração média = 3.8430 ± 2.2525
+Geração 10: Autonomia média = 398.7965 ± 247.3143
+Geração 10: Aceleração média = 0.4323 ± 0.1125
 
-CPU time: 0.196856 seconds
+CPU time: 0.199413 seconds
 
 100 individuos, 10 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1815 ± 0.1314
-Geração 1: Aceleração média = 2.8760 ± 1.8860
+Geração 1: Autonomia média = 8.5290 ± 71.1801
+Geração 1: Aceleração média = 0.4835 ± 0.0964
 
-Geração 2: Autonomia média = 0.2218 ± 0.1730
-Geração 2: Aceleração média = 2.7829 ± 2.1480
+Geração 2: Autonomia média = 20.4222 ± 104.2530
+Geração 2: Aceleração média = 0.4589 ± 0.0877
 
-Geração 3: Autonomia média = 0.2734 ± 0.1946
-Geração 3: Aceleração média = 3.0447 ± 2.2146
+Geração 3: Autonomia média = 38.1036 ± 135.2404
+Geração 3: Aceleração média = 0.4545 ± 0.0984
 
-Geração 4: Autonomia média = 0.2467 ± 0.1774
-Geração 4: Aceleração média = 2.6922 ± 2.0343
+Geração 4: Autonomia média = 94.0262 ± 203.8110
+Geração 4: Aceleração média = 0.4472 ± 0.0896
 
-Geração 5: Autonomia média = 0.2347 ± 0.1824
-Geração 5: Aceleração média = 2.5367 ± 2.0326
+Geração 5: Autonomia média = 210.2239 ± 285.9688
+Geração 5: Aceleração média = 0.4247 ± 0.1057
 
-Geração 6: Autonomia média = 0.2729 ± 0.1908
-Geração 6: Aceleração média = 2.8896 ± 2.0064
+Geração 6: Autonomia média = 438.4476 ± 271.8482
+Geração 6: Aceleração média = 0.4771 ± 0.1097
 
-Geração 7: Autonomia média = 0.2992 ± 0.2070
-Geração 7: Aceleração média = 3.1540 ± 2.1672
+Geração 7: Autonomia média = 427.8501 ± 211.3995
+Geração 7: Aceleração média = 0.4542 ± 0.0976
 
-Geração 8: Autonomia média = 0.3497 ± 0.2268
-Geração 8: Aceleração média = 3.6657 ± 2.3545
+Geração 8: Autonomia média = 431.1680 ± 251.6670
+Geração 8: Aceleração média = 0.4535 ± 0.1103
 
-Geração 9: Autonomia média = 0.3636 ± 0.2197
-Geração 9: Aceleração média = 3.8070 ± 2.2794
+Geração 9: Autonomia média = 456.3195 ± 270.5726
+Geração 9: Aceleração média = 0.4650 ± 0.1167
 
-Geração 10: Autonomia média = 0.3935 ± 0.2318
-Geração 10: Aceleração média = 4.1119 ± 2.4022
+Geração 10: Autonomia média = 516.3585 ± 280.2793
+Geração 10: Aceleração média = 0.4872 ± 0.1218
 
-CPU time: 0.284660 seconds
+CPU time: 0.178152 seconds
 
 100 individuos, 10 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1709 ± 0.1214
-Geração 1: Aceleração média = 2.9287 ± 2.1181
+Geração 1: Autonomia média = 20.3222 ± 97.2242
+Geração 1: Aceleração média = 0.4728 ± 0.0893
 
-Geração 2: Autonomia média = 0.2037 ± 0.1495
-Geração 2: Aceleração média = 2.5907 ± 1.8585
+Geração 2: Autonomia média = 50.9778 ± 142.6342
+Geração 2: Aceleração média = 0.4407 ± 0.0838
 
-Geração 3: Autonomia média = 0.2502 ± 0.1598
-Geração 3: Aceleração média = 2.8023 ± 1.7813
+Geração 3: Autonomia média = 106.4336 ± 176.6745
+Geração 3: Aceleração média = 0.4338 ± 0.0908
 
-Geração 4: Autonomia média = 0.2452 ± 0.1465
-Geração 4: Aceleração média = 2.6726 ± 1.5921
+Geração 4: Autonomia média = 255.5099 ± 205.4419
+Geração 4: Aceleração média = 0.4189 ± 0.0766
 
-Geração 5: Autonomia média = 0.2586 ± 0.1772
-Geração 5: Aceleração média = 2.8049 ± 1.9081
+Geração 5: Autonomia média = 313.0451 ± 140.2063
+Geração 5: Aceleração média = 0.4045 ± 0.0619
 
-Geração 6: Autonomia média = 0.3131 ± 0.2004
-Geração 6: Aceleração média = 3.3625 ± 2.1488
+Geração 6: Autonomia média = 328.5813 ± 147.9975
+Geração 6: Aceleração média = 0.4052 ± 0.0755
 
-Geração 7: Autonomia média = 0.3446 ± 0.2119
-Geração 7: Aceleração média = 3.6894 ± 2.2734
+Geração 7: Autonomia média = 349.9440 ± 158.0362
+Geração 7: Aceleração média = 0.4146 ± 0.0810
 
-Geração 8: Autonomia média = 0.3331 ± 0.2001
-Geração 8: Aceleração média = 3.5305 ± 2.1062
+Geração 8: Autonomia média = 396.2506 ± 180.7805
+Geração 8: Aceleração média = 0.4376 ± 0.0898
 
-Geração 9: Autonomia média = 0.3766 ± 0.2170
-Geração 9: Aceleração média = 3.9762 ± 2.2746
+Geração 9: Autonomia média = 418.6297 ± 202.5564
+Geração 9: Aceleração média = 0.4469 ± 0.0976
 
-Geração 10: Autonomia média = 0.3733 ± 0.2086
-Geração 10: Aceleração média = 3.9203 ± 2.1631
+Geração 10: Autonomia média = 436.7499 ± 215.9681
+Geração 10: Aceleração média = 0.4550 ± 0.1035
 
-CPU time: 0.230216 seconds
+CPU time: 0.155700 seconds
 
 100 individuos, 10 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1774 ± 0.1220
-Geração 1: Aceleração média = 3.1078 ± 2.1862
+Geração 1: Autonomia média = 20.3700 ± 97.2146
+Geração 1: Aceleração média = 0.4833 ± 0.0980
 
-Geração 2: Autonomia média = 0.2276 ± 0.1514
-Geração 2: Aceleração média = 2.9881 ± 2.0262
+Geração 2: Autonomia média = 54.9272 ± 155.2601
+Geração 2: Aceleração média = 0.4458 ± 0.0807
 
-Geração 3: Autonomia média = 0.2658 ± 0.1681
-Geração 3: Aceleração média = 3.0300 ± 1.9638
+Geração 3: Autonomia média = 128.5311 ± 206.5724
+Geração 3: Aceleração média = 0.4343 ± 0.0801
 
-Geração 4: Autonomia média = 0.2640 ± 0.1767
-Geração 4: Aceleração média = 2.8739 ± 1.9284
+Geração 4: Autonomia média = 316.8619 ± 288.7814
+Geração 4: Aceleração média = 0.4419 ± 0.1023
 
-Geração 5: Autonomia média = 0.2526 ± 0.1772
-Geração 5: Aceleração média = 2.7077 ± 1.8852
+Geração 5: Autonomia média = 464.9157 ± 279.0365
+Geração 5: Aceleração média = 0.4748 ± 0.1221
 
-Geração 6: Autonomia média = 0.2911 ± 0.1980
-Geração 6: Aceleração média = 3.0890 ± 2.0824
+Geração 6: Autonomia média = 448.0621 ± 283.3206
+Geração 6: Aceleração média = 0.4579 ± 0.1224
 
-Geração 7: Autonomia média = 0.3386 ± 0.2087
-Geração 7: Aceleração média = 3.5789 ± 2.1910
+Geração 7: Autonomia média = 472.3165 ± 308.7351
+Geração 7: Aceleração média = 0.4643 ± 0.1334
 
-Geração 8: Autonomia média = 0.3530 ± 0.2146
-Geração 8: Aceleração média = 3.7112 ± 2.2329
+Geração 8: Autonomia média = 558.4003 ± 337.8554
+Geração 8: Aceleração média = 0.5024 ± 0.1408
 
-Geração 9: Autonomia média = 0.3828 ± 0.2203
-Geração 9: Aceleração média = 4.0053 ± 2.2784
+Geração 9: Autonomia média = 578.5170 ± 348.4576
+Geração 9: Aceleração média = 0.5082 ± 0.1415
 
-Geração 10: Autonomia média = 0.4005 ± 0.2270
-Geração 10: Aceleração média = 4.1808 ± 2.3430
+Geração 10: Autonomia média = 583.1082 ± 351.3328
+Geração 10: Aceleração média = 0.5086 ± 0.1424
 
-CPU time: 0.241416 seconds
+CPU time: 0.118657 seconds
 
 100 individuos, 10 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1813 ± 0.1239
-Geração 1: Aceleração média = 3.1500 ± 2.1404
+Geração 1: Autonomia média = 20.3801 ± 97.2126
+Geração 1: Aceleração média = 0.4811 ± 0.0972
 
-Geração 2: Autonomia média = 0.2153 ± 0.1706
-Geração 2: Aceleração média = 2.7333 ± 2.0432
+Geração 2: Autonomia média = 54.8230 ± 156.4243
+Geração 2: Aceleração média = 0.4507 ± 0.0888
 
-Geração 3: Autonomia média = 0.2542 ± 0.2029
-Geração 3: Aceleração média = 2.9177 ± 2.2508
+Geração 3: Autonomia média = 103.0146 ± 194.8146
+Geração 3: Aceleração média = 0.4342 ± 0.0844
 
-Geração 4: Autonomia média = 0.3229 ± 0.2314
-Geração 4: Aceleração média = 3.5672 ± 2.5856
+Geração 4: Autonomia média = 247.9616 ± 265.3328
+Geração 4: Aceleração média = 0.4482 ± 0.0909
 
-Geração 5: Autonomia média = 0.2806 ± 0.2156
-Geração 5: Aceleração média = 3.0149 ± 2.2761
+Geração 5: Autonomia média = 399.6224 ± 212.0463
+Geração 5: Aceleração média = 0.4469 ± 0.0849
 
-Geração 6: Autonomia média = 0.3197 ± 0.2243
-Geração 6: Aceleração média = 3.3979 ± 2.3507
+Geração 6: Autonomia média = 416.4594 ± 228.3876
+Geração 6: Aceleração média = 0.4464 ± 0.0921
 
-Geração 7: Autonomia média = 0.3768 ± 0.2327
-Geração 7: Aceleração média = 3.9809 ± 2.4282
+Geração 7: Autonomia média = 411.4376 ± 224.6286
+Geração 7: Aceleração média = 0.4439 ± 0.0890
 
-Geração 8: Autonomia média = 0.4145 ± 0.2272
-Geração 8: Aceleração média = 4.3647 ± 2.3667
+Geração 8: Autonomia média = 474.9095 ± 223.9986
+Geração 8: Aceleração média = 0.4645 ± 0.0963
 
-Geração 9: Autonomia média = 0.4381 ± 0.2313
-Geração 9: Aceleração média = 4.6017 ± 2.4070
+Geração 9: Autonomia média = 520.1818 ± 252.3764
+Geração 9: Aceleração média = 0.4818 ± 0.1057
 
-Geração 10: Autonomia média = 0.4426 ± 0.2327
-Geração 10: Aceleração média = 4.6383 ± 2.4137
+Geração 10: Autonomia média = 562.1352 ± 278.6928
+Geração 10: Aceleração média = 0.4973 ± 0.1128
 
-CPU time: 0.273642 seconds
+CPU time: 0.116013 seconds
 
 100 individuos, 10 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1218
-Geração 1: Aceleração média = 2.9275 ± 2.0247
+Geração 1: Autonomia média = 13.1187 ± 82.1401
+Geração 1: Aceleração média = 0.4744 ± 0.0900
 
-Geração 2: Autonomia média = 0.2249 ± 0.1579
-Geração 2: Aceleração média = 2.9955 ± 2.1268
+Geração 2: Autonomia média = 18.9624 ± 87.5521
+Geração 2: Aceleração média = 0.4569 ± 0.0942
 
-Geração 3: Autonomia média = 0.2654 ± 0.1795
-Geração 3: Aceleração média = 3.0424 ± 2.0157
+Geração 3: Autonomia média = 43.0969 ± 127.5751
+Geração 3: Aceleração média = 0.4629 ± 0.1066
 
-Geração 4: Autonomia média = 0.3044 ± 0.1952
-Geração 4: Aceleração média = 3.3146 ± 2.1297
+Geração 4: Autonomia média = 115.8592 ± 190.4767
+Geração 4: Aceleração média = 0.4583 ± 0.0937
 
-Geração 5: Autonomia média = 0.2878 ± 0.1950
-Geração 5: Aceleração média = 3.0992 ± 2.0776
+Geração 5: Autonomia média = 267.3610 ± 212.2824
+Geração 5: Aceleração média = 0.4136 ± 0.0786
 
-Geração 6: Autonomia média = 0.3395 ± 0.2042
-Geração 6: Aceleração média = 3.6129 ± 2.1511
+Geração 6: Autonomia média = 351.4257 ± 137.4578
+Geração 6: Aceleração média = 0.4138 ± 0.0666
 
-Geração 7: Autonomia média = 0.3547 ± 0.2108
-Geração 7: Aceleração média = 3.7588 ± 2.2157
+Geração 7: Autonomia média = 370.4559 ± 160.7567
+Geração 7: Aceleração média = 0.4219 ± 0.0766
 
-Geração 8: Autonomia média = 0.4002 ± 0.2244
-Geração 8: Aceleração média = 4.2299 ± 2.3500
+Geração 8: Autonomia média = 387.0069 ± 168.1743
+Geração 8: Aceleração média = 0.4287 ± 0.0790
 
-Geração 9: Autonomia média = 0.4204 ± 0.2300
-Geração 9: Aceleração média = 4.4294 ± 2.3999
+Geração 9: Autonomia média = 424.7851 ± 190.8730
+Geração 9: Aceleração média = 0.4452 ± 0.0873
 
-Geração 10: Autonomia média = 0.4111 ± 0.2328
-Geração 10: Aceleração média = 4.3189 ± 2.4147
+Geração 10: Autonomia média = 447.1106 ± 203.0255
+Geração 10: Aceleração média = 0.4545 ± 0.0915
 
-CPU time: 0.157245 seconds
+CPU time: 0.042720 seconds
 
 100 individuos, 10 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1690 ± 0.1198
-Geração 1: Aceleração média = 2.8574 ± 1.9200
+Geração 1: Autonomia média = 12.9437 ± 82.1469
+Geração 1: Aceleração média = 0.4780 ± 0.0928
 
-Geração 2: Autonomia média = 0.2052 ± 0.1634
-Geração 2: Aceleração média = 2.6110 ± 2.0288
+Geração 2: Autonomia média = 15.3099 ± 81.9951
+Geração 2: Aceleração média = 0.4615 ± 0.0983
 
-Geração 3: Autonomia média = 0.2619 ± 0.1974
-Geração 3: Aceleração média = 2.9392 ± 2.1799
+Geração 3: Autonomia média = 42.3382 ± 140.2983
+Geração 3: Aceleração média = 0.4593 ± 0.0988
 
-Geração 4: Autonomia média = 0.2852 ± 0.2110
-Geração 4: Aceleração média = 3.1116 ± 2.3026
+Geração 4: Autonomia média = 126.5612 ± 244.7803
+Geração 4: Aceleração média = 0.4612 ± 0.1147
 
-Geração 5: Autonomia média = 0.2645 ± 0.1841
-Geração 5: Aceleração média = 2.8403 ± 1.9639
+Geração 5: Autonomia média = 273.6605 ± 327.5493
+Geração 5: Aceleração média = 0.4527 ± 0.1230
 
-Geração 6: Autonomia média = 0.2771 ± 0.1870
-Geração 6: Aceleração média = 2.9387 ± 1.9460
+Geração 6: Autonomia média = 432.1415 ± 332.7439
+Geração 6: Aceleração média = 0.4572 ± 0.1308
 
-Geração 7: Autonomia média = 0.3050 ± 0.2118
-Geração 7: Aceleração média = 3.2163 ± 2.2070
+Geração 7: Autonomia média = 432.3659 ± 322.9745
+Geração 7: Aceleração média = 0.4404 ± 0.1296
 
-Geração 8: Autonomia média = 0.3491 ± 0.2234
-Geração 8: Aceleração média = 3.6383 ± 2.2904
+Geração 8: Autonomia média = 479.1675 ± 354.0292
+Geração 8: Aceleração média = 0.4622 ± 0.1387
 
-Geração 9: Autonomia média = 0.3905 ± 0.2374
-Geração 9: Aceleração média = 4.0542 ± 2.4402
+Geração 9: Autonomia média = 529.4156 ± 351.4999
+Geração 9: Aceleração média = 0.4825 ± 0.1387
 
-Geração 10: Autonomia média = 0.3951 ± 0.2382
-Geração 10: Aceleração média = 4.0912 ± 2.4338
+Geração 10: Autonomia média = 566.8450 ± 373.2638
+Geração 10: Aceleração média = 0.4950 ± 0.1462
 
-CPU time: 0.183384 seconds
+CPU time: 0.042270 seconds
 
 100 individuos, 10 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1226
-Geração 1: Aceleração média = 2.7935 ± 1.8704
+Geração 1: Autonomia média = 13.2434 ± 82.1640
+Geração 1: Aceleração média = 0.4799 ± 0.0948
 
-Geração 2: Autonomia média = 0.2293 ± 0.1586
-Geração 2: Aceleração média = 2.8836 ± 2.0407
+Geração 2: Autonomia média = 14.9766 ± 82.0056
+Geração 2: Aceleração média = 0.4577 ± 0.0968
 
-Geração 3: Autonomia média = 0.2499 ± 0.1648
-Geração 3: Aceleração média = 2.8579 ± 1.9520
+Geração 3: Autonomia média = 18.3839 ± 81.6306
+Geração 3: Aceleração média = 0.4595 ± 0.1099
 
-Geração 4: Autonomia média = 0.2707 ± 0.1852
-Geração 4: Aceleração média = 2.9529 ± 2.0600
+Geração 4: Autonomia média = 26.7181 ± 90.6242
+Geração 4: Aceleração média = 0.4261 ± 0.0936
 
-Geração 5: Autonomia média = 0.2544 ± 0.1861
-Geração 5: Aceleração média = 2.7248 ± 1.9967
+Geração 5: Autonomia média = 44.1051 ± 113.0080
+Geração 5: Aceleração média = 0.4482 ± 0.1084
 
-Geração 6: Autonomia média = 0.3074 ± 0.2041
-Geração 6: Aceleração média = 3.2718 ± 2.1895
+Geração 6: Autonomia média = 100.0750 ± 197.3465
+Geração 6: Aceleração média = 0.4413 ± 0.1062
 
-Geração 7: Autonomia média = 0.3536 ± 0.2112
-Geração 7: Aceleração média = 3.7429 ± 2.2608
+Geração 7: Autonomia média = 248.1386 ± 271.8657
+Geração 7: Aceleração média = 0.4093 ± 0.0957
 
-Geração 8: Autonomia média = 0.3617 ± 0.2154
-Geração 8: Aceleração média = 3.7938 ± 2.2539
+Geração 8: Autonomia média = 396.3202 ± 256.1047
+Geração 8: Aceleração média = 0.4354 ± 0.1069
 
-Geração 9: Autonomia média = 0.3972 ± 0.2312
-Geração 9: Aceleração média = 4.1315 ± 2.3850
+Geração 9: Autonomia média = 433.2375 ± 297.1488
+Geração 9: Aceleração média = 0.4489 ± 0.1187
 
-Geração 10: Autonomia média = 0.4432 ± 0.2451
-Geração 10: Aceleração média = 4.5908 ± 2.5101
+Geração 10: Autonomia média = 543.4113 ± 340.4830
+Geração 10: Aceleração média = 0.4914 ± 0.1355
 
-CPU time: 0.222486 seconds
+CPU time: 0.042531 seconds
 
 100 individuos, 20 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1737 ± 0.1279
-Geração 1: Aceleração média = 2.7482 ± 1.8328
+Geração 1: Autonomia média = 8.4909 ± 71.1839
+Geração 1: Aceleração média = 0.4763 ± 0.0901
 
-Geração 2: Autonomia média = 0.2077 ± 0.1626
-Geração 2: Aceleração média = 2.7557 ± 2.2299
+Geração 2: Autonomia média = 24.1677 ± 121.5834
+Geração 2: Aceleração média = 0.4672 ± 0.0901
 
-Geração 3: Autonomia média = 0.2510 ± 0.1738
-Geração 3: Aceleração média = 2.8311 ± 1.9301
+Geração 3: Autonomia média = 59.8963 ± 175.0098
+Geração 3: Aceleração média = 0.4627 ± 0.1004
 
-Geração 4: Autonomia média = 0.2313 ± 0.1547
-Geração 4: Aceleração média = 2.5271 ± 1.7232
+Geração 4: Autonomia média = 157.5508 ± 257.2185
+Geração 4: Aceleração média = 0.4779 ± 0.1057
 
-Geração 5: Autonomia média = 0.2334 ± 0.1705
-Geração 5: Aceleração média = 2.5338 ± 1.8818
+Geração 5: Autonomia média = 352.6209 ± 286.2190
+Geração 5: Aceleração média = 0.4741 ± 0.1143
 
-Geração 6: Autonomia média = 0.2388 ± 0.1665
-Geração 6: Aceleração média = 2.5616 ± 1.8073
+Geração 6: Autonomia média = 327.9786 ± 185.8184
+Geração 6: Aceleração média = 0.4207 ± 0.0848
 
-Geração 7: Autonomia média = 0.2670 ± 0.1596
-Geração 7: Aceleração média = 2.8068 ± 1.6545
+Geração 7: Autonomia média = 292.1512 ± 199.5743
+Geração 7: Aceleração média = 0.4043 ± 0.0885
 
-Geração 8: Autonomia média = 0.2972 ± 0.1835
-Geração 8: Aceleração média = 3.1143 ± 1.9044
+Geração 8: Autonomia média = 351.4345 ± 169.5130
+Geração 8: Aceleração média = 0.4182 ± 0.0921
 
-Geração 9: Autonomia média = 0.3043 ± 0.1818
-Geração 9: Aceleração média = 3.1807 ± 1.8791
+Geração 9: Autonomia média = 355.9206 ± 177.6196
+Geração 9: Aceleração média = 0.4194 ± 0.0961
 
-Geração 10: Autonomia média = 0.3173 ± 0.1867
-Geração 10: Aceleração média = 3.3076 ± 1.9230
+Geração 10: Autonomia média = 352.2856 ± 175.8939
+Geração 10: Aceleração média = 0.4169 ± 0.0950
 
-Geração 11: Autonomia média = 0.3358 ± 0.1907
-Geração 11: Aceleração média = 3.4944 ± 1.9654
+Geração 11: Autonomia média = 365.5644 ± 175.5649
+Geração 11: Aceleração média = 0.4238 ± 0.0939
 
-Geração 12: Autonomia média = 0.3501 ± 0.1948
-Geração 12: Aceleração média = 3.6399 ± 2.0063
+Geração 12: Autonomia média = 389.7535 ± 196.3920
+Geração 12: Aceleração média = 0.4348 ± 0.0994
 
-Geração 13: Autonomia média = 0.3735 ± 0.2077
-Geração 13: Aceleração média = 3.8810 ± 2.1383
+Geração 13: Autonomia média = 414.3295 ± 208.7867
+Geração 13: Aceleração média = 0.4440 ± 0.1020
 
-Geração 14: Autonomia média = 0.3803 ± 0.2158
-Geração 14: Aceleração média = 3.9518 ± 2.2206
+Geração 14: Autonomia média = 431.2214 ± 214.5479
+Geração 14: Aceleração média = 0.4521 ± 0.1025
 
-Geração 15: Autonomia média = 0.3812 ± 0.2203
-Geração 15: Aceleração média = 3.9607 ± 2.2669
+Geração 15: Autonomia média = 446.3432 ± 220.9849
+Geração 15: Aceleração média = 0.4579 ± 0.1031
 
-Geração 16: Autonomia média = 0.3837 ± 0.2253
-Geração 16: Aceleração média = 3.9866 ± 2.3182
+Geração 16: Autonomia média = 466.0452 ± 236.9065
+Geração 16: Aceleração média = 0.4657 ± 0.1075
 
-Geração 17: Autonomia média = 0.3963 ± 0.2245
-Geração 17: Aceleração média = 4.1172 ± 2.3105
+Geração 17: Autonomia média = 477.3344 ± 235.7582
+Geração 17: Aceleração média = 0.4702 ± 0.1052
 
-Geração 18: Autonomia média = 0.3993 ± 0.2226
-Geração 18: Aceleração média = 4.1472 ± 2.2912
+Geração 18: Autonomia média = 492.7331 ± 246.4792
+Geração 18: Aceleração média = 0.4761 ± 0.1084
 
-Geração 19: Autonomia média = 0.4137 ± 0.2155
-Geração 19: Aceleração média = 4.2958 ± 2.2191
+Geração 19: Autonomia média = 481.7898 ± 239.7142
+Geração 19: Aceleração média = 0.4700 ± 0.1049
 
-Geração 20: Autonomia média = 0.4073 ± 0.2263
-Geração 20: Aceleração média = 4.2295 ± 2.3299
+Geração 20: Autonomia média = 513.3795 ± 268.5340
+Geração 20: Aceleração média = 0.4822 ± 0.1117
 
-CPU time: 0.403581 seconds
+CPU time: 0.250306 seconds
 
 100 individuos, 20 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1756 ± 0.1273
-Geração 1: Aceleração média = 2.8078 ± 1.8328
+Geração 1: Autonomia média = 8.5010 ± 71.1828
+Geração 1: Aceleração média = 0.4783 ± 0.0908
 
-Geração 2: Autonomia média = 0.2198 ± 0.1741
-Geração 2: Aceleração média = 2.7629 ± 2.0778
+Geração 2: Autonomia média = 23.6372 ± 121.6549
+Geração 2: Aceleração média = 0.4572 ± 0.0841
 
-Geração 3: Autonomia média = 0.2514 ± 0.1811
-Geração 3: Aceleração média = 2.8662 ± 2.0800
+Geração 3: Autonomia média = 53.8086 ± 181.2051
+Geração 3: Aceleração média = 0.4492 ± 0.0866
 
-Geração 4: Autonomia média = 0.2920 ± 0.2100
-Geração 4: Aceleração média = 3.1983 ± 2.2930
+Geração 4: Autonomia média = 136.5782 ± 257.1904
+Geração 4: Aceleração média = 0.4574 ± 0.0953
 
-Geração 5: Autonomia média = 0.2435 ± 0.1806
-Geração 5: Aceleração média = 2.6197 ± 1.9354
+Geração 5: Autonomia média = 309.3584 ± 307.5035
+Geração 5: Aceleração média = 0.4774 ± 0.1066
 
-Geração 6: Autonomia média = 0.2613 ± 0.1939
-Geração 6: Aceleração média = 2.7709 ± 2.0477
+Geração 6: Autonomia média = 425.8320 ± 240.5493
+Geração 6: Aceleração média = 0.4686 ± 0.1003
 
-Geração 7: Autonomia média = 0.2918 ± 0.1883
-Geração 7: Aceleração média = 3.0702 ± 1.9575
+Geração 7: Autonomia média = 389.6272 ± 149.5197
+Geração 7: Aceleração média = 0.4400 ± 0.0773
 
-Geração 8: Autonomia média = 0.3179 ± 0.2015
-Geração 8: Aceleração média = 3.3373 ± 2.0928
+Geração 8: Autonomia média = 356.5905 ± 180.5752
+Geração 8: Aceleração média = 0.4167 ± 0.0874
 
-Geração 9: Autonomia média = 0.3430 ± 0.2066
-Geração 9: Aceleração média = 3.5958 ± 2.1447
+Geração 9: Autonomia média = 365.1464 ± 210.1271
+Geração 9: Aceleração média = 0.4186 ± 0.1016
 
-Geração 10: Autonomia média = 0.3674 ± 0.2173
-Geração 10: Aceleração média = 3.8430 ± 2.2525
+Geração 10: Autonomia média = 398.7965 ± 247.3143
+Geração 10: Aceleração média = 0.4323 ± 0.1125
 
-Geração 11: Autonomia média = 0.3875 ± 0.2308
-Geração 11: Aceleração média = 4.0466 ± 2.3892
+Geração 11: Autonomia média = 443.3002 ± 280.1041
+Geração 11: Aceleração média = 0.4520 ± 0.1214
 
-Geração 12: Autonomia média = 0.4173 ± 0.2402
-Geração 12: Aceleração média = 4.3483 ± 2.4781
+Geração 12: Autonomia média = 494.9351 ± 296.4114
+Geração 12: Aceleração média = 0.4759 ± 0.1247
 
-Geração 13: Autonomia média = 0.4468 ± 0.2519
-Geração 13: Aceleração média = 4.6511 ± 2.6012
+Geração 13: Autonomia média = 582.3112 ± 366.9261
+Geração 13: Aceleração média = 0.5102 ± 0.1472
 
-Geração 14: Autonomia média = 0.4979 ± 0.2574
-Geração 14: Aceleração média = 5.1784 ± 2.6590
+Geração 14: Autonomia média = 634.6491 ± 384.2907
+Geração 14: Aceleração média = 0.5319 ± 0.1506
 
-Geração 15: Autonomia média = 0.5109 ± 0.2551
-Geração 15: Aceleração média = 5.3114 ± 2.6343
+Geração 15: Autonomia média = 714.6604 ± 426.4299
+Geração 15: Aceleração média = 0.5613 ± 0.1633
 
-Geração 16: Autonomia média = 0.5142 ± 0.2702
-Geração 16: Aceleração média = 5.3405 ± 2.7896
+Geração 16: Autonomia média = 761.7428 ± 430.1239
+Geração 16: Aceleração média = 0.5789 ± 0.1621
 
-Geração 17: Autonomia média = 0.5157 ± 0.2714
-Geração 17: Aceleração média = 5.3530 ± 2.7986
+Geração 17: Autonomia média = 777.6166 ± 437.5409
+Geração 17: Aceleração média = 0.5841 ± 0.1638
 
-Geração 18: Autonomia média = 0.5170 ± 0.2707
-Geração 18: Aceleração média = 5.3652 ± 2.7928
+Geração 18: Autonomia média = 794.4925 ± 459.1289
+Geração 18: Aceleração média = 0.5873 ± 0.1700
 
-Geração 19: Autonomia média = 0.5156 ± 0.2682
-Geração 19: Aceleração média = 5.3482 ± 2.7665
+Geração 19: Autonomia média = 826.0213 ± 458.2866
+Geração 19: Aceleração média = 0.5986 ± 0.1699
 
-Geração 20: Autonomia média = 0.5147 ± 0.2765
-Geração 20: Aceleração média = 5.3403 ± 2.8498
+Geração 20: Autonomia média = 838.6886 ± 469.4409
+Geração 20: Aceleração média = 0.6017 ± 0.1725
 
-CPU time: 0.387664 seconds
+CPU time: 0.248089 seconds
 
 100 individuos, 20 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1815 ± 0.1314
-Geração 1: Aceleração média = 2.8760 ± 1.8860
+Geração 1: Autonomia média = 8.5290 ± 71.1801
+Geração 1: Aceleração média = 0.4835 ± 0.0964
 
-Geração 2: Autonomia média = 0.2218 ± 0.1730
-Geração 2: Aceleração média = 2.7829 ± 2.1480
+Geração 2: Autonomia média = 20.4222 ± 104.2530
+Geração 2: Aceleração média = 0.4589 ± 0.0877
 
-Geração 3: Autonomia média = 0.2734 ± 0.1946
-Geração 3: Aceleração média = 3.0447 ± 2.2146
+Geração 3: Autonomia média = 38.1036 ± 135.2404
+Geração 3: Aceleração média = 0.4545 ± 0.0984
 
-Geração 4: Autonomia média = 0.2467 ± 0.1774
-Geração 4: Aceleração média = 2.6922 ± 2.0343
+Geração 4: Autonomia média = 94.0262 ± 203.8110
+Geração 4: Aceleração média = 0.4472 ± 0.0896
 
-Geração 5: Autonomia média = 0.2347 ± 0.1824
-Geração 5: Aceleração média = 2.5367 ± 2.0326
+Geração 5: Autonomia média = 210.2239 ± 285.9688
+Geração 5: Aceleração média = 0.4247 ± 0.1057
 
-Geração 6: Autonomia média = 0.2729 ± 0.1908
-Geração 6: Aceleração média = 2.8896 ± 2.0064
+Geração 6: Autonomia média = 438.4476 ± 271.8482
+Geração 6: Aceleração média = 0.4771 ± 0.1097
 
-Geração 7: Autonomia média = 0.2992 ± 0.2070
-Geração 7: Aceleração média = 3.1540 ± 2.1672
+Geração 7: Autonomia média = 427.8501 ± 211.3995
+Geração 7: Aceleração média = 0.4542 ± 0.0976
 
-Geração 8: Autonomia média = 0.3497 ± 0.2268
-Geração 8: Aceleração média = 3.6657 ± 2.3545
+Geração 8: Autonomia média = 431.1680 ± 251.6670
+Geração 8: Aceleração média = 0.4535 ± 0.1103
 
-Geração 9: Autonomia média = 0.3636 ± 0.2197
-Geração 9: Aceleração média = 3.8070 ± 2.2794
+Geração 9: Autonomia média = 456.3195 ± 270.5726
+Geração 9: Aceleração média = 0.4650 ± 0.1167
 
-Geração 10: Autonomia média = 0.3935 ± 0.2318
-Geração 10: Aceleração média = 4.1119 ± 2.4022
+Geração 10: Autonomia média = 516.3585 ± 280.2793
+Geração 10: Aceleração média = 0.4872 ± 0.1218
 
-Geração 11: Autonomia média = 0.4202 ± 0.2344
-Geração 11: Aceleração média = 4.3822 ± 2.4207
+Geração 11: Autonomia média = 547.2206 ± 294.9762
+Geração 11: Aceleração média = 0.4994 ± 0.1259
 
-Geração 12: Autonomia média = 0.4313 ± 0.2465
-Geração 12: Aceleração média = 4.4918 ± 2.5454
+Geração 12: Autonomia média = 540.5878 ± 306.0428
+Geração 12: Aceleração média = 0.4925 ± 0.1278
 
-Geração 13: Autonomia média = 0.4500 ± 0.2425
-Geração 13: Aceleração média = 4.6857 ± 2.5043
+Geração 13: Autonomia média = 579.9659 ± 347.6802
+Geração 13: Aceleração média = 0.5058 ± 0.1385
 
-Geração 14: Autonomia média = 0.4419 ± 0.2334
-Geração 14: Aceleração média = 4.5998 ± 2.4109
+Geração 14: Autonomia média = 635.3133 ± 377.0612
+Geração 14: Aceleração média = 0.5268 ± 0.1457
 
-Geração 15: Autonomia média = 0.4469 ± 0.2367
-Geração 15: Aceleração média = 4.6488 ± 2.4395
+Geração 15: Autonomia média = 675.5696 ± 382.4304
+Geração 15: Aceleração média = 0.5432 ± 0.1474
 
-Geração 16: Autonomia média = 0.4583 ± 0.2349
-Geração 16: Aceleração média = 4.7652 ± 2.4218
+Geração 16: Autonomia média = 714.7127 ± 412.1281
+Geração 16: Aceleração média = 0.5582 ± 0.1563
 
-Geração 17: Autonomia média = 0.4648 ± 0.2435
-Geração 17: Aceleração média = 4.8288 ± 2.5110
+Geração 17: Autonomia média = 745.3877 ± 420.1503
+Geração 17: Aceleração média = 0.5698 ± 0.1586
 
-Geração 18: Autonomia média = 0.4833 ± 0.2449
-Geração 18: Aceleração média = 5.0168 ± 2.5254
+Geração 18: Autonomia média = 750.5589 ± 434.6816
+Geração 18: Aceleração média = 0.5698 ± 0.1634
 
-Geração 19: Autonomia média = 0.4860 ± 0.2484
-Geração 19: Aceleração média = 5.0441 ± 2.5596
+Geração 19: Autonomia média = 771.8944 ± 450.9615
+Geração 19: Aceleração média = 0.5750 ± 0.1689
 
-Geração 20: Autonomia média = 0.4988 ± 0.2570
-Geração 20: Aceleração média = 5.1765 ± 2.6468
+Geração 20: Autonomia média = 850.6665 ± 453.3120
+Geração 20: Aceleração média = 0.6049 ± 0.1666
 
-CPU time: 0.356508 seconds
+CPU time: 0.250303 seconds
 
 100 individuos, 20 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1709 ± 0.1214
-Geração 1: Aceleração média = 2.9287 ± 2.1181
+Geração 1: Autonomia média = 20.3222 ± 97.2242
+Geração 1: Aceleração média = 0.4728 ± 0.0893
 
-Geração 2: Autonomia média = 0.2037 ± 0.1495
-Geração 2: Aceleração média = 2.5907 ± 1.8585
+Geração 2: Autonomia média = 50.9778 ± 142.6342
+Geração 2: Aceleração média = 0.4407 ± 0.0838
 
-Geração 3: Autonomia média = 0.2502 ± 0.1598
-Geração 3: Aceleração média = 2.8023 ± 1.7813
+Geração 3: Autonomia média = 106.4336 ± 176.6745
+Geração 3: Aceleração média = 0.4338 ± 0.0908
 
-Geração 4: Autonomia média = 0.2452 ± 0.1465
-Geração 4: Aceleração média = 2.6726 ± 1.5921
+Geração 4: Autonomia média = 255.5099 ± 205.4419
+Geração 4: Aceleração média = 0.4189 ± 0.0766
 
-Geração 5: Autonomia média = 0.2586 ± 0.1772
-Geração 5: Aceleração média = 2.8049 ± 1.9081
+Geração 5: Autonomia média = 313.0451 ± 140.2063
+Geração 5: Aceleração média = 0.4045 ± 0.0619
 
-Geração 6: Autonomia média = 0.3131 ± 0.2004
-Geração 6: Aceleração média = 3.3625 ± 2.1488
+Geração 6: Autonomia média = 328.5813 ± 147.9975
+Geração 6: Aceleração média = 0.4052 ± 0.0755
 
-Geração 7: Autonomia média = 0.3446 ± 0.2119
-Geração 7: Aceleração média = 3.6894 ± 2.2734
+Geração 7: Autonomia média = 349.9440 ± 158.0362
+Geração 7: Aceleração média = 0.4146 ± 0.0810
 
-Geração 8: Autonomia média = 0.3331 ± 0.2001
-Geração 8: Aceleração média = 3.5305 ± 2.1062
+Geração 8: Autonomia média = 396.2506 ± 180.7805
+Geração 8: Aceleração média = 0.4376 ± 0.0898
 
-Geração 9: Autonomia média = 0.3766 ± 0.2170
-Geração 9: Aceleração média = 3.9762 ± 2.2746
+Geração 9: Autonomia média = 418.6297 ± 202.5564
+Geração 9: Aceleração média = 0.4469 ± 0.0976
 
-Geração 10: Autonomia média = 0.3733 ± 0.2086
-Geração 10: Aceleração média = 3.9203 ± 2.1631
+Geração 10: Autonomia média = 436.7499 ± 215.9681
+Geração 10: Aceleração média = 0.4550 ± 0.1035
 
-Geração 11: Autonomia média = 0.3963 ± 0.2106
-Geração 11: Aceleração média = 4.1455 ± 2.1742
+Geração 11: Autonomia média = 458.6002 ± 221.6094
+Geração 11: Aceleração média = 0.4657 ± 0.1063
 
-Geração 12: Autonomia média = 0.4154 ± 0.2147
-Geração 12: Aceleração média = 4.3336 ± 2.2133
+Geração 12: Autonomia média = 478.6443 ± 229.5925
+Geração 12: Aceleração média = 0.4749 ± 0.1091
 
-Geração 13: Autonomia média = 0.4377 ± 0.2192
-Geração 13: Aceleração média = 4.5587 ± 2.2560
+Geração 13: Autonomia média = 487.2324 ± 224.7279
+Geração 13: Aceleração média = 0.4796 ± 0.1067
 
-Geração 14: Autonomia média = 0.4463 ± 0.2204
-Geração 14: Aceleração média = 4.6455 ± 2.2704
+Geração 14: Autonomia média = 501.6422 ± 234.4707
+Geração 14: Aceleração média = 0.4860 ± 0.1085
 
-Geração 15: Autonomia média = 0.4550 ± 0.2276
-Geração 15: Aceleração média = 4.7310 ± 2.3427
+Geração 15: Autonomia média = 512.2501 ± 239.3218
+Geração 15: Aceleração média = 0.4906 ± 0.1084
 
-Geração 16: Autonomia média = 0.4502 ± 0.2316
-Geração 16: Aceleração média = 4.6838 ± 2.3818
+Geração 16: Autonomia média = 500.5093 ± 255.9880
+Geração 16: Aceleração média = 0.4822 ± 0.1142
 
-Geração 17: Autonomia média = 0.4681 ± 0.2289
-Geração 17: Aceleração média = 4.8665 ± 2.3557
+Geração 17: Autonomia média = 514.3304 ± 267.1952
+Geração 17: Aceleração média = 0.4865 ± 0.1165
 
-Geração 18: Autonomia média = 0.4464 ± 0.2309
-Geração 18: Aceleração média = 4.6407 ± 2.3767
+Geração 18: Autonomia média = 509.6881 ± 270.2003
+Geração 18: Aceleração média = 0.4829 ± 0.1181
 
-Geração 19: Autonomia média = 0.4324 ± 0.2309
-Geração 19: Aceleração média = 4.4978 ± 2.3765
+Geração 19: Autonomia média = 436.7424 ± 276.7545
+Geração 19: Aceleração média = 0.4436 ± 0.1157
 
-Geração 20: Autonomia média = 0.4498 ± 0.2258
-Geração 20: Aceleração média = 4.6787 ± 2.3219
+Geração 20: Autonomia média = 488.3424 ± 286.4293
+Geração 20: Aceleração média = 0.4657 ± 0.1189
 
-CPU time: 0.328445 seconds
+CPU time: 0.181429 seconds
 
 100 individuos, 20 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1774 ± 0.1220
-Geração 1: Aceleração média = 3.1078 ± 2.1862
+Geração 1: Autonomia média = 20.3700 ± 97.2146
+Geração 1: Aceleração média = 0.4833 ± 0.0980
 
-Geração 2: Autonomia média = 0.2276 ± 0.1514
-Geração 2: Aceleração média = 2.9881 ± 2.0262
+Geração 2: Autonomia média = 54.9272 ± 155.2601
+Geração 2: Aceleração média = 0.4458 ± 0.0807
 
-Geração 3: Autonomia média = 0.2658 ± 0.1681
-Geração 3: Aceleração média = 3.0300 ± 1.9638
+Geração 3: Autonomia média = 128.5311 ± 206.5724
+Geração 3: Aceleração média = 0.4343 ± 0.0801
 
-Geração 4: Autonomia média = 0.2640 ± 0.1767
-Geração 4: Aceleração média = 2.8739 ± 1.9284
+Geração 4: Autonomia média = 316.8619 ± 288.7814
+Geração 4: Aceleração média = 0.4419 ± 0.1023
 
-Geração 5: Autonomia média = 0.2526 ± 0.1772
-Geração 5: Aceleração média = 2.7077 ± 1.8852
+Geração 5: Autonomia média = 464.9157 ± 279.0365
+Geração 5: Aceleração média = 0.4748 ± 0.1221
 
-Geração 6: Autonomia média = 0.2911 ± 0.1980
-Geração 6: Aceleração média = 3.0890 ± 2.0824
+Geração 6: Autonomia média = 448.0621 ± 283.3206
+Geração 6: Aceleração média = 0.4579 ± 0.1224
 
-Geração 7: Autonomia média = 0.3386 ± 0.2087
-Geração 7: Aceleração média = 3.5789 ± 2.1910
+Geração 7: Autonomia média = 472.3165 ± 308.7351
+Geração 7: Aceleração média = 0.4643 ± 0.1334
 
-Geração 8: Autonomia média = 0.3530 ± 0.2146
-Geração 8: Aceleração média = 3.7112 ± 2.2329
+Geração 8: Autonomia média = 558.4003 ± 337.8554
+Geração 8: Aceleração média = 0.5024 ± 0.1408
 
-Geração 9: Autonomia média = 0.3828 ± 0.2203
-Geração 9: Aceleração média = 4.0053 ± 2.2784
+Geração 9: Autonomia média = 578.5170 ± 348.4576
+Geração 9: Aceleração média = 0.5082 ± 0.1415
 
-Geração 10: Autonomia média = 0.4005 ± 0.2270
-Geração 10: Aceleração média = 4.1808 ± 2.3430
+Geração 10: Autonomia média = 583.1082 ± 351.3328
+Geração 10: Aceleração média = 0.5086 ± 0.1424
 
-Geração 11: Autonomia média = 0.4277 ± 0.2237
-Geração 11: Aceleração média = 4.4554 ± 2.3052
+Geração 11: Autonomia média = 661.2524 ± 365.9100
+Geração 11: Aceleração média = 0.5388 ± 0.1474
 
-Geração 12: Autonomia média = 0.4303 ± 0.2231
-Geração 12: Aceleração média = 4.4769 ± 2.2919
+Geração 12: Autonomia média = 674.9218 ± 360.2784
+Geração 12: Aceleração média = 0.5436 ± 0.1439
 
-Geração 13: Autonomia média = 0.4415 ± 0.2183
-Geração 13: Aceleração média = 4.5894 ± 2.2456
+Geração 13: Autonomia média = 741.4611 ± 378.9974
+Geração 13: Aceleração média = 0.5690 ± 0.1490
 
-Geração 14: Autonomia média = 0.4415 ± 0.2262
-Geração 14: Aceleração média = 4.5866 ± 2.3278
+Geração 14: Autonomia média = 737.7883 ± 394.2142
+Geração 14: Aceleração média = 0.5653 ± 0.1530
 
-Geração 15: Autonomia média = 0.4539 ± 0.2342
-Geração 15: Aceleração média = 4.7108 ± 2.4122
+Geração 15: Autonomia média = 761.0020 ± 395.2757
+Geração 15: Aceleração média = 0.5737 ± 0.1512
 
-Geração 16: Autonomia média = 0.4541 ± 0.2306
-Geração 16: Aceleração média = 4.7111 ± 2.3744
+Geração 16: Autonomia média = 775.1649 ± 403.0317
+Geração 16: Aceleração média = 0.5776 ± 0.1535
 
-Geração 17: Autonomia média = 0.4331 ± 0.2331
-Geração 17: Aceleração média = 4.4936 ± 2.4010
+Geração 17: Autonomia média = 784.0873 ± 410.5543
+Geração 17: Aceleração média = 0.5802 ± 0.1551
 
-Geração 18: Autonomia média = 0.4513 ± 0.2291
-Geração 18: Aceleração média = 4.6824 ± 2.3571
+Geração 18: Autonomia média = 780.3936 ± 409.9809
+Geração 18: Aceleração média = 0.5789 ± 0.1537
 
-Geração 19: Autonomia média = 0.4392 ± 0.2312
-Geração 19: Aceleração média = 4.5606 ± 2.3779
+Geração 19: Autonomia média = 819.8750 ± 405.7289
+Geração 19: Aceleração média = 0.5949 ± 0.1494
 
-Geração 20: Autonomia média = 0.4474 ± 0.2355
-Geração 20: Aceleração média = 4.6473 ± 2.4196
+Geração 20: Autonomia média = 824.0800 ± 415.9681
+Geração 20: Aceleração média = 0.5957 ± 0.1530
 
-CPU time: 0.348559 seconds
+CPU time: 0.182199 seconds
 
 100 individuos, 20 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1813 ± 0.1239
-Geração 1: Aceleração média = 3.1500 ± 2.1404
+Geração 1: Autonomia média = 20.3801 ± 97.2126
+Geração 1: Aceleração média = 0.4811 ± 0.0972
 
-Geração 2: Autonomia média = 0.2153 ± 0.1706
-Geração 2: Aceleração média = 2.7333 ± 2.0432
+Geração 2: Autonomia média = 54.8230 ± 156.4243
+Geração 2: Aceleração média = 0.4507 ± 0.0888
 
-Geração 3: Autonomia média = 0.2542 ± 0.2029
-Geração 3: Aceleração média = 2.9177 ± 2.2508
+Geração 3: Autonomia média = 103.0146 ± 194.8146
+Geração 3: Aceleração média = 0.4342 ± 0.0844
 
-Geração 4: Autonomia média = 0.3229 ± 0.2314
-Geração 4: Aceleração média = 3.5672 ± 2.5856
+Geração 4: Autonomia média = 247.9616 ± 265.3328
+Geração 4: Aceleração média = 0.4482 ± 0.0909
 
-Geração 5: Autonomia média = 0.2806 ± 0.2156
-Geração 5: Aceleração média = 3.0149 ± 2.2761
+Geração 5: Autonomia média = 399.6224 ± 212.0463
+Geração 5: Aceleração média = 0.4469 ± 0.0849
 
-Geração 6: Autonomia média = 0.3197 ± 0.2243
-Geração 6: Aceleração média = 3.3979 ± 2.3507
+Geração 6: Autonomia média = 416.4594 ± 228.3876
+Geração 6: Aceleração média = 0.4464 ± 0.0921
 
-Geração 7: Autonomia média = 0.3768 ± 0.2327
-Geração 7: Aceleração média = 3.9809 ± 2.4282
+Geração 7: Autonomia média = 411.4376 ± 224.6286
+Geração 7: Aceleração média = 0.4439 ± 0.0890
 
-Geração 8: Autonomia média = 0.4145 ± 0.2272
-Geração 8: Aceleração média = 4.3647 ± 2.3667
+Geração 8: Autonomia média = 474.9095 ± 223.9986
+Geração 8: Aceleração média = 0.4645 ± 0.0963
 
-Geração 9: Autonomia média = 0.4381 ± 0.2313
-Geração 9: Aceleração média = 4.6017 ± 2.4070
+Geração 9: Autonomia média = 520.1818 ± 252.3764
+Geração 9: Aceleração média = 0.4818 ± 0.1057
 
-Geração 10: Autonomia média = 0.4426 ± 0.2327
-Geração 10: Aceleração média = 4.6383 ± 2.4137
+Geração 10: Autonomia média = 562.1352 ± 278.6928
+Geração 10: Aceleração média = 0.4973 ± 0.1128
 
-Geração 11: Autonomia média = 0.4590 ± 0.2378
-Geração 11: Aceleração média = 4.8007 ± 2.4637
+Geração 11: Autonomia média = 589.7739 ± 292.9332
+Geração 11: Aceleração média = 0.5090 ± 0.1171
 
-Geração 12: Autonomia média = 0.4443 ± 0.2349
-Geração 12: Aceleração média = 4.6357 ± 2.4250
+Geração 12: Autonomia média = 635.6332 ± 318.7056
+Geração 12: Aceleração média = 0.5261 ± 0.1246
 
-Geração 13: Autonomia média = 0.4578 ± 0.2333
-Geração 13: Aceleração média = 4.7677 ± 2.4031
+Geração 13: Autonomia média = 647.7400 ± 323.2304
+Geração 13: Aceleração média = 0.5320 ± 0.1255
 
-Geração 14: Autonomia média = 0.4818 ± 0.2381
-Geração 14: Aceleração média = 5.0090 ± 2.4553
+Geração 14: Autonomia média = 645.8978 ± 320.3490
+Geração 14: Aceleração média = 0.5311 ± 0.1238
 
-Geração 15: Autonomia média = 0.4848 ± 0.2301
-Geração 15: Aceleração média = 5.0361 ± 2.3720
+Geração 15: Autonomia média = 702.2466 ± 360.2793
+Geração 15: Aceleração média = 0.5517 ± 0.1346
 
-Geração 16: Autonomia média = 0.4949 ± 0.2278
-Geração 16: Aceleração média = 5.1386 ± 2.3468
+Geração 16: Autonomia média = 767.2097 ± 399.7044
+Geração 16: Aceleração média = 0.5743 ± 0.1459
 
-Geração 17: Autonomia média = 0.4743 ± 0.2416
-Geração 17: Aceleração média = 4.9230 ± 2.4890
+Geração 17: Autonomia média = 768.6009 ± 418.5306
+Geração 17: Aceleração média = 0.5726 ± 0.1527
 
-Geração 18: Autonomia média = 0.4773 ± 0.2455
-Geração 18: Aceleração média = 4.9530 ± 2.5285
+Geração 18: Autonomia média = 774.6118 ± 417.1363
+Geração 18: Aceleração média = 0.5750 ± 0.1523
 
-Geração 19: Autonomia média = 0.4872 ± 0.2491
-Geração 19: Aceleração média = 5.0590 ± 2.5625
+Geração 19: Autonomia média = 805.1090 ± 426.2343
+Geração 19: Aceleração média = 0.5862 ± 0.1549
 
-Geração 20: Autonomia média = 0.4852 ± 0.2414
-Geração 20: Aceleração média = 5.0391 ± 2.4828
+Geração 20: Autonomia média = 791.4712 ± 428.8138
+Geração 20: Aceleração média = 0.5805 ± 0.1558
 
-CPU time: 0.307337 seconds
+CPU time: 0.217581 seconds
 
 100 individuos, 20 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1218
-Geração 1: Aceleração média = 2.9275 ± 2.0247
+Geração 1: Autonomia média = 13.1187 ± 82.1401
+Geração 1: Aceleração média = 0.4744 ± 0.0900
 
-Geração 2: Autonomia média = 0.2249 ± 0.1579
-Geração 2: Aceleração média = 2.9955 ± 2.1268
+Geração 2: Autonomia média = 18.9624 ± 87.5521
+Geração 2: Aceleração média = 0.4569 ± 0.0942
 
-Geração 3: Autonomia média = 0.2654 ± 0.1795
-Geração 3: Aceleração média = 3.0424 ± 2.0157
+Geração 3: Autonomia média = 43.0969 ± 127.5751
+Geração 3: Aceleração média = 0.4629 ± 0.1066
 
-Geração 4: Autonomia média = 0.3044 ± 0.1952
-Geração 4: Aceleração média = 3.3146 ± 2.1297
+Geração 4: Autonomia média = 115.8592 ± 190.4767
+Geração 4: Aceleração média = 0.4583 ± 0.0937
 
-Geração 5: Autonomia média = 0.2878 ± 0.1950
-Geração 5: Aceleração média = 3.0992 ± 2.0776
+Geração 5: Autonomia média = 267.3610 ± 212.2824
+Geração 5: Aceleração média = 0.4136 ± 0.0786
 
-Geração 6: Autonomia média = 0.3395 ± 0.2042
-Geração 6: Aceleração média = 3.6129 ± 2.1511
+Geração 6: Autonomia média = 351.4257 ± 137.4578
+Geração 6: Aceleração média = 0.4138 ± 0.0666
 
-Geração 7: Autonomia média = 0.3547 ± 0.2108
-Geração 7: Aceleração média = 3.7588 ± 2.2157
+Geração 7: Autonomia média = 370.4559 ± 160.7567
+Geração 7: Aceleração média = 0.4219 ± 0.0766
 
-Geração 8: Autonomia média = 0.4002 ± 0.2244
-Geração 8: Aceleração média = 4.2299 ± 2.3500
+Geração 8: Autonomia média = 387.0069 ± 168.1743
+Geração 8: Aceleração média = 0.4287 ± 0.0790
 
-Geração 9: Autonomia média = 0.4204 ± 0.2300
-Geração 9: Aceleração média = 4.4294 ± 2.3999
+Geração 9: Autonomia média = 424.7851 ± 190.8730
+Geração 9: Aceleração média = 0.4452 ± 0.0873
 
-Geração 10: Autonomia média = 0.4111 ± 0.2328
-Geração 10: Aceleração média = 4.3189 ± 2.4147
+Geração 10: Autonomia média = 447.1106 ± 203.0255
+Geração 10: Aceleração média = 0.4545 ± 0.0915
 
-Geração 11: Autonomia média = 0.4270 ± 0.2398
-Geração 11: Aceleração média = 4.4667 ± 2.4683
+Geração 11: Autonomia média = 464.2228 ± 213.2643
+Geração 11: Aceleração média = 0.4618 ± 0.0952
 
-Geração 12: Autonomia média = 0.4383 ± 0.2434
-Geração 12: Aceleração média = 4.5667 ± 2.4979
+Geração 12: Autonomia média = 472.1187 ± 216.3798
+Geração 12: Aceleração média = 0.4648 ± 0.0965
 
-Geração 13: Autonomia média = 0.4577 ± 0.2436
-Geração 13: Aceleração média = 4.7615 ± 2.5010
+Geração 13: Autonomia média = 479.5989 ± 215.4062
+Geração 13: Aceleração média = 0.4679 ± 0.0962
 
-Geração 14: Autonomia média = 0.4741 ± 0.2451
-Geração 14: Aceleração média = 4.9245 ± 2.5170
+Geração 14: Autonomia média = 474.3089 ± 216.8879
+Geração 14: Aceleração média = 0.4647 ± 0.0960
 
-Geração 15: Autonomia média = 0.4596 ± 0.2448
-Geração 15: Aceleração média = 4.7746 ± 2.5142
+Geração 15: Autonomia média = 476.1558 ± 216.7854
+Geração 15: Aceleração média = 0.4657 ± 0.0960
 
-Geração 16: Autonomia média = 0.4819 ± 0.2407
-Geração 16: Aceleração média = 5.0018 ± 2.4721
+Geração 16: Autonomia média = 481.2661 ± 224.6626
+Geração 16: Aceleração média = 0.4671 ± 0.0982
 
-Geração 17: Autonomia média = 0.4620 ± 0.2427
-Geração 17: Aceleração média = 4.7970 ± 2.4914
+Geração 17: Autonomia média = 495.4659 ± 229.9054
+Geração 17: Aceleração média = 0.4731 ± 0.0995
 
-Geração 18: Autonomia média = 0.4794 ± 0.2412
-Geração 18: Aceleração média = 4.9759 ± 2.4769
+Geração 18: Autonomia média = 503.1053 ± 241.7967
+Geração 18: Aceleração média = 0.4758 ± 0.1041
 
-Geração 19: Autonomia média = 0.4815 ± 0.2471
-Geração 19: Aceleração média = 4.9958 ± 2.5401
+Geração 19: Autonomia média = 539.7696 ± 260.3241
+Geração 19: Aceleração média = 0.4911 ± 0.1109
 
-Geração 20: Autonomia média = 0.4755 ± 0.2434
-Geração 20: Aceleração média = 4.9354 ± 2.5017
+Geração 20: Autonomia média = 555.5024 ± 262.6092
+Geração 20: Aceleração média = 0.4972 ± 0.1113
 
-CPU time: 0.320482 seconds
+CPU time: 0.081066 seconds
 
 100 individuos, 20 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1690 ± 0.1198
-Geração 1: Aceleração média = 2.8574 ± 1.9200
+Geração 1: Autonomia média = 12.9437 ± 82.1469
+Geração 1: Aceleração média = 0.4780 ± 0.0928
 
-Geração 2: Autonomia média = 0.2052 ± 0.1634
-Geração 2: Aceleração média = 2.6110 ± 2.0288
+Geração 2: Autonomia média = 15.3099 ± 81.9951
+Geração 2: Aceleração média = 0.4615 ± 0.0983
 
-Geração 3: Autonomia média = 0.2619 ± 0.1974
-Geração 3: Aceleração média = 2.9392 ± 2.1799
+Geração 3: Autonomia média = 42.3382 ± 140.2983
+Geração 3: Aceleração média = 0.4593 ± 0.0988
 
-Geração 4: Autonomia média = 0.2852 ± 0.2110
-Geração 4: Aceleração média = 3.1116 ± 2.3026
+Geração 4: Autonomia média = 126.5612 ± 244.7803
+Geração 4: Aceleração média = 0.4612 ± 0.1147
 
-Geração 5: Autonomia média = 0.2645 ± 0.1841
-Geração 5: Aceleração média = 2.8403 ± 1.9639
+Geração 5: Autonomia média = 273.6605 ± 327.5493
+Geração 5: Aceleração média = 0.4527 ± 0.1230
 
-Geração 6: Autonomia média = 0.2771 ± 0.1870
-Geração 6: Aceleração média = 2.9387 ± 1.9460
+Geração 6: Autonomia média = 432.1415 ± 332.7439
+Geração 6: Aceleração média = 0.4572 ± 0.1308
 
-Geração 7: Autonomia média = 0.3050 ± 0.2118
-Geração 7: Aceleração média = 3.2163 ± 2.2070
+Geração 7: Autonomia média = 432.3659 ± 322.9745
+Geração 7: Aceleração média = 0.4404 ± 0.1296
 
-Geração 8: Autonomia média = 0.3491 ± 0.2234
-Geração 8: Aceleração média = 3.6383 ± 2.2904
+Geração 8: Autonomia média = 479.1675 ± 354.0292
+Geração 8: Aceleração média = 0.4622 ± 0.1387
 
-Geração 9: Autonomia média = 0.3905 ± 0.2374
-Geração 9: Aceleração média = 4.0542 ± 2.4402
+Geração 9: Autonomia média = 529.4156 ± 351.4999
+Geração 9: Aceleração média = 0.4825 ± 0.1387
 
-Geração 10: Autonomia média = 0.3951 ± 0.2382
-Geração 10: Aceleração média = 4.0912 ± 2.4338
+Geração 10: Autonomia média = 566.8450 ± 373.2638
+Geração 10: Aceleração média = 0.4950 ± 0.1462
 
-Geração 11: Autonomia média = 0.4305 ± 0.2472
-Geração 11: Aceleração média = 4.4498 ± 2.5246
+Geração 11: Autonomia média = 624.1843 ± 371.8302
+Geração 11: Aceleração média = 0.5197 ± 0.1435
 
-Geração 12: Autonomia média = 0.4649 ± 0.2570
-Geração 12: Aceleração média = 4.7974 ± 2.6185
+Geração 12: Autonomia média = 656.8726 ± 369.1887
+Geração 12: Aceleração média = 0.5328 ± 0.1420
 
-Geração 13: Autonomia média = 0.5017 ± 0.2541
-Geração 13: Aceleração média = 5.1708 ± 2.5960
+Geração 13: Autonomia média = 698.1815 ± 375.4626
+Geração 13: Aceleração média = 0.5491 ± 0.1428
 
-Geração 14: Autonomia média = 0.4992 ± 0.2637
-Geração 14: Aceleração média = 5.1378 ± 2.6924
+Geração 14: Autonomia média = 729.4206 ± 400.2969
+Geração 14: Aceleração média = 0.5608 ± 0.1496
 
-Geração 15: Autonomia média = 0.5013 ± 0.2496
-Geração 15: Aceleração média = 5.1569 ± 2.5515
+Geração 15: Autonomia média = 747.4566 ± 401.1414
+Geração 15: Aceleração média = 0.5681 ± 0.1481
 
-Geração 16: Autonomia média = 0.5125 ± 0.2591
-Geração 16: Aceleração média = 5.2741 ± 2.6479
+Geração 16: Autonomia média = 766.2868 ± 403.1070
+Geração 16: Aceleração média = 0.5744 ± 0.1499
 
-Geração 17: Autonomia média = 0.4770 ± 0.2580
-Geração 17: Aceleração média = 4.9127 ± 2.6357
+Geração 17: Autonomia média = 779.9351 ± 412.7080
+Geração 17: Aceleração média = 0.5785 ± 0.1529
 
-Geração 18: Autonomia média = 0.4641 ± 0.2629
-Geração 18: Aceleração média = 4.7805 ± 2.6850
+Geração 18: Autonomia média = 778.7468 ± 418.4154
+Geração 18: Aceleração média = 0.5773 ± 0.1526
 
-Geração 19: Autonomia média = 0.4993 ± 0.2579
-Geração 19: Aceleração média = 5.1386 ± 2.6388
+Geração 19: Autonomia média = 780.4809 ± 417.1434
+Geração 19: Aceleração média = 0.5781 ± 0.1528
 
-Geração 20: Autonomia média = 0.5153 ± 0.2610
-Geração 20: Aceleração média = 5.3025 ± 2.6710
+Geração 20: Autonomia média = 791.5676 ± 422.8343
+Geração 20: Aceleração média = 0.5820 ± 0.1550
 
-CPU time: 0.314819 seconds
+CPU time: 0.081082 seconds
 
 100 individuos, 20 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1691 ± 0.1226
-Geração 1: Aceleração média = 2.7935 ± 1.8704
+Geração 1: Autonomia média = 13.2434 ± 82.1640
+Geração 1: Aceleração média = 0.4799 ± 0.0948
 
-Geração 2: Autonomia média = 0.2293 ± 0.1586
-Geração 2: Aceleração média = 2.8836 ± 2.0407
+Geração 2: Autonomia média = 14.9766 ± 82.0056
+Geração 2: Aceleração média = 0.4577 ± 0.0968
 
-Geração 3: Autonomia média = 0.2499 ± 0.1648
-Geração 3: Aceleração média = 2.8579 ± 1.9520
+Geração 3: Autonomia média = 18.3839 ± 81.6306
+Geração 3: Aceleração média = 0.4595 ± 0.1099
 
-Geração 4: Autonomia média = 0.2707 ± 0.1852
-Geração 4: Aceleração média = 2.9529 ± 2.0600
+Geração 4: Autonomia média = 26.7181 ± 90.6242
+Geração 4: Aceleração média = 0.4261 ± 0.0936
 
-Geração 5: Autonomia média = 0.2544 ± 0.1861
-Geração 5: Aceleração média = 2.7248 ± 1.9967
+Geração 5: Autonomia média = 44.1051 ± 113.0080
+Geração 5: Aceleração média = 0.4482 ± 0.1084
 
-Geração 6: Autonomia média = 0.3074 ± 0.2041
-Geração 6: Aceleração média = 3.2718 ± 2.1895
+Geração 6: Autonomia média = 100.0750 ± 197.3465
+Geração 6: Aceleração média = 0.4413 ± 0.1062
 
-Geração 7: Autonomia média = 0.3536 ± 0.2112
-Geração 7: Aceleração média = 3.7429 ± 2.2608
+Geração 7: Autonomia média = 248.1386 ± 271.8657
+Geração 7: Aceleração média = 0.4093 ± 0.0957
 
-Geração 8: Autonomia média = 0.3617 ± 0.2154
-Geração 8: Aceleração média = 3.7938 ± 2.2539
+Geração 8: Autonomia média = 396.3202 ± 256.1047
+Geração 8: Aceleração média = 0.4354 ± 0.1069
 
-Geração 9: Autonomia média = 0.3972 ± 0.2312
-Geração 9: Aceleração média = 4.1315 ± 2.3850
+Geração 9: Autonomia média = 433.2375 ± 297.1488
+Geração 9: Aceleração média = 0.4489 ± 0.1187
 
-Geração 10: Autonomia média = 0.4432 ± 0.2451
-Geração 10: Aceleração média = 4.5908 ± 2.5101
+Geração 10: Autonomia média = 543.4113 ± 340.4830
+Geração 10: Aceleração média = 0.4914 ± 0.1355
 
-Geração 11: Autonomia média = 0.4683 ± 0.2408
-Geração 11: Aceleração média = 4.8404 ± 2.4641
+Geração 11: Autonomia média = 602.1257 ± 373.1897
+Geração 11: Aceleração média = 0.5114 ± 0.1444
 
-Geração 12: Autonomia média = 0.4850 ± 0.2535
-Geração 12: Aceleração média = 5.0048 ± 2.5923
+Geração 12: Autonomia média = 673.5045 ± 368.8433
+Geração 12: Aceleração média = 0.5375 ± 0.1431
 
-Geração 13: Autonomia média = 0.4992 ± 0.2573
-Geração 13: Aceleração média = 5.1458 ± 2.6308
+Geração 13: Autonomia média = 727.2536 ± 402.2510
+Geração 13: Aceleração média = 0.5561 ± 0.1535
 
-Geração 14: Autonomia média = 0.4893 ± 0.2612
-Geração 14: Aceleração média = 5.0450 ± 2.6688
+Geração 14: Autonomia média = 793.5085 ± 405.4171
+Geração 14: Aceleração média = 0.5814 ± 0.1532
 
-Geração 15: Autonomia média = 0.4993 ± 0.2690
-Geração 15: Aceleração média = 5.1472 ± 2.7471
+Geração 15: Autonomia média = 823.9284 ± 410.4683
+Geração 15: Aceleração média = 0.5921 ± 0.1534
 
-Geração 16: Autonomia média = 0.4995 ± 0.2742
-Geração 16: Aceleração média = 5.1475 ± 2.8005
+Geração 16: Autonomia média = 813.5165 ± 414.5478
+Geração 16: Aceleração média = 0.5877 ± 0.1553
 
-Geração 17: Autonomia média = 0.5076 ± 0.2749
-Geração 17: Aceleração média = 5.2310 ± 2.8068
+Geração 17: Autonomia média = 821.1151 ± 414.0108
+Geração 17: Aceleração média = 0.5899 ± 0.1539
 
-Geração 18: Autonomia média = 0.5298 ± 0.2756
-Geração 18: Aceleração média = 5.4583 ± 2.8133
+Geração 18: Autonomia média = 815.8546 ± 416.7548
+Geração 18: Aceleração média = 0.5879 ± 0.1551
 
-Geração 19: Autonomia média = 0.5143 ± 0.2696
-Geração 19: Aceleração média = 5.3020 ± 2.7516
+Geração 19: Autonomia média = 828.8690 ± 417.2137
+Geração 19: Aceleração média = 0.5920 ± 0.1549
 
-Geração 20: Autonomia média = 0.5237 ± 0.2682
-Geração 20: Aceleração média = 5.3981 ± 2.7372
+Geração 20: Autonomia média = 852.3149 ± 417.0216
+Geração 20: Aceleração média = 0.6006 ± 0.1540
 
-CPU time: 0.215206 seconds
+CPU time: 0.084146 seconds
 
 200 individuos, 5 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1733 ± 0.1222
-Geração 1: Aceleração média = 2.7344 ± 1.8832
+Geração 1: Autonomia média = 10.1807 ± 71.6427
+Geração 1: Aceleração média = 0.4724 ± 0.0922
 
-Geração 2: Autonomia média = 0.2343 ± 0.1604
-Geração 2: Aceleração média = 2.9199 ± 1.9894
+Geração 2: Autonomia média = 27.2387 ± 121.7945
+Geração 2: Aceleração média = 0.4721 ± 0.1097
 
-Geração 3: Autonomia média = 0.2593 ± 0.1717
-Geração 3: Aceleração média = 2.9136 ± 1.9710
+Geração 3: Autonomia média = 76.6756 ± 212.3393
+Geração 3: Aceleração média = 0.4900 ± 0.1280
 
-Geração 4: Autonomia média = 0.2292 ± 0.1763
-Geração 4: Aceleração média = 2.5367 ± 1.9718
+Geração 4: Autonomia média = 218.0813 ± 333.2659
+Geração 4: Aceleração média = 0.5416 ± 0.1297
 
-Geração 5: Autonomia média = 0.1921 ± 0.1585
-Geração 5: Aceleração média = 2.0718 ± 1.6951
+Geração 5: Autonomia média = 536.1930 ± 362.4995
+Geração 5: Aceleração média = 0.5570 ± 0.1283
 
-CPU time: 0.498006 seconds
+CPU time: 0.475650 seconds
 
 200 individuos, 5 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1743 ± 0.1227
-Geração 1: Aceleração média = 2.7632 ± 1.9118
+Geração 1: Autonomia média = 10.2525 ± 71.6720
+Geração 1: Aceleração média = 0.4690 ± 0.0853
 
-Geração 2: Autonomia média = 0.2430 ± 0.1596
-Geração 2: Aceleração média = 3.1383 ± 2.1486
+Geração 2: Autonomia média = 16.9871 ± 80.8101
+Geração 2: Aceleração média = 0.4652 ± 0.1048
 
-Geração 3: Autonomia média = 0.2641 ± 0.1794
-Geração 3: Aceleração média = 3.0484 ± 2.1784
+Geração 3: Autonomia média = 33.5662 ± 104.3390
+Geração 3: Aceleração média = 0.4932 ± 0.1231
 
-Geração 4: Autonomia média = 0.2438 ± 0.1634
-Geração 4: Aceleração média = 2.6669 ± 1.8014
+Geração 4: Autonomia média = 76.7192 ± 167.9169
+Geração 4: Aceleração média = 0.5098 ± 0.1276
 
-Geração 5: Autonomia média = 0.2323 ± 0.1666
-Geração 5: Aceleração média = 2.4794 ± 1.7703
+Geração 5: Autonomia média = 173.8769 ± 263.3078
+Geração 5: Aceleração média = 0.5339 ± 0.1238
 
-CPU time: 0.501136 seconds
+CPU time: 0.440954 seconds
 
 200 individuos, 5 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1747 ± 0.1221
-Geração 1: Aceleração média = 2.7687 ± 1.8999
+Geração 1: Autonomia média = 10.1263 ± 71.5659
+Geração 1: Aceleração média = 0.4765 ± 0.0967
 
-Geração 2: Autonomia média = 0.2277 ± 0.1401
-Geração 2: Aceleração média = 2.8756 ± 1.8895
+Geração 2: Autonomia média = 17.1646 ± 79.0135
+Geração 2: Aceleração média = 0.4739 ± 0.1091
 
-Geração 3: Autonomia média = 0.2489 ± 0.1465
-Geração 3: Aceleração média = 2.7764 ± 1.6379
+Geração 3: Autonomia média = 47.7855 ± 133.0539
+Geração 3: Aceleração média = 0.4794 ± 0.1289
 
-Geração 4: Autonomia média = 0.2473 ± 0.1729
-Geração 4: Aceleração média = 2.7044 ± 1.8844
+Geração 4: Autonomia média = 126.0384 ± 211.9775
+Geração 4: Aceleração média = 0.5539 ± 0.1369
 
-Geração 5: Autonomia média = 0.2268 ± 0.1717
-Geração 5: Aceleração média = 2.4333 ± 1.8290
+Geração 5: Autonomia média = 273.0455 ± 312.8151
+Geração 5: Aceleração média = 0.4990 ± 0.1266
 
-CPU time: 0.502799 seconds
+CPU time: 0.477964 seconds
 
 200 individuos, 5 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1796 ± 0.1215
-Geração 1: Aceleração média = 2.7865 ± 1.9342
+Geração 1: Autonomia média = 10.7125 ± 74.2547
+Geração 1: Aceleração média = 0.4724 ± 0.0949
 
-Geração 2: Autonomia média = 0.2190 ± 0.1540
-Geração 2: Aceleração média = 2.7795 ± 2.0450
+Geração 2: Autonomia média = 23.8249 ± 104.0023
+Geração 2: Aceleração média = 0.4516 ± 0.0982
 
-Geração 3: Autonomia média = 0.2496 ± 0.1742
-Geração 3: Aceleração média = 2.8135 ± 1.9623
+Geração 3: Autonomia média = 64.3593 ± 161.2075
+Geração 3: Aceleração média = 0.4436 ± 0.1054
 
-Geração 4: Autonomia média = 0.2493 ± 0.1861
-Geração 4: Aceleração média = 2.7283 ± 2.0362
+Geração 4: Autonomia média = 166.6598 ± 236.2560
+Geração 4: Aceleração média = 0.4421 ± 0.1124
 
-Geração 5: Autonomia média = 0.2543 ± 0.1858
-Geração 5: Aceleração média = 2.7472 ± 2.0327
+Geração 5: Autonomia média = 362.7404 ± 256.4816
+Geração 5: Aceleração média = 0.4372 ± 0.1024
 
-CPU time: 0.372352 seconds
+CPU time: 0.343913 seconds
 
 200 individuos, 5 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1817 ± 0.1210
-Geração 1: Aceleração média = 2.8330 ± 1.9412
+Geração 1: Autonomia média = 10.7103 ± 74.2539
+Geração 1: Aceleração média = 0.4752 ± 0.0954
 
-Geração 2: Autonomia média = 0.2261 ± 0.1453
-Geração 2: Aceleração média = 2.9055 ± 1.9444
+Geração 2: Autonomia média = 18.7150 ± 90.7923
+Geração 2: Aceleração média = 0.4651 ± 0.1045
 
-Geração 3: Autonomia média = 0.2481 ± 0.1711
-Geração 3: Aceleração média = 2.7811 ± 1.9264
+Geração 3: Autonomia média = 36.0383 ± 120.1875
+Geração 3: Aceleração média = 0.4620 ± 0.1208
 
-Geração 4: Autonomia média = 0.2561 ± 0.1845
-Geração 4: Aceleração média = 2.7943 ± 2.0122
+Geração 4: Autonomia média = 101.5311 ± 204.0478
+Geração 4: Aceleração média = 0.4811 ± 0.1352
 
-Geração 5: Autonomia média = 0.2714 ± 0.1890
-Geração 5: Aceleração média = 2.9295 ± 2.0382
+Geração 5: Autonomia média = 219.3565 ± 283.6253
+Geração 5: Aceleração média = 0.5102 ± 0.1353
 
-CPU time: 0.398651 seconds
+CPU time: 0.304044 seconds
 
 200 individuos, 5 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1819 ± 0.1192
-Geração 1: Aceleração média = 2.8753 ± 1.9734
+Geração 1: Autonomia média = 9.1921 ± 71.3140
+Geração 1: Aceleração média = 0.4711 ± 0.0940
 
-Geração 2: Autonomia média = 0.2162 ± 0.1507
-Geração 2: Aceleração média = 2.7491 ± 1.9611
+Geração 2: Autonomia média = 18.2893 ± 93.6606
+Geração 2: Aceleração média = 0.4582 ± 0.1006
 
-Geração 3: Autonomia média = 0.2425 ± 0.1678
-Geração 3: Aceleração média = 2.7363 ± 1.8822
+Geração 3: Autonomia média = 29.7545 ± 105.7693
+Geração 3: Aceleração média = 0.4522 ± 0.1140
 
-Geração 4: Autonomia média = 0.2660 ± 0.1821
-Geração 4: Aceleração média = 2.8913 ± 1.9940
+Geração 4: Autonomia média = 77.6731 ± 180.1866
+Geração 4: Aceleração média = 0.4418 ± 0.1190
 
-Geração 5: Autonomia média = 0.2535 ± 0.1838
-Geração 5: Aceleração média = 2.7006 ± 1.9702
+Geração 5: Autonomia média = 156.6729 ± 251.2242
+Geração 5: Aceleração média = 0.4398 ± 0.1116
 
-CPU time: 0.394356 seconds
+CPU time: 0.312778 seconds
 
 200 individuos, 5 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1732 ± 0.1179
-Geração 1: Aceleração média = 2.7628 ± 1.9359
+Geração 1: Autonomia média = 9.6850 ± 71.2746
+Geração 1: Aceleração média = 0.4708 ± 0.0936
 
-Geração 2: Autonomia média = 0.2131 ± 0.1528
-Geração 2: Aceleração média = 2.6453 ± 1.9436
+Geração 2: Autonomia média = 25.5052 ± 115.3868
+Geração 2: Aceleração média = 0.4532 ± 0.0990
 
-Geração 3: Autonomia média = 0.2348 ± 0.1657
-Geração 3: Aceleração média = 2.5984 ± 1.8334
+Geração 3: Autonomia média = 51.7350 ± 155.5650
+Geração 3: Aceleração média = 0.4656 ± 0.1076
 
-Geração 4: Autonomia média = 0.2461 ± 0.1712
-Geração 4: Aceleração média = 2.6600 ± 1.8389
+Geração 4: Autonomia média = 115.2865 ± 220.8453
+Geração 4: Aceleração média = 0.4661 ± 0.1027
 
-Geração 5: Autonomia média = 0.2525 ± 0.1738
-Geração 5: Aceleração média = 2.6938 ± 1.8383
+Geração 5: Autonomia média = 283.0052 ± 284.7093
+Geração 5: Aceleração média = 0.4555 ± 0.1010
 
-CPU time: 0.290344 seconds
+CPU time: 0.078152 seconds
 
 200 individuos, 5 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1730 ± 0.1178
-Geração 1: Aceleração média = 2.7842 ± 1.9382
+Geração 1: Autonomia média = 9.6675 ± 71.2750
+Geração 1: Aceleração média = 0.4661 ± 0.0826
 
-Geração 2: Autonomia média = 0.2089 ± 0.1484
-Geração 2: Aceleração média = 2.6186 ± 1.9018
+Geração 2: Autonomia média = 22.9024 ± 107.0589
+Geração 2: Aceleração média = 0.4548 ± 0.0928
 
-Geração 3: Autonomia média = 0.2356 ± 0.1714
-Geração 3: Aceleração média = 2.6087 ± 1.8687
+Geração 3: Autonomia média = 59.2150 ± 167.9482
+Geração 3: Aceleração média = 0.4677 ± 0.1031
 
-Geração 4: Autonomia média = 0.2577 ± 0.1978
-Geração 4: Aceleração média = 2.7951 ± 2.1630
+Geração 4: Autonomia média = 145.5158 ± 245.0306
+Geração 4: Aceleração média = 0.4818 ± 0.1101
 
-Geração 5: Autonomia média = 0.2536 ± 0.2089
-Geração 5: Aceleração média = 2.7209 ± 2.2597
+Geração 5: Autonomia média = 341.8981 ± 305.9843
+Geração 5: Aceleração média = 0.4789 ± 0.1140
 
-CPU time: 0.324860 seconds
+CPU time: 0.078585 seconds
 
 200 individuos, 5 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1727 ± 0.1192
-Geração 1: Aceleração média = 2.7948 ± 1.9485
+Geração 1: Autonomia média = 9.3217 ± 71.2332
+Geração 1: Aceleração média = 0.4689 ± 0.0870
 
-Geração 2: Autonomia média = 0.2121 ± 0.1419
-Geração 2: Aceleração média = 2.7847 ± 2.0655
+Geração 2: Autonomia média = 23.8044 ± 104.5796
+Geração 2: Aceleração média = 0.4548 ± 0.1026
 
-Geração 3: Autonomia média = 0.2310 ± 0.1552
-Geração 3: Aceleração média = 2.6034 ± 1.7846
+Geração 3: Autonomia média = 41.4820 ± 132.4325
+Geração 3: Aceleração média = 0.4401 ± 0.0997
 
-Geração 4: Autonomia média = 0.2704 ± 0.1808
-Geração 4: Aceleração média = 2.9458 ± 1.9944
+Geração 4: Autonomia média = 103.2891 ± 206.6115
+Geração 4: Aceleração média = 0.4360 ± 0.1000
 
-Geração 5: Autonomia média = 0.2457 ± 0.1702
-Geração 5: Aceleração média = 2.6376 ± 1.8196
+Geração 5: Autonomia média = 236.7481 ± 273.8753
+Geração 5: Aceleração média = 0.4370 ± 0.1022
 
-CPU time: 0.254578 seconds
+CPU time: 0.081334 seconds
 
 200 individuos, 10 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1733 ± 0.1222
-Geração 1: Aceleração média = 2.7344 ± 1.8832
+Geração 1: Autonomia média = 10.1807 ± 71.6427
+Geração 1: Aceleração média = 0.4724 ± 0.0922
 
-Geração 2: Autonomia média = 0.2343 ± 0.1604
-Geração 2: Aceleração média = 2.9199 ± 1.9894
+Geração 2: Autonomia média = 27.2387 ± 121.7945
+Geração 2: Aceleração média = 0.4721 ± 0.1097
 
-Geração 3: Autonomia média = 0.2593 ± 0.1717
-Geração 3: Aceleração média = 2.9136 ± 1.9710
+Geração 3: Autonomia média = 76.6756 ± 212.3393
+Geração 3: Aceleração média = 0.4900 ± 0.1280
 
-Geração 4: Autonomia média = 0.2292 ± 0.1763
-Geração 4: Aceleração média = 2.5367 ± 1.9718
+Geração 4: Autonomia média = 218.0813 ± 333.2659
+Geração 4: Aceleração média = 0.5416 ± 0.1297
 
-Geração 5: Autonomia média = 0.1921 ± 0.1585
-Geração 5: Aceleração média = 2.0718 ± 1.6951
+Geração 5: Autonomia média = 536.1930 ± 362.4995
+Geração 5: Aceleração média = 0.5570 ± 0.1283
 
-Geração 6: Autonomia média = 0.2002 ± 0.1811
-Geração 6: Aceleração média = 2.1384 ± 1.9027
+Geração 6: Autonomia média = 610.8928 ± 241.1838
+Geração 6: Aceleração média = 0.5504 ± 0.1009
 
-Geração 7: Autonomia média = 0.2386 ± 0.1890
-Geração 7: Aceleração média = 2.5335 ± 1.9847
+Geração 7: Autonomia média = 495.7872 ± 270.1529
+Geração 7: Aceleração média = 0.4914 ± 0.1152
 
-Geração 8: Autonomia média = 0.2669 ± 0.1931
-Geração 8: Aceleração média = 2.8175 ± 2.0187
+Geração 8: Autonomia média = 443.9006 ± 280.6191
+Geração 8: Aceleração média = 0.4604 ± 0.1178
 
-Geração 9: Autonomia média = 0.2801 ± 0.2040
-Geração 9: Aceleração média = 2.9408 ± 2.1182
+Geração 9: Autonomia média = 389.7987 ± 308.8740
+Geração 9: Aceleração média = 0.4332 ± 0.1261
 
-Geração 10: Autonomia média = 0.3103 ± 0.2104
-Geração 10: Aceleração média = 3.2436 ± 2.1752
+Geração 10: Autonomia média = 394.6522 ± 345.2544
+Geração 10: Aceleração média = 0.4315 ± 0.1377
 
-CPU time: 0.699681 seconds
+CPU time: 0.670604 seconds
 
 200 individuos, 10 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1743 ± 0.1227
-Geração 1: Aceleração média = 2.7632 ± 1.9118
+Geração 1: Autonomia média = 10.2525 ± 71.6720
+Geração 1: Aceleração média = 0.4690 ± 0.0853
 
-Geração 2: Autonomia média = 0.2430 ± 0.1596
-Geração 2: Aceleração média = 3.1383 ± 2.1486
+Geração 2: Autonomia média = 16.9871 ± 80.8101
+Geração 2: Aceleração média = 0.4652 ± 0.1048
 
-Geração 3: Autonomia média = 0.2641 ± 0.1794
-Geração 3: Aceleração média = 3.0484 ± 2.1784
+Geração 3: Autonomia média = 33.5662 ± 104.3390
+Geração 3: Aceleração média = 0.4932 ± 0.1231
 
-Geração 4: Autonomia média = 0.2438 ± 0.1634
-Geração 4: Aceleração média = 2.6669 ± 1.8014
+Geração 4: Autonomia média = 76.7192 ± 167.9169
+Geração 4: Aceleração média = 0.5098 ± 0.1276
 
-Geração 5: Autonomia média = 0.2323 ± 0.1666
-Geração 5: Aceleração média = 2.4794 ± 1.7703
+Geração 5: Autonomia média = 173.8769 ± 263.3078
+Geração 5: Aceleração média = 0.5339 ± 0.1238
 
-Geração 6: Autonomia média = 0.2159 ± 0.1658
-Geração 6: Aceleração média = 2.2932 ± 1.7417
+Geração 6: Autonomia média = 359.1067 ± 347.9213
+Geração 6: Aceleração média = 0.4972 ± 0.1249
 
-Geração 7: Autonomia média = 0.2573 ± 0.1659
-Geração 7: Aceleração média = 2.7117 ± 1.7256
+Geração 7: Autonomia média = 647.5036 ± 245.7222
+Geração 7: Aceleração média = 0.5623 ± 0.1070
 
-Geração 8: Autonomia média = 0.2807 ± 0.1778
-Geração 8: Aceleração média = 2.9456 ± 1.8439
+Geração 8: Autonomia média = 513.8724 ± 266.5873
+Geração 8: Aceleração média = 0.4968 ± 0.1219
 
-Geração 9: Autonomia média = 0.2995 ± 0.1914
-Geração 9: Aceleração média = 3.1342 ± 1.9810
+Geração 9: Autonomia média = 422.1359 ± 291.6789
+Geração 9: Aceleração média = 0.4385 ± 0.1232
 
-Geração 10: Autonomia média = 0.3407 ± 0.2135
-Geração 10: Aceleração média = 3.5584 ± 2.2089
+Geração 10: Autonomia média = 421.4542 ± 325.7999
+Geração 10: Aceleração média = 0.4352 ± 0.1327
 
-CPU time: 0.644821 seconds
+CPU time: 0.749430 seconds
 
 200 individuos, 10 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1747 ± 0.1221
-Geração 1: Aceleração média = 2.7687 ± 1.8999
+Geração 1: Autonomia média = 10.1263 ± 71.5659
+Geração 1: Aceleração média = 0.4765 ± 0.0967
 
-Geração 2: Autonomia média = 0.2277 ± 0.1401
-Geração 2: Aceleração média = 2.8756 ± 1.8895
+Geração 2: Autonomia média = 17.1646 ± 79.0135
+Geração 2: Aceleração média = 0.4739 ± 0.1091
 
-Geração 3: Autonomia média = 0.2489 ± 0.1465
-Geração 3: Aceleração média = 2.7764 ± 1.6379
+Geração 3: Autonomia média = 47.7855 ± 133.0539
+Geração 3: Aceleração média = 0.4794 ± 0.1289
 
-Geração 4: Autonomia média = 0.2473 ± 0.1729
-Geração 4: Aceleração média = 2.7044 ± 1.8844
+Geração 4: Autonomia média = 126.0384 ± 211.9775
+Geração 4: Aceleração média = 0.5539 ± 0.1369
 
-Geração 5: Autonomia média = 0.2268 ± 0.1717
-Geração 5: Aceleração média = 2.4333 ± 1.8290
+Geração 5: Autonomia média = 273.0455 ± 312.8151
+Geração 5: Aceleração média = 0.4990 ± 0.1266
 
-Geração 6: Autonomia média = 0.2457 ± 0.1898
-Geração 6: Aceleração média = 2.6208 ± 2.0251
+Geração 6: Autonomia média = 500.3421 ± 265.0874
+Geração 6: Aceleração média = 0.4986 ± 0.1131
 
-Geração 7: Autonomia média = 0.2856 ± 0.2037
-Geração 7: Aceleração média = 3.0203 ± 2.1512
+Geração 7: Autonomia média = 399.7861 ± 273.9555
+Geração 7: Aceleração média = 0.4391 ± 0.1123
 
-Geração 8: Autonomia média = 0.3262 ± 0.2118
-Geração 8: Aceleração média = 3.4357 ± 2.2248
+Geração 8: Autonomia média = 331.0818 ± 273.0209
+Geração 8: Aceleração média = 0.4096 ± 0.1037
 
-Geração 9: Autonomia média = 0.3323 ± 0.2104
-Geração 9: Aceleração média = 3.4863 ± 2.1921
+Geração 9: Autonomia média = 343.6616 ± 312.5723
+Geração 9: Aceleração média = 0.4159 ± 0.1165
 
-Geração 10: Autonomia média = 0.3885 ± 0.2259
-Geração 10: Aceleração média = 4.0624 ± 2.3447
+Geração 10: Autonomia média = 431.9502 ± 313.5117
+Geração 10: Aceleração média = 0.4480 ± 0.1199
 
-CPU time: 0.674226 seconds
+CPU time: 0.743501 seconds
 
 200 individuos, 10 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1796 ± 0.1215
-Geração 1: Aceleração média = 2.7865 ± 1.9342
+Geração 1: Autonomia média = 10.7125 ± 74.2547
+Geração 1: Aceleração média = 0.4724 ± 0.0949
 
-Geração 2: Autonomia média = 0.2190 ± 0.1540
-Geração 2: Aceleração média = 2.7795 ± 2.0450
+Geração 2: Autonomia média = 23.8249 ± 104.0023
+Geração 2: Aceleração média = 0.4516 ± 0.0982
 
-Geração 3: Autonomia média = 0.2496 ± 0.1742
-Geração 3: Aceleração média = 2.8135 ± 1.9623
+Geração 3: Autonomia média = 64.3593 ± 161.2075
+Geração 3: Aceleração média = 0.4436 ± 0.1054
 
-Geração 4: Autonomia média = 0.2493 ± 0.1861
-Geração 4: Aceleração média = 2.7283 ± 2.0362
+Geração 4: Autonomia média = 166.6598 ± 236.2560
+Geração 4: Aceleração média = 0.4421 ± 0.1124
 
-Geração 5: Autonomia média = 0.2543 ± 0.1858
-Geração 5: Aceleração média = 2.7472 ± 2.0327
+Geração 5: Autonomia média = 362.7404 ± 256.4816
+Geração 5: Aceleração média = 0.4372 ± 0.1024
 
-Geração 6: Autonomia média = 0.2022 ± 0.1644
-Geração 6: Aceleração média = 2.1597 ± 1.7380
+Geração 6: Autonomia média = 421.1221 ± 262.3902
+Geração 6: Aceleração média = 0.4532 ± 0.1151
 
-Geração 7: Autonomia média = 0.2442 ± 0.1794
-Geração 7: Aceleração média = 2.5852 ± 1.8822
+Geração 7: Autonomia média = 316.9681 ± 214.2221
+Geração 7: Aceleração média = 0.4056 ± 0.0917
 
-Geração 8: Autonomia média = 0.2703 ± 0.1904
-Geração 8: Aceleração média = 2.8422 ± 1.9851
+Geração 8: Autonomia média = 310.3153 ± 225.6149
+Geração 8: Aceleração média = 0.4035 ± 0.0957
 
-Geração 9: Autonomia média = 0.3214 ± 0.1968
-Geração 9: Aceleração média = 3.3650 ± 2.0438
+Geração 9: Autonomia média = 294.1102 ± 226.6064
+Geração 9: Aceleração média = 0.3968 ± 0.0911
 
-Geração 10: Autonomia média = 0.3445 ± 0.2164
-Geração 10: Aceleração média = 3.5985 ± 2.2408
+Geração 10: Autonomia média = 308.0135 ± 237.8929
+Geração 10: Aceleração média = 0.4048 ± 0.0931
 
-CPU time: 0.594273 seconds
+CPU time: 0.509394 seconds
 
 200 individuos, 10 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1817 ± 0.1210
-Geração 1: Aceleração média = 2.8330 ± 1.9412
+Geração 1: Autonomia média = 10.7103 ± 74.2539
+Geração 1: Aceleração média = 0.4752 ± 0.0954
 
-Geração 2: Autonomia média = 0.2261 ± 0.1453
-Geração 2: Aceleração média = 2.9055 ± 1.9444
+Geração 2: Autonomia média = 18.7150 ± 90.7923
+Geração 2: Aceleração média = 0.4651 ± 0.1045
 
-Geração 3: Autonomia média = 0.2481 ± 0.1711
-Geração 3: Aceleração média = 2.7811 ± 1.9264
+Geração 3: Autonomia média = 36.0383 ± 120.1875
+Geração 3: Aceleração média = 0.4620 ± 0.1208
 
-Geração 4: Autonomia média = 0.2561 ± 0.1845
-Geração 4: Aceleração média = 2.7943 ± 2.0122
+Geração 4: Autonomia média = 101.5311 ± 204.0478
+Geração 4: Aceleração média = 0.4811 ± 0.1352
 
-Geração 5: Autonomia média = 0.2714 ± 0.1890
-Geração 5: Aceleração média = 2.9295 ± 2.0382
+Geração 5: Autonomia média = 219.3565 ± 283.6253
+Geração 5: Aceleração média = 0.5102 ± 0.1353
 
-Geração 6: Autonomia média = 0.2508 ± 0.1706
-Geração 6: Aceleração média = 2.6801 ± 1.8080
+Geração 6: Autonomia média = 448.4075 ± 295.6080
+Geração 6: Aceleração média = 0.4851 ± 0.1175
 
-Geração 7: Autonomia média = 0.2353 ± 0.1664
-Geração 7: Aceleração média = 2.4964 ± 1.7424
+Geração 7: Autonomia média = 496.4753 ± 282.4753
+Geração 7: Aceleração média = 0.4859 ± 0.1263
 
-Geração 8: Autonomia média = 0.2552 ± 0.1645
-Geração 8: Aceleração média = 2.6897 ± 1.7110
+Geração 8: Autonomia média = 356.8146 ± 218.6029
+Geração 8: Aceleração média = 0.4168 ± 0.0966
 
-Geração 9: Autonomia média = 0.2996 ± 0.1859
-Geração 9: Aceleração média = 3.1442 ± 1.9307
+Geração 9: Autonomia média = 362.0654 ± 245.9979
+Geração 9: Aceleração média = 0.4178 ± 0.1061
 
-Geração 10: Autonomia média = 0.3157 ± 0.1924
-Geração 10: Aceleração média = 3.3002 ± 1.9839
+Geração 10: Autonomia média = 367.4782 ± 254.8180
+Geração 10: Aceleração média = 0.4209 ± 0.1064
 
-CPU time: 0.635860 seconds
+CPU time: 0.540905 seconds
 
 200 individuos, 10 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1819 ± 0.1192
-Geração 1: Aceleração média = 2.8753 ± 1.9734
+Geração 1: Autonomia média = 9.1921 ± 71.3140
+Geração 1: Aceleração média = 0.4711 ± 0.0940
 
-Geração 2: Autonomia média = 0.2162 ± 0.1507
-Geração 2: Aceleração média = 2.7491 ± 1.9611
+Geração 2: Autonomia média = 18.2893 ± 93.6606
+Geração 2: Aceleração média = 0.4582 ± 0.1006
 
-Geração 3: Autonomia média = 0.2425 ± 0.1678
-Geração 3: Aceleração média = 2.7363 ± 1.8822
+Geração 3: Autonomia média = 29.7545 ± 105.7693
+Geração 3: Aceleração média = 0.4522 ± 0.1140
 
-Geração 4: Autonomia média = 0.2660 ± 0.1821
-Geração 4: Aceleração média = 2.8913 ± 1.9940
+Geração 4: Autonomia média = 77.6731 ± 180.1866
+Geração 4: Aceleração média = 0.4418 ± 0.1190
 
-Geração 5: Autonomia média = 0.2535 ± 0.1838
-Geração 5: Aceleração média = 2.7006 ± 1.9702
+Geração 5: Autonomia média = 156.6729 ± 251.2242
+Geração 5: Aceleração média = 0.4398 ± 0.1116
 
-Geração 6: Autonomia média = 0.2499 ± 0.1794
-Geração 6: Aceleração média = 2.6484 ± 1.8945
+Geração 6: Autonomia média = 302.1902 ± 280.0710
+Geração 6: Aceleração média = 0.4364 ± 0.0971
 
-Geração 7: Autonomia média = 0.2782 ± 0.1854
-Geração 7: Aceleração média = 2.9350 ± 1.9499
+Geração 7: Autonomia média = 364.1996 ± 265.7546
+Geração 7: Aceleração média = 0.4345 ± 0.1044
 
-Geração 8: Autonomia média = 0.3210 ± 0.2040
-Geração 8: Aceleração média = 3.3741 ± 2.1367
+Geração 8: Autonomia média = 347.0551 ± 210.2668
+Geração 8: Aceleração média = 0.4107 ± 0.0874
 
-Geração 9: Autonomia média = 0.3646 ± 0.2094
-Geração 9: Aceleração média = 3.8209 ± 2.1839
+Geração 9: Autonomia média = 364.2003 ± 232.0852
+Geração 9: Aceleração média = 0.4133 ± 0.0961
 
-Geração 10: Autonomia média = 0.3966 ± 0.2144
-Geração 10: Aceleração média = 4.1472 ± 2.2366
+Geração 10: Autonomia média = 454.7306 ± 286.2446
+Geração 10: Aceleração média = 0.4509 ± 0.1173
 
-CPU time: 0.662503 seconds
+CPU time: 0.525231 seconds
 
 200 individuos, 10 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1732 ± 0.1179
-Geração 1: Aceleração média = 2.7628 ± 1.9359
+Geração 1: Autonomia média = 9.6850 ± 71.2746
+Geração 1: Aceleração média = 0.4708 ± 0.0936
 
-Geração 2: Autonomia média = 0.2131 ± 0.1528
-Geração 2: Aceleração média = 2.6453 ± 1.9436
+Geração 2: Autonomia média = 25.5052 ± 115.3868
+Geração 2: Aceleração média = 0.4532 ± 0.0990
 
-Geração 3: Autonomia média = 0.2348 ± 0.1657
-Geração 3: Aceleração média = 2.5984 ± 1.8334
+Geração 3: Autonomia média = 51.7350 ± 155.5650
+Geração 3: Aceleração média = 0.4656 ± 0.1076
 
-Geração 4: Autonomia média = 0.2461 ± 0.1712
-Geração 4: Aceleração média = 2.6600 ± 1.8389
+Geração 4: Autonomia média = 115.2865 ± 220.8453
+Geração 4: Aceleração média = 0.4661 ± 0.1027
 
-Geração 5: Autonomia média = 0.2525 ± 0.1738
-Geração 5: Aceleração média = 2.6938 ± 1.8383
+Geração 5: Autonomia média = 283.0052 ± 284.7093
+Geração 5: Aceleração média = 0.4555 ± 0.1010
 
-Geração 6: Autonomia média = 0.2236 ± 0.1560
-Geração 6: Aceleração média = 2.3684 ± 1.6174
+Geração 6: Autonomia média = 468.8027 ± 206.2200
+Geração 6: Aceleração média = 0.4840 ± 0.0950
 
-Geração 7: Autonomia média = 0.2521 ± 0.1743
-Geração 7: Aceleração média = 2.6554 ± 1.8050
+Geração 7: Autonomia média = 431.7778 ± 176.0911
+Geração 7: Aceleração média = 0.4600 ± 0.0880
 
-Geração 8: Autonomia média = 0.2963 ± 0.1822
-Geração 8: Aceleração média = 3.1030 ± 1.8870
+Geração 8: Autonomia média = 383.1914 ± 176.2344
+Geração 8: Aceleração média = 0.4306 ± 0.0885
 
-Geração 9: Autonomia média = 0.3187 ± 0.1855
-Geração 9: Aceleração média = 3.3282 ± 1.9181
+Geração 9: Autonomia média = 354.2719 ± 173.0857
+Geração 9: Aceleração média = 0.4141 ± 0.0855
 
-Geração 10: Autonomia média = 0.3563 ± 0.2053
-Geração 10: Aceleração média = 3.7114 ± 2.1196
+Geração 10: Autonomia média = 351.7021 ± 170.9313
+Geração 10: Aceleração média = 0.4129 ± 0.0844
 
-CPU time: 0.467964 seconds
+CPU time: 0.151167 seconds
 
 200 individuos, 10 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1730 ± 0.1178
-Geração 1: Aceleração média = 2.7842 ± 1.9382
+Geração 1: Autonomia média = 9.6675 ± 71.2750
+Geração 1: Aceleração média = 0.4661 ± 0.0826
 
-Geração 2: Autonomia média = 0.2089 ± 0.1484
-Geração 2: Aceleração média = 2.6186 ± 1.9018
+Geração 2: Autonomia média = 22.9024 ± 107.0589
+Geração 2: Aceleração média = 0.4548 ± 0.0928
 
-Geração 3: Autonomia média = 0.2356 ± 0.1714
-Geração 3: Aceleração média = 2.6087 ± 1.8687
+Geração 3: Autonomia média = 59.2150 ± 167.9482
+Geração 3: Aceleração média = 0.4677 ± 0.1031
 
-Geração 4: Autonomia média = 0.2577 ± 0.1978
-Geração 4: Aceleração média = 2.7951 ± 2.1630
+Geração 4: Autonomia média = 145.5158 ± 245.0306
+Geração 4: Aceleração média = 0.4818 ± 0.1101
 
-Geração 5: Autonomia média = 0.2536 ± 0.2089
-Geração 5: Aceleração média = 2.7209 ± 2.2597
+Geração 5: Autonomia média = 341.8981 ± 305.9843
+Geração 5: Aceleração média = 0.4789 ± 0.1140
 
-Geração 6: Autonomia média = 0.2462 ± 0.1933
-Geração 6: Aceleração média = 2.6177 ± 2.0543
+Geração 6: Autonomia média = 538.3912 ± 266.8196
+Geração 6: Aceleração média = 0.5107 ± 0.1198
 
-Geração 7: Autonomia média = 0.2674 ± 0.1923
-Geração 7: Aceleração média = 2.8203 ± 2.0104
+Geração 7: Autonomia média = 475.3074 ± 251.1196
+Geração 7: Aceleração média = 0.4728 ± 0.1195
 
-Geração 8: Autonomia média = 0.3329 ± 0.2191
-Geração 8: Aceleração média = 3.4960 ± 2.2872
+Geração 8: Autonomia média = 397.8717 ± 275.6279
+Geração 8: Aceleração média = 0.4255 ± 0.1141
 
-Geração 9: Autonomia média = 0.3763 ± 0.2287
-Geração 9: Aceleração média = 3.9315 ± 2.3716
+Geração 9: Autonomia média = 439.4643 ± 304.8323
+Geração 9: Aceleração média = 0.4405 ± 0.1242
 
-Geração 10: Autonomia média = 0.4190 ± 0.2365
-Geração 10: Aceleração média = 4.3660 ± 2.4475
+Geração 10: Autonomia média = 522.4723 ± 337.6012
+Geração 10: Aceleração média = 0.4755 ± 0.1345
 
-CPU time: 0.523637 seconds
+CPU time: 0.151682 seconds
 
 200 individuos, 10 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1727 ± 0.1192
-Geração 1: Aceleração média = 2.7948 ± 1.9485
+Geração 1: Autonomia média = 9.3217 ± 71.2332
+Geração 1: Aceleração média = 0.4689 ± 0.0870
 
-Geração 2: Autonomia média = 0.2121 ± 0.1419
-Geração 2: Aceleração média = 2.7847 ± 2.0655
+Geração 2: Autonomia média = 23.8044 ± 104.5796
+Geração 2: Aceleração média = 0.4548 ± 0.1026
 
-Geração 3: Autonomia média = 0.2310 ± 0.1552
-Geração 3: Aceleração média = 2.6034 ± 1.7846
+Geração 3: Autonomia média = 41.4820 ± 132.4325
+Geração 3: Aceleração média = 0.4401 ± 0.0997
 
-Geração 4: Autonomia média = 0.2704 ± 0.1808
-Geração 4: Aceleração média = 2.9458 ± 1.9944
+Geração 4: Autonomia média = 103.2891 ± 206.6115
+Geração 4: Aceleração média = 0.4360 ± 0.1000
 
-Geração 5: Autonomia média = 0.2457 ± 0.1702
-Geração 5: Aceleração média = 2.6376 ± 1.8196
+Geração 5: Autonomia média = 236.7481 ± 273.8753
+Geração 5: Aceleração média = 0.4370 ± 0.1022
 
-Geração 6: Autonomia média = 0.2472 ± 0.1731
-Geração 6: Aceleração média = 2.6260 ± 1.8247
+Geração 6: Autonomia média = 398.6530 ± 248.8078
+Geração 6: Aceleração média = 0.4496 ± 0.0983
 
-Geração 7: Autonomia média = 0.2629 ± 0.1682
-Geração 7: Aceleração média = 2.7732 ± 1.7542
+Geração 7: Autonomia média = 461.4394 ± 285.8881
+Geração 7: Aceleração média = 0.4596 ± 0.1168
 
-Geração 8: Autonomia média = 0.3055 ± 0.1965
-Geração 8: Aceleração média = 3.2080 ± 2.0436
+Geração 8: Autonomia média = 428.5673 ± 294.1552
+Geração 8: Aceleração média = 0.4364 ± 0.1190
 
-Geração 9: Autonomia média = 0.3496 ± 0.2145
-Geração 9: Aceleração média = 3.6591 ± 2.2303
+Geração 9: Autonomia média = 502.4008 ± 317.1784
+Geração 9: Aceleração média = 0.4686 ± 0.1252
 
-Geração 10: Autonomia média = 0.3913 ± 0.2244
-Geração 10: Aceleração média = 4.0804 ± 2.3254
+Geração 10: Autonomia média = 619.9632 ± 361.9551
+Geração 10: Aceleração média = 0.5159 ± 0.1396
 
-CPU time: 0.569380 seconds
+CPU time: 0.199813 seconds
 
 200 individuos, 20 geracoes 0.6 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1733 ± 0.1222
-Geração 1: Aceleração média = 2.7344 ± 1.8832
+Geração 1: Autonomia média = 10.1807 ± 71.6427
+Geração 1: Aceleração média = 0.4724 ± 0.0922
 
-Geração 2: Autonomia média = 0.2343 ± 0.1604
-Geração 2: Aceleração média = 2.9199 ± 1.9894
+Geração 2: Autonomia média = 27.2387 ± 121.7945
+Geração 2: Aceleração média = 0.4721 ± 0.1097
 
-Geração 3: Autonomia média = 0.2593 ± 0.1717
-Geração 3: Aceleração média = 2.9136 ± 1.9710
+Geração 3: Autonomia média = 76.6756 ± 212.3393
+Geração 3: Aceleração média = 0.4900 ± 0.1280
 
-Geração 4: Autonomia média = 0.2292 ± 0.1763
-Geração 4: Aceleração média = 2.5367 ± 1.9718
+Geração 4: Autonomia média = 218.0813 ± 333.2659
+Geração 4: Aceleração média = 0.5416 ± 0.1297
 
-Geração 5: Autonomia média = 0.1921 ± 0.1585
-Geração 5: Aceleração média = 2.0718 ± 1.6951
+Geração 5: Autonomia média = 536.1930 ± 362.4995
+Geração 5: Aceleração média = 0.5570 ± 0.1283
 
-Geração 6: Autonomia média = 0.2002 ± 0.1811
-Geração 6: Aceleração média = 2.1384 ± 1.9027
+Geração 6: Autonomia média = 610.8928 ± 241.1838
+Geração 6: Aceleração média = 0.5504 ± 0.1009
 
-Geração 7: Autonomia média = 0.2386 ± 0.1890
-Geração 7: Aceleração média = 2.5335 ± 1.9847
+Geração 7: Autonomia média = 495.7872 ± 270.1529
+Geração 7: Aceleração média = 0.4914 ± 0.1152
 
-Geração 8: Autonomia média = 0.2669 ± 0.1931
-Geração 8: Aceleração média = 2.8175 ± 2.0187
+Geração 8: Autonomia média = 443.9006 ± 280.6191
+Geração 8: Aceleração média = 0.4604 ± 0.1178
 
-Geração 9: Autonomia média = 0.2801 ± 0.2040
-Geração 9: Aceleração média = 2.9408 ± 2.1182
+Geração 9: Autonomia média = 389.7987 ± 308.8740
+Geração 9: Aceleração média = 0.4332 ± 0.1261
 
-Geração 10: Autonomia média = 0.3103 ± 0.2104
-Geração 10: Aceleração média = 3.2436 ± 2.1752
+Geração 10: Autonomia média = 394.6522 ± 345.2544
+Geração 10: Aceleração média = 0.4315 ± 0.1377
 
-Geração 11: Autonomia média = 0.3558 ± 0.2256
-Geração 11: Aceleração média = 3.7075 ± 2.3326
+Geração 11: Autonomia média = 420.2089 ± 361.9567
+Geração 11: Aceleração média = 0.4481 ± 0.1390
 
-Geração 12: Autonomia média = 0.3745 ± 0.2281
-Geração 12: Aceleração média = 3.8964 ± 2.3558
+Geração 12: Autonomia média = 470.6911 ± 358.7229
+Geração 12: Aceleração média = 0.4661 ± 0.1382
 
-Geração 13: Autonomia média = 0.3982 ± 0.2359
-Geração 13: Aceleração média = 4.1387 ± 2.4338
+Geração 13: Autonomia média = 504.8873 ± 358.7248
+Geração 13: Aceleração média = 0.4767 ± 0.1394
 
-Geração 14: Autonomia média = 0.4090 ± 0.2382
-Geração 14: Aceleração média = 4.2485 ± 2.4557
+Geração 14: Autonomia média = 499.0693 ± 359.1054
+Geração 14: Aceleração média = 0.4716 ± 0.1381
 
-Geração 15: Autonomia média = 0.4105 ± 0.2389
-Geração 15: Aceleração média = 4.2633 ± 2.4626
+Geração 15: Autonomia média = 530.1019 ± 349.7642
+Geração 15: Aceleração média = 0.4813 ± 0.1376
 
-Geração 16: Autonomia média = 0.4257 ± 0.2368
-Geração 16: Aceleração média = 4.4188 ± 2.4415
+Geração 16: Autonomia média = 546.3161 ± 360.3164
+Geração 16: Aceleração média = 0.4873 ± 0.1407
 
-Geração 17: Autonomia média = 0.4362 ± 0.2393
-Geração 17: Aceleração média = 4.5270 ± 2.4672
+Geração 17: Autonomia média = 574.3277 ± 368.7928
+Geração 17: Aceleração média = 0.4987 ± 0.1431
 
-Geração 18: Autonomia média = 0.4579 ± 0.2462
-Geração 18: Aceleração média = 4.7512 ± 2.5401
+Geração 18: Autonomia média = 594.8594 ± 373.0793
+Geração 18: Aceleração média = 0.5068 ± 0.1448
 
-Geração 19: Autonomia média = 0.4681 ± 0.2499
-Geração 19: Aceleração média = 4.8563 ± 2.5772
+Geração 19: Autonomia média = 617.2140 ± 373.6885
+Geração 19: Aceleração média = 0.5134 ± 0.1463
 
-Geração 20: Autonomia média = 0.4811 ± 0.2545
-Geração 20: Aceleração média = 4.9906 ± 2.6247
+Geração 20: Autonomia média = 639.1803 ± 380.8808
+Geração 20: Aceleração média = 0.5220 ± 0.1488
 
-CPU time: 1.102858 seconds
+CPU time: 0.909198 seconds
 
 200 individuos, 20 geracoes 0.6 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1743 ± 0.1227
-Geração 1: Aceleração média = 2.7632 ± 1.9118
+Geração 1: Autonomia média = 10.2525 ± 71.6720
+Geração 1: Aceleração média = 0.4690 ± 0.0853
 
-Geração 2: Autonomia média = 0.2430 ± 0.1596
-Geração 2: Aceleração média = 3.1383 ± 2.1486
+Geração 2: Autonomia média = 16.9871 ± 80.8101
+Geração 2: Aceleração média = 0.4652 ± 0.1048
 
-Geração 3: Autonomia média = 0.2641 ± 0.1794
-Geração 3: Aceleração média = 3.0484 ± 2.1784
+Geração 3: Autonomia média = 33.5662 ± 104.3390
+Geração 3: Aceleração média = 0.4932 ± 0.1231
 
-Geração 4: Autonomia média = 0.2438 ± 0.1634
-Geração 4: Aceleração média = 2.6669 ± 1.8014
+Geração 4: Autonomia média = 76.7192 ± 167.9169
+Geração 4: Aceleração média = 0.5098 ± 0.1276
 
-Geração 5: Autonomia média = 0.2323 ± 0.1666
-Geração 5: Aceleração média = 2.4794 ± 1.7703
+Geração 5: Autonomia média = 173.8769 ± 263.3078
+Geração 5: Aceleração média = 0.5339 ± 0.1238
 
-Geração 6: Autonomia média = 0.2159 ± 0.1658
-Geração 6: Aceleração média = 2.2932 ± 1.7417
+Geração 6: Autonomia média = 359.1067 ± 347.9213
+Geração 6: Aceleração média = 0.4972 ± 0.1249
 
-Geração 7: Autonomia média = 0.2573 ± 0.1659
-Geração 7: Aceleração média = 2.7117 ± 1.7256
+Geração 7: Autonomia média = 647.5036 ± 245.7222
+Geração 7: Aceleração média = 0.5623 ± 0.1070
 
-Geração 8: Autonomia média = 0.2807 ± 0.1778
-Geração 8: Aceleração média = 2.9456 ± 1.8439
+Geração 8: Autonomia média = 513.8724 ± 266.5873
+Geração 8: Aceleração média = 0.4968 ± 0.1219
 
-Geração 9: Autonomia média = 0.2995 ± 0.1914
-Geração 9: Aceleração média = 3.1342 ± 1.9810
+Geração 9: Autonomia média = 422.1359 ± 291.6789
+Geração 9: Aceleração média = 0.4385 ± 0.1232
 
-Geração 10: Autonomia média = 0.3407 ± 0.2135
-Geração 10: Aceleração média = 3.5584 ± 2.2089
+Geração 10: Autonomia média = 421.4542 ± 325.7999
+Geração 10: Aceleração média = 0.4352 ± 0.1327
 
-Geração 11: Autonomia média = 0.3562 ± 0.2230
-Geração 11: Aceleração média = 3.7153 ± 2.3059
+Geração 11: Autonomia média = 451.4675 ± 327.5100
+Geração 11: Aceleração média = 0.4445 ± 0.1338
 
-Geração 12: Autonomia média = 0.3924 ± 0.2326
-Geração 12: Aceleração média = 4.0843 ± 2.4031
+Geração 12: Autonomia média = 508.6479 ± 335.7687
+Geração 12: Aceleração média = 0.4702 ± 0.1358
 
-Geração 13: Autonomia média = 0.4034 ± 0.2304
-Geração 13: Aceleração média = 4.1939 ± 2.3768
+Geração 13: Autonomia média = 548.1981 ± 346.6121
+Geração 13: Aceleração média = 0.4872 ± 0.1381
 
-Geração 14: Autonomia média = 0.4183 ± 0.2372
-Geração 14: Aceleração média = 4.3450 ± 2.4450
+Geração 14: Autonomia média = 592.7410 ± 371.4069
+Geração 14: Aceleração média = 0.5053 ± 0.1451
 
-Geração 15: Autonomia média = 0.4331 ± 0.2324
-Geração 15: Aceleração média = 4.4949 ± 2.3950
+Geração 15: Autonomia média = 639.4642 ± 390.7772
+Geração 15: Aceleração média = 0.5232 ± 0.1504
 
-Geração 16: Autonomia média = 0.4384 ± 0.2411
-Geração 16: Aceleração média = 4.5489 ± 2.4848
+Geração 16: Autonomia média = 674.5462 ± 408.7780
+Geração 16: Aceleração média = 0.5358 ± 0.1536
 
-Geração 17: Autonomia média = 0.4324 ± 0.2397
-Geração 17: Aceleração média = 4.4862 ± 2.4703
+Geração 17: Autonomia média = 722.2078 ± 415.9096
+Geração 17: Aceleração média = 0.5541 ± 0.1553
 
-Geração 18: Autonomia média = 0.4501 ± 0.2438
-Geração 18: Aceleração média = 4.6666 ± 2.5138
+Geração 18: Autonomia média = 749.4985 ± 420.7114
+Geração 18: Aceleração média = 0.5645 ± 0.1558
 
-Geração 19: Autonomia média = 0.4655 ± 0.2478
-Geração 19: Aceleração média = 4.8273 ± 2.5546
+Geração 19: Autonomia média = 761.3341 ± 423.7640
+Geração 19: Aceleração média = 0.5687 ± 0.1562
 
-Geração 20: Autonomia média = 0.4607 ± 0.2426
-Geração 20: Aceleração média = 4.7769 ± 2.5011
+Geração 20: Autonomia média = 767.4839 ± 419.5716
+Geração 20: Aceleração média = 0.5716 ± 0.1543
 
-CPU time: 1.015847 seconds
+CPU time: 0.967547 seconds
 
 200 individuos, 20 geracoes 0.6 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1747 ± 0.1221
-Geração 1: Aceleração média = 2.7687 ± 1.8999
+Geração 1: Autonomia média = 10.1263 ± 71.5659
+Geração 1: Aceleração média = 0.4765 ± 0.0967
 
-Geração 2: Autonomia média = 0.2277 ± 0.1401
-Geração 2: Aceleração média = 2.8756 ± 1.8895
+Geração 2: Autonomia média = 17.1646 ± 79.0135
+Geração 2: Aceleração média = 0.4739 ± 0.1091
 
-Geração 3: Autonomia média = 0.2489 ± 0.1465
-Geração 3: Aceleração média = 2.7764 ± 1.6379
+Geração 3: Autonomia média = 47.7855 ± 133.0539
+Geração 3: Aceleração média = 0.4794 ± 0.1289
 
-Geração 4: Autonomia média = 0.2473 ± 0.1729
-Geração 4: Aceleração média = 2.7044 ± 1.8844
+Geração 4: Autonomia média = 126.0384 ± 211.9775
+Geração 4: Aceleração média = 0.5539 ± 0.1369
 
-Geração 5: Autonomia média = 0.2268 ± 0.1717
-Geração 5: Aceleração média = 2.4333 ± 1.8290
+Geração 5: Autonomia média = 273.0455 ± 312.8151
+Geração 5: Aceleração média = 0.4990 ± 0.1266
 
-Geração 6: Autonomia média = 0.2457 ± 0.1898
-Geração 6: Aceleração média = 2.6208 ± 2.0251
+Geração 6: Autonomia média = 500.3421 ± 265.0874
+Geração 6: Aceleração média = 0.4986 ± 0.1131
 
-Geração 7: Autonomia média = 0.2856 ± 0.2037
-Geração 7: Aceleração média = 3.0203 ± 2.1512
+Geração 7: Autonomia média = 399.7861 ± 273.9555
+Geração 7: Aceleração média = 0.4391 ± 0.1123
 
-Geração 8: Autonomia média = 0.3262 ± 0.2118
-Geração 8: Aceleração média = 3.4357 ± 2.2248
+Geração 8: Autonomia média = 331.0818 ± 273.0209
+Geração 8: Aceleração média = 0.4096 ± 0.1037
 
-Geração 9: Autonomia média = 0.3323 ± 0.2104
-Geração 9: Aceleração média = 3.4863 ± 2.1921
+Geração 9: Autonomia média = 343.6616 ± 312.5723
+Geração 9: Aceleração média = 0.4159 ± 0.1165
 
-Geração 10: Autonomia média = 0.3885 ± 0.2259
-Geração 10: Aceleração média = 4.0624 ± 2.3447
+Geração 10: Autonomia média = 431.9502 ± 313.5117
+Geração 10: Aceleração média = 0.4480 ± 0.1199
 
-Geração 11: Autonomia média = 0.4206 ± 0.2478
-Geração 11: Aceleração média = 4.3890 ± 2.5642
+Geração 11: Autonomia média = 503.6223 ± 295.7350
+Geração 11: Aceleração média = 0.4712 ± 0.1194
 
-Geração 12: Autonomia média = 0.4441 ± 0.2530
-Geração 12: Aceleração média = 4.6223 ± 2.6125
+Geração 12: Autonomia média = 546.5010 ± 308.9688
+Geração 12: Aceleração média = 0.4890 ± 0.1242
 
-Geração 13: Autonomia média = 0.4537 ± 0.2572
-Geração 13: Aceleração média = 4.7162 ± 2.6539
+Geração 13: Autonomia média = 581.6280 ± 325.6424
+Geração 13: Aceleração média = 0.5032 ± 0.1280
 
-Geração 14: Autonomia média = 0.4764 ± 0.2546
-Geração 14: Aceleração média = 4.9479 ± 2.6248
+Geração 14: Autonomia média = 619.1311 ± 347.3573
+Geração 14: Aceleração média = 0.5171 ± 0.1348
 
-Geração 15: Autonomia média = 0.4819 ± 0.2652
-Geração 15: Aceleração média = 5.0032 ± 2.7341
+Geração 15: Autonomia média = 680.9342 ± 367.4101
+Geração 15: Aceleração média = 0.5412 ± 0.1411
 
-Geração 16: Autonomia média = 0.4887 ± 0.2661
-Geração 16: Aceleração média = 5.0705 ± 2.7433
+Geração 16: Autonomia média = 681.6165 ± 362.5158
+Geração 16: Aceleração média = 0.5416 ± 0.1389
 
-Geração 17: Autonomia média = 0.4853 ± 0.2674
-Geração 17: Aceleração média = 5.0344 ± 2.7557
+Geração 17: Autonomia média = 743.6118 ± 390.1985
+Geração 17: Aceleração média = 0.5644 ± 0.1466
 
-Geração 18: Autonomia média = 0.4914 ± 0.2685
-Geração 18: Aceleração média = 5.0965 ± 2.7660
+Geração 18: Autonomia média = 779.2434 ± 397.9417
+Geração 18: Aceleração média = 0.5776 ± 0.1473
 
-Geração 19: Autonomia média = 0.5015 ± 0.2633
-Geração 19: Aceleração média = 5.1997 ± 2.7133
+Geração 19: Autonomia média = 772.4376 ± 398.4489
+Geração 19: Aceleração média = 0.5744 ± 0.1477
 
-Geração 20: Autonomia média = 0.5102 ± 0.2602
-Geração 20: Aceleração média = 5.2891 ± 2.6816
+Geração 20: Autonomia média = 807.5712 ± 412.6749
+Geração 20: Aceleração média = 0.5869 ± 0.1509
 
-CPU time: 1.184734 seconds
+CPU time: 1.042022 seconds
 
 200 individuos, 20 geracoes 0.8 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1796 ± 0.1215
-Geração 1: Aceleração média = 2.7865 ± 1.9342
+Geração 1: Autonomia média = 10.7125 ± 74.2547
+Geração 1: Aceleração média = 0.4724 ± 0.0949
 
-Geração 2: Autonomia média = 0.2190 ± 0.1540
-Geração 2: Aceleração média = 2.7795 ± 2.0450
+Geração 2: Autonomia média = 23.8249 ± 104.0023
+Geração 2: Aceleração média = 0.4516 ± 0.0982
 
-Geração 3: Autonomia média = 0.2496 ± 0.1742
-Geração 3: Aceleração média = 2.8135 ± 1.9623
+Geração 3: Autonomia média = 64.3593 ± 161.2075
+Geração 3: Aceleração média = 0.4436 ± 0.1054
 
-Geração 4: Autonomia média = 0.2493 ± 0.1861
-Geração 4: Aceleração média = 2.7283 ± 2.0362
+Geração 4: Autonomia média = 166.6598 ± 236.2560
+Geração 4: Aceleração média = 0.4421 ± 0.1124
 
-Geração 5: Autonomia média = 0.2543 ± 0.1858
-Geração 5: Aceleração média = 2.7472 ± 2.0327
+Geração 5: Autonomia média = 362.7404 ± 256.4816
+Geração 5: Aceleração média = 0.4372 ± 0.1024
 
-Geração 6: Autonomia média = 0.2022 ± 0.1644
-Geração 6: Aceleração média = 2.1597 ± 1.7380
+Geração 6: Autonomia média = 421.1221 ± 262.3902
+Geração 6: Aceleração média = 0.4532 ± 0.1151
 
-Geração 7: Autonomia média = 0.2442 ± 0.1794
-Geração 7: Aceleração média = 2.5852 ± 1.8822
+Geração 7: Autonomia média = 316.9681 ± 214.2221
+Geração 7: Aceleração média = 0.4056 ± 0.0917
 
-Geração 8: Autonomia média = 0.2703 ± 0.1904
-Geração 8: Aceleração média = 2.8422 ± 1.9851
+Geração 8: Autonomia média = 310.3153 ± 225.6149
+Geração 8: Aceleração média = 0.4035 ± 0.0957
 
-Geração 9: Autonomia média = 0.3214 ± 0.1968
-Geração 9: Aceleração média = 3.3650 ± 2.0438
+Geração 9: Autonomia média = 294.1102 ± 226.6064
+Geração 9: Aceleração média = 0.3968 ± 0.0911
 
-Geração 10: Autonomia média = 0.3445 ± 0.2164
-Geração 10: Aceleração média = 3.5985 ± 2.2408
+Geração 10: Autonomia média = 308.0135 ± 237.8929
+Geração 10: Aceleração média = 0.4048 ± 0.0931
 
-Geração 11: Autonomia média = 0.3824 ± 0.2215
-Geração 11: Aceleração média = 3.9844 ± 2.2889
+Geração 11: Autonomia média = 338.8659 ± 228.5434
+Geração 11: Aceleração média = 0.4115 ± 0.0931
 
-Geração 12: Autonomia média = 0.4027 ± 0.2259
-Geração 12: Aceleração média = 4.1888 ± 2.3253
+Geração 12: Autonomia média = 365.6277 ± 224.1944
+Geração 12: Aceleração média = 0.4188 ± 0.0951
 
-Geração 13: Autonomia média = 0.4400 ± 0.2317
-Geração 13: Aceleração média = 4.5705 ± 2.3861
+Geração 13: Autonomia média = 381.0726 ± 218.6823
+Geração 13: Aceleração média = 0.4219 ± 0.0943
 
-Geração 14: Autonomia média = 0.4585 ± 0.2391
-Geração 14: Aceleração média = 4.7588 ± 2.4611
+Geração 14: Autonomia média = 395.0728 ± 225.7997
+Geração 14: Aceleração média = 0.4281 ± 0.0973
 
-Geração 15: Autonomia média = 0.4713 ± 0.2434
-Geração 15: Aceleração média = 4.8907 ± 2.5058
+Geração 15: Autonomia média = 392.7868 ± 225.4523
+Geração 15: Aceleração média = 0.4269 ± 0.0968
 
-Geração 16: Autonomia média = 0.4710 ± 0.2393
-Geração 16: Aceleração média = 4.8869 ± 2.4637
+Geração 16: Autonomia média = 398.5942 ± 226.3726
+Geração 16: Aceleração média = 0.4297 ± 0.0973
 
-Geração 17: Autonomia média = 0.4620 ± 0.2448
-Geração 17: Aceleração média = 4.7951 ± 2.5202
+Geração 17: Autonomia média = 418.4553 ± 237.0035
+Geração 17: Aceleração média = 0.4383 ± 0.1008
 
-Geração 18: Autonomia média = 0.4694 ± 0.2401
-Geração 18: Aceleração média = 4.8714 ± 2.4715
+Geração 18: Autonomia média = 441.6020 ± 251.0258
+Geração 18: Aceleração média = 0.4472 ± 0.1060
 
-Geração 19: Autonomia média = 0.4789 ± 0.2395
-Geração 19: Aceleração média = 4.9697 ± 2.4654
+Geração 19: Autonomia média = 467.6483 ± 263.2346
+Geração 19: Aceleração média = 0.4580 ± 0.1096
 
-Geração 20: Autonomia média = 0.4739 ± 0.2439
-Geração 20: Aceleração média = 4.9182 ± 2.5110
+Geração 20: Autonomia média = 492.6540 ± 273.2884
+Geração 20: Aceleração média = 0.4682 ± 0.1129
 
-CPU time: 0.928055 seconds
+CPU time: 0.721161 seconds
 
 200 individuos, 20 geracoes 0.8 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1817 ± 0.1210
-Geração 1: Aceleração média = 2.8330 ± 1.9412
+Geração 1: Autonomia média = 10.7103 ± 74.2539
+Geração 1: Aceleração média = 0.4752 ± 0.0954
 
-Geração 2: Autonomia média = 0.2261 ± 0.1453
-Geração 2: Aceleração média = 2.9055 ± 1.9444
+Geração 2: Autonomia média = 18.7150 ± 90.7923
+Geração 2: Aceleração média = 0.4651 ± 0.1045
 
-Geração 3: Autonomia média = 0.2481 ± 0.1711
-Geração 3: Aceleração média = 2.7811 ± 1.9264
+Geração 3: Autonomia média = 36.0383 ± 120.1875
+Geração 3: Aceleração média = 0.4620 ± 0.1208
 
-Geração 4: Autonomia média = 0.2561 ± 0.1845
-Geração 4: Aceleração média = 2.7943 ± 2.0122
+Geração 4: Autonomia média = 101.5311 ± 204.0478
+Geração 4: Aceleração média = 0.4811 ± 0.1352
 
-Geração 5: Autonomia média = 0.2714 ± 0.1890
-Geração 5: Aceleração média = 2.9295 ± 2.0382
+Geração 5: Autonomia média = 219.3565 ± 283.6253
+Geração 5: Aceleração média = 0.5102 ± 0.1353
 
-Geração 6: Autonomia média = 0.2508 ± 0.1706
-Geração 6: Aceleração média = 2.6801 ± 1.8080
+Geração 6: Autonomia média = 448.4075 ± 295.6080
+Geração 6: Aceleração média = 0.4851 ± 0.1175
 
-Geração 7: Autonomia média = 0.2353 ± 0.1664
-Geração 7: Aceleração média = 2.4964 ± 1.7424
+Geração 7: Autonomia média = 496.4753 ± 282.4753
+Geração 7: Aceleração média = 0.4859 ± 0.1263
 
-Geração 8: Autonomia média = 0.2552 ± 0.1645
-Geração 8: Aceleração média = 2.6897 ± 1.7110
+Geração 8: Autonomia média = 356.8146 ± 218.6029
+Geração 8: Aceleração média = 0.4168 ± 0.0966
 
-Geração 9: Autonomia média = 0.2996 ± 0.1859
-Geração 9: Aceleração média = 3.1442 ± 1.9307
+Geração 9: Autonomia média = 362.0654 ± 245.9979
+Geração 9: Aceleração média = 0.4178 ± 0.1061
 
-Geração 10: Autonomia média = 0.3157 ± 0.1924
-Geração 10: Aceleração média = 3.3002 ± 1.9839
+Geração 10: Autonomia média = 367.4782 ± 254.8180
+Geração 10: Aceleração média = 0.4209 ± 0.1064
 
-Geração 11: Autonomia média = 0.3378 ± 0.2080
-Geração 11: Aceleração média = 3.5228 ± 2.1407
+Geração 11: Autonomia média = 398.2530 ± 267.2750
+Geração 11: Aceleração média = 0.4381 ± 0.1065
 
-Geração 12: Autonomia média = 0.3686 ± 0.2142
-Geração 12: Aceleração média = 3.8335 ± 2.2032
+Geração 12: Autonomia média = 401.8901 ± 266.3228
+Geração 12: Aceleração média = 0.4369 ± 0.1048
 
-Geração 13: Autonomia média = 0.4115 ± 0.2199
-Geração 13: Aceleração média = 4.2746 ± 2.2624
+Geração 13: Autonomia média = 433.3049 ± 243.7880
+Geração 13: Aceleração média = 0.4440 ± 0.1005
 
-Geração 14: Autonomia média = 0.4270 ± 0.2211
-Geração 14: Aceleração média = 4.4324 ± 2.2748
+Geração 14: Autonomia média = 465.8765 ± 265.3579
+Geração 14: Aceleração média = 0.4570 ± 0.1085
 
-Geração 15: Autonomia média = 0.4306 ± 0.2298
-Geração 15: Aceleração média = 4.4671 ± 2.3641
+Geração 15: Autonomia média = 511.5354 ± 297.7915
+Geração 15: Aceleração média = 0.4742 ± 0.1195
 
-Geração 16: Autonomia média = 0.4404 ± 0.2247
-Geração 16: Aceleração média = 4.5683 ± 2.3125
+Geração 16: Autonomia média = 561.7609 ± 321.6825
+Geração 16: Aceleração média = 0.4940 ± 0.1272
 
-Geração 17: Autonomia média = 0.4484 ± 0.2373
-Geração 17: Aceleração média = 4.6504 ± 2.4398
+Geração 17: Autonomia média = 581.3816 ± 322.4619
+Geração 17: Aceleração média = 0.5022 ± 0.1268
 
-Geração 18: Autonomia média = 0.4346 ± 0.2358
-Geração 18: Aceleração média = 4.5078 ± 2.4246
+Geração 18: Autonomia média = 620.6245 ± 330.6817
+Geração 18: Aceleração média = 0.5176 ± 0.1293
 
-Geração 19: Autonomia média = 0.4341 ± 0.2343
-Geração 19: Aceleração média = 4.5026 ± 2.4081
+Geração 19: Autonomia média = 636.1722 ± 334.3129
+Geração 19: Aceleração média = 0.5235 ± 0.1307
 
-Geração 20: Autonomia média = 0.4286 ± 0.2292
-Geração 20: Aceleração média = 4.4441 ± 2.3553
+Geração 20: Autonomia média = 662.1965 ± 336.6498
+Geração 20: Aceleração média = 0.5338 ± 0.1310
 
-CPU time: 0.964346 seconds
+CPU time: 0.745315 seconds
 
 200 individuos, 20 geracoes 0.8 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1819 ± 0.1192
-Geração 1: Aceleração média = 2.8753 ± 1.9734
+Geração 1: Autonomia média = 9.1921 ± 71.3140
+Geração 1: Aceleração média = 0.4711 ± 0.0940
 
-Geração 2: Autonomia média = 0.2162 ± 0.1507
-Geração 2: Aceleração média = 2.7491 ± 1.9611
+Geração 2: Autonomia média = 18.2893 ± 93.6606
+Geração 2: Aceleração média = 0.4582 ± 0.1006
 
-Geração 3: Autonomia média = 0.2425 ± 0.1678
-Geração 3: Aceleração média = 2.7363 ± 1.8822
+Geração 3: Autonomia média = 29.7545 ± 105.7693
+Geração 3: Aceleração média = 0.4522 ± 0.1140
 
-Geração 4: Autonomia média = 0.2660 ± 0.1821
-Geração 4: Aceleração média = 2.8913 ± 1.9940
+Geração 4: Autonomia média = 77.6731 ± 180.1866
+Geração 4: Aceleração média = 0.4418 ± 0.1190
 
-Geração 5: Autonomia média = 0.2535 ± 0.1838
-Geração 5: Aceleração média = 2.7006 ± 1.9702
+Geração 5: Autonomia média = 156.6729 ± 251.2242
+Geração 5: Aceleração média = 0.4398 ± 0.1116
 
-Geração 6: Autonomia média = 0.2499 ± 0.1794
-Geração 6: Aceleração média = 2.6484 ± 1.8945
+Geração 6: Autonomia média = 302.1902 ± 280.0710
+Geração 6: Aceleração média = 0.4364 ± 0.0971
 
-Geração 7: Autonomia média = 0.2782 ± 0.1854
-Geração 7: Aceleração média = 2.9350 ± 1.9499
+Geração 7: Autonomia média = 364.1996 ± 265.7546
+Geração 7: Aceleração média = 0.4345 ± 0.1044
 
-Geração 8: Autonomia média = 0.3210 ± 0.2040
-Geração 8: Aceleração média = 3.3741 ± 2.1367
+Geração 8: Autonomia média = 347.0551 ± 210.2668
+Geração 8: Aceleração média = 0.4107 ± 0.0874
 
-Geração 9: Autonomia média = 0.3646 ± 0.2094
-Geração 9: Aceleração média = 3.8209 ± 2.1839
+Geração 9: Autonomia média = 364.2003 ± 232.0852
+Geração 9: Aceleração média = 0.4133 ± 0.0961
 
-Geração 10: Autonomia média = 0.3966 ± 0.2144
-Geração 10: Aceleração média = 4.1472 ± 2.2366
+Geração 10: Autonomia média = 454.7306 ± 286.2446
+Geração 10: Aceleração média = 0.4509 ± 0.1173
 
-Geração 11: Autonomia média = 0.4020 ± 0.2296
-Geração 11: Aceleração média = 4.1933 ± 2.3814
+Geração 11: Autonomia média = 506.4138 ± 300.1533
+Geração 11: Aceleração média = 0.4720 ± 0.1225
 
-Geração 12: Autonomia média = 0.4135 ± 0.2378
-Geração 12: Aceleração média = 4.3075 ± 2.4642
+Geração 12: Autonomia média = 550.0318 ± 316.1340
+Geração 12: Aceleração média = 0.4901 ± 0.1275
 
-Geração 13: Autonomia média = 0.4278 ± 0.2366
-Geração 13: Aceleração média = 4.4498 ± 2.4450
+Geração 13: Autonomia média = 610.7741 ± 343.1894
+Geração 13: Aceleração média = 0.5140 ± 0.1354
 
-Geração 14: Autonomia média = 0.4598 ± 0.2388
-Geração 14: Aceleração média = 4.7751 ± 2.4659
+Geração 14: Autonomia média = 672.9986 ± 362.3276
+Geração 14: Aceleração média = 0.5378 ± 0.1398
 
-Geração 15: Autonomia média = 0.4694 ± 0.2466
-Geração 15: Aceleração média = 4.8710 ± 2.5439
+Geração 15: Autonomia média = 700.8681 ± 373.0279
+Geração 15: Aceleração média = 0.5473 ± 0.1418
 
-Geração 16: Autonomia média = 0.4633 ± 0.2499
-Geração 16: Aceleração média = 4.8061 ± 2.5769
+Geração 16: Autonomia média = 721.3789 ± 388.5567
+Geração 16: Aceleração média = 0.5544 ± 0.1460
 
-Geração 17: Autonomia média = 0.4821 ± 0.2580
-Geração 17: Aceleração média = 4.9991 ± 2.6609
+Geração 17: Autonomia média = 773.1319 ± 419.4836
+Geração 17: Aceleração média = 0.5731 ± 0.1547
 
-Geração 18: Autonomia média = 0.4842 ± 0.2605
-Geração 18: Aceleração média = 5.0208 ± 2.6883
+Geração 18: Autonomia média = 775.3651 ± 411.8109
+Geração 18: Aceleração média = 0.5744 ± 0.1519
 
-Geração 19: Autonomia média = 0.4985 ± 0.2714
-Geração 19: Aceleração média = 5.1676 ± 2.7973
+Geração 19: Autonomia média = 786.8776 ± 414.3058
+Geração 19: Aceleração média = 0.5783 ± 0.1523
 
-Geração 20: Autonomia média = 0.5022 ± 0.2681
-Geração 20: Aceleração média = 5.2043 ± 2.7644
+Geração 20: Autonomia média = 804.3097 ± 426.4483
+Geração 20: Aceleração média = 0.5837 ± 0.1559
 
-CPU time: 1.003817 seconds
+CPU time: 0.773772 seconds
 
 200 individuos, 20 geracoes 1.0 chance de crossover e 0.01 chance de mutacao
-Geração 1: Autonomia média = 0.1732 ± 0.1179
-Geração 1: Aceleração média = 2.7628 ± 1.9359
+Geração 1: Autonomia média = 9.6850 ± 71.2746
+Geração 1: Aceleração média = 0.4708 ± 0.0936
 
-Geração 2: Autonomia média = 0.2131 ± 0.1528
-Geração 2: Aceleração média = 2.6453 ± 1.9436
+Geração 2: Autonomia média = 25.5052 ± 115.3868
+Geração 2: Aceleração média = 0.4532 ± 0.0990
 
-Geração 3: Autonomia média = 0.2348 ± 0.1657
-Geração 3: Aceleração média = 2.5984 ± 1.8334
+Geração 3: Autonomia média = 51.7350 ± 155.5650
+Geração 3: Aceleração média = 0.4656 ± 0.1076
 
-Geração 4: Autonomia média = 0.2461 ± 0.1712
-Geração 4: Aceleração média = 2.6600 ± 1.8389
+Geração 4: Autonomia média = 115.2865 ± 220.8453
+Geração 4: Aceleração média = 0.4661 ± 0.1027
 
-Geração 5: Autonomia média = 0.2525 ± 0.1738
-Geração 5: Aceleração média = 2.6938 ± 1.8383
+Geração 5: Autonomia média = 283.0052 ± 284.7093
+Geração 5: Aceleração média = 0.4555 ± 0.1010
 
-Geração 6: Autonomia média = 0.2236 ± 0.1560
-Geração 6: Aceleração média = 2.3684 ± 1.6174
+Geração 6: Autonomia média = 468.8027 ± 206.2200
+Geração 6: Aceleração média = 0.4840 ± 0.0950
 
-Geração 7: Autonomia média = 0.2521 ± 0.1743
-Geração 7: Aceleração média = 2.6554 ± 1.8050
+Geração 7: Autonomia média = 431.7778 ± 176.0911
+Geração 7: Aceleração média = 0.4600 ± 0.0880
 
-Geração 8: Autonomia média = 0.2963 ± 0.1822
-Geração 8: Aceleração média = 3.1030 ± 1.8870
+Geração 8: Autonomia média = 383.1914 ± 176.2344
+Geração 8: Aceleração média = 0.4306 ± 0.0885
 
-Geração 9: Autonomia média = 0.3187 ± 0.1855
-Geração 9: Aceleração média = 3.3282 ± 1.9181
+Geração 9: Autonomia média = 354.2719 ± 173.0857
+Geração 9: Aceleração média = 0.4141 ± 0.0855
 
-Geração 10: Autonomia média = 0.3563 ± 0.2053
-Geração 10: Aceleração média = 3.7114 ± 2.1196
+Geração 10: Autonomia média = 351.7021 ± 170.9313
+Geração 10: Aceleração média = 0.4129 ± 0.0844
 
-Geração 11: Autonomia média = 0.3884 ± 0.2093
-Geração 11: Aceleração média = 4.0390 ± 2.1590
+Geração 11: Autonomia média = 379.6482 ± 184.1492
+Geração 11: Aceleração média = 0.4271 ± 0.0880
 
-Geração 12: Autonomia média = 0.4010 ± 0.2185
-Geração 12: Aceleração média = 4.1648 ± 2.2497
+Geração 12: Autonomia média = 391.1445 ± 186.0564
+Geração 12: Aceleração média = 0.4318 ± 0.0877
 
-Geração 13: Autonomia média = 0.4212 ± 0.2228
-Geração 13: Aceleração média = 4.3712 ± 2.2945
+Geração 13: Autonomia média = 405.2763 ± 194.1979
+Geração 13: Aceleração média = 0.4379 ± 0.0905
 
-Geração 14: Autonomia média = 0.4313 ± 0.2251
-Geração 14: Aceleração média = 4.4745 ± 2.3181
+Geração 14: Autonomia média = 375.5162 ± 167.7302
+Geração 14: Aceleração média = 0.4232 ± 0.0766
 
-Geração 15: Autonomia média = 0.4391 ± 0.2248
-Geração 15: Aceleração média = 4.5537 ± 2.3146
+Geração 15: Autonomia média = 362.6324 ± 162.3613
+Geração 15: Aceleração média = 0.4166 ± 0.0735
 
-Geração 16: Autonomia média = 0.4417 ± 0.2276
-Geração 16: Aceleração média = 4.5804 ± 2.3445
+Geração 16: Autonomia média = 365.9509 ± 164.6375
+Geração 16: Aceleração média = 0.4178 ± 0.0743
 
-Geração 17: Autonomia média = 0.4405 ± 0.2278
-Geração 17: Aceleração média = 4.5676 ± 2.3466
+Geração 17: Autonomia média = 376.6979 ± 178.8801
+Geração 17: Aceleração média = 0.4222 ± 0.0790
 
-Geração 18: Autonomia média = 0.4452 ± 0.2264
-Geração 18: Aceleração média = 4.6156 ± 2.3324
+Geração 18: Autonomia média = 388.4373 ± 186.5466
+Geração 18: Aceleração média = 0.4274 ± 0.0814
 
-Geração 19: Autonomia média = 0.4464 ± 0.2263
-Geração 19: Aceleração média = 4.6280 ± 2.3308
+Geração 19: Autonomia média = 400.4689 ± 194.9720
+Geração 19: Aceleração média = 0.4328 ± 0.0849
 
-Geração 20: Autonomia média = 0.4497 ± 0.2272
-Geração 20: Aceleração média = 4.6625 ± 2.3389
+Geração 20: Autonomia média = 414.3671 ± 209.0813
+Geração 20: Aceleração média = 0.4386 ± 0.0898
 
-CPU time: 0.842908 seconds
+CPU time: 0.292075 seconds
 
 200 individuos, 20 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Autonomia média = 0.1730 ± 0.1178
-Geração 1: Aceleração média = 2.7842 ± 1.9382
+Geração 1: Autonomia média = 9.6675 ± 71.2750
+Geração 1: Aceleração média = 0.4661 ± 0.0826
 
-Geração 2: Autonomia média = 0.2089 ± 0.1484
-Geração 2: Aceleração média = 2.6186 ± 1.9018
+Geração 2: Autonomia média = 22.9024 ± 107.0589
+Geração 2: Aceleração média = 0.4548 ± 0.0928
 
-Geração 3: Autonomia média = 0.2356 ± 0.1714
-Geração 3: Aceleração média = 2.6087 ± 1.8687
+Geração 3: Autonomia média = 59.2150 ± 167.9482
+Geração 3: Aceleração média = 0.4677 ± 0.1031
 
-Geração 4: Autonomia média = 0.2577 ± 0.1978
-Geração 4: Aceleração média = 2.7951 ± 2.1630
+Geração 4: Autonomia média = 145.5158 ± 245.0306
+Geração 4: Aceleração média = 0.4818 ± 0.1101
 
-Geração 5: Autonomia média = 0.2536 ± 0.2089
-Geração 5: Aceleração média = 2.7209 ± 2.2597
+Geração 5: Autonomia média = 341.8981 ± 305.9843
+Geração 5: Aceleração média = 0.4789 ± 0.1140
 
-Geração 6: Autonomia média = 0.2462 ± 0.1933
-Geração 6: Aceleração média = 2.6177 ± 2.0543
+Geração 6: Autonomia média = 538.3912 ± 266.8196
+Geração 6: Aceleração média = 0.5107 ± 0.1198
 
-Geração 7: Autonomia média = 0.2674 ± 0.1923
-Geração 7: Aceleração média = 2.8203 ± 2.0104
+Geração 7: Autonomia média = 475.3074 ± 251.1196
+Geração 7: Aceleração média = 0.4728 ± 0.1195
 
-Geração 8: Autonomia média = 0.3329 ± 0.2191
-Geração 8: Aceleração média = 3.4960 ± 2.2872
+Geração 8: Autonomia média = 397.8717 ± 275.6279
+Geração 8: Aceleração média = 0.4255 ± 0.1141
 
-Geração 9: Autonomia média = 0.3763 ± 0.2287
-Geração 9: Aceleração média = 3.9315 ± 2.3716
+Geração 9: Autonomia média = 439.4643 ± 304.8323
+Geração 9: Aceleração média = 0.4405 ± 0.1242
 
-Geração 10: Autonomia média = 0.4190 ± 0.2365
-Geração 10: Aceleração média = 4.3660 ± 2.4475
+Geração 10: Autonomia média = 522.4723 ± 337.6012
+Geração 10: Aceleração média = 0.4755 ± 0.1345
 
-Geração 11: Autonomia média = 0.4374 ± 0.2517
-Geração 11: Aceleração média = 4.5471 ± 2.5974
+Geração 11: Autonomia média = 600.6053 ± 369.6962
+Geração 11: Aceleração média = 0.5061 ± 0.1442
 
-Geração 12: Autonomia média = 0.4690 ± 0.2564
-Geração 12: Aceleração média = 4.8676 ± 2.6428
+Geração 12: Autonomia média = 691.4649 ± 381.3650
+Geração 12: Aceleração média = 0.5426 ± 0.1461
 
-Geração 13: Autonomia média = 0.4710 ± 0.2609
-Geração 13: Aceleração média = 4.8845 ± 2.6860
+Geração 13: Autonomia média = 734.6990 ± 396.1965
+Geração 13: Aceleração média = 0.5588 ± 0.1501
 
-Geração 14: Autonomia média = 0.4848 ± 0.2579
-Geração 14: Aceleração média = 5.0253 ± 2.6559
+Geração 14: Autonomia média = 752.3645 ± 400.2016
+Geração 14: Aceleração média = 0.5650 ± 0.1514
 
-Geração 15: Autonomia média = 0.4986 ± 0.2591
-Geração 15: Aceleração média = 5.1680 ± 2.6688
+Geração 15: Autonomia média = 770.1431 ± 396.1190
+Geração 15: Aceleração média = 0.5721 ± 0.1492
 
-Geração 16: Autonomia média = 0.4932 ± 0.2592
-Geração 16: Aceleração média = 5.1111 ± 2.6715
+Geração 16: Autonomia média = 786.8402 ± 393.4972
+Geração 16: Aceleração média = 0.5783 ± 0.1476
 
-Geração 17: Autonomia média = 0.5016 ± 0.2629
-Geração 17: Aceleração média = 5.1963 ± 2.7098
+Geração 17: Autonomia média = 807.6622 ± 402.9845
+Geração 17: Aceleração média = 0.5855 ± 0.1507
 
-Geração 18: Autonomia média = 0.4900 ± 0.2605
-Geração 18: Aceleração média = 5.0758 ± 2.6838
+Geração 18: Autonomia média = 802.9134 ± 399.7150
+Geração 18: Aceleração média = 0.5837 ± 0.1491
 
-Geração 19: Autonomia média = 0.4876 ± 0.2592
-Geração 19: Aceleração média = 5.0523 ± 2.6695
+Geração 19: Autonomia média = 823.9857 ± 408.5199
+Geração 19: Aceleração média = 0.5916 ± 0.1519
 
-Geração 20: Autonomia média = 0.4824 ± 0.2620
-Geração 20: Aceleração média = 4.9965 ± 2.6990
+Geração 20: Autonomia média = 818.3618 ± 409.1040
+Geração 20: Aceleração média = 0.5893 ± 0.1522
 
-CPU time: 0.800477 seconds
+CPU time: 0.297630 seconds
 
 200 individuos, 20 geracoes 1.0 chance de crossover e 0.1 chance de mutacao
-Geração 1: Autonomia média = 0.1727 ± 0.1192
-Geração 1: Aceleração média = 2.7948 ± 1.9485
+Geração 1: Autonomia média = 9.3217 ± 71.2332
+Geração 1: Aceleração média = 0.4689 ± 0.0870
 
-Geração 2: Autonomia média = 0.2121 ± 0.1419
-Geração 2: Aceleração média = 2.7847 ± 2.0655
+Geração 2: Autonomia média = 23.8044 ± 104.5796
+Geração 2: Aceleração média = 0.4548 ± 0.1026
 
-Geração 3: Autonomia média = 0.2310 ± 0.1552
-Geração 3: Aceleração média = 2.6034 ± 1.7846
+Geração 3: Autonomia média = 41.4820 ± 132.4325
+Geração 3: Aceleração média = 0.4401 ± 0.0997
 
-Geração 4: Autonomia média = 0.2704 ± 0.1808
-Geração 4: Aceleração média = 2.9458 ± 1.9944
+Geração 4: Autonomia média = 103.2891 ± 206.6115
+Geração 4: Aceleração média = 0.4360 ± 0.1000
 
-Geração 5: Autonomia média = 0.2457 ± 0.1702
-Geração 5: Aceleração média = 2.6376 ± 1.8196
+Geração 5: Autonomia média = 236.7481 ± 273.8753
+Geração 5: Aceleração média = 0.4370 ± 0.1022
 
-Geração 6: Autonomia média = 0.2472 ± 0.1731
-Geração 6: Aceleração média = 2.6260 ± 1.8247
+Geração 6: Autonomia média = 398.6530 ± 248.8078
+Geração 6: Aceleração média = 0.4496 ± 0.0983
 
-Geração 7: Autonomia média = 0.2629 ± 0.1682
-Geração 7: Aceleração média = 2.7732 ± 1.7542
+Geração 7: Autonomia média = 461.4394 ± 285.8881
+Geração 7: Aceleração média = 0.4596 ± 0.1168
 
-Geração 8: Autonomia média = 0.3055 ± 0.1965
-Geração 8: Aceleração média = 3.2080 ± 2.0436
+Geração 8: Autonomia média = 428.5673 ± 294.1552
+Geração 8: Aceleração média = 0.4364 ± 0.1190
 
-Geração 9: Autonomia média = 0.3496 ± 0.2145
-Geração 9: Aceleração média = 3.6591 ± 2.2303
+Geração 9: Autonomia média = 502.4008 ± 317.1784
+Geração 9: Aceleração média = 0.4686 ± 0.1252
 
-Geração 10: Autonomia média = 0.3913 ± 0.2244
-Geração 10: Aceleração média = 4.0804 ± 2.3254
+Geração 10: Autonomia média = 619.9632 ± 361.9551
+Geração 10: Aceleração média = 0.5159 ± 0.1396
 
-Geração 11: Autonomia média = 0.4252 ± 0.2332
-Geração 11: Aceleração média = 4.4222 ± 2.4121
+Geração 11: Autonomia média = 671.9282 ± 372.3946
+Geração 11: Aceleração média = 0.5356 ± 0.1428
 
-Geração 12: Autonomia média = 0.4575 ± 0.2478
-Geração 12: Aceleração média = 4.7519 ± 2.5603
+Geração 12: Autonomia média = 747.2725 ± 390.9268
+Geração 12: Aceleração média = 0.5641 ± 0.1467
 
-Geração 13: Autonomia média = 0.4689 ± 0.2474
-Geração 13: Aceleração média = 4.8618 ± 2.5497
+Geração 13: Autonomia média = 761.3976 ± 401.2666
+Geração 13: Aceleração média = 0.5685 ± 0.1495
 
-Geração 14: Autonomia média = 0.4959 ± 0.2518
-Geração 14: Aceleração média = 5.1386 ± 2.5949
+Geração 14: Autonomia média = 786.1584 ± 404.1280
+Geração 14: Aceleração média = 0.5778 ± 0.1499
 
-Geração 15: Autonomia média = 0.4936 ± 0.2562
-Geração 15: Aceleração média = 5.1144 ± 2.6409
+Geração 15: Autonomia média = 785.0284 ± 401.4603
+Geração 15: Aceleração média = 0.5777 ± 0.1486
 
-Geração 16: Autonomia média = 0.4984 ± 0.2582
-Geração 16: Aceleração média = 5.1641 ± 2.6613
+Geração 16: Autonomia média = 804.5094 ± 400.2309
+Geração 16: Aceleração média = 0.5853 ± 0.1480
 
-Geração 17: Autonomia média = 0.4862 ± 0.2567
-Geração 17: Aceleração média = 5.0368 ± 2.6442
+Geração 17: Autonomia média = 810.4546 ± 405.5089
+Geração 17: Aceleração média = 0.5869 ± 0.1501
 
-Geração 18: Autonomia média = 0.5064 ± 0.2655
-Geração 18: Aceleração média = 5.2452 ± 2.7346
+Geração 18: Autonomia média = 798.8054 ± 399.3015
+Geração 18: Aceleração média = 0.5829 ± 0.1473
 
-Geração 19: Autonomia média = 0.5068 ± 0.2634
-Geração 19: Aceleração média = 5.2476 ± 2.7148
+Geração 19: Autonomia média = 771.7142 ± 392.3823
+Geração 19: Aceleração média = 0.5727 ± 0.1453
 
-Geração 20: Autonomia média = 0.5154 ± 0.2610
-Geração 20: Aceleração média = 5.3355 ± 2.6897
+Geração 20: Autonomia média = 781.1529 ± 398.7283
+Geração 20: Aceleração média = 0.5757 ± 0.1473
 
-CPU time: 0.742795 seconds
+CPU time: 0.295008 seconds
 
