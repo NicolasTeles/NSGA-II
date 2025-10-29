@@ -13,8 +13,8 @@ class Solucao:
         self.capacidade_bateria = capacidade_bateria
         
         EPS = 1e-6  # evitar divisao por 0
-        self.autonomia = math.sqrt(capacidade_bateria) / (potencia_motor * abs(math.sin(diametro_roda) + EPS) )
-        self.tempo_aceleracao = math.log1p(capacidade_bateria + abs(math.cos(diametro_roda) )) / math.sqrt(potencia_motor)
+        self.autonomia = math.sqrt(capacidade_bateria) / (potencia_motor * abs(math.sin(diametro_roda)) + EPS )
+        self.tempo_aceleracao = math.log1p(capacidade_bateria + abs(math.cos(diametro_roda)) ) / math.sqrt(potencia_motor)
         
         self.domination_count = 0
         self.dominates = []
