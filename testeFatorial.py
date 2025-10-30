@@ -8,12 +8,20 @@ CHANCES_CROSS = [0.6, 0.8, 1.0]
 CHANCES_MUT = [0.01, 0.05, 0.1]
 SEEDS = range(42, 46)
 
+QTD_INVIVIDUOS_COMPLEXO = [200, 500, 700]
+QTDS_GERACOES_COMPLEXO = [10, 20, 35]
+FUNCOES_COMPLEXAS = True
+
 diretorio = "./img"
 arqs = glob.glob(os.path.join(diretorio, "*"))
 
 for arq in arqs:
     if os.path.isfile(arq):
         os.remove(arq)
+    if os.path.isdir(arq):
+        for f in arq:
+            if os.path.isfile(arq):
+                os.remove(arq)
 
 diretorio = "./stats"
 arqs = glob.glob(os.path.join(diretorio, "*"))
@@ -21,10 +29,20 @@ arqs = glob.glob(os.path.join(diretorio, "*"))
 for arq in arqs:
     if os.path.isfile(arq):
         os.remove(arq)
+    if os.path.isdir(arq):
+        for f in arq:
+            if os.path.isfile(arq):
+                os.remove(arq)
 
-for i in QTDS_INDIVIDUOS:
-    for g in QTDS_GERACOES:
-        for c in CHANCES_CROSS:
-            for m in CHANCES_MUT:
-                for s in SEEDS:
-                    NSGA2.main(i, g, c, m, s)
+arquivo_tempos = open(f"./stats/tempo.txt", "w")
+
+for i in QTD_INVIVIDUOS_COMPLEXO:
+    for g in QTDS_GERACOES_COMPLEXO:
+        tempo_execucao = 0
+        cont=0
+        for s in SEEDS:
+            for c in CHANCES_CROSS:
+                for m in CHANCES_MUT:
+                    tempo_execucao += NSGA2.main(i, g, c, m, s)
+                    cont += 1
+        arquivo_tempos.write(f"Media de tempo de execucao para {i} individuos e {g} geracoes: {(tempo_execucao / cont):.6f} segundos\n\n")

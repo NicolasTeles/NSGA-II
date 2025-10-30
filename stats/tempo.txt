@@ -1,0 +1,18 @@
+Media de tempo de execucao para 200 individuos e 10 geracoes: 0.021487 segundos
+
+Media de tempo de execucao para 200 individuos e 20 geracoes: 0.013774 segundos
+
+Media de tempo de execucao para 200 individuos e 35 geracoes: 0.010907 segundos
+
+Media de tempo de execucao para 500 individuos e 10 geracoes: 0.054151 segundos
+
+Media de tempo de execucao para 500 individuos e 20 geracoes: 0.038245 segundos
+
+Media de tempo de execucao para 500 individuos e 35 geracoes: 0.027724 segundos
+
+Media de tempo de execucao para 700 individuos e 10 geracoes: 0.088507 segundos
+
+Media de tempo de execucao para 700 individuos e 20 geracoes: 0.056415 segundos
+
+Media de tempo de execucao para 700 individuos e 35 geracoes: 0.042625 segundos
+

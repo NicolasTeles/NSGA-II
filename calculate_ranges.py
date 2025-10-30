@@ -12,64 +12,11 @@ def temp_acc_ant(diametro, potencia, capacidade):
     return (capacidade + diametro) / potencia
 
 def aut_novo(diametro, potencia, capacidade):
-    return math.sqrt(capacidade) / (potencia * abs(math.sin(diametro)) + EPS)
+    denominador = max(potencia * abs(math.sin(diametro)), 0.1)
+    return math.sqrt(capacidade) / denominador
 
 def temp_acc_novo(diametro, potencia, capacidade):
-    return math.log1p(capacidade + abs(math.cos(diametro))) / math.sqrt(potencia)
-
-def minmax_trig(valor_inicial):
-    k = 0
-    
-    minmax_sen = {
-        "min": 1,
-        "max": 0
-    }
-    minmax_cos = {
-        "min": 1,
-        "max": 0
-    }
-    
-    retorno = {
-        "sen": {
-            "min": 10,
-            "max": 30
-        },
-        
-        "cos":{
-            "min": 10,
-            "max": 30
-        }
-    }
-    
-    while valor_inicial + k*math.pi <= 30:
-        if valor_inicial + k*math.pi < 10:
-            k += math.pi
-            continue
-        
-        seno = math.sin(valor_inicial + k*math.pi)
-        if seno < minmax_sen["min"]:
-            minmax_sen["min"] = seno
-            retorno["sen"]["min"] = valor_inicial + k*math.pi
-            
-        if seno > minmax_sen["max"]:
-            minmax_sen["max"] = seno
-            retorno["sen"]["max"] = valor_inicial + k*math.pi
-            
-        cosseno = math.cos(valor_inicial + k*math.pi) 
-        if cosseno < minmax_cos["min"]:
-            minmax_cos["min"] = cosseno
-            retorno["cos"]["min"] = valor_inicial + k*math.pi
-            
-        if cosseno > minmax_cos["max"]:
-            minmax_cos["max"] = cosseno
-            retorno["cos"]["max"] = valor_inicial + k*math.pi
-        
-        k += math.pi
-            
-    return retorno
-
-trig_inteiro = minmax_trig(0)
-trig_sobre2 = minmax_trig(math.pi/2)
+    return math.sqrt(capacidade + abs(math.cos(diametro))) / math.sqrt(potencia)
 
 D, P, C = 30, 200, 100
 print("MIN AUTONOMIA ANTIGA")
@@ -77,8 +24,8 @@ print("MIN AUTONOMIA ANTIGA")
 print(f"({aut_ant(D, P, C)}, {temp_acc_ant(D, P, C)})\n\n")
 
 
-# min autonomina => min sen(diametro) => diametro = k*pi
-D = trig_inteiro["sen"]["min"]
+# min autonomia => max sen(diametro) => diametro = k*pi + pi/2
+D = (3+1/2)*math.pi
 print("MIN AUTONOMIA NOVA")
 # print(f"AUTONOMIA: {aut_ant(D, P, C)} TEMPO ACELERACAO: {temp_acc_ant(D, P, C)}\n\n")
 print(f"({aut_novo(D, P, C)}, {temp_acc_novo(D, P, C)})\n\n")
@@ -91,8 +38,8 @@ print("MAX AUTONOMIA ANTIGA")
 print(f"({aut_ant(D, P, C)}, {temp_acc_ant(D, P, C)})\n\n")
 
 
-# max autonomia => max sen(diametro) => diametro = pi/2+k*pi
-D = trig_sobre2["sen"]["max"]
+# max autonomia => min sen(diametro) => diametro = pi/2+k*pi
+D = 3*math.pi
 print("MAX AUTONOMIA NOVA")
 # print(f"AUTONOMIA: {aut_ant(D, P, C)} TEMPO ACELERACAO: {temp_acc_ant(D, P, C)}\n\n")
 print(f"({aut_novo(D, P, C)}, {temp_acc_novo(D, P, C)})\n\n")
@@ -106,7 +53,7 @@ print(f"({aut_ant(D, P, C)}, {temp_acc_ant(D, P, C)})\n\n")
 
 
 # min tempo aceleracao => min cos(diametro) => diametro = pi/2+k*pi
-D = trig_sobre2["cos"]["min"]
+D = (3+1/2)*math.pi
 print("MIN TEMPO ACELERACAO NOVO")
 # print(f"AUTONOMIA: {aut_ant(D, P, C)} TEMPO ACELERACAO: {temp_acc_ant(D, P, C)}\n\n")
 print(f"({aut_novo(D, P, C)}, {temp_acc_novo(D, P, C)})\n\n")
@@ -121,7 +68,7 @@ print(f"({aut_ant(D, P, C)}, {temp_acc_ant(D, P, C)})\n\n")
 
 # max tempo aceleracao => max cos(diametro) => diametro = k*pi
 
-D = trig_inteiro["cos"]["max"]
+D = 3*math.pi
 print("MAX TEMPO ACELERACAO NOVO")
 # print(f"AUTONOMIA: {aut_ant(D, P, C)} TEMPO ACELERACAO: {temp_acc_ant(D, P, C)}\n\n")
 print(f"({aut_novo(D, P, C)}, {temp_acc_novo(D, P, C)})\n\n")

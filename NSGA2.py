@@ -6,15 +6,27 @@ import numpy as np
 import os
 import math
 
+def autonomia_simples(diametro, potencia, capacidade):
+    return capacidade / (potencia * diametro)
+
+def tempo_aceleracao_simples(diametro, potencia, capacidade):
+    return (capacidade + diametro) / potencia
+
+def autonomia_complexo(diametro, potencia, capacidade):
+    denominador = max(potencia * abs(math.sin(diametro)), 0.1)
+    return math.sqrt(capacidade) / denominador
+
+def tempo_aceleracao_complexo(diametro, potencia, capacidade):
+    return math.sqrt(capacidade + abs(math.cos(diametro))) / math.sqrt(potencia)
+
 class Solucao:
     def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
         self.diametro_roda = diametro_roda
         self.potencia_motor = potencia_motor
         self.capacidade_bateria = capacidade_bateria
         
-        EPS = 1e-6  # evitar divisao por 0
-        self.autonomia = math.sqrt(capacidade_bateria) / (potencia_motor * abs(math.sin(diametro_roda)) + EPS )
-        self.tempo_aceleracao = math.log1p(capacidade_bateria + abs(math.cos(diametro_roda)) ) / math.sqrt(potencia_motor)
+        self.autonomia = autonomia_complexo(diametro_roda, potencia_motor, capacidade_bateria)
+        self.tempo_aceleracao = tempo_aceleracao_complexo(diametro_roda, potencia_motor, capacidade_bateria)
         
         self.domination_count = 0
         self.dominates = []
@@ -300,6 +312,7 @@ def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0
     plt.savefig(f"./stats/seed{SEED}/aceleracao{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
     
     plt.close('all')
+    return (end - start)
 
 if __name__ == '__main__':
     main()
