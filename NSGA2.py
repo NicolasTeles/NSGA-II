@@ -25,8 +25,12 @@ class Solucao:
         self.potencia_motor = potencia_motor
         self.capacidade_bateria = capacidade_bateria
         
-        self.autonomia = autonomia_complexo(diametro_roda, potencia_motor, capacidade_bateria)
-        self.tempo_aceleracao = tempo_aceleracao_complexo(diametro_roda, potencia_motor, capacidade_bateria)
+        if funcoes_complexas:
+            self.autonomia = autonomia_complexo(diametro_roda, potencia_motor, capacidade_bateria)
+            self.tempo_aceleracao = tempo_aceleracao_complexo(diametro_roda, potencia_motor, capacidade_bateria)
+        else:
+            self.autonomia = autonomia_simples(diametro_roda, potencia_motor, capacidade_bateria)
+            self.tempo_aceleracao = tempo_aceleracao_simples(diametro_roda, potencia_motor, capacidade_bateria)
         
         self.domination_count = 0
         self.dominates = []
@@ -220,6 +224,11 @@ def calcular_estatisticas(pop: list[Solucao]):
     autonomias = np.array([ind.autonomia for ind in pop])
     aceleracoes = np.array([ind.tempo_aceleracao for ind in pop])
     
+    max_autonomia = max(autonomias)
+    min_autonomia = min(autonomias)
+    max_aceleracao = max(aceleracoes)
+    min_aceleracao = min(aceleracoes)
+    
     media_autonomia = autonomias.mean()
     desvio_autonomia = autonomias.std(ddof=1)
     media_aceleracao = aceleracoes.mean()
@@ -229,10 +238,17 @@ def calcular_estatisticas(pop: list[Solucao]):
         "media_autonomia": media_autonomia,
         "desvio_autonomia": desvio_autonomia,
         "media_aceleracao": media_aceleracao,
-        "desvio_aceleracao": desvio_aceleracao
+        "desvio_aceleracao": desvio_aceleracao,
+        "max_autonomia": max_autonomia,
+        "min_autonomia": min_autonomia,
+        "max_aceleracao": max_aceleracao,
+        "min_aceleracao": min_aceleracao
     }
 
-def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0.05, SEED=42):
+def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0.05, SEED=42, FUNCS_COMPLEXAS=False):
+    global funcoes_complexas
+    funcoes_complexas = FUNCS_COMPLEXAS
+    
     random.seed(SEED)
     
     medias_autonomia = []
@@ -265,7 +281,9 @@ def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0
         stats = calcular_estatisticas(populacao)
         
         arquivo_texto.write(f"Geração {i+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
-        arquivo_texto.write(f"Geração {i+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n\n")
+        arquivo_texto.write(f"Geração {i+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n")
+        arquivo_texto.write(f"Autonomia: {stats["min_autonomia"]} - {stats["max_autonomia"]}\n")
+        arquivo_texto.write(f"Tempo de aceleracao: {stats["min_aceleracao"]} - {stats["max_aceleracao"]}\n\n")
         
         medias_autonomia.append(stats["media_autonomia"])
         desvios_autonomia.append(stats["desvio_autonomia"])
