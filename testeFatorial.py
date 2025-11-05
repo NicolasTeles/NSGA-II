@@ -1,6 +1,7 @@
 import NSGA2
 import os
 import glob
+import shutil
 
 QTDS_INDIVIDUOS_SIMPLES = [50, 100, 200]
 QTDS_GERACOES_SIMPLES = [5, 10, 20]
@@ -12,26 +13,14 @@ QTDS_INDIVIDUOS_COMPLEXO = [200, 500, 700]
 QTDS_GERACOES_COMPLEXO = [10, 20, 35]
 
 diretorio = "./img"
-arqs = glob.glob(os.path.join(diretorio, "*"))
 
-for arq in arqs:
-    if os.path.isfile(arq):
-        os.remove(arq)
-    if os.path.isdir(arq):
-        for f in arq:
-            if os.path.isfile(arq):
-                os.remove(arq)
+shutil.rmtree(diretorio)
+os.makedirs(diretorio)
 
 diretorio = "./stats"
-arqs = glob.glob(os.path.join(diretorio, "*"))
 
-for arq in arqs:
-    if os.path.isfile(arq):
-        os.remove(arq)
-    if os.path.isdir(arq):
-        for f in arq:
-            if os.path.isfile(arq):
-                os.remove(arq)
+shutil.rmtree(diretorio)
+os.makedirs(diretorio)
 
 arquivo_tempos = open(f"./stats/tempo.txt", "w")
 
