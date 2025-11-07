@@ -5,6 +5,40 @@ import copy
 import numpy as np
 import os
 import math
+from enum import Enum, auto
+
+class Otimizacao(Enum):
+    MIN = auto()
+    MAX = auto()
+
+class Problema:
+    def __init__(self, funcoes_objetivo, limites, tipos_otimizacao):
+        """
+        funcoes_objetivo: list of callables, each f(x) returning a scalar
+        limites: list of (min, max) tuples for each decision variable
+        tipos_otimizacao: list[Otimizacao] same length as funcoes_objetivo
+        """
+        self.funcoes_objetivo = funcoes_objetivo
+        self.limites = limites
+        self.tipos_otimizacao = tipos_otimizacao
+
+    def gerar_individuo(self):
+        """Cria uma lista de variáveis aleatórias dentro dos limites"""
+        return [random.uniform(l[0], l[1]) for l in self.limites]
+
+    def avaliar(self, variaveis):
+        """Retorna a lista dos valores das funções objetivo"""
+        return [f(variaveis) for f in self.funcoes_objetivo]
+
+class Solucao:
+    def __init__(self, x, problema: Problema):
+        self.x = x
+        self.objetivos = problema.avaliar(x)
+
+        self.domination_count = 0
+        self.dominates = []
+        self.front = 0
+        self.crowding_distance = -1
 
 def autonomia_simples(diametro, potencia, capacidade):
     return capacidade / (potencia * diametro)
@@ -19,24 +53,6 @@ def autonomia_complexo(diametro, potencia, capacidade):
 def tempo_aceleracao_complexo(diametro, potencia, capacidade):
     return math.sqrt(capacidade + abs(math.cos(diametro))) / math.sqrt(potencia)
 
-class Solucao:
-    def __init__(self, diametro_roda, potencia_motor, capacidade_bateria):
-        self.diametro_roda = diametro_roda
-        self.potencia_motor = potencia_motor
-        self.capacidade_bateria = capacidade_bateria
-        
-        if funcoes_complexas:
-            self.autonomia = autonomia_complexo(diametro_roda, potencia_motor, capacidade_bateria)
-            self.tempo_aceleracao = tempo_aceleracao_complexo(diametro_roda, potencia_motor, capacidade_bateria)
-        else:
-            self.autonomia = autonomia_simples(diametro_roda, potencia_motor, capacidade_bateria)
-            self.tempo_aceleracao = tempo_aceleracao_simples(diametro_roda, potencia_motor, capacidade_bateria)
-        
-        self.domination_count = 0
-        self.dominates = []
-        
-        self.front = 0
-        self.crowding_distance = -1
 
 def gerar_individuos(n=10):
     individuos = []
@@ -48,31 +64,15 @@ def gerar_individuos(n=10):
         individuos.append(individuo)
     return individuos
 
-def crossover(parents, chance_mutacao: float) -> Solucao:
-    parent1, parent2 = parents[:]
-    if random.random() < chance_mutacao:
-        capacidade = random.uniform(100, 500)
-    elif(random.random() < 0.5):
-        capacidade = parent1.capacidade_bateria
-    else:
-        capacidade = parent2.capacidade_bateria
+def crossover(p1: Solucao, p2: Solucao, problema: Problema, chance_mutacao: float):
+    x = []
+    for (min_lim, max_lim), v1, v2 in zip(problema.limites, p1.x, p2.x):
+        if random.random() < chance_mutacao:
+            x.append(random.uniform(min_lim, max_lim))
+        else:
+            x.append(random.choice([v1, v2]))
+    return Solucao(x, problema)
     
-    if random.random() < chance_mutacao:
-        potencia = random.uniform(50, 200)
-    elif(random.random() < 0.5):
-        potencia = parent1.potencia_motor
-    else:
-        potencia = parent2.potencia_motor
-    
-    if random.random() < chance_mutacao:
-        diametro = random.uniform(10, 30)
-    elif(random.random() < 0.5):
-        diametro = parent1.diametro_roda
-    else:
-        diametro = parent2.diametro_roda
-    
-    return Solucao(diametro, potencia, capacidade)
-
 def offspring_aleatoria(populacao: list[Solucao], chance_crossover: float, chance_mutacao: float):
     nova_pop = populacao[:]
     for _ in range(len(populacao)):
@@ -109,12 +109,70 @@ def offspring(populacao: list[Solucao], chance_crossover: float, chance_mutacao:
         nova_pop.append(novo_ind)
     return nova_pop
 
-def domina(dominates: Solucao, dominated: Solucao):
-    condicao1 = (dominates.autonomia >= dominated.autonomia and dominates.tempo_aceleracao <= dominated.tempo_aceleracao)
-    condicao2 = (dominates.autonomia > dominated.autonomia or dominates.tempo_aceleracao < dominated.tempo_aceleracao)
-    return condicao1 and condicao2
+def domina(a: Solucao, b: Solucao, problema: Problema):
+    melhor_ou_igual = True
+    melhor_pelo_menos_um = False
+    
+    for i, tipo in enumerate(problema.tipos_otimizacao):
+        val_a, val_b = a.objetivos[i], b.objetivos[i]
+        
+        if tipo == Otimizacao.MIN:
+            if val_a > val_b:
+                melhor_ou_igual = False
+            elif val_a < val_b:
+                melhor_pelo_menos_um = True
+        elif tipo == Otimizacao.MAX:
+            if val_a < val_b:
+                melhor_ou_igual = False
+            elif val_a > val_b:
+                melhor_pelo_menos_um = True
+                
+    return melhor_ou_igual and melhor_pelo_menos_um
 
-def non_dominated_sorting(pop: list[Solucao]):
+def non_dominated_sorting(pop: list[Solucao], problema: Problema):
+    """
+    Performs non-dominated sorting over `pop` using `problema` to interpret objectives.
+    Returns list of fronts (each front is a list of Solucao).
+    """
+    # reset domination information first
+    for ind in pop:
+        ind.domination_count = 0
+        ind.dominates = []
+        ind.front = 0
+
+    # compute domination relationships
+    for p in pop:
+        for q in pop:
+            if p is q:
+                continue
+            if domina(p, q, problema):
+                p.dominates.append(q)
+            elif domina(q, p, problema):
+                p.domination_count += 1
+    
+    fronts = []
+    
+    first_front = [ind for ind in pop if ind.domination_count == 0]
+    for ind in first_front:
+        ind.front = 1
+    fronts.append(first_front)
+    
+    i = 0
+    while fronts[i]:
+        next_front = []
+        for p in fronts[i]:
+            for q in p.dominates:
+                q.domination_count -= 1
+                if q.domination_count == 0:
+                    q.front = i + 2
+                    next_front.append(q)
+        i += 1
+        fronts.append(next_front)
+        if fronts and not fronts[-1]:
+            fronts.pop()
+        return fronts
+    
+    
     for ind1 in pop:
         for ind2 in pop:
             if domina(ind1, ind2):
