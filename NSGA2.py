@@ -130,17 +130,13 @@ def domina(a: Solucao, b: Solucao, problema: Problema):
     return melhor_ou_igual and melhor_pelo_menos_um
 
 def non_dominated_sorting(pop: list[Solucao], problema: Problema):
-    """
-    Performs non-dominated sorting over `pop` using `problema` to interpret objectives.
-    Returns list of fronts (each front is a list of Solucao).
-    """
-    # reset domination information first
+    # reset informacos sobre dominacao
     for ind in pop:
         ind.domination_count = 0
         ind.dominates = []
         ind.front = 0
 
-    # compute domination relationships
+    # computar dominacoes
     for p in pop:
         for q in pop:
             if p is q:
@@ -168,85 +164,65 @@ def non_dominated_sorting(pop: list[Solucao], problema: Problema):
                     next_front.append(q)
         i += 1
         fronts.append(next_front)
+        
+        
+        # ultima frente vai estar vazia, remover ela
         if fronts and not fronts[-1]:
             fronts.pop()
         return fronts
-    
-    
-    for ind1 in pop:
-        for ind2 in pop:
-            if domina(ind1, ind2):
-                ind2.domination_count += 1
-                ind1.dominates.append(ind2)
-                
-    fronts = []      
-    fronts.append([])
-    for individuo in pop:
-        if individuo.domination_count == 0:
-            individuo.front = 1
-            fronts[0].append(individuo)
-    i = 0
-    while True:
-        for individuo in fronts[i]:
-            for dominated in individuo.dominates:
-                dominated.domination_count -= 1
-        
-        indiv_sem_frente = False
-        fronts.append([])
-        for individuo in pop:
-            if individuo.front == 0:
-                indiv_sem_frente = True
-                if individuo.domination_count == 0:
-                    individuo.front = i+2
-                    fronts[i+1].append(individuo)
-        i += 1
-        if not indiv_sem_frente:
-            break
-    
-    # for indiv in pop:
-    #     print(f"auton: {indiv.autonomia} aceler: {indiv.tempo_aceleracao} domination_count:{indiv.domination_count} front: {indiv.front}")
-    return fronts
 
-def crowding_distance_sorting(front: list[Solucao]):
-    for solucao in front:
-        solucao.crowding_distance = 0
+def crowding_distance_sorting(front: list[Solucao], problema: Problema):
+    if not front:
+        return front
+
+    # inicializar
+    for sol in front:
+        sol.crowding_distance = 0.0
         
-    # para autonomia
+    if len(front) <= 2:
+        for s in front:
+            s.crowding_distance = float('inf')
+        return front
+
+    num_obj = len(problema.funcoes_objetivo)
+
+    for m in range(num_obj):
+        front_sorted = sorted(front, key=lambda s: s.objetivos[m])
         
-    front.sort(key=lambda sol: sol.autonomia, reverse=True)
-    front[0].crowding_distance, front[-1].crowding_distance = float('inf'), float('inf')
-    
-    max, min = front[0], front[-1]
-    
-    for i, solucao in enumerate(front[1:-1], start=1):
-        solucao.crowding_distance += (front[i-1].autonomia - front[i+1].autonomia) / (max.autonomia - min.autonomia)
-        
-    # para aceleracao
-    
-    front.sort(key=lambda sol: sol.tempo_aceleracao)
-    front[0].crowding_distance, front[-1].crowding_distance = float('inf'), float('inf')
-    
-    max, min = front[-1], front[0]
-    
-    for i, solucao in enumerate(front[1:-1], start=1):
-        solucao.crowding_distance += (front[i+1].tempo_aceleracao - front[i-1].tempo_aceleracao) / (max.tempo_aceleracao - min.tempo_aceleracao)
-    
-    front.sort(key=lambda sol: sol.crowding_distance, reverse=True)
+        front_sorted[0].crowding_distance = float('inf')
+        front_sorted[-1].crowding_distance = float('inf')
+
+        obj_min = front_sorted[0].objetivos[m]
+        obj_max = front_sorted[-1].objetivos[m]
+        denom = obj_max - obj_min
+
+        # evitar divisao por 0 em 
+        if denom == 0:
+            continue
+
+        for i in range(1, len(front_sorted) - 1):
+            prev_val = front_sorted[i - 1].objetivos[m]
+            next_val = front_sorted[i + 1].objetivos[m]
+            # normalized distance
+            front_sorted[i].crowding_distance += (next_val - prev_val) / denom
+
+    front.sort(key=lambda s: s.crowding_distance, reverse=True)
     return front
 
-# REPASSAR FRENTES COMPLETAS PARA A PROXIMA GERACAO E FAZER CROWD DISTANCE SORTING
-def gerar_prox_geracao(fronts: list[list[Solucao]], tam_pop_inicial):
+# repassar frentes completas para a proxima geracao e fazer crowding distance sorting
+def gerar_prox_geracao(fronts: list[list[Solucao]], tam_pop_inicial, problema: Problema):
     tam_pop_atual = 0
     nova_pop = []
     for front in fronts:
-        if len(front)+tam_pop_atual <= tam_pop_inicial:
+        if tam_pop_atual + len(front) <= tam_pop_inicial:
             nova_pop.extend(front)
             tam_pop_atual += len(front)
         else:
-            new_front = crowding_distance_sorting(front)
+            frente_com_cd = crowding_distance_sorting(front, problema)
             i = 0
-            while len(nova_pop) < tam_pop_inicial:
-                nova_pop.append(new_front[i])
+            while tam_pop_atual < tam_pop_inicial and i < len(frente_com_cd):
+                nova_pop.append(frente_com_cd[i])
+                tam_pop_atual += 1
                 i += 1
             break
     return nova_pop
@@ -279,116 +255,249 @@ def resetar_valores(pop: list[Solucao]):
         ind.crowding_distance = -1
 
 def calcular_estatisticas(pop: list[Solucao]):
-    autonomias = np.array([ind.autonomia for ind in pop])
-    aceleracoes = np.array([ind.tempo_aceleracao for ind in pop])
-    
-    max_autonomia = max(autonomias)
-    min_autonomia = min(autonomias)
-    max_aceleracao = max(aceleracoes)
-    min_aceleracao = min(aceleracoes)
-    
-    media_autonomia = autonomias.mean()
-    desvio_autonomia = autonomias.std(ddof=1)
-    media_aceleracao = aceleracoes.mean()
-    desvio_aceleracao = aceleracoes.std(ddof=1)
+    """
+    Calcula estatísticas (média, desvio padrão, min, max) para cada objetivo
+    presente em Solucao.objetivos.
 
-    return {
-        "media_autonomia": media_autonomia,
-        "desvio_autonomia": desvio_autonomia,
-        "media_aceleracao": media_aceleracao,
-        "desvio_aceleracao": desvio_aceleracao,
-        "max_autonomia": max_autonomia,
-        "min_autonomia": min_autonomia,
-        "max_aceleracao": max_aceleracao,
-        "min_aceleracao": min_aceleracao
-    }
+    Retorno:
+    - Se houver exatamente 2 objetivos, retorna o dicionário compatível com
+      o código existente (chaves relacionadas a autonomia e aceleracao).
+    - Para qualquer outro número de objetivos, adiciona chaves genéricas
+      'media_obj_i', 'desvio_obj_i', 'min_obj_i', 'max_obj_i'.
+    Mensagens/erros em português.
+    """
+    if not pop:
+        raise ValueError("População vazia — não há estatísticas para calcular.")
 
-def main(NUM_INDIVIDUOS=500, GERACOES=20, CHANCE_CROSSOVER=1.0, CHANCE_MUTACAO=0.05, SEED=42, FUNCS_COMPLEXAS=False):
-    global funcoes_complexas
-    funcoes_complexas = FUNCS_COMPLEXAS
-    
+    # Extrair matriz (N_individuos x N_objetivos)
+    try:
+        matriz = np.array([ind.objetivos for ind in pop], dtype=float)
+    except Exception as e:
+        raise ValueError("Erro ao construir matriz de objetivos: verifique 'ind.objetivos'.") from e
+
+    # número de indivíduos e objetivos
+    n_ind, n_obj = matriz.shape
+
+    stats = {}
+
+    # calcular por objetivo
+    medias = matriz.mean(axis=0)
+    # desvio padrão: ddof=1 quando possível (mais apropriado para amostras)
+    if n_ind > 1:
+        desvios = matriz.std(axis=0, ddof=1)
+    else:
+        # com 1 indivíduo, std = 0 (evita ddof > n-1)
+        desvios = np.zeros(n_obj, dtype=float)
+
+    mins = matriz.min(axis=0)
+    maxs = matriz.max(axis=0)
+
+    # preencher chaves genéricas
+    for j in range(n_obj):
+        stats[f"media_obj_{j}"] = float(medias[j])
+        stats[f"desvio_obj_{j}"] = float(desvios[j])
+        stats[f"min_obj_{j}"] = float(mins[j])
+        stats[f"max_obj_{j}"] = float(maxs[j])
+
+    # Compatibilidade com o código existente (se houver exatamente 2 objetivos)
+    if n_obj == 2:
+        # assumir objetivo 0 = autonomia (max), objetivo 1 = aceleracao (min), mas
+        # aqui só colocamos os valores brutos (o sinal/otimização é tratado em Problema)
+        stats["media_autonomia"] = float(medias[0])
+        stats["desvio_autonomia"] = float(desvios[0])
+        stats["media_aceleracao"] = float(medias[1])
+        stats["desvio_aceleracao"] = float(desvios[1])
+
+        stats["max_autonomia"] = float(maxs[0])
+        stats["min_autonomia"] = float(mins[0])
+        stats["max_aceleracao"] = float(maxs[1])
+        stats["min_aceleracao"] = float(mins[1])
+
+    else:
+        # Aviso opcional (não lançar erro) — o restante do código pode ignorar isso.
+        # Se quiser tratar esse aviso como exceção, substitua print por raise.
+        print(f"Aviso: {n_obj} objetivos detectados. Foram calculadas estatísticas genéricas 'media_obj_i', etc.")
+
+    return stats
+
+
+def main(
+    NUM_INDIVIDUOS=500,
+    GERACOES=20,
+    CHANCE_CROSSOVER=1.0,
+    CHANCE_MUTACAO=0.05,
+    SEED=42,
+    FUNCS_COMPLEXAS=False
+):
+    # Configurações iniciais
     random.seed(SEED)
-    
-    medias_autonomia = []
-    desvios_autonomia = []
-    medias_aceleracao = []
-    desvios_aceleracao = []
-    
-    arquivo_texto = open(f"./stats/stats{SEED}.txt", "a")
-    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes {CHANCE_CROSSOVER} chance de crossover e {CHANCE_MUTACAO} chance de mutacao\n")
-    
-    start = time.process_time()
+    np.random.seed(SEED)
 
-    populacao_inicial = gerar_individuos(NUM_INDIVIDUOS)
+    # --- 1) montar funcoes_objetivo (nomes + callables) conforme modo simples/complexo ---
+    def obter_funcoes_objetivo(funcs_complexas: bool):
+        if funcs_complexas:
+            return [
+                ("Autonomia", lambda x: autonomia_complexo(x[0], x[1], x[2])),
+                ("Aceleração", lambda x: tempo_aceleracao_complexo(x[0], x[1], x[2]))
+            ]
+        else:
+            return [
+                ("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])),
+                ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))
+            ]
+
+    funcoes_objetivo = obter_funcoes_objetivo(FUNCS_COMPLEXAS)
+
+    # --- 2) limites reais que você informou ---
+    limites_variaveis = [
+        (10.0, 30.0),   # diametro_roda
+        (50.0, 200.0),  # potencia_motor
+        (100.0, 500.0)  # capacidade_bateria
+    ]
+
+    # --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
+    tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
+
+    # extrair nomes e funcoes para passar ao Problema
+    nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
+
+    # --- 4) criar Problema usando sua classe existente ---
+    problema = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
+
+    # --- 5) criar populacao inicial (usando Problema.gerar_individuo + Solucao genérico) ---
+    populacao_inicial = [Solucao(problema.gerar_individuo(), problema) for _ in range(NUM_INDIVIDUOS)]
+
+    # imprimir indivíduos iniciais (mantendo estilo do seu código; se quiser, comente)
     for i, ind in enumerate(populacao_inicial):
-        print(f"Indivíduo {i+1}: diametro_roda={ind.diametro_roda:.2f}, potencia_motor={ind.potencia_motor:.2f}, capacidade_bateria={ind.capacidade_bateria:.2f}")
+        # exibir os genes (x) em vez de atributos antigos
+        d, p, c = ind.x
+        print(f"Indivíduo {i+1}: diametro_roda={d:.2f}, potencia_motor={p:.2f}, capacidade_bateria={c:.2f}")
 
     populacao = populacao_inicial[:]
-    nova_populacao = None
-    populacao = offspring_aleatoria(populacao_inicial, CHANCE_CROSSOVER, CHANCE_MUTACAO)
 
-    for i in range(GERACOES):
-        if i != 0:
-            populacao = offspring(populacao, CHANCE_CROSSOVER, CHANCE_MUTACAO)
-            resetar_valores(populacao)
-        # print(len(populacao))
-        frentes = non_dominated_sorting(populacao)
-        nova_populacao = gerar_prox_geracao(frentes, len(populacao_inicial))
-        populacao = nova_populacao[:]
-        print(f"\nFIM DA GERAÇÃO {i+1}\n")
+    # históricos por objetivo (para plot de médias/desvios)
+    historico_medias = {nome: [] for nome in nomes_objetivos}
+    historico_desvios = {nome: [] for nome in nomes_objetivos}
+
+    # arquivo de stats (mantendo seu formato)
+    os.makedirs("./stats", exist_ok=True)
+    arquivo_texto = open(f"./stats/stats{SEED}.txt", "a")
+    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes {CHANCE_CROSSOVER} chance de crossover e {CHANCE_MUTACAO} chance de mutacao\n")
+
+    start = time.process_time()
+
+    # --- helper local: torneio binário baseado em front e crowding_distance (igual ao que você já usa) ---
+    def torneio_binario(pop):
+        a, b = random.sample(pop, 2)
+        if a.front == b.front:
+            return a if a.crowding_distance > b.crowding_distance else b
+        return a if a.front < b.front else b
+
+    # --- loop principal ---
+    for g in range(GERACOES):
+        if g != 0:
+            # seleção e reprodução simples: gerar filhos do tamanho da população atual
+            filhos = []
+            while len(filhos) < len(populacao):
+                p1 = torneio_binario(populacao)
+                p2 = torneio_binario(populacao)
+                # crossover -> usa a assinatura que existe no seu código
+                if random.random() <= CHANCE_CROSSOVER:
+                    filho = crossover(p1, p2, problema, CHANCE_MUTACAO)
+                else:
+                    filho = copy.deepcopy(random.choice([p1, p2]))
+                filhos.append(filho)
+            # combinar pais+filhos como na NSGA-II
+            populacao = populacao + filhos
+
+        # reset valores de dominacao / crowding antes de sortear
+        resetar_valores(populacao)
+
+        # non-dominated sorting usando sua função (passando problema)
+        frentes = non_dominated_sorting(populacao, problema)
+
+        # gerar proxima geracao com suas funcoes (usa crowding internamente)
+        nova_pop = gerar_prox_geracao(frentes, NUM_INDIVIDUOS, problema)
+
+        populacao = nova_pop[:]
+
+        print(f"\nFIM DA GERAÇÃO {g+1}\n")
+
+        # calcular estatisticas usando a sua função genérica (ela retorna chaves compatíveis para 2 objetivos)
         stats = calcular_estatisticas(populacao)
-        
-        arquivo_texto.write(f"Geração {i+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
-        arquivo_texto.write(f"Geração {i+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n")
-        arquivo_texto.write(f"Autonomia: {stats["min_autonomia"]} - {stats["max_autonomia"]}\n")
-        arquivo_texto.write(f"Tempo de aceleracao: {stats["min_aceleracao"]} - {stats["max_aceleracao"]}\n\n")
-        
-        medias_autonomia.append(stats["media_autonomia"])
-        desvios_autonomia.append(stats["desvio_autonomia"])
-        medias_aceleracao.append(stats["media_aceleracao"])
-        desvios_aceleracao.append(stats["desvio_aceleracao"])
+
+        # escrever no arquivo (compatível com sua versão anterior: usa chaves media_autonomia etc quando houver 2 objetivos)
+        if f"media_autonomia" in stats:
+            arquivo_texto.write(f"Geração {g+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
+            arquivo_texto.write(f"Geração {g+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n")
+            arquivo_texto.write(f"Autonomia: {stats['min_autonomia']} - {stats['max_autonomia']}\n")
+            arquivo_texto.write(f"Tempo de aceleracao: {stats['min_aceleracao']} - {stats['max_aceleracao']}\n\n")
+        else:
+            # populacao com != 2 objetivos -> escrever estatisticas genéricas por objetivo
+            arquivo_texto.write(f"Geração {g+1}: Estatísticas por objetivo:\n")
+            n_obj = len(populacao[0].objetivos)
+            for j in range(n_obj):
+                arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']}, max {stats[f'max_obj_{j}']})\n")
+            arquivo_texto.write("\n")
+
+        # atualizar históricos por objetivo (usando as chaves genéricas)
+        if "media_autonomia" in stats:
+            historico_medias["Autonomia"].append(stats["media_autonomia"])
+            historico_desvios["Autonomia"].append(stats["desvio_autonomia"])
+            historico_medias["Aceleração"].append(stats["media_aceleracao"])
+            historico_desvios["Aceleração"].append(stats["desvio_aceleracao"])
+        else:
+            n_obj = len(populacao[0].objetivos)
+            for j in range(n_obj):
+                nome = nomes_objetivos[j] if j < len(nomes_objetivos) else f"obj_{j}"
+                historico_medias[nome].append(stats[f"media_obj_{j}"])
+                historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
 
     end = time.process_time()
 
     print(f"CPU time: {end - start:.6f} seconds")
-    
     arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
-    
-    folder_path = f"./img/seed{SEED}"
-    os.makedirs(folder_path, exist_ok=True)
+    arquivo_texto.close()
 
-    plot(populacao_inicial, f"./img/seed{SEED}/populacao inicial")
-    plot(nova_populacao, f"./img/seed{SEED}/pop{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}")
-    
-    folder_path = f"./stats/seed{SEED}"
-    os.makedirs(folder_path, exist_ok=True)
-    
-    plt.figure()
-    plt.plot(range(GERACOES), medias_autonomia, label="Autonomia média")
-    plt.fill_between(range(GERACOES),
-                    np.array(medias_autonomia) - np.array(desvios_autonomia),
-                    np.array(medias_autonomia) + np.array(desvios_autonomia),
-                    alpha=0.2)
-    plt.legend()
-    plt.xlabel("Geração")
-    plt.ylabel("Autonomia")
-    plt.title("Evolução da média e desvio padrão da autonomia")
-    plt.savefig(f"./stats/seed{SEED}/autonomia{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
-    
-    plt.figure()
-    plt.plot(range(GERACOES), medias_aceleracao, label="Tempo de aceleracao médio")
-    plt.fill_between(range(GERACOES),
-                    np.array(medias_aceleracao) - np.array(desvios_aceleracao),
-                    np.array(medias_aceleracao) + np.array(desvios_aceleracao),
-                    alpha=0.2)
-    plt.legend()
-    plt.xlabel("Geração")
-    plt.ylabel("Tempo de aceleracao")
-    plt.title("Evolução da média e desvio padrão da aceleracao")
-    plt.savefig(f"./stats/seed{SEED}/aceleracao{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
-    
-    plt.close('all')
+    # --- criar pastas para salvar figuras ---
+    folder_img = f"./img/seed{SEED}"
+    os.makedirs(folder_img, exist_ok=True)
+    folder_stats = f"./stats/seed{SEED}"
+    os.makedirs(folder_stats, exist_ok=True)
+
+    # --- gerar gráfico da população final SOMENTE se houver 2 objetivos ---
+    if len(funcoes) == 2:
+        xs = [ind.objetivos[0] for ind in populacao]
+        ys = [ind.objetivos[1] for ind in populacao]
+        plt.figure(figsize=(8,6))
+        plt.scatter(xs, ys, label="Indivíduos")
+        plt.xlabel(nomes_objetivos[0])
+        plt.ylabel(nomes_objetivos[1])
+        plt.title("População final: " + nomes_objetivos[0] + " vs " + nomes_objetivos[1])
+        plt.grid(True)
+        plt.savefig(f"{folder_img}/pop_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+        plt.close()
+    else:
+        print("Mais de 2 objetivos — gráficos de indivíduos desativados.")
+
+    # --- gerar gráficos de médias e desvios por objetivo (sempre) ---
+    for nome in nomes_objetivos:
+        medias = historico_medias[nome]
+        desvios = historico_desvios[nome]
+        plt.figure()
+        plt.plot(range(1, len(medias)+1), medias, label=f"{nome} média")
+        lower = np.array(medias) - np.array(desvios)
+        upper = np.array(medias) + np.array(desvios)
+        plt.fill_between(range(1, len(medias)+1), lower, upper, alpha=0.2)
+        plt.xlabel("Geração")
+        plt.ylabel(nome)
+        plt.title(f"Evolução da média e desvio padrão de {nome}")
+        plt.legend()
+        plt.savefig(f"{folder_stats}/{nome}_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+        plt.close()
+
     return (end - start)
+
 
 if __name__ == '__main__':
     main()
