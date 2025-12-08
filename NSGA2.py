@@ -321,48 +321,34 @@ def calcular_estatisticas(pop: list[Solucao]):
     return stats
 
 
+
+funcoes_objetivo = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
+
+limites_variaveis = [
+    (10.0, 30.0),   # diametro_roda
+    (50.0, 200.0),  # potencia_motor
+    (100.0, 500.0)  # capacidade_bateria
+]
+
+# --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
+tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
+
+# extrair nomes e funcoes para passar ao Problema
+nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
+
+problema_generico = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
+
 def main(
     NUM_INDIVIDUOS=500,
     GERACOES=20,
     CHANCE_CROSSOVER=1.0,
     CHANCE_MUTACAO=0.05,
     SEED=42,
-    FUNCS_COMPLEXAS=False
+    problema=problema_generico
 ):
     # Configurações iniciais
     random.seed(SEED)
     np.random.seed(SEED)
-
-    # --- 1) montar funcoes_objetivo (nomes + callables) conforme modo simples/complexo ---
-    def obter_funcoes_objetivo(funcs_complexas: bool):
-        if funcs_complexas:
-            return [
-                ("Autonomia", lambda x: autonomia_complexo(x[0], x[1], x[2])),
-                ("Aceleração", lambda x: tempo_aceleracao_complexo(x[0], x[1], x[2]))
-            ]
-        else:
-            return [
-                ("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])),
-                ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))
-            ]
-
-    funcoes_objetivo = obter_funcoes_objetivo(FUNCS_COMPLEXAS)
-
-    # --- 2) limites reais que você informou ---
-    limites_variaveis = [
-        (10.0, 30.0),   # diametro_roda
-        (50.0, 200.0),  # potencia_motor
-        (100.0, 500.0)  # capacidade_bateria
-    ]
-
-    # --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
-    tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
-
-    # extrair nomes e funcoes para passar ao Problema
-    nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
-
-    # --- 4) criar Problema usando sua classe existente ---
-    problema = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
 
     # --- 5) criar populacao inicial (usando Problema.gerar_individuo + Solucao genérico) ---
     populacao_inicial = [Solucao(problema.gerar_individuo(), problema) for _ in range(NUM_INDIVIDUOS)]

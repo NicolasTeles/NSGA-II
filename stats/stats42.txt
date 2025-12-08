@@ -99,5 +99,5 @@ Geração 20: Aceleração média = 5.0834 ± 2.6583
 Autonomia: 0.05700903832272323 - 0.9756612581567755
 Tempo de aceleracao: 0.6225267414202852 - 9.984198333766276
 
-CPU time: 7.977218 seconds
+CPU time: 8.112773 seconds
 
