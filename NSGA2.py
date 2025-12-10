@@ -254,16 +254,166 @@ def resetar_valores(pop: list[Solucao]):
         ind.front = 0
         ind.crowding_distance = -1
 
-def calcular_estatisticas(pop: list[Solucao]):
+funcoes_objetivo = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
+
+limites_variaveis = [
+    (10.0, 30.0),   # diametro_roda
+    (50.0, 200.0),  # potencia_motor
+    (100.0, 500.0)  # capacidade_bateria
+]
+
+# --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
+tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
+
+# extrair nomes e funcoes para passar ao Problema
+nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
+
+problema_generico = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
+
+# ============================================================
+# INÍCIO: BLOCO PAPER - Instância 3BC
+# ============================================================
+# Este bloco implementa uma instância prática do benchmark 3BC (bi-objetivo).
+#
+# Note: variáveis usam prefixo BASIN_ para evitar conflitos com outros nomes.
+# ============================================================
+
+# 1) definição dos nós (posições) e valores ms (valores alvo) e profundidade |s|
+BASIN_XS = {
+    's0': (0.0, 0.0),   # root
+    's1': (0.25, 0.0),
+    's2': (-0.25, 0.0),
+    's3': (0.0, 0.25),  # escolhemos s3 como global (menor ms)
+    's4': (0.0, -0.25),
+}
+BASIN_MS = {
+    's0': -1.0,
+    's1': -2.0,
+    's2': -2.1,
+    's3': -2.5,   # global (melhor)
+    's4': -2.2,
+}
+# profundidade |s|
+BASIN_DEPTH = {'s0': 0, 's1': 1, 's2': 1, 's3': 1, 's4': 1}
+
+def basin_alpha_for_node(node):
+    """Inclinação do poço: alpha = 4^{|s|} conforme exemplo prático."""
+    return 4 ** BASIN_DEPTH[node]
+
+# 2) projeção para o diamante L1: |x1| + |x2| <= 1
+def basin_project_to_diamond(x1, x2):
+    s = abs(x1) + abs(x2)
+    if s <= 1.0:
+        return x1, x2
+    # escala preservando o sinal para ficar na fronteira do diamante
+    factor = 1.0 / s
+    return x1 * factor, x2 * factor
+
+# 3) função primitiva f(x) = min_s ( m_s + alpha_s * L1(x, x_s) )
+def basin_primitive_f(x1, x2):
+    best = float('inf')
+    for node in BASIN_XS:
+        xs1, xs2 = BASIN_XS[node]
+        dist = abs(x1 - xs1) + abs(x2 - xs2)  # L1
+        val = BASIN_MS[node] + basin_alpha_for_node(node) * dist
+        if val < best:
+            best = val
+    return best
+
+# 4) função que calcula os dois objetivos rotacionados (retorna tupla)
+def basin_threebc_objectives(decision_vector):
+    """
+    decision_vector: [t, x1, x2]
+    retorna (o1, o2)
+    """
+    t = float(decision_vector[0])
+    x1 = float(decision_vector[1])
+    x2 = float(decision_vector[2])
+
+    # projetar x para o diamante (opcional: outra estratégia é penalizar)
+    x1p, x2p = basin_project_to_diamond(x1, x2)
+    fval = basin_primitive_f(x1p, x2p)
+
+    o1 = (t + fval) / math.sqrt(2.0)
+    o2 = (fval - t) / math.sqrt(2.0)
+    return o1, o2
+
+# 5) conversão para o formato do seu Problema: precisamos de 2 callables,
+#    cada um recebendo a lista 'variaveis' e retornando um escalar.
+def basin_obj_o1(variaveis):
+    return basin_threebc_objectives(variaveis)[0]
+
+def basin_obj_o2(variaveis):
+    return basin_threebc_objectives(variaveis)[1]
+
+# 6) limites das variáveis: [t, x1, x2]
+BASIN_LIMITES = [
+    (0.0, 2.0),   # t
+    (-1.0, 1.0),  # x1 (domínio retangular — aplicamos projeção internamente)
+    (-1.0, 1.0),  # x2
+]
+
+# 7) tipos de otimização: minimizar ambos (ajuste se necessário)
+BASIN_TIPOS_OTIMIZACAO = [Otimizacao.MIN, Otimizacao.MIN]
+
+# 8) nomes das funções (opcional, para documentação/relatórios)
+BASIN_NOMES_OBJETIVOS = ["O1_ProgressoRotacionado", "O2_ValorRotacionado"]
+
+# 9) função utilitária para descobrir a qual basin uma posição x pertence (por distancia L1 mínima)
+def basin_of(x1, x2):
+    best_node = None
+    best_dist = float('inf')
+    for node in BASIN_XS:
+        xs1, xs2 = BASIN_XS[node]
+        d = abs(x1 - xs1) + abs(x2 - xs2)
+        if d < best_dist:
+            best_dist = d
+            best_node = node
+    return best_node
+
+# 10) factory function: cria e retorna uma instância Problema pronto para uso
+def create_3bc_problema(ProblemaClass):
+    """
+    Recebe a classe Problema e devolve uma instancia configurada.
+    """
+    funcoes = [basin_obj_o1, basin_obj_o2]
+    problema = ProblemaClass(funcoes_objetivo=funcoes, limites=BASIN_LIMITES, tipos_otimizacao=BASIN_TIPOS_OTIMIZACAO)
+    # anexar metadados úteis (não obrigatório mas prático)
+    problema.nomes_objetivos = BASIN_NOMES_OBJETIVOS
+    # global_node: nó com menor ms (mais negativo) = global optimum
+    global_node = min(BASIN_MS.keys(), key=lambda k: BASIN_MS[k])
+    problema._3bc_metadata = {
+        'xs': BASIN_XS,
+        'ms': BASIN_MS,
+        'depth': BASIN_DEPTH,
+        'global_node': global_node
+    }
+    return problema
+
+# criar a instância pronta para uso (variável: problema_3bc)
+problema_3bc = create_3bc_problema(Problema)
+
+# ============================================================
+# FIM: BLOCO PAPER - Instância 3BC
+# ============================================================
+
+def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
     """
     Calcula estatísticas (média, desvio padrão, min, max) para cada objetivo
     presente em Solucao.objetivos.
 
+    Argumentos:
+    - pop: lista de Solucao
+    - nomes_objetivos: lista de strings com os nomes dos objetivos (opcional).
+
     Retorno:
-    - Se houver exatamente 2 objetivos, retorna o dicionário compatível com
-      o código existente (chaves relacionadas a autonomia e aceleracao).
+    - Se houver exatamente 2 objetivos, retorna um dicionário com chaves
+        baseadas nos nomes passados em `nomes_objetivos` (quando fornecidos),
+        e mantém também as chaves legadas 'media_autonomia', 'desvio_autonomia',
+        'media_aceleracao', 'desvio_aceleracao' para compatibilidade com o
+        restante do código.
     - Para qualquer outro número de objetivos, adiciona chaves genéricas
-      'media_obj_i', 'desvio_obj_i', 'min_obj_i', 'max_obj_i'.
+        'media_obj_i', 'desvio_obj_i', 'min_obj_i', 'max_obj_i'.
     Mensagens/erros em português.
     """
     if not pop:
@@ -301,8 +451,26 @@ def calcular_estatisticas(pop: list[Solucao]):
 
     # Compatibilidade com o código existente (se houver exatamente 2 objetivos)
     if n_obj == 2:
-        # assumir objetivo 0 = autonomia (max), objetivo 1 = aceleracao (min), mas
-        # aqui só colocamos os valores brutos (o sinal/otimização é tratado em Problema)
+        # decidir nomes a partir do parâmetro fornecido, com fallback
+        if nomes_objetivos and len(nomes_objetivos) >= 2:
+            nome0 = nomes_objetivos[0]
+            nome1 = nomes_objetivos[1]
+        else:
+            nome0 = "autonomia"
+            nome1 = "aceleracao"
+
+        # chaves baseadas nos nomes fornecidos
+        stats[f"media_{nome0}"] = float(medias[0])
+        stats[f"desvio_{nome0}"] = float(desvios[0])
+        stats[f"media_{nome1}"] = float(medias[1])
+        stats[f"desvio_{nome1}"] = float(desvios[1])
+
+        stats[f"max_{nome0}"] = float(maxs[0])
+        stats[f"min_{nome0}"] = float(mins[0])
+        stats[f"max_{nome1}"] = float(maxs[1])
+        stats[f"min_{nome1}"] = float(mins[1])
+
+        # manter chaves legadas para compatibilidade com o restante do código
         stats["media_autonomia"] = float(medias[0])
         stats["desvio_autonomia"] = float(desvios[0])
         stats["media_aceleracao"] = float(medias[1])
@@ -320,31 +488,13 @@ def calcular_estatisticas(pop: list[Solucao]):
 
     return stats
 
-
-
-funcoes_objetivo = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
-
-limites_variaveis = [
-    (10.0, 30.0),   # diametro_roda
-    (50.0, 200.0),  # potencia_motor
-    (100.0, 500.0)  # capacidade_bateria
-]
-
-# --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
-tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
-
-# extrair nomes e funcoes para passar ao Problema
-nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
-
-problema_generico = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
-
 def main(
     NUM_INDIVIDUOS=500,
     GERACOES=20,
     CHANCE_CROSSOVER=1.0,
     CHANCE_MUTACAO=0.05,
     SEED=42,
-    problema=problema_generico
+    problema=problema_3bc
 ):
     # Configurações iniciais
     random.seed(SEED)
@@ -361,9 +511,17 @@ def main(
 
     populacao = populacao_inicial[:]
 
+    # resolver nomes dos objetivos a partir do problema (fallbacks disponíveis)
+    if hasattr(problema, 'nomes_objetivos') and problema.nomes_objetivos:
+        objective_names = list(problema.nomes_objetivos)
+    elif 'nomes_objetivos' in globals() and nomes_objetivos:
+        objective_names = list(nomes_objetivos)
+    else:
+        objective_names = list(BASIN_NOMES_OBJETIVOS)
+
     # históricos por objetivo (para plot de médias/desvios)
-    historico_medias = {nome: [] for nome in nomes_objetivos}
-    historico_desvios = {nome: [] for nome in nomes_objetivos}
+    historico_medias = {nome: [] for nome in objective_names}
+    historico_desvios = {nome: [] for nome in objective_names}
 
     # arquivo de stats (mantendo seu formato)
     os.makedirs("./stats", exist_ok=True)
@@ -410,10 +568,18 @@ def main(
         print(f"\nFIM DA GERAÇÃO {g+1}\n")
 
         # calcular estatisticas usando a sua função genérica (ela retorna chaves compatíveis para 2 objetivos)
-        stats = calcular_estatisticas(populacao)
+        # passar nomes dos objetivos a partir do problema em uso
+        stats = calcular_estatisticas(populacao, problema.nomes_objetivos if hasattr(problema, 'nomes_objetivos') else None)
 
-        # escrever no arquivo (compatível com sua versão anterior: usa chaves media_autonomia etc quando houver 2 objetivos)
-        if f"media_autonomia" in stats:
+        # escrever no arquivo: preferir nomes vindos do problema, com fallback para chaves legadas
+        if len(objective_names) >= 2 and f"media_{objective_names[0]}" in stats:
+            # usar chaves baseadas nos nomes do problema
+            arquivo_texto.write(f"Geração {g+1}: {objective_names[0]} média = {stats[f'media_{objective_names[0]}']:.4f} ± {stats[f'desvio_{objective_names[0]}']:.4f}\n")
+            arquivo_texto.write(f"Geração {g+1}: {objective_names[1]} média = {stats[f'media_{objective_names[1]}']:.4f} ± {stats[f'desvio_{objective_names[1]}']:.4f}\n")
+            arquivo_texto.write(f"{objective_names[0]}: {stats[f'min_{objective_names[0]}']} - {stats[f'max_{objective_names[0]}']}\n")
+            arquivo_texto.write(f"{objective_names[1]}: {stats[f'min_{objective_names[1]}']} - {stats[f'max_{objective_names[1]}']}\n\n")
+        elif f"media_autonomia" in stats:
+            # fallback para chaves legadas
             arquivo_texto.write(f"Geração {g+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
             arquivo_texto.write(f"Geração {g+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n")
             arquivo_texto.write(f"Autonomia: {stats['min_autonomia']} - {stats['max_autonomia']}\n")
@@ -426,16 +592,36 @@ def main(
                 arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']}, max {stats[f'max_obj_{j}']})\n")
             arquivo_texto.write("\n")
 
-        # atualizar históricos por objetivo (usando as chaves genéricas)
-        if "media_autonomia" in stats:
-            historico_medias["Autonomia"].append(stats["media_autonomia"])
-            historico_desvios["Autonomia"].append(stats["desvio_autonomia"])
-            historico_medias["Aceleração"].append(stats["media_aceleracao"])
-            historico_desvios["Aceleração"].append(stats["desvio_aceleracao"])
+        # atualizar históricos por objetivo (usar chaves baseadas nos nomes do problema)
+        if len(objective_names) >= 2:
+            key0 = f"media_{objective_names[0]}"
+            key0_std = f"desvio_{objective_names[0]}"
+            key1 = f"media_{objective_names[1]}"
+            key1_std = f"desvio_{objective_names[1]}"
+
+            if key0 in stats and key1 in stats:
+                historico_medias[objective_names[0]].append(stats[key0])
+                historico_desvios[objective_names[0]].append(stats[key0_std])
+                historico_medias[objective_names[1]].append(stats[key1])
+                historico_desvios[objective_names[1]].append(stats[key1_std])
+            elif "media_autonomia" in stats:
+                # fallback para chaves legadas
+                historico_medias[objective_names[0]].append(stats["media_autonomia"])
+                historico_desvios[objective_names[0]].append(stats["desvio_autonomia"])
+                historico_medias[objective_names[1]].append(stats["media_aceleracao"])
+                historico_desvios[objective_names[1]].append(stats["desvio_aceleracao"])
+            else:
+                # última opção: usar chaves genéricas por índice
+                n_obj = len(populacao[0].objetivos)
+                for j in range(n_obj):
+                    nome = objective_names[j] if j < len(objective_names) else f"obj_{j}"
+                    historico_medias[nome].append(stats[f"media_obj_{j}"])
+                    historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
         else:
+            # não há nomes suficientes: usar chaves genéricas
             n_obj = len(populacao[0].objetivos)
             for j in range(n_obj):
-                nome = nomes_objetivos[j] if j < len(nomes_objetivos) else f"obj_{j}"
+                nome = objective_names[j] if j < len(objective_names) else f"obj_{j}"
                 historico_medias[nome].append(stats[f"media_obj_{j}"])
                 historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
 
@@ -457,9 +643,9 @@ def main(
         ys = [ind.objetivos[1] for ind in populacao]
         plt.figure(figsize=(8,6))
         plt.scatter(xs, ys, label="Indivíduos")
-        plt.xlabel(nomes_objetivos[0])
-        plt.ylabel(nomes_objetivos[1])
-        plt.title("População final: " + nomes_objetivos[0] + " vs " + nomes_objetivos[1])
+        plt.xlabel(objective_names[0])
+        plt.ylabel(objective_names[1])
+        plt.title("População final: " + objective_names[0] + " vs " + objective_names[1])
         plt.grid(True)
         plt.savefig(f"{folder_img}/pop_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
         plt.close()
@@ -467,7 +653,7 @@ def main(
         print("Mais de 2 objetivos — gráficos de indivíduos desativados.")
 
     # --- gerar gráficos de médias e desvios por objetivo (sempre) ---
-    for nome in nomes_objetivos:
+    for nome in objective_names:
         medias = historico_medias[nome]
         desvios = historico_desvios[nome]
         plt.figure()
