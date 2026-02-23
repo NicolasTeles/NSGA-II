@@ -519,6 +519,22 @@ def main(
     else:
         objective_names = list(BASIN_NOMES_OBJETIVOS)
 
+    # salvar figura da população inicial (diretório: img/seed{SEED}/popOriginal)
+    folder_pop_original = f"./img/seed{SEED}"
+    os.makedirs(folder_pop_original, exist_ok=True)
+    # só plotar se houver exatamente 2 objetivos (compatível com o restante do código)
+    if len(funcoes) == 2:
+        xs_init = [ind.objetivos[0] for ind in populacao_inicial]
+        ys_init = [ind.objetivos[1] for ind in populacao_inicial]
+        plt.figure(figsize=(8,6))
+        plt.scatter(xs_init, ys_init, label="População inicial")
+        plt.xlabel(objective_names[0])
+        plt.ylabel(objective_names[1])
+        plt.title("População inicial")
+        plt.grid(True)
+        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
+        plt.close()
+
     # históricos por objetivo (para plot de médias/desvios)
     historico_medias = {nome: [] for nome in objective_names}
     historico_desvios = {nome: [] for nome in objective_names}

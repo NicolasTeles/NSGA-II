@@ -99,5 +99,5 @@ Geração 20: O2_ValorRotacionado média = -2.4437 ± 0.4619
 O1_ProgressoRotacionado: -1.7325998290385651 - -0.3287272799690098
 O2_ValorRotacionado: -3.1510294438990347 - -1.7370549781274485
 
-CPU time: 3.982331 seconds
+CPU time: 3.979257 seconds
 
