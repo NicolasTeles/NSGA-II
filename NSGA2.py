@@ -324,7 +324,7 @@ def basin_primitive_f(x1, x2):
 def basin_threebc_objectives(decision_vector):
     """
     decision_vector: [t, x1, x2]
-    retorna (o1, o2)
+    retorna (o1, o2, o3)
     """
     t = float(decision_vector[0])
     x1 = float(decision_vector[1])
@@ -336,9 +336,13 @@ def basin_threebc_objectives(decision_vector):
 
     o1 = (t + fval) / math.sqrt(2.0)
     o2 = (fval - t) / math.sqrt(2.0)
-    return o1, o2
+    
+    # adicionando terceiro objetivo:
+    o3 = fval + 2.0 * abs(t - 1.0)
+    
+    return o1, o2, o3
 
-# 5) conversão para o formato do seu Problema: precisamos de 2 callables,
+# 5) conversão para o formato do Problema: precisamos de callables,
 #    cada um recebendo a lista 'variaveis' e retornando um escalar.
 def basin_obj_o1(variaveis):
     return basin_threebc_objectives(variaveis)[0]
@@ -346,18 +350,21 @@ def basin_obj_o1(variaveis):
 def basin_obj_o2(variaveis):
     return basin_threebc_objectives(variaveis)[1]
 
+def basin_obj_o3(variaveis):
+    return basin_threebc_objectives(variaveis)[2]
+
 # 6) limites das variáveis: [t, x1, x2]
 BASIN_LIMITES = [
     (0.0, 2.0),   # t
-    (-1.0, 1.0),  # x1 (domínio retangular — aplicamos projeção internamente)
+    (-1.0, 1.0),  # x1
     (-1.0, 1.0),  # x2
 ]
 
 # 7) tipos de otimização: minimizar ambos (ajuste se necessário)
-BASIN_TIPOS_OTIMIZACAO = [Otimizacao.MIN, Otimizacao.MIN]
+BASIN_TIPOS_OTIMIZACAO = [Otimizacao.MIN, Otimizacao.MIN, Otimizacao.MIN]
 
 # 8) nomes das funções (opcional, para documentação/relatórios)
-BASIN_NOMES_OBJETIVOS = ["O1_ProgressoRotacionado", "O2_ValorRotacionado"]
+BASIN_NOMES_OBJETIVOS = ["O1_ProgressoRotacionado", "O2_ValorRotacionado", "O3"]
 
 # 9) função utilitária para descobrir a qual basin uma posição x pertence (por distancia L1 mínima)
 def basin_of(x1, x2):
@@ -376,7 +383,7 @@ def create_3bc_problema(ProblemaClass):
     """
     Recebe a classe Problema e devolve uma instancia configurada.
     """
-    funcoes = [basin_obj_o1, basin_obj_o2]
+    funcoes = [basin_obj_o1, basin_obj_o2, basin_obj_o3]
     problema = ProblemaClass(funcoes_objetivo=funcoes, limites=BASIN_LIMITES, tipos_otimizacao=BASIN_TIPOS_OTIMIZACAO)
     # anexar metadados úteis (não obrigatório mas prático)
     problema.nomes_objetivos = BASIN_NOMES_OBJETIVOS
@@ -489,8 +496,8 @@ def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
     return stats
 
 def main(
-    NUM_INDIVIDUOS=500,
-    GERACOES=20,
+    NUM_INDIVIDUOS=750,
+    GERACOES=25,
     CHANCE_CROSSOVER=1.0,
     CHANCE_MUTACAO=0.05,
     SEED=42,
@@ -523,7 +530,7 @@ def main(
     folder_pop_original = f"./img/seed{SEED}"
     os.makedirs(folder_pop_original, exist_ok=True)
     # só plotar se houver exatamente 2 objetivos (compatível com o restante do código)
-    if len(funcoes) == 2:
+    if len(problema.funcoes_objetivo) == 2:
         xs_init = [ind.objetivos[0] for ind in populacao_inicial]
         ys_init = [ind.objetivos[1] for ind in populacao_inicial]
         plt.figure(figsize=(8,6))
