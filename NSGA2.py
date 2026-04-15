@@ -5,30 +5,7 @@ import copy
 import numpy as np
 import os
 import math
-from enum import Enum, auto
-
-class Otimizacao(Enum):
-    MIN = auto()
-    MAX = auto()
-
-class Problema:
-    def __init__(self, funcoes_objetivo, limites, tipos_otimizacao):
-        """
-        funcoes_objetivo: list of callables, each f(x) returning a scalar
-        limites: list of (min, max) tuples for each decision variable
-        tipos_otimizacao: list[Otimizacao] same length as funcoes_objetivo
-        """
-        self.funcoes_objetivo = funcoes_objetivo
-        self.limites = limites
-        self.tipos_otimizacao = tipos_otimizacao
-
-    def gerar_individuo(self):
-        """Cria uma lista de variáveis aleatórias dentro dos limites"""
-        return [random.uniform(l[0], l[1]) for l in self.limites]
-
-    def avaliar(self, variaveis):
-        """Retorna a lista dos valores das funções objetivo"""
-        return [f(variaveis) for f in self.funcoes_objetivo]
+from models import Problema, Otimizacao
 
 class Solucao:
     def __init__(self, x, problema: Problema):
@@ -254,21 +231,25 @@ def resetar_valores(pop: list[Solucao]):
         ind.front = 0
         ind.crowding_distance = -1
 
-funcoes_objetivo = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
+funcoes_objetivo_padrao = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
 
-limites_variaveis = [
+limites_variaveis_padrao = [
     (10.0, 30.0),   # diametro_roda
     (50.0, 200.0),  # potencia_motor
     (100.0, 500.0)  # capacidade_bateria
 ]
 
 # --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
-tipos_otimizacao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
+tipos_otimizacao_padrao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
 
 # extrair nomes e funcoes para passar ao Problema
-nomes_objetivos, funcoes = map(list, zip(*funcoes_objetivo))
+nomes_objetivos_padrao, funcoes_padrao = map(list, zip(*funcoes_objetivo_padrao))
 
-problema_generico = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis, tipos_otimizacao=tipos_otimizacao)
+problema_generico = Problema(
+    funcoes_objetivo=funcoes_padrao, 
+    limites=limites_variaveis_padrao, 
+    tipos_otimizacao=tipos_otimizacao_padrao
+)
 
 # ============================================================
 # INÍCIO: BLOCO PAPER - Instância 3BC
@@ -278,127 +259,7 @@ problema_generico = Problema(funcoes_objetivo=funcoes, limites=limites_variaveis
 # Note: variáveis usam prefixo BASIN_ para evitar conflitos com outros nomes.
 # ============================================================
 
-# 1) definição dos nós (posições) e valores ms (valores alvo) e profundidade |s|
-BASIN_XS = {
-    's0': (0.0, 0.0),   # root
-    's1': (0.25, 0.0),
-    's2': (-0.25, 0.0),
-    's3': (0.0, 0.25),  # escolhemos s3 como global (menor ms)
-    's4': (0.0, -0.25),
-}
-BASIN_MS = {
-    's0': -1.0,
-    's1': -2.0,
-    's2': -2.1,
-    's3': -2.5,   # global (melhor)
-    's4': -2.2,
-}
-# profundidade |s|
-BASIN_DEPTH = {'s0': 0, 's1': 1, 's2': 1, 's3': 1, 's4': 1}
-
-def basin_alpha_for_node(node):
-    """Inclinação do poço: alpha = 4^{|s|} conforme exemplo prático."""
-    return 4 ** BASIN_DEPTH[node]
-
-# 2) projeção para o diamante L1: |x1| + |x2| <= 1
-def basin_project_to_diamond(x1, x2):
-    s = abs(x1) + abs(x2)
-    if s <= 1.0:
-        return x1, x2
-    # escala preservando o sinal para ficar na fronteira do diamante
-    factor = 1.0 / s
-    return x1 * factor, x2 * factor
-
-# 3) função primitiva f(x) = min_s ( m_s + alpha_s * L1(x, x_s) )
-def basin_primitive_f(x1, x2):
-    best = float('inf')
-    for node in BASIN_XS:
-        xs1, xs2 = BASIN_XS[node]
-        dist = abs(x1 - xs1) + abs(x2 - xs2)  # L1
-        val = BASIN_MS[node] + basin_alpha_for_node(node) * dist
-        if val < best:
-            best = val
-    return best
-
-# 4) função que calcula os dois objetivos rotacionados (retorna tupla)
-def basin_threebc_objectives(decision_vector):
-    """
-    decision_vector: [t, x1, x2]
-    retorna (o1, o2, o3)
-    """
-    t = float(decision_vector[0])
-    x1 = float(decision_vector[1])
-    x2 = float(decision_vector[2])
-
-    # projetar x para o diamante (opcional: outra estratégia é penalizar)
-    x1p, x2p = basin_project_to_diamond(x1, x2)
-    fval = basin_primitive_f(x1p, x2p)
-
-    o1 = (t + fval) / math.sqrt(2.0)
-    o2 = (fval - t) / math.sqrt(2.0)
-    
-    # adicionando terceiro objetivo:
-    o3 = fval + 2.0 * abs(t - 1.0)
-    
-    return o1, o2, o3
-
-# 5) conversão para o formato do Problema: precisamos de callables,
-#    cada um recebendo a lista 'variaveis' e retornando um escalar.
-def basin_obj_o1(variaveis):
-    return basin_threebc_objectives(variaveis)[0]
-
-def basin_obj_o2(variaveis):
-    return basin_threebc_objectives(variaveis)[1]
-
-def basin_obj_o3(variaveis):
-    return basin_threebc_objectives(variaveis)[2]
-
-# 6) limites das variáveis: [t, x1, x2]
-BASIN_LIMITES = [
-    (0.0, 2.0),   # t
-    (-1.0, 1.0),  # x1
-    (-1.0, 1.0),  # x2
-]
-
-# 7) tipos de otimização: minimizar ambos (ajuste se necessário)
-BASIN_TIPOS_OTIMIZACAO = [Otimizacao.MIN, Otimizacao.MIN, Otimizacao.MIN]
-
-# 8) nomes das funções (opcional, para documentação/relatórios)
-BASIN_NOMES_OBJETIVOS = ["O1_ProgressoRotacionado", "O2_ValorRotacionado", "O3"]
-
-# 9) função utilitária para descobrir a qual basin uma posição x pertence (por distancia L1 mínima)
-def basin_of(x1, x2):
-    best_node = None
-    best_dist = float('inf')
-    for node in BASIN_XS:
-        xs1, xs2 = BASIN_XS[node]
-        d = abs(x1 - xs1) + abs(x2 - xs2)
-        if d < best_dist:
-            best_dist = d
-            best_node = node
-    return best_node
-
-# 10) factory function: cria e retorna uma instância Problema pronto para uso
-def create_3bc_problema(ProblemaClass):
-    """
-    Recebe a classe Problema e devolve uma instancia configurada.
-    """
-    funcoes = [basin_obj_o1, basin_obj_o2, basin_obj_o3]
-    problema = ProblemaClass(funcoes_objetivo=funcoes, limites=BASIN_LIMITES, tipos_otimizacao=BASIN_TIPOS_OTIMIZACAO)
-    # anexar metadados úteis (não obrigatório mas prático)
-    problema.nomes_objetivos = BASIN_NOMES_OBJETIVOS
-    # global_node: nó com menor ms (mais negativo) = global optimum
-    global_node = min(BASIN_MS.keys(), key=lambda k: BASIN_MS[k])
-    problema._3bc_metadata = {
-        'xs': BASIN_XS,
-        'ms': BASIN_MS,
-        'depth': BASIN_DEPTH,
-        'global_node': global_node
-    }
-    return problema
-
-# criar a instância pronta para uso (variável: problema_3bc)
-problema_3bc = create_3bc_problema(Problema)
+from three_bc import problema_3bc
 
 # ============================================================
 # FIM: BLOCO PAPER - Instância 3BC
@@ -510,37 +371,15 @@ def main(
     # --- 5) criar populacao inicial (usando Problema.gerar_individuo + Solucao genérico) ---
     populacao_inicial = [Solucao(problema.gerar_individuo(), problema) for _ in range(NUM_INDIVIDUOS)]
 
-    # imprimir indivíduos iniciais (mantendo estilo do seu código; se quiser, comente)
-    for i, ind in enumerate(populacao_inicial):
-        # exibir os genes (x) em vez de atributos antigos
-        d, p, c = ind.x
-        print(f"Indivíduo {i+1}: diametro_roda={d:.2f}, potencia_motor={p:.2f}, capacidade_bateria={c:.2f}")
-
     populacao = populacao_inicial[:]
 
     # resolver nomes dos objetivos a partir do problema (fallbacks disponíveis)
     if hasattr(problema, 'nomes_objetivos') and problema.nomes_objetivos:
         objective_names = list(problema.nomes_objetivos)
-    elif 'nomes_objetivos' in globals() and nomes_objetivos:
-        objective_names = list(nomes_objetivos)
-    else:
-        objective_names = list(BASIN_NOMES_OBJETIVOS)
 
     # salvar figura da população inicial (diretório: img/seed{SEED}/popOriginal)
     folder_pop_original = f"./img/seed{SEED}"
     os.makedirs(folder_pop_original, exist_ok=True)
-    # só plotar se houver exatamente 2 objetivos (compatível com o restante do código)
-    if len(problema.funcoes_objetivo) == 2:
-        xs_init = [ind.objetivos[0] for ind in populacao_inicial]
-        ys_init = [ind.objetivos[1] for ind in populacao_inicial]
-        plt.figure(figsize=(8,6))
-        plt.scatter(xs_init, ys_init, label="População inicial")
-        plt.xlabel(objective_names[0])
-        plt.ylabel(objective_names[1])
-        plt.title("População inicial")
-        plt.grid(True)
-        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
-        plt.close()
 
     # históricos por objetivo (para plot de médias/desvios)
     historico_medias = {nome: [] for nome in objective_names}
@@ -553,7 +392,7 @@ def main(
 
     start = time.process_time()
 
-    # --- helper local: torneio binário baseado em front e crowding_distance (igual ao que você já usa) ---
+    # --- helper local: torneio binário baseado em front e crowding_distance ---
     def torneio_binario(pop):
         a, b = random.sample(pop, 2)
         if a.front == b.front:
@@ -658,10 +497,20 @@ def main(
     folder_img = f"./img/seed{SEED}"
     os.makedirs(folder_img, exist_ok=True)
     folder_stats = f"./stats/seed{SEED}"
-    os.makedirs(folder_stats, exist_ok=True)
+    os.makedirs(folder_stats, exist_ok=True)    
 
     # --- gerar gráfico da população final SOMENTE se houver 2 objetivos ---
-    if len(funcoes) == 2:
+    if len(problema_3bc.funcoes_objetivo) == 2:
+        xs_init = [ind.objetivos[0] for ind in populacao_inicial]
+        ys_init = [ind.objetivos[1] for ind in populacao_inicial]
+        plt.figure(figsize=(8,6))
+        plt.scatter(xs_init, ys_init, label="População inicial")
+        plt.xlabel(objective_names[0])
+        plt.ylabel(objective_names[1])
+        plt.title("População inicial")
+        plt.grid(True)
+        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
+        
         xs = [ind.objetivos[0] for ind in populacao]
         ys = [ind.objetivos[1] for ind in populacao]
         plt.figure(figsize=(8,6))

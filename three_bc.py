@@ -1,5 +1,5 @@
 import math
-from NSGA2 import Problema, Otimizacao  # adjust to your main file's name
+from models import Problema, Otimizacao
 
 # --- Nodes, target values and depth ---
 BASIN_XS = {
@@ -21,6 +21,7 @@ BASIN_DEPTH = {'s0': 0, 's1': 1, 's2': 1, 's3': 1, 's4': 1}
 def basin_alpha_for_node(node):
     return 4 ** BASIN_DEPTH[node]
 
+# projeção para o diamante L1: |x1| + |x2| <= 1
 def basin_project_to_diamond(x1, x2):
     s = abs(x1) + abs(x2)
     if s <= 1.0:
@@ -28,6 +29,7 @@ def basin_project_to_diamond(x1, x2):
     factor = 1.0 / s
     return x1 * factor, x2 * factor
 
+# função primitiva f(x) = min_s ( m_s + alpha_s * L1(x, x_s) )
 def basin_primitive_f(x1, x2):
     best = float('inf')
     for node in BASIN_XS:
@@ -63,7 +65,12 @@ def basin_of(x1, x2):
             best_node = node
     return best_node
 
-BASIN_LIMITES = [(0.0, 2.0), (-1.0, 1.0), (-1.0, 1.0)]
+BASIN_LIMITES = [
+    (0.0, 2.0),   # t
+    (-1.0, 1.0),  # x1
+    (-1.0, 1.0),  # x2
+]
+
 BASIN_TIPOS_OTIMIZACAO = [Otimizacao.MIN, Otimizacao.MIN, Otimizacao.MIN]
 BASIN_NOMES_OBJETIVOS = ["O1_ProgressoRotacionado", "O2_ValorRotacionado", "O3"]
 
