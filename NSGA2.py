@@ -6,85 +6,86 @@ import numpy as np
 import os
 import math
 from models import Problema, Otimizacao
+import pandas as pd
+import json
 
 class Solucao:
     def __init__(self, x, problema: Problema):
         self.x = x
         self.objetivos = problema.avaliar(x)
+        self.calorias_totais = problema.get_calorias(x) if hasattr(problema, 'get_calorias') else None
 
         self.domination_count = 0
         self.dominates = []
         self.front = 0
         self.crowding_distance = -1
 
-def autonomia_simples(diametro, potencia, capacidade):
-    return capacidade / (potencia * diametro)
+def mutacao_polinomial(individuo, limites, chance_mutacao):
+    # pequeno(5-10) pulos maiores
+    # medio(20) balanceado
+    # grande (50+) pequenas mutacoes locais
+    distribution_index = 6
+    
+    # individuo[i] representa um gene
+    for i, (min_lim, max_lim) in enumerate(limites):
+        if random.random() < chance_mutacao:
+            u = random.random()
+            mutation_strenght = None
+            
+            if u < 0.5:
+                mutation_strenght = (2*u) ** ( 1/(2*distribution_index+1) ) - 1
+            else:
+                mutation_strenght = 1 - ( 2*(1-u) ) ** ( 1/(distribution_index+1) )
+            
+            individuo[i] = individuo[i] + mutation_strenght * (max_lim - min_lim)
 
-def tempo_aceleracao_simples(diametro, potencia, capacidade):
-    return (capacidade + diametro) / potencia
+def SBX(parent1: Solucao, parent2: Solucao) -> list:
+    # pequeno(2-5) exploracao agressiva
+    # medio(10-20) balanceado
+    # grande (50+) filho bem proximo aos pais
+    crossover_index = 55
+    spread_factor = None
+    
+    filho0 = []
+    filho1 = []
+    
+    for gene_p1, gene_p2 in zip(parent1.x, parent2.x):
+        u = random.random()
+        if u <= 0.5:
+            spread_factor = (2*u) ** ( 1/(crossover_index+1) )
+        else:
+            spread_factor = ( 1/(2*(1-u)) ) ** ( 1/(crossover_index+1) )
+        gene_f0 = (1/2)*( (1+spread_factor)*gene_p1 + (1-spread_factor)*gene_p2 )
+        gene_f1 = (1/2)*( (1-spread_factor)*gene_p1 + (1+spread_factor)*gene_p2 )
+        
+        filho0.append(gene_f0)
+        filho1.append(gene_f1)
+        
+    return filho0, filho1
 
-def autonomia_complexo(diametro, potencia, capacidade):
-    denominador = max(potencia * abs(math.sin(diametro)), 0.1)
-    return math.sqrt(capacidade) / denominador
-
-def tempo_aceleracao_complexo(diametro, potencia, capacidade):
-    return math.sqrt(capacidade + abs(math.cos(diametro))) / math.sqrt(potencia)
-
-
-def gerar_individuos(n=10):
-    individuos = []
-    for _ in range(n):
-        diametro_roda = random.uniform(10, 30)  # exemplo: entre 10 e 30
-        potencia_motor = random.uniform(50, 200)  # exemplo: entre 50 e 200
-        capacidade_bateria = random.uniform(100, 500)  # exemplo: entre 100 e 500
-        individuo = Solucao(diametro_roda, potencia_motor, capacidade_bateria)
-        individuos.append(individuo)
-    return individuos
+def blx_alpha_beta(parent1: Solucao, parent2: Solucao) -> list:
+    filho = []
+    alpha = 0.75
+    beta = 0.25
+    
+    for gene_p1, gene_p2 in zip(parent1.x, parent2.x):
+        dist = abs(gene_p1 - gene_p2)
+        min_gene, max_gene = sorted((gene_p1, gene_p2))
+        
+        lower = min_gene - alpha * dist
+        upper = max_gene + beta * dist
+        
+        valor = random.uniform(lower, upper)
+        
+        filho.append(valor)
+    
+    return filho
 
 def crossover(p1: Solucao, p2: Solucao, problema: Problema, chance_mutacao: float):
-    x = []
-    for (min_lim, max_lim), v1, v2 in zip(problema.limites, p1.x, p2.x):
-        if random.random() < chance_mutacao:
-            x.append(random.uniform(min_lim, max_lim))
-        else:
-            x.append(random.choice([v1, v2]))
-    return Solucao(x, problema)
-    
-def offspring_aleatoria(populacao: list[Solucao], chance_crossover: float, chance_mutacao: float):
-    nova_pop = populacao[:]
-    for _ in range(len(populacao)):
-        index1, index2 = random.sample(range(len(populacao)), 2)
-        parents = [populacao[index1], populacao[index2]]
-        if random.random() <= chance_crossover:
-            novo_ind = crossover(parents, chance_mutacao)
-        else:
-            novo_ind = copy.deepcopy(random.choice(parents))
-        nova_pop.append(novo_ind)
-    return nova_pop
-
-def offspring(populacao: list[Solucao], chance_crossover: float, chance_mutacao: float):
-    nova_pop = populacao[:]
-    for i in range(len(populacao)):
-        parents = []
-        for _ in range(2):
-            index1, index2 = random.sample(range(len(populacao)), 2)
-            candidate1, candidate2 = populacao[index1], populacao[index2]
-            
-            if candidate1.front == candidate2.front:
-                if candidate1.crowding_distance > candidate2.crowding_distance:
-                    parents.append(candidate1)
-                else:
-                    parents.append(candidate2)
-            elif candidate1.front < candidate2.front:
-                parents.append(candidate1)
-            else:
-                parents.append(candidate2)
-        if random.random() <= chance_crossover:
-            novo_ind = crossover(parents, chance_mutacao)
-        else:
-            novo_ind = copy.deepcopy(random.choice(parents))
-        nova_pop.append(novo_ind)
-    return nova_pop
+    x, y = SBX(p1, p2)
+    mutacao_polinomial(x, problema.limites, chance_mutacao)
+    mutacao_polinomial(y, problema.limites, chance_mutacao)
+    return [Solucao(x, problema), Solucao(y, problema)]
 
 def domina(a: Solucao, b: Solucao, problema: Problema):
     melhor_ou_igual = True
@@ -107,13 +108,11 @@ def domina(a: Solucao, b: Solucao, problema: Problema):
     return melhor_ou_igual and melhor_pelo_menos_um
 
 def non_dominated_sorting(pop: list[Solucao], problema: Problema):
-    # reset informacos sobre dominacao
     for ind in pop:
         ind.domination_count = 0
         ind.dominates = []
         ind.front = 0
 
-    # computar dominacoes
     for p in pop:
         for q in pop:
             if p is q:
@@ -142,8 +141,6 @@ def non_dominated_sorting(pop: list[Solucao], problema: Problema):
         i += 1
         fronts.append(next_front)
         
-        
-        # ultima frente vai estar vazia, remover ela
         if fronts and not fronts[-1]:
             fronts.pop()
         return fronts
@@ -152,7 +149,6 @@ def crowding_distance_sorting(front: list[Solucao], problema: Problema):
     if not front:
         return front
 
-    # inicializar
     for sol in front:
         sol.crowding_distance = 0.0
         
@@ -173,20 +169,17 @@ def crowding_distance_sorting(front: list[Solucao], problema: Problema):
         obj_max = front_sorted[-1].objetivos[m]
         denom = obj_max - obj_min
 
-        # evitar divisao por 0 em 
         if denom == 0:
             continue
 
         for i in range(1, len(front_sorted) - 1):
             prev_val = front_sorted[i - 1].objetivos[m]
             next_val = front_sorted[i + 1].objetivos[m]
-            # normalized distance
             front_sorted[i].crowding_distance += (next_val - prev_val) / denom
 
     front.sort(key=lambda s: s.crowding_distance, reverse=True)
     return front
 
-# repassar frentes completas para a proxima geracao e fazer crowding distance sorting
 def gerar_prox_geracao(fronts: list[list[Solucao]], tam_pop_inicial, problema: Problema):
     tam_pop_atual = 0
     nova_pop = []
@@ -204,122 +197,43 @@ def gerar_prox_geracao(fronts: list[list[Solucao]], tam_pop_inicial, problema: P
             break
     return nova_pop
 
-
-def plot(pop, filename: str):
-    autonomias = [ind.autonomia for ind in pop]
-    tempos = [ind.tempo_aceleracao for ind in pop]
-
-    plt.figure(figsize=(10, 6))
-    plt.scatter(autonomias, tempos, color='blue', label='Indivíduos')
-    plt.xlabel('Autonomia')
-    plt.ylabel('Tempo de Aceleração')
-    plt.title('Indivíduos: Autonomia vs Tempo de Aceleração')
-    plt.legend()
-    plt.grid(True)
-
-    plt.xlim(min(autonomias), max(autonomias))
-    plt.ylim(min(tempos), max(tempos))
-
-    plt.savefig(filename + ".png")
-    plt.close()
-
 def resetar_valores(pop: list[Solucao]):
     for ind in pop:
         ind.domination_count = 0
         ind.dominates = []
-        
         ind.front = 0
         ind.crowding_distance = -1
 
-funcoes_objetivo_padrao = [("Autonomia", lambda x: autonomia_simples(x[0], x[1], x[2])), ("Aceleração", lambda x: tempo_aceleracao_simples(x[0], x[1], x[2]))]
-
-limites_variaveis_padrao = [
-    (10.0, 30.0),   # diametro_roda
-    (50.0, 200.0),  # potencia_motor
-    (100.0, 500.0)  # capacidade_bateria
-]
-
-# --- 3) tipos de otimizacao (usar Enum Otimizacao que você já tem) ---
-tipos_otimizacao_padrao = [Otimizacao.MAX, Otimizacao.MIN]  # Autonomia (max), Aceleração (min)
-
-# extrair nomes e funcoes para passar ao Problema
-nomes_objetivos_padrao, funcoes_padrao = map(list, zip(*funcoes_objetivo_padrao))
-
-problema_generico = Problema(
-    funcoes_objetivo=funcoes_padrao, 
-    limites=limites_variaveis_padrao, 
-    tipos_otimizacao=tipos_otimizacao_padrao
-)
-
-# ============================================================
-# INÍCIO: BLOCO PAPER - Instância 3BC
-# ============================================================
-# Este bloco implementa uma instância prática do benchmark 3BC (bi-objetivo).
-#
-# Note: variáveis usam prefixo BASIN_ para evitar conflitos com outros nomes.
-# ============================================================
-
-from three_bc import problema_3bc
-
-# ============================================================
-# FIM: BLOCO PAPER - Instância 3BC
-# ============================================================
+from dieta import problema_dieta, construir_dieta
 
 def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
-    """
-    Calcula estatísticas (média, desvio padrão, min, max) para cada objetivo
-    presente em Solucao.objetivos.
-
-    Argumentos:
-    - pop: lista de Solucao
-    - nomes_objetivos: lista de strings com os nomes dos objetivos (opcional).
-
-    Retorno:
-    - Se houver exatamente 2 objetivos, retorna um dicionário com chaves
-        baseadas nos nomes passados em `nomes_objetivos` (quando fornecidos),
-        e mantém também as chaves legadas 'media_autonomia', 'desvio_autonomia',
-        'media_aceleracao', 'desvio_aceleracao' para compatibilidade com o
-        restante do código.
-    - Para qualquer outro número de objetivos, adiciona chaves genéricas
-        'media_obj_i', 'desvio_obj_i', 'min_obj_i', 'max_obj_i'.
-    Mensagens/erros em português.
-    """
     if not pop:
         raise ValueError("População vazia — não há estatísticas para calcular.")
 
-    # Extrair matriz (N_individuos x N_objetivos)
     try:
         matriz = np.array([ind.objetivos for ind in pop], dtype=float)
     except Exception as e:
         raise ValueError("Erro ao construir matriz de objetivos: verifique 'ind.objetivos'.") from e
 
-    # número de indivíduos e objetivos
     n_ind, n_obj = matriz.shape
-
     stats = {}
 
-    # calcular por objetivo
     medias = matriz.mean(axis=0)
-    # desvio padrão: ddof=1 quando possível (mais apropriado para amostras)
     if n_ind > 1:
         desvios = matriz.std(axis=0, ddof=1)
     else:
-        # com 1 indivíduo, std = 0 (evita ddof > n-1)
         desvios = np.zeros(n_obj, dtype=float)
 
     mins = matriz.min(axis=0)
     maxs = matriz.max(axis=0)
 
-    # preencher chaves genéricas
     for j in range(n_obj):
         stats[f"media_obj_{j}"] = float(medias[j])
         stats[f"desvio_obj_{j}"] = float(desvios[j])
         stats[f"min_obj_{j}"] = float(mins[j])
         stats[f"max_obj_{j}"] = float(maxs[j])
 
-    # Compatibilidade com o código existente (se houver exatamente 2 objetivos)
     if n_obj == 2:
-        # decidir nomes a partir do parâmetro fornecido, com fallback
         if nomes_objetivos and len(nomes_objetivos) >= 2:
             nome0 = nomes_objetivos[0]
             nome1 = nomes_objetivos[1]
@@ -327,72 +241,126 @@ def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
             nome0 = "autonomia"
             nome1 = "aceleracao"
 
-        # chaves baseadas nos nomes fornecidos
         stats[f"media_{nome0}"] = float(medias[0])
         stats[f"desvio_{nome0}"] = float(desvios[0])
         stats[f"media_{nome1}"] = float(medias[1])
         stats[f"desvio_{nome1}"] = float(desvios[1])
-
         stats[f"max_{nome0}"] = float(maxs[0])
         stats[f"min_{nome0}"] = float(mins[0])
         stats[f"max_{nome1}"] = float(maxs[1])
         stats[f"min_{nome1}"] = float(mins[1])
 
-        # manter chaves legadas para compatibilidade com o restante do código
         stats["media_autonomia"] = float(medias[0])
         stats["desvio_autonomia"] = float(desvios[0])
         stats["media_aceleracao"] = float(medias[1])
         stats["desvio_aceleracao"] = float(desvios[1])
-
         stats["max_autonomia"] = float(maxs[0])
         stats["min_autonomia"] = float(mins[0])
         stats["max_aceleracao"] = float(maxs[1])
         stats["min_aceleracao"] = float(mins[1])
-
     else:
-        # Aviso opcional (não lançar erro) — o restante do código pode ignorar isso.
-        # Se quiser tratar esse aviso como exceção, substitua print por raise.
         print(f"Aviso: {n_obj} objetivos detectados. Foram calculadas estatísticas genéricas 'media_obj_i', etc.")
 
     return stats
 
+import pandas as pd
+import json
+
+def exportar_pareto_csv(pareto, caminho_csv):
+
+    rows = []
+
+    for i, individuo in enumerate(pareto):
+
+        dieta = construir_dieta(individuo.x)
+
+        row = {
+            "id": i,
+
+            "fo_phdi": individuo.objetivos[0],
+            "fo_aceitabilidade": individuo.objetivos[1],
+
+            "kcal_total": dieta.calorias_totais,
+            "custo_total": dieta.custo_total,
+
+            "phdi_total": dieta.pontuacao_phdi,
+            "aceitabilidade_total": dieta.pontuacao_aceitabilidade,
+
+            "genes": json.dumps(individuo.x)
+        }
+
+        # adiciona informações de cada grupo alimentar
+        for grupo in dieta.grupos_alimentares:
+
+            nome = grupo.nome.lower().replace(" ", "_")
+
+            row[f"{nome}_kcal"] = grupo.calorias
+
+            row[f"{nome}_pct"] = grupo.percentual_calorico
+
+            row[f"{nome}_phdi"] = grupo.pontuacao_phdi
+
+            row[f"{nome}_aceitabilidade"] = grupo.pontuacao_aceitabilidade
+
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+
+    df.to_csv(caminho_csv, index=False)
+
 def main(
-    NUM_INDIVIDUOS=750,
-    GERACOES=25,
+    NUM_INDIVIDUOS=130,
+    GERACOES=200,
     CHANCE_CROSSOVER=1.0,
-    CHANCE_MUTACAO=0.05,
+    CHANCE_MUTACAO=0.2,
     SEED=42,
-    problema=problema_3bc
+    problema=problema_dieta
 ):
-    # Configurações iniciais
     random.seed(SEED)
     np.random.seed(SEED)
 
-    # --- 5) criar populacao inicial (usando Problema.gerar_individuo + Solucao genérico) ---
     populacao_inicial = [Solucao(problema.gerar_individuo(), problema) for _ in range(NUM_INDIVIDUOS)]
-
     populacao = populacao_inicial[:]
+    
+    print([ind.calorias_totais for ind in populacao_inicial])
+    print([ind.objetivos for ind in populacao_inicial])
 
-    # resolver nomes dos objetivos a partir do problema (fallbacks disponíveis)
     if hasattr(problema, 'nomes_objetivos') and problema.nomes_objetivos:
         objective_names = list(problema.nomes_objetivos)
+    else:
+        objective_names = [f"obj_{i}" for i in range(len(populacao_inicial[0].objetivos))]
 
-    # salvar figura da população inicial (diretório: img/seed{SEED}/popOriginal)
+    # --- pastas ---
     folder_pop_original = f"./img/seed{SEED}"
+    folder_img = f"./img/seed{SEED}"
+    folder_stats = f"./stats/seed{SEED}"
     os.makedirs(folder_pop_original, exist_ok=True)
+    os.makedirs(folder_img, exist_ok=True)
+    os.makedirs(folder_stats, exist_ok=True)
+    os.makedirs("./stats", exist_ok=True)
 
-    # históricos por objetivo (para plot de médias/desvios)
+    # --- plot população inicial ---
+    if len(problema.funcoes_objetivo) == 2:
+        xs_init = [ind.objetivos[0] for ind in populacao_inicial]
+        ys_init = [ind.objetivos[1] for ind in populacao_inicial]
+        plt.figure(figsize=(8, 6))
+        plt.scatter(xs_init, ys_init, label="População inicial")
+        plt.xlabel(objective_names[0])
+        plt.ylabel(objective_names[1])
+        plt.title("População inicial")
+        plt.grid(True)
+        plt.legend()
+        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
+        plt.close()
+
     historico_medias = {nome: [] for nome in objective_names}
     historico_desvios = {nome: [] for nome in objective_names}
 
-    # arquivo de stats (mantendo seu formato)
-    os.makedirs("./stats", exist_ok=True)
     arquivo_texto = open(f"./stats/stats{SEED}.txt", "a")
-    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes {CHANCE_CROSSOVER} chance de crossover e {CHANCE_MUTACAO} chance de mutacao\n")
+    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes, {CHANCE_CROSSOVER} chance de crossover, {CHANCE_MUTACAO} chance de mutacao\n\n")
 
     start = time.process_time()
 
-    # --- helper local: torneio binário baseado em front e crowding_distance ---
     def torneio_binario(pop):
         a, b = random.sample(pop, 2)
         if a.front == b.front:
@@ -402,88 +370,56 @@ def main(
     # --- loop principal ---
     for g in range(GERACOES):
         if g != 0:
-            # seleção e reprodução simples: gerar filhos do tamanho da população atual
             filhos = []
             while len(filhos) < len(populacao):
                 p1 = torneio_binario(populacao)
                 p2 = torneio_binario(populacao)
-                # crossover -> usa a assinatura que existe no seu código
                 if random.random() <= CHANCE_CROSSOVER:
-                    filho = crossover(p1, p2, problema, CHANCE_MUTACAO)
+                    novos_filhos = crossover(p1, p2, problema, CHANCE_MUTACAO)
                 else:
-                    filho = copy.deepcopy(random.choice([p1, p2]))
-                filhos.append(filho)
-            # combinar pais+filhos como na NSGA-II
+                    novos_filhos = [copy.deepcopy(random.choice([p1, p2])), copy.deepcopy(random.choice([p1, p2]))]
+                filhos.extend(novos_filhos)
             populacao = populacao + filhos
 
-        # reset valores de dominacao / crowding antes de sortear
         resetar_valores(populacao)
-
-        # non-dominated sorting usando sua função (passando problema)
         frentes = non_dominated_sorting(populacao, problema)
-
-        # gerar proxima geracao com suas funcoes (usa crowding internamente)
         nova_pop = gerar_prox_geracao(frentes, NUM_INDIVIDUOS, problema)
-
         populacao = nova_pop[:]
 
         print(f"\nFIM DA GERAÇÃO {g+1}\n")
 
-        # calcular estatisticas usando a sua função genérica (ela retorna chaves compatíveis para 2 objetivos)
-        # passar nomes dos objetivos a partir do problema em uso
+        # --- estatísticas dos objetivos ---
         stats = calcular_estatisticas(populacao, problema.nomes_objetivos if hasattr(problema, 'nomes_objetivos') else None)
 
-        # escrever no arquivo: preferir nomes vindos do problema, com fallback para chaves legadas
+        arquivo_texto.write(f"=== Geração {g+1} ===\n")
+
         if len(objective_names) >= 2 and f"media_{objective_names[0]}" in stats:
-            # usar chaves baseadas nos nomes do problema
-            arquivo_texto.write(f"Geração {g+1}: {objective_names[0]} média = {stats[f'media_{objective_names[0]}']:.4f} ± {stats[f'desvio_{objective_names[0]}']:.4f}\n")
-            arquivo_texto.write(f"Geração {g+1}: {objective_names[1]} média = {stats[f'media_{objective_names[1]}']:.4f} ± {stats[f'desvio_{objective_names[1]}']:.4f}\n")
-            arquivo_texto.write(f"{objective_names[0]}: {stats[f'min_{objective_names[0]}']} - {stats[f'max_{objective_names[0]}']}\n")
-            arquivo_texto.write(f"{objective_names[1]}: {stats[f'min_{objective_names[1]}']} - {stats[f'max_{objective_names[1]}']}\n\n")
-        elif f"media_autonomia" in stats:
-            # fallback para chaves legadas
-            arquivo_texto.write(f"Geração {g+1}: Autonomia média = {stats['media_autonomia']:.4f} ± {stats['desvio_autonomia']:.4f}\n")
-            arquivo_texto.write(f"Geração {g+1}: Aceleração média = {stats['media_aceleracao']:.4f} ± {stats['desvio_aceleracao']:.4f}\n")
-            arquivo_texto.write(f"Autonomia: {stats['min_autonomia']} - {stats['max_autonomia']}\n")
-            arquivo_texto.write(f"Tempo de aceleracao: {stats['min_aceleracao']} - {stats['max_aceleracao']}\n\n")
+            for nome in objective_names:
+                arquivo_texto.write(f"  {nome}: média = {stats[f'media_{nome}']:.4f} ± {stats[f'desvio_{nome}']:.4f} (min {stats[f'min_{nome}']:.4f}, max {stats[f'max_{nome}']:.4f})\n")
         else:
-            # populacao com != 2 objetivos -> escrever estatisticas genéricas por objetivo
-            arquivo_texto.write(f"Geração {g+1}: Estatísticas por objetivo:\n")
             n_obj = len(populacao[0].objetivos)
             for j in range(n_obj):
-                arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']}, max {stats[f'max_obj_{j}']})\n")
-            arquivo_texto.write("\n")
+                arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']:.4f}, max {stats[f'max_obj_{j}']:.4f})\n")
 
-        # atualizar históricos por objetivo (usar chaves baseadas nos nomes do problema)
-        if len(objective_names) >= 2:
-            key0 = f"media_{objective_names[0]}"
-            key0_std = f"desvio_{objective_names[0]}"
-            key1 = f"media_{objective_names[1]}"
-            key1_std = f"desvio_{objective_names[1]}"
+        # --- estatísticas de calorias ---
+        if hasattr(problema, 'get_calorias'):
+            calorias_pop = [ind.calorias_totais for ind in populacao if ind.calorias_totais is not None]
+            media_cal = np.mean(calorias_pop)
+            desvio_cal = np.std(calorias_pop, ddof=1)
+            arquivo_texto.write(f"  Calorias totais: média = {media_cal:.2f} ± {desvio_cal:.2f}\n")
 
-            if key0 in stats and key1 in stats:
-                historico_medias[objective_names[0]].append(stats[key0])
-                historico_desvios[objective_names[0]].append(stats[key0_std])
-                historico_medias[objective_names[1]].append(stats[key1])
-                historico_desvios[objective_names[1]].append(stats[key1_std])
-            elif "media_autonomia" in stats:
-                # fallback para chaves legadas
-                historico_medias[objective_names[0]].append(stats["media_autonomia"])
-                historico_desvios[objective_names[0]].append(stats["desvio_autonomia"])
-                historico_medias[objective_names[1]].append(stats["media_aceleracao"])
-                historico_desvios[objective_names[1]].append(stats["desvio_aceleracao"])
+        # --- tamanho do Pareto front ---
+        pareto = [ind for ind in populacao if ind.front == 1]
+        arquivo_texto.write(f"  Pareto front: {len(pareto)} indivíduos\n\n")
+
+        # --- históricos ---
+        for j, nome in enumerate(objective_names):
+            key_media = f"media_{nome}"
+            key_desvio = f"desvio_{nome}"
+            if key_media in stats:
+                historico_medias[nome].append(stats[key_media])
+                historico_desvios[nome].append(stats[key_desvio])
             else:
-                # última opção: usar chaves genéricas por índice
-                n_obj = len(populacao[0].objetivos)
-                for j in range(n_obj):
-                    nome = objective_names[j] if j < len(objective_names) else f"obj_{j}"
-                    historico_medias[nome].append(stats[f"media_obj_{j}"])
-                    historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
-        else:
-            # não há nomes suficientes: usar chaves genéricas
-            n_obj = len(populacao[0].objetivos)
-            for j in range(n_obj):
-                nome = objective_names[j] if j < len(objective_names) else f"obj_{j}"
                 historico_medias[nome].append(stats[f"media_obj_{j}"])
                 historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
 
@@ -493,50 +429,44 @@ def main(
     arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
     arquivo_texto.close()
 
-    # --- criar pastas para salvar figuras ---
-    folder_img = f"./img/seed{SEED}"
-    os.makedirs(folder_img, exist_ok=True)
-    folder_stats = f"./stats/seed{SEED}"
-    os.makedirs(folder_stats, exist_ok=True)    
+    # --- plot Pareto front final ---
+    pareto = [ind for ind in populacao if ind.front == 1]
+    print(f"Pareto front size: {len(pareto)}")
+    
+    exportar_pareto_csv(
+        pareto,
+        f"./stats/seed{SEED}/pareto_final.csv"
+    )
 
-    # --- gerar gráfico da população final SOMENTE se houver 2 objetivos ---
-    if len(problema_3bc.funcoes_objetivo) == 2:
-        xs_init = [ind.objetivos[0] for ind in populacao_inicial]
-        ys_init = [ind.objetivos[1] for ind in populacao_inicial]
-        plt.figure(figsize=(8,6))
-        plt.scatter(xs_init, ys_init, label="População inicial")
+    if len(problema.funcoes_objetivo) == 2:
+        xs_pareto = [ind.objetivos[0] for ind in pareto]
+        ys_pareto = [ind.objetivos[1] for ind in pareto]
+        plt.figure(figsize=(8, 6))
+        plt.scatter(xs_pareto, ys_pareto, label="Pareto Front", color='red')
         plt.xlabel(objective_names[0])
         plt.ylabel(objective_names[1])
-        plt.title("População inicial")
+        plt.title(f"Pareto Front: {objective_names[0]} vs {objective_names[1]}")
         plt.grid(True)
-        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
-        
-        xs = [ind.objetivos[0] for ind in populacao]
-        ys = [ind.objetivos[1] for ind in populacao]
-        plt.figure(figsize=(8,6))
-        plt.scatter(xs, ys, label="Indivíduos")
-        plt.xlabel(objective_names[0])
-        plt.ylabel(objective_names[1])
-        plt.title("População final: " + objective_names[0] + " vs " + objective_names[1])
-        plt.grid(True)
-        plt.savefig(f"{folder_img}/pop_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+        plt.legend()
+        plt.savefig(f"{folder_img}/pareto_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
         plt.close()
     else:
-        print("Mais de 2 objetivos — gráficos de indivíduos desativados.")
+        print("Mais de 2 objetivos — gráfico de Pareto desativado.")
 
-    # --- gerar gráficos de médias e desvios por objetivo (sempre) ---
+    # --- gráficos de médias e desvios por objetivo ---
     for nome in objective_names:
         medias = historico_medias[nome]
         desvios = historico_desvios[nome]
         plt.figure()
-        plt.plot(range(1, len(medias)+1), medias, label=f"{nome} média")
+        plt.plot(range(1, len(medias) + 1), medias, label=f"{nome} média")
         lower = np.array(medias) - np.array(desvios)
         upper = np.array(medias) + np.array(desvios)
-        plt.fill_between(range(1, len(medias)+1), lower, upper, alpha=0.2)
+        plt.fill_between(range(1, len(medias) + 1), lower, upper, alpha=0.2)
         plt.xlabel("Geração")
         plt.ylabel(nome)
         plt.title(f"Evolução da média e desvio padrão de {nome}")
         plt.legend()
+        plt.grid(True)
         plt.savefig(f"{folder_stats}/{nome}_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
         plt.close()
 

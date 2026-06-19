@@ -16,3 +16,4 @@ class Problema:
 
     def avaliar(self, variaveis):
         return [f(variaveis) for f in self.funcoes_objetivo]
+    

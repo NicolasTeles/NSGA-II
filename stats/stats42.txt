@@ -1,385 +1,1204 @@
-750 individuos, 25 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Estatísticas por objetivo:
-  Objetivo 0: média = 0.4981 ± 0.5315 (min -1.5000982291590919, max 1.4131988194709417)
-  Objetivo 1: média = -0.9602 ± 0.5557 (min -2.7748804459033187, max -0.004010075359846227)
-  Objetivo 2: média = 0.6448 ± 0.7583 (min -1.9009692550741848, max 1.9971298736509064)
-
-Geração 2: Estatísticas por objetivo:
-  Objetivo 0: média = 0.3546 ± 0.6121 (min -1.5000982291590919, max 1.4131988194709417)
-  Objetivo 1: média = -1.1338 ± 0.6227 (min -2.9557499214062126, max -0.004010075359846227)
-  Objetivo 2: média = 0.5063 ± 0.8822 (min -2.1470665801164723, max 1.9971298736509064)
-
-Geração 3: Estatísticas por objetivo:
-  Objetivo 0: média = 0.1601 ± 0.6680 (min -1.5000982291590919, max 1.4131988194709417)
-  Objetivo 1: média = -1.2965 ± 0.6702 (min -2.9557499214062126, max -0.004010075359846227)
-  Objetivo 2: média = 0.2812 ± 0.9910 (min -2.1470665801164723, max 1.9971298736509064)
-
-Geração 4: Estatísticas por objetivo:
-  Objetivo 0: média = 0.0481 ± 0.6886 (min -1.5000982291590919, max 1.4131988194709417)
-  Objetivo 1: média = -1.3929 ± 0.7205 (min -2.9967285748231243, max -0.004010075359846227)
-  Objetivo 2: média = 0.1600 ± 1.0396 (min -2.1498120091103248, max 1.9971298736509064)
-
-Geração 5: Estatísticas por objetivo:
-  Objetivo 0: média = -0.0208 ± 0.7264 (min -1.651396229866934, max 1.4131988194709417)
-  Objetivo 1: média = -1.4460 ± 0.7371 (min -3.009426729783269, max -0.004010075359846227)
-  Objetivo 2: média = 0.0873 ± 1.0796 (min -2.190000700568618, max 1.9971298736509064)
-
-Geração 6: Estatísticas por objetivo:
-  Objetivo 0: média = -0.0398 ± 0.7446 (min -1.6653973001926952, max 1.4131988194709417)
-  Objetivo 1: média = -1.4788 ± 0.7701 (min -3.121512647251964, max -0.003784043194149242)
-  Objetivo 2: média = 0.0855 ± 1.1045 (min -2.3697084720178196, max 1.9971298736509064)
-
-Geração 7: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1390 ± 0.7735 (min -1.712268920222941, max 1.4131988194709417)
-  Objetivo 1: média = -1.5085 ± 0.7720 (min -3.1217089268411735, max -0.003784043194149242)
-  Objetivo 2: média = -0.0046 ± 1.1456 (min -2.3697084720178196, max 1.9971298736509064)
-
-Geração 8: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1594 ± 0.7877 (min -1.712268920222941, max 1.4131988194709417)
-  Objetivo 1: média = -1.5192 ± 0.7989 (min -3.1409246768608767, max -0.002133205438864654)
-  Objetivo 2: média = 0.0014 ± 1.1583 (min -2.3697084720178196, max 1.9971298736509064)
-
-Geração 9: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1632 ± 0.7964 (min -1.712268920222941, max 1.4131988194709417)
-  Objetivo 1: média = -1.5568 ± 0.8087 (min -3.1611702694326564, max -0.002133205438864654)
-  Objetivo 2: média = -0.0247 ± 1.1881 (min -2.3781845539761726, max 1.9971298736509064)
-
-Geração 10: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1603 ± 0.8053 (min -1.7474709274646207, max 1.4131988194709417)
-  Objetivo 1: média = -1.5783 ± 0.8115 (min -3.1615112997973416, max -0.002133205438864654)
-  Objetivo 2: média = -0.0529 ± 1.1953 (min -2.3781845539761726, max 1.9971298736509064)
-
-Geração 11: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1695 ± 0.8060 (min -1.7474709274646207, max 1.4131988194709417)
-  Objetivo 1: média = -1.5642 ± 0.8123 (min -3.1615112997973416, max -0.002133205438864654)
-  Objetivo 2: média = -0.0678 ± 1.2011 (min -2.406391684397482, max 1.9971298736509064)
-
-Geração 12: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1959 ± 0.8229 (min -1.7474709274646207, max 1.4131988194709417)
-  Objetivo 1: média = -1.5957 ± 0.8103 (min -3.1615112997973416, max -0.002133205438864654)
-  Objetivo 2: média = -0.0705 ± 1.2113 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 13: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1851 ± 0.8289 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.5506 ± 0.8189 (min -3.1615112997973416, max -0.002133205438864654)
-  Objetivo 2: média = -0.0301 ± 1.2042 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 14: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1824 ± 0.8391 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6091 ± 0.8157 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0757 ± 1.2213 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 15: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1680 ± 0.8206 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6294 ± 0.8224 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0854 ± 1.2147 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 16: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1749 ± 0.8351 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.5784 ± 0.8226 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0537 ± 1.2360 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 17: Estatísticas por objetivo:
-  Objetivo 0: média = -0.2246 ± 0.8275 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6158 ± 0.8294 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.1108 ± 1.2340 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 18: Estatísticas por objetivo:
-  Objetivo 0: média = -0.2121 ± 0.8355 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.5829 ± 0.8247 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0796 ± 1.2456 (min -2.4541008725848537, max 1.9971298736509064)
-
-Geração 19: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1855 ± 0.8365 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.5979 ± 0.8196 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0883 ± 1.2289 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 20: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1991 ± 0.8431 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6388 ± 0.8319 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0967 ± 1.2348 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 21: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1903 ± 0.8461 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6029 ± 0.8200 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0799 ± 1.2318 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 22: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1909 ± 0.8402 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6150 ± 0.8367 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0613 ± 1.2248 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 23: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1578 ± 0.8448 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6466 ± 0.8332 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0652 ± 1.2222 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 24: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1681 ± 0.8495 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6197 ± 0.8319 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.0901 ± 1.2435 (min -2.4611181772910617, max 1.9971298736509064)
-
-Geração 25: Estatísticas por objetivo:
-  Objetivo 0: média = -0.1937 ± 0.8339 (min -1.7584434773751096, max 1.4131988194709417)
-  Objetivo 1: média = -1.6511 ± 0.8497 (min -3.1702740697452914, max -0.002133205438864654)
-  Objetivo 2: média = -0.1641 ± 1.2385 (min -2.4796375502721326, max 1.9971298736509064)
-
-CPU time: 140.897538 seconds
-
-750 individuos, 25 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: Estatísticas por objetivo:
-  Objetivo 0: média = -0.7003 ± 0.4459 (min -1.5000982291590919, max 0.10027305126824572)
-  Objetivo 1: média = -2.0944 ± 0.4683 (min -2.7748804459033187, max -1.3151271438685503)
-  Objetivo 2: média = -0.9684 ± 0.6676 (min -1.9009692550741848, max 0.13477791169033182)
-
-Geração 2: Estatísticas por objetivo:
-  Objetivo 0: média = -0.8476 ± 0.3285 (min -1.5000982291590919, max -0.4177747372334735)
-  Objetivo 1: média = -2.1666 ± 0.5162 (min -2.836948985952525, max -1.3151271438685503)
-  Objetivo 2: média = -1.1318 ± 0.5698 (min -1.9658244398158042, max 0.13477791169033182)
-
-Geração 3: Estatísticas por objetivo:
-  Objetivo 0: média = -0.8308 ± 0.3266 (min -1.5925435483742467, max -0.4177747372334735)
-  Objetivo 1: média = -2.2605 ± 0.4505 (min -2.836948985952525, max -1.5259541873647877)
-  Objetivo 2: média = -1.2767 ± 0.4580 (min -1.9658244398158042, max -0.17630803071262147)
-
-Geração 4: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9587 ± 0.3420 (min -1.5925435483742467, max -0.6443511510473617)
-  Objetivo 1: média = -2.3021 ± 0.4989 (min -2.836948985952525, max -1.5259541873647877)
-  Objetivo 2: média = -1.3299 ± 0.5595 (min -2.069183310117389, max -0.17630803071262147)
-
-Geração 5: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9907 ± 0.3540 (min -1.674491372805151, max -0.6443511510473617)
-  Objetivo 1: média = -2.3368 ± 0.4637 (min -2.836948985952525, max -1.558074331982442)
-  Objetivo 2: média = -1.3452 ± 0.4401 (min -2.069183310117389, max -0.26825102039794757)
-
-Geração 6: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0040 ± 0.4052 (min -1.674491372805151, max -0.597966626108961)
-  Objetivo 1: média = -2.4603 ± 0.4444 (min -2.9098831486281713, max -1.6001116347625453)
-  Objetivo 2: média = -1.3534 ± 0.4548 (min -2.3637366706175755, max -0.26825102039794757)
-
-Geração 7: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0307 ± 0.4167 (min -1.7501408441744168, max -0.5259176118600056)
-  Objetivo 1: média = -2.4589 ± 0.4321 (min -2.981932162877127, max -1.6001116347625453)
-  Objetivo 2: média = -1.3494 ± 0.4132 (min -2.3637366706175755, max -0.26825102039794757)
-
-Geração 8: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0200 ± 0.4171 (min -1.7501408441744168, max -0.5259176118600056)
-  Objetivo 1: média = -2.4771 ± 0.4261 (min -2.981932162877127, max -1.6001116347625453)
-  Objetivo 2: média = -1.3641 ± 0.4296 (min -2.3637366706175755, max -0.26825102039794757)
-
-Geração 9: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9735 ± 0.4106 (min -1.7501408441744168, max -0.4709802143573707)
-  Objetivo 1: média = -2.5282 ± 0.4183 (min -3.0368695603797615, max -1.6001116347625453)
-  Objetivo 2: média = -1.3722 ± 0.4374 (min -2.4712298742427703, max -0.26825102039794757)
-
-Geração 10: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9445 ± 0.4127 (min -1.7501408441744168, max -0.3866559188583246)
-  Objetivo 1: média = -2.5599 ± 0.4166 (min -3.1211938558788077, max -1.6001116347625453)
-  Objetivo 2: média = -1.3505 ± 0.4278 (min -2.4712298742427703, max -0.26825102039794757)
-
-Geração 11: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9741 ± 0.4318 (min -1.7501408441744168, max -0.3699225504695919)
-  Objetivo 1: média = -2.5322 ± 0.4332 (min -3.1379272242675404, max -1.6001116347625453)
-  Objetivo 2: média = -1.3274 ± 0.4576 (min -2.4712298742427703, max -0.26825102039794757)
-
-Geração 12: Estatísticas por objetivo:
-  Objetivo 0: média = -1.2249 ± 0.4609 (min -1.7501408441744168, max -0.3699225504695919)
-  Objetivo 1: média = -2.2830 ± 0.4609 (min -3.1379272242675404, max -1.7577089305627154)
-  Objetivo 2: média = -1.2259 ± 0.6142 (min -2.4712298742427703, max -0.4911272535118725)
-
-Geração 13: Estatísticas por objetivo:
-  Objetivo 0: média = -1.2113 ± 0.4662 (min -1.7501408441744168, max -0.34886430609646)
-  Objetivo 1: média = -2.2966 ± 0.4663 (min -3.1589854686406724, max -1.7577089305627154)
-  Objetivo 2: média = -1.2276 ± 0.6196 (min -2.4712298742427703, max -0.4911272535118725)
-
-Geração 14: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9810 ± 0.4331 (min -1.7533591124248364, max -0.34886430609646)
-  Objetivo 1: média = -2.5272 ± 0.4330 (min -3.1589854686406724, max -1.7577089305627154)
-  Objetivo 2: média = -1.3631 ± 0.5336 (min -2.4757811928498685, max -0.4911272535118725)
-
-Geração 15: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9386 ± 0.4255 (min -1.7533591124248364, max -0.34886430609646)
-  Objetivo 1: média = -2.5699 ± 0.4252 (min -3.1589854686406724, max -1.760927198813135)
-  Objetivo 2: média = -1.3781 ± 0.5690 (min -2.4757811928498685, max -0.4956785721189707)
-
-Geração 16: Estatísticas por objetivo:
-  Objetivo 0: média = -0.9725 ± 0.4155 (min -1.7533591124248364, max -0.35208257434687973)
-  Objetivo 1: média = -2.5369 ± 0.4150 (min -3.1622037368910916, max -1.760927198813135)
-  Objetivo 2: média = -1.4121 ± 0.5288 (min -2.4757811928498685, max -0.4956785721189707)
-
-Geração 17: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0114 ± 0.4103 (min -1.7533591124248364, max -0.3471404642919023)
-  Objetivo 1: média = -2.5000 ± 0.4096 (min -3.1622037368910916, max -1.7577089305627154)
-  Objetivo 2: média = -1.4495 ± 0.5348 (min -2.4757811928498685, max -0.4911272535118725)
-
-Geração 18: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0855 ± 0.4192 (min -1.7533591124248364, max -0.35208257434687973)
-  Objetivo 1: média = -2.4283 ± 0.4193 (min -3.1622037368910916, max -1.760927198813135)
-  Objetivo 2: média = -1.4306 ± 0.5512 (min -2.4757811928498685, max -0.4956785721189707)
-
-Geração 19: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0693 ± 0.4113 (min -1.7533591124248364, max -0.34656476799189995)
-  Objetivo 1: média = -2.4448 ± 0.4113 (min -3.167721543246072, max -1.760927198813135)
-  Objetivo 2: média = -1.4633 ± 0.5581 (min -2.4757811928498685, max -0.4952575085622324)
-
-Geração 20: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0434 ± 0.3976 (min -1.7533591124248364, max -0.34656476799189995)
-  Objetivo 1: média = -2.4708 ± 0.3976 (min -3.167721543246072, max -1.760927198813135)
-  Objetivo 2: média = -1.5098 ± 0.5591 (min -2.4757811928498685, max -0.4952575085622324)
-
-Geração 21: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0378 ± 0.4014 (min -1.7534828212567681, max -0.34656476799189995)
-  Objetivo 1: média = -2.4765 ± 0.4014 (min -3.167721543246072, max -1.7608034899812035)
-  Objetivo 2: média = -1.5035 ± 0.5706 (min -2.4757811928498685, max -0.4952575085622324)
-
-Geração 22: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0286 ± 0.4042 (min -1.7538660777600816, max -0.34656476799189995)
-  Objetivo 1: média = -2.4858 ± 0.4042 (min -3.167721543246072, max -1.7614341641483802)
-  Objetivo 2: média = -1.4915 ± 0.5675 (min -2.4764981501026253, max -0.4952575085622324)
-
-Geração 23: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0264 ± 0.4073 (min -1.7545606157039373, max -0.34656476799189995)
-  Objetivo 1: média = -2.4880 ± 0.4073 (min -3.167721543246072, max -1.7597256955340344)
-  Objetivo 2: média = -1.4837 ± 0.5724 (min -2.4764981501026253, max -0.4922802076538906)
-
-Geração 24: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0253 ± 0.4095 (min -1.7545606157039373, max -0.34656476799189995)
-  Objetivo 1: média = -2.4894 ± 0.4095 (min -3.167721543246072, max -1.7597256955340344)
-  Objetivo 2: média = -1.4766 ± 0.5724 (min -2.4764981501026253, max -0.4922802076538906)
-
-Geração 25: Estatísticas por objetivo:
-  Objetivo 0: média = -1.0391 ± 0.4051 (min -1.7550675810391825, max -0.34656476799189995)
-  Objetivo 1: média = -2.4757 ± 0.4051 (min -3.167721543246072, max -1.7602326608692795)
-  Objetivo 2: média = -1.4958 ± 0.5775 (min -2.4764981501026253, max -0.49299716490664736)
-
-CPU time: 88.645331 seconds
-
-750 individuos, 25 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-750 individuos, 25 geracoes 1.0 chance de crossover e 0.05 chance de mutacao
-Geração 1: O1_ProgressoRotacionado média = -0.7003 ± 0.4459
-Geração 1: O2_ValorRotacionado média = -2.0944 ± 0.4683
-O1_ProgressoRotacionado: -1.5000982291590919 - 0.10027305126824572
-O2_ValorRotacionado: -2.7748804459033187 - -1.3151271438685503
-
-Geração 2: O1_ProgressoRotacionado média = -0.8329 ± 0.3219
-Geração 2: O2_ValorRotacionado média = -2.1436 ± 0.5049
-O1_ProgressoRotacionado: -1.5000982291590919 - -0.4177747372334735
-O2_ValorRotacionado: -2.836948985952525 - -1.3151271438685503
-
-Geração 3: O1_ProgressoRotacionado média = -0.8369 ± 0.3227
-Geração 3: O2_ValorRotacionado média = -2.1978 ± 0.4759
-O1_ProgressoRotacionado: -1.5000982291590919 - -0.4177747372334735
-O2_ValorRotacionado: -2.836948985952525 - -1.3587454178258909
-
-Geração 4: O1_ProgressoRotacionado média = -0.9436 ± 0.3912
-Geração 4: O2_ValorRotacionado média = -2.2366 ± 0.5471
-O1_ProgressoRotacionado: -1.5000982291590919 - -0.4177747372334735
-O2_ValorRotacionado: -2.836948985952525 - -1.3587454178258909
-
-Geração 5: O1_ProgressoRotacionado média = -1.0346 ± 0.4220
-Geração 5: O2_ValorRotacionado média = -2.2028 ± 0.5754
-O1_ProgressoRotacionado: -1.5285771078593622 - -0.4177747372334735
-O2_ValorRotacionado: -2.836948985952525 - -1.5259541873647877
-
-Geração 6: O1_ProgressoRotacionado média = -0.8107 ± 0.3410
-Geração 6: O2_ValorRotacionado média = -2.5878 ± 0.3609
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.4177747372334735
-O2_ValorRotacionado: -2.932477741703489 - -1.6937671083853827
-
-Geração 7: O1_ProgressoRotacionado média = -0.8608 ± 0.3514
-Geração 7: O2_ValorRotacionado média = -2.5857 ± 0.3702
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.4792561927306948
-O2_ValorRotacionado: -2.932477741703489 - -1.6937671083853827
-
-Geração 8: O1_ProgressoRotacionado média = -0.8328 ± 0.3219
-Geração 8: O2_ValorRotacionado média = -2.6453 ± 0.3447
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.36636411721738027
-O2_ValorRotacionado: -2.932477741703489 - -1.6937671083853827
-
-Geração 9: O1_ProgressoRotacionado média = -0.8005 ± 0.2800
-Geração 9: O2_ValorRotacionado média = -2.6908 ± 0.2968
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.36636411721738027
-O2_ValorRotacionado: -2.980628499797426 - -1.6937671083853827
-
-Geração 10: O1_ProgressoRotacionado média = -0.7760 ± 0.2698
-Geração 10: O2_ValorRotacionado média = -2.7258 ± 0.2752
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.34504617220654854
-O2_ValorRotacionado: -3.1628036025305835 - -1.6937671083853827
-
-Geração 11: O1_ProgressoRotacionado média = -0.7741 ± 0.2621
-Geração 11: O2_ValorRotacionado média = -2.7302 ± 0.2659
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.34504617220654854
-O2_ValorRotacionado: -3.1628036025305835 - -1.6937671083853827
-
-Geração 12: O1_ProgressoRotacionado média = -0.7859 ± 0.2727
-Geração 12: O2_ValorRotacionado média = -2.7219 ± 0.2727
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.766852866471414
-
-Geração 13: O1_ProgressoRotacionado média = -0.8261 ± 0.3155
-Geração 13: O2_ValorRotacionado média = -2.6817 ± 0.3155
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.766852866471414
-
-Geração 14: O1_ProgressoRotacionado média = -0.8786 ± 0.3574
-Geração 14: O2_ValorRotacionado média = -2.6292 ± 0.3574
-O1_ProgressoRotacionado: -1.7409969082657182 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.766852866471414
-
-Geração 15: O1_ProgressoRotacionado média = -0.9506 ± 0.3942
-Geração 15: O2_ValorRotacionado média = -2.5573 ± 0.3942
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.7560580928074307
-
-Geração 16: O1_ProgressoRotacionado média = -1.0351 ± 0.4137
-Geração 16: O2_ValorRotacionado média = -2.4728 ± 0.4137
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.7560580928074307
-
-Geração 17: O1_ProgressoRotacionado média = -1.0927 ± 0.4125
-Geração 17: O2_ValorRotacionado média = -2.4152 ± 0.4125
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.7560580928074307
-
-Geração 18: O1_ProgressoRotacionado média = -1.0968 ± 0.4024
-Geração 18: O2_ValorRotacionado média = -2.4111 ± 0.4024
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.3423347213367599
-O2_ValorRotacionado: -3.165515053400372 - -1.7560580928074307
-
-Geração 19: O1_ProgressoRotacionado média = -1.0968 ± 0.4024
-Geração 19: O2_ValorRotacionado média = -2.4111 ± 0.4025
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7560580928074307
-
-Geração 20: O1_ProgressoRotacionado média = -1.0851 ± 0.4051
-Geração 20: O2_ValorRotacionado média = -2.4229 ± 0.4051
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7560580928074307
-
-Geração 21: O1_ProgressoRotacionado média = -1.0663 ± 0.4002
-Geração 21: O2_ValorRotacionado média = -2.4419 ± 0.4002
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7560580928074307
-
-Geração 22: O1_ProgressoRotacionado média = -1.0452 ± 0.4012
-Geração 22: O2_ValorRotacionado média = -2.4634 ± 0.4011
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7560580928074307
-
-Geração 23: O1_ProgressoRotacionado média = -1.0668 ± 0.3972
-Geração 23: O2_ValorRotacionado média = -2.4425 ± 0.3973
-O1_ProgressoRotacionado: -1.7517916819297015 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7560580928074307
-
-Geração 24: O1_ProgressoRotacionado média = -1.1042 ± 0.4001
-Geração 24: O2_ValorRotacionado média = -2.4067 ± 0.4009
-O1_ProgressoRotacionado: -1.7550675810391825 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7602326608692795
-
-Geração 25: O1_ProgressoRotacionado média = -1.0411 ± 0.3986
-Geração 25: O2_ValorRotacionado média = -2.4731 ± 0.3987
-O1_ProgressoRotacionado: -1.7550675810391825 - -0.34605995492242475
-O2_ValorRotacionado: -3.169240286986037 - -1.7602326608692795
-
-CPU time: 44.737806 seconds
+130 individuos, 200 geracoes, 1.0 chance de crossover, 0.2 chance de mutacao
+
+=== Geração 1 ===
+  FO PHDI: média = 43.7635 ± 10.6955 (min 30.3036, max 58.2094)
+  FO Aceitabilidade: média = 65.9422 ± 6.8946 (min 53.0667, max 72.1569)
+  Calorias totais: média = 1544.69 ± 14.58
+  Pareto front: 3 indivíduos
+
+=== Geração 2 ===
+  FO PHDI: média = 47.5639 ± 13.7792 (min 34.4319, max 73.3267)
+  FO Aceitabilidade: média = 67.6239 ± 5.0252 (min 56.9843, max 72.2630)
+  Calorias totais: média = 1545.27 ± 27.29
+  Pareto front: 5 indivíduos
+
+=== Geração 3 ===
+  FO PHDI: média = 47.8299 ± 14.8586 (min 34.4319, max 73.3267)
+  FO Aceitabilidade: média = 69.1332 ± 2.9376 (min 64.3220, max 72.2630)
+  Calorias totais: média = 1536.15 ± 30.44
+  Pareto front: 6 indivíduos
+
+=== Geração 4 ===
+  FO PHDI: média = 53.3589 ± 16.2710 (min 34.4862, max 73.3267)
+  FO Aceitabilidade: média = 70.0623 ± 3.8488 (min 64.3220, max 73.8343)
+  Calorias totais: média = 1522.94 ± 27.19
+  Pareto front: 3 indivíduos
+
+=== Geração 5 ===
+  FO PHDI: média = 52.6877 ± 15.0472 (min 34.4862, max 73.3267)
+  FO Aceitabilidade: média = 70.4646 ± 3.5044 (min 64.3220, max 73.8343)
+  Calorias totais: média = 1521.58 ± 24.90
+  Pareto front: 6 indivíduos
+
+=== Geração 6 ===
+  FO PHDI: média = 51.8393 ± 15.5837 (min 34.4862, max 73.3267)
+  FO Aceitabilidade: média = 70.7664 ± 3.4296 (min 64.4036, max 73.8375)
+  Calorias totais: média = 1531.82 ± 26.12
+  Pareto front: 7 indivíduos
+
+=== Geração 7 ===
+  FO PHDI: média = 50.9819 ± 15.3851 (min 35.5056, max 73.3267)
+  FO Aceitabilidade: média = 71.4462 ± 3.0353 (min 64.4036, max 73.9655)
+  Calorias totais: média = 1523.45 ± 22.81
+  Pareto front: 9 indivíduos
+
+=== Geração 8 ===
+  FO PHDI: média = 53.8081 ± 15.9641 (min 36.3783, max 73.3267)
+  FO Aceitabilidade: média = 71.5591 ± 3.4140 (min 64.4036, max 73.9876)
+  Calorias totais: média = 1520.88 ± 19.40
+  Pareto front: 4 indivíduos
+
+=== Geração 9 ===
+  FO PHDI: média = 54.6943 ± 15.9490 (min 36.3783, max 73.3267)
+  FO Aceitabilidade: média = 71.3228 ± 3.5597 (min 64.4036, max 74.1033)
+  Calorias totais: média = 1523.50 ± 22.01
+  Pareto front: 7 indivíduos
+
+=== Geração 10 ===
+  FO PHDI: média = 57.5102 ± 15.5050 (min 36.5467, max 73.3267)
+  FO Aceitabilidade: média = 70.7945 ± 3.7228 (min 64.4036, max 74.8507)
+  Calorias totais: média = 1524.88 ± 22.37
+  Pareto front: 9 indivíduos
+
+=== Geração 11 ===
+  FO PHDI: média = 65.2919 ± 10.4768 (min 39.2519, max 73.3267)
+  FO Aceitabilidade: média = 70.4718 ± 3.5450 (min 64.4036, max 75.4116)
+  Calorias totais: média = 1526.40 ± 23.24
+  Pareto front: 7 indivíduos
+
+=== Geração 12 ===
+  FO PHDI: média = 66.3885 ± 8.6761 (min 37.4497, max 74.6020)
+  FO Aceitabilidade: média = 70.8761 ± 3.6128 (min 64.5094, max 76.6003)
+  Calorias totais: média = 1528.52 ± 24.72
+  Pareto front: 9 indivíduos
+
+=== Geração 13 ===
+  FO PHDI: média = 67.4060 ± 8.5225 (min 37.4497, max 77.0157)
+  FO Aceitabilidade: média = 70.6717 ± 3.4100 (min 65.5875, max 76.6003)
+  Calorias totais: média = 1531.45 ± 24.02
+  Pareto front: 9 indivíduos
+
+=== Geração 14 ===
+  FO PHDI: média = 65.7421 ± 11.8384 (min 37.0760, max 77.7576)
+  FO Aceitabilidade: média = 72.0181 ± 3.4148 (min 66.0839, max 76.6003)
+  Calorias totais: média = 1530.28 ± 22.69
+  Pareto front: 5 indivíduos
+
+=== Geração 15 ===
+  FO PHDI: média = 67.9025 ± 15.3621 (min 37.4204, max 86.6352)
+  FO Aceitabilidade: média = 70.4265 ± 6.8050 (min 54.6466, max 76.6003)
+  Calorias totais: média = 1521.15 ± 28.89
+  Pareto front: 7 indivíduos
+
+=== Geração 16 ===
+  FO PHDI: média = 68.5453 ± 13.8003 (min 37.4204, max 86.6352)
+  FO Aceitabilidade: média = 71.3611 ± 6.4248 (min 54.6466, max 76.6003)
+  Calorias totais: média = 1522.91 ± 26.65
+  Pareto front: 6 indivíduos
+
+=== Geração 17 ===
+  FO PHDI: média = 72.0377 ± 16.2368 (min 37.4204, max 86.7067)
+  FO Aceitabilidade: média = 67.6698 ± 9.0633 (min 54.0261, max 76.6003)
+  Calorias totais: média = 1517.12 ± 33.65
+  Pareto front: 6 indivíduos
+
+=== Geração 18 ===
+  FO PHDI: média = 75.6704 ± 15.3499 (min 37.4497, max 87.5141)
+  FO Aceitabilidade: média = 66.9188 ± 10.2000 (min 54.0261, max 76.8195)
+  Calorias totais: média = 1518.03 ± 34.70
+  Pareto front: 3 indivíduos
+
+=== Geração 19 ===
+  FO PHDI: média = 75.6152 ± 13.8045 (min 37.4497, max 87.5141)
+  FO Aceitabilidade: média = 67.7351 ± 9.6457 (min 54.0261, max 77.1133)
+  Calorias totais: média = 1519.23 ± 33.00
+  Pareto front: 4 indivíduos
+
+=== Geração 20 ===
+  FO PHDI: média = 75.9234 ± 13.2045 (min 37.4497, max 87.5141)
+  FO Aceitabilidade: média = 67.5034 ± 9.2332 (min 54.0261, max 77.1133)
+  Calorias totais: média = 1515.97 ± 33.50
+  Pareto front: 4 indivíduos
+
+=== Geração 21 ===
+  FO PHDI: média = 78.3166 ± 6.8497 (min 68.5633, max 88.0230)
+  FO Aceitabilidade: média = 69.0561 ± 9.2378 (min 55.0591, max 77.6017)
+  Calorias totais: média = 1540.37 ± 30.17
+  Pareto front: 6 indivíduos
+
+=== Geração 22 ===
+  FO PHDI: média = 78.8016 ± 6.8565 (min 68.5633, max 88.0230)
+  FO Aceitabilidade: média = 69.3735 ± 9.2170 (min 55.0591, max 77.6017)
+  Calorias totais: média = 1541.58 ± 30.29
+  Pareto front: 7 indivíduos
+
+=== Geração 23 ===
+  FO PHDI: média = 79.2409 ± 6.8920 (min 68.5633, max 88.0230)
+  FO Aceitabilidade: média = 69.6662 ± 9.2180 (min 55.0591, max 77.6017)
+  Calorias totais: média = 1547.24 ± 28.34
+  Pareto front: 8 indivíduos
+
+=== Geração 24 ===
+  FO PHDI: média = 79.5273 ± 6.4613 (min 68.5633, max 88.0230)
+  FO Aceitabilidade: média = 69.1996 ± 8.8986 (min 55.0591, max 77.6017)
+  Calorias totais: média = 1551.65 ± 27.72
+  Pareto front: 10 indivíduos
+
+=== Geração 25 ===
+  FO PHDI: média = 78.7604 ± 7.2445 (min 64.9233, max 88.0230)
+  FO Aceitabilidade: média = 69.8331 ± 8.9724 (min 55.0591, max 79.5782)
+  Calorias totais: média = 1549.95 ± 27.43
+  Pareto front: 11 indivíduos
+
+=== Geração 26 ===
+  FO PHDI: média = 77.8311 ± 7.6438 (min 64.9233, max 88.0230)
+  FO Aceitabilidade: média = 70.6980 ± 8.6917 (min 55.0591, max 79.6646)
+  Calorias totais: média = 1552.33 ± 25.85
+  Pareto front: 11 indivíduos
+
+=== Geração 27 ===
+  FO PHDI: média = 76.7893 ± 7.9652 (min 64.9233, max 89.5185)
+  FO Aceitabilidade: média = 72.2937 ± 8.1192 (min 55.1117, max 79.6646)
+  Calorias totais: média = 1552.89 ± 20.76
+  Pareto front: 7 indivíduos
+
+=== Geração 28 ===
+  FO PHDI: média = 76.3733 ± 7.9339 (min 64.9233, max 90.3123)
+  FO Aceitabilidade: média = 73.4325 ± 6.8591 (min 57.4612, max 79.6646)
+  Calorias totais: média = 1554.09 ± 14.91
+  Pareto front: 8 indivíduos
+
+=== Geração 29 ===
+  FO PHDI: média = 76.1171 ± 8.1610 (min 64.9654, max 90.3123)
+  FO Aceitabilidade: média = 73.3608 ± 7.2025 (min 57.4612, max 79.6646)
+  Calorias totais: média = 1555.85 ± 14.55
+  Pareto front: 11 indivíduos
+
+=== Geração 30 ===
+  FO PHDI: média = 76.6090 ± 7.7393 (min 64.9654, max 92.0155)
+  FO Aceitabilidade: média = 73.5125 ± 6.4158 (min 59.1269, max 79.6646)
+  Calorias totais: média = 1551.90 ± 12.74
+  Pareto front: 12 indivíduos
+
+=== Geração 31 ===
+  FO PHDI: média = 78.6456 ± 6.9983 (min 65.5204, max 92.0155)
+  FO Aceitabilidade: média = 72.9456 ± 7.1337 (min 59.1269, max 85.4512)
+  Calorias totais: média = 1548.82 ± 12.62
+  Pareto front: 6 indivíduos
+
+=== Geração 32 ===
+  FO PHDI: média = 78.8544 ± 6.7141 (min 65.5204, max 92.0155)
+  FO Aceitabilidade: média = 72.9985 ± 7.5503 (min 59.1269, max 85.8293)
+  Calorias totais: média = 1546.35 ± 13.15
+  Pareto front: 9 indivíduos
+
+=== Geração 33 ===
+  FO PHDI: média = 81.7494 ± 4.7398 (min 75.5687, max 92.0155)
+  FO Aceitabilidade: média = 73.4393 ± 8.6588 (min 59.1269, max 85.8293)
+  Calorias totais: média = 1546.07 ± 11.63
+  Pareto front: 12 indivíduos
+
+=== Geração 34 ===
+  FO PHDI: média = 81.6749 ± 4.5654 (min 75.5687, max 92.0155)
+  FO Aceitabilidade: média = 73.6026 ± 8.1746 (min 59.1616, max 85.8293)
+  Calorias totais: média = 1546.55 ± 11.26
+  Pareto front: 12 indivíduos
+
+=== Geração 35 ===
+  FO PHDI: média = 81.9235 ± 4.3719 (min 75.5687, max 92.0155)
+  FO Aceitabilidade: média = 73.3658 ± 7.9557 (min 59.1616, max 85.8293)
+  Calorias totais: média = 1542.60 ± 14.09
+  Pareto front: 13 indivíduos
+
+=== Geração 36 ===
+  FO PHDI: média = 82.1821 ± 4.8738 (min 74.6403, max 92.0155)
+  FO Aceitabilidade: média = 74.2630 ± 8.0503 (min 59.1616, max 85.8293)
+  Calorias totais: média = 1541.90 ± 14.03
+  Pareto front: 6 indivíduos
+
+=== Geração 37 ===
+  FO PHDI: média = 81.9002 ± 5.6627 (min 72.3419, max 92.0155)
+  FO Aceitabilidade: média = 75.4825 ± 9.2714 (min 59.1616, max 85.8293)
+  Calorias totais: média = 1532.32 ± 20.00
+  Pareto front: 6 indivíduos
+
+=== Geração 38 ===
+  FO PHDI: média = 82.6915 ± 6.3573 (min 72.3522, max 92.3348)
+  FO Aceitabilidade: média = 74.5328 ± 10.7948 (min 56.3847, max 85.9994)
+  Calorias totais: média = 1543.81 ± 17.84
+  Pareto front: 9 indivíduos
+
+=== Geração 39 ===
+  FO PHDI: média = 83.7046 ± 6.7426 (min 75.4858, max 92.3348)
+  FO Aceitabilidade: média = 74.3410 ± 11.8913 (min 56.3847, max 86.2763)
+  Calorias totais: média = 1545.99 ± 16.64
+  Pareto front: 10 indivíduos
+
+=== Geração 40 ===
+  FO PHDI: média = 83.2625 ± 6.7782 (min 75.4858, max 92.3348)
+  FO Aceitabilidade: média = 75.0260 ± 11.8550 (min 56.3847, max 86.2763)
+  Calorias totais: média = 1545.23 ± 16.42
+  Pareto front: 10 indivíduos
+
+=== Geração 41 ===
+  FO PHDI: média = 83.8710 ± 6.9269 (min 75.4858, max 92.3348)
+  FO Aceitabilidade: média = 74.4157 ± 11.8924 (min 56.3847, max 86.2763)
+  Calorias totais: média = 1545.77 ± 15.95
+  Pareto front: 9 indivíduos
+
+=== Geração 42 ===
+  FO PHDI: média = 84.9456 ± 6.8091 (min 75.8011, max 92.3348)
+  FO Aceitabilidade: média = 72.6071 ± 11.9503 (min 56.3847, max 86.4139)
+  Calorias totais: média = 1547.61 ± 15.67
+  Pareto front: 10 indivíduos
+
+=== Geração 43 ===
+  FO PHDI: média = 84.5857 ± 6.9116 (min 75.8011, max 92.3348)
+  FO Aceitabilidade: média = 73.6445 ± 11.9755 (min 56.3847, max 86.4139)
+  Calorias totais: média = 1544.43 ± 16.12
+  Pareto front: 10 indivíduos
+
+=== Geração 44 ===
+  FO PHDI: média = 85.8914 ± 6.5303 (min 75.8011, max 92.3348)
+  FO Aceitabilidade: média = 71.8950 ± 11.6833 (min 56.3847, max 86.4139)
+  Calorias totais: média = 1546.21 ± 16.51
+  Pareto front: 10 indivíduos
+
+=== Geração 45 ===
+  FO PHDI: média = 85.4127 ± 6.7163 (min 75.8011, max 92.3348)
+  FO Aceitabilidade: média = 72.6337 ± 11.8184 (min 56.3847, max 86.4492)
+  Calorias totais: média = 1547.73 ± 17.27
+  Pareto front: 11 indivíduos
+
+=== Geração 46 ===
+  FO PHDI: média = 85.0714 ± 7.1426 (min 75.8011, max 93.3728)
+  FO Aceitabilidade: média = 74.1320 ± 11.7698 (min 56.3847, max 86.4492)
+  Calorias totais: média = 1547.72 ± 14.85
+  Pareto front: 7 indivíduos
+
+=== Geração 47 ===
+  FO PHDI: média = 84.7325 ± 7.3141 (min 75.8011, max 93.7533)
+  FO Aceitabilidade: média = 74.3586 ± 12.1557 (min 55.7697, max 86.4570)
+  Calorias totais: média = 1546.55 ± 16.60
+  Pareto front: 10 indivíduos
+
+=== Geração 48 ===
+  FO PHDI: média = 82.3637 ± 7.3615 (min 75.9941, max 94.4431)
+  FO Aceitabilidade: média = 79.5526 ± 10.7193 (min 55.6995, max 88.2891)
+  Calorias totais: média = 1544.72 ± 19.92
+  Pareto front: 9 indivíduos
+
+=== Geração 49 ===
+  FO PHDI: média = 83.1988 ± 7.8807 (min 75.9941, max 97.4233)
+  FO Aceitabilidade: média = 79.2972 ± 9.9873 (min 56.3777, max 88.2891)
+  Calorias totais: média = 1548.67 ± 14.18
+  Pareto front: 11 indivíduos
+
+=== Geração 50 ===
+  FO PHDI: média = 84.8426 ± 8.0948 (min 76.5550, max 97.4233)
+  FO Aceitabilidade: média = 77.9681 ± 10.5832 (min 56.6291, max 88.2891)
+  Calorias totais: média = 1549.92 ± 17.42
+  Pareto front: 9 indivíduos
+
+=== Geração 51 ===
+  FO PHDI: média = 84.2627 ± 7.9585 (min 76.5550, max 97.4233)
+  FO Aceitabilidade: média = 78.8773 ± 10.2631 (min 57.0996, max 88.2891)
+  Calorias totais: média = 1549.52 ± 13.12
+  Pareto front: 10 indivíduos
+
+=== Geração 52 ===
+  FO PHDI: média = 84.3433 ± 8.0067 (min 76.5550, max 97.4233)
+  FO Aceitabilidade: média = 78.9878 ± 10.2756 (min 57.0996, max 88.2891)
+  Calorias totais: média = 1549.80 ± 13.15
+  Pareto front: 10 indivíduos
+
+=== Geração 53 ===
+  FO PHDI: média = 84.4664 ± 8.2480 (min 75.9015, max 98.8145)
+  FO Aceitabilidade: média = 79.0304 ± 10.0866 (min 58.0113, max 88.5536)
+  Calorias totais: média = 1548.73 ± 10.56
+  Pareto front: 11 indivíduos
+
+=== Geração 54 ===
+  FO PHDI: média = 83.6122 ± 8.0021 (min 75.9015, max 98.8145)
+  FO Aceitabilidade: média = 80.1907 ± 9.6276 (min 58.0113, max 88.5536)
+  Calorias totais: média = 1548.78 ± 10.09
+  Pareto front: 11 indivíduos
+
+=== Geração 55 ===
+  FO PHDI: média = 83.6242 ± 7.5059 (min 75.9015, max 98.8145)
+  FO Aceitabilidade: média = 80.7375 ± 8.8480 (min 58.0113, max 88.5536)
+  Calorias totais: média = 1549.51 ± 9.92
+  Pareto front: 15 indivíduos
+
+=== Geração 56 ===
+  FO PHDI: média = 84.4975 ± 7.9335 (min 75.9015, max 99.0923)
+  FO Aceitabilidade: média = 79.9862 ± 9.5619 (min 58.4677, max 88.5536)
+  Calorias totais: média = 1552.90 ± 10.24
+  Pareto front: 18 indivíduos
+
+=== Geração 57 ===
+  FO PHDI: média = 84.9925 ± 8.4422 (min 75.9015, max 100.2224)
+  FO Aceitabilidade: média = 79.4335 ± 10.6524 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1556.37 ± 11.29
+  Pareto front: 21 indivíduos
+
+=== Geração 58 ===
+  FO PHDI: média = 85.3670 ± 8.2753 (min 75.9015, max 100.2224)
+  FO Aceitabilidade: média = 79.1763 ± 10.3823 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1557.30 ± 13.03
+  Pareto front: 24 indivíduos
+
+=== Geração 59 ===
+  FO PHDI: média = 86.0563 ± 8.4218 (min 75.9015, max 100.2224)
+  FO Aceitabilidade: média = 78.4582 ± 10.6560 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1557.04 ± 13.63
+  Pareto front: 26 indivíduos
+
+=== Geração 60 ===
+  FO PHDI: média = 86.5231 ± 8.7506 (min 75.9015, max 100.2224)
+  FO Aceitabilidade: média = 77.9710 ± 11.1000 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1557.62 ± 13.79
+  Pareto front: 24 indivíduos
+
+=== Geração 61 ===
+  FO PHDI: média = 87.4288 ± 8.5238 (min 75.9015, max 100.2224)
+  FO Aceitabilidade: média = 77.1718 ± 11.0238 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1556.34 ± 13.59
+  Pareto front: 19 indivíduos
+
+=== Geração 62 ===
+  FO PHDI: média = 86.3298 ± 8.4646 (min 74.7668, max 101.2876)
+  FO Aceitabilidade: média = 78.6737 ± 10.3820 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1554.53 ± 12.30
+  Pareto front: 19 indivíduos
+
+=== Geração 63 ===
+  FO PHDI: média = 86.1392 ± 9.0548 (min 74.7668, max 101.2876)
+  FO Aceitabilidade: média = 79.1951 ± 10.9645 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1555.25 ± 11.36
+  Pareto front: 19 indivíduos
+
+=== Geração 64 ===
+  FO PHDI: média = 86.7647 ± 9.0877 (min 74.7668, max 101.2876)
+  FO Aceitabilidade: média = 78.8360 ± 10.9886 (min 58.4510, max 88.5536)
+  Calorias totais: média = 1554.48 ± 10.81
+  Pareto front: 23 indivíduos
+
+=== Geração 65 ===
+  FO PHDI: média = 87.2237 ± 9.4866 (min 69.6390, max 101.2876)
+  FO Aceitabilidade: média = 78.1859 ± 11.2832 (min 58.4510, max 88.5591)
+  Calorias totais: média = 1553.74 ± 10.50
+  Pareto front: 25 indivíduos
+
+=== Geração 66 ===
+  FO PHDI: média = 87.0138 ± 9.6414 (min 69.3965, max 101.2876)
+  FO Aceitabilidade: média = 78.7064 ± 10.9767 (min 58.4510, max 88.5808)
+  Calorias totais: média = 1554.25 ± 10.54
+  Pareto front: 27 indivíduos
+
+=== Geração 67 ===
+  FO PHDI: média = 86.7178 ± 9.4697 (min 69.3965, max 101.2876)
+  FO Aceitabilidade: média = 79.7823 ± 9.8972 (min 58.4510, max 88.5808)
+  Calorias totais: média = 1553.95 ± 11.08
+  Pareto front: 29 indivíduos
+
+=== Geração 68 ===
+  FO PHDI: média = 86.8499 ± 9.8304 (min 69.3965, max 101.2966)
+  FO Aceitabilidade: média = 79.4414 ± 10.4587 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1553.17 ± 9.85
+  Pareto front: 29 indivíduos
+
+=== Geração 69 ===
+  FO PHDI: média = 85.0809 ± 9.4832 (min 69.3965, max 101.6825)
+  FO Aceitabilidade: média = 81.8560 ± 8.8092 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1552.75 ± 9.62
+  Pareto front: 25 indivíduos
+
+=== Geração 70 ===
+  FO PHDI: média = 86.4517 ± 9.7966 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 80.7343 ± 9.4785 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1552.20 ± 11.25
+  Pareto front: 28 indivíduos
+
+=== Geração 71 ===
+  FO PHDI: média = 86.3816 ± 10.2030 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 80.6699 ± 9.8854 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1552.10 ± 13.44
+  Pareto front: 25 indivíduos
+
+=== Geração 72 ===
+  FO PHDI: média = 86.7570 ± 10.2184 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 80.2864 ± 10.1137 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1551.43 ± 13.48
+  Pareto front: 27 indivíduos
+
+=== Geração 73 ===
+  FO PHDI: média = 86.8882 ± 10.3336 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 80.3033 ± 10.1111 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1551.16 ± 13.41
+  Pareto front: 28 indivíduos
+
+=== Geração 74 ===
+  FO PHDI: média = 87.1255 ± 11.2037 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 79.8498 ± 10.8211 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1551.09 ± 11.79
+  Pareto front: 24 indivíduos
+
+=== Geração 75 ===
+  FO PHDI: média = 87.3804 ± 11.0851 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 80.4162 ± 10.3575 (min 52.0763, max 88.5808)
+  Calorias totais: média = 1551.89 ± 12.22
+  Pareto front: 20 indivíduos
+
+=== Geração 76 ===
+  FO PHDI: média = 89.3220 ± 10.6657 (min 69.3965, max 101.7986)
+  FO Aceitabilidade: média = 79.4056 ± 10.9443 (min 52.0763, max 88.8829)
+  Calorias totais: média = 1553.65 ± 11.29
+  Pareto front: 17 indivíduos
+
+=== Geração 77 ===
+  FO PHDI: média = 91.1462 ± 9.9247 (min 75.9314, max 103.1103)
+  FO Aceitabilidade: média = 78.9994 ± 10.3311 (min 58.8432, max 88.9882)
+  Calorias totais: média = 1554.93 ± 11.26
+  Pareto front: 17 indivíduos
+
+=== Geração 78 ===
+  FO PHDI: média = 89.8939 ± 9.9698 (min 75.9314, max 103.1103)
+  FO Aceitabilidade: média = 81.2627 ± 8.4836 (min 59.0726, max 88.9882)
+  Calorias totais: média = 1553.24 ± 11.07
+  Pareto front: 20 indivíduos
+
+=== Geração 79 ===
+  FO PHDI: média = 89.4225 ± 9.9009 (min 75.9314, max 103.1103)
+  FO Aceitabilidade: média = 81.5544 ± 8.3788 (min 59.0726, max 88.9882)
+  Calorias totais: média = 1551.37 ± 11.58
+  Pareto front: 21 indivíduos
+
+=== Geração 80 ===
+  FO PHDI: média = 89.8117 ± 9.7762 (min 76.3304, max 103.1103)
+  FO Aceitabilidade: média = 81.3512 ± 8.6296 (min 59.0726, max 88.9882)
+  Calorias totais: média = 1550.35 ± 12.54
+  Pareto front: 24 indivíduos
+
+=== Geração 81 ===
+  FO PHDI: média = 90.1659 ± 10.3783 (min 74.5059, max 103.1103)
+  FO Aceitabilidade: média = 81.0385 ± 9.7762 (min 59.0726, max 89.2034)
+  Calorias totais: média = 1550.47 ± 12.23
+  Pareto front: 15 indivíduos
+
+=== Geração 82 ===
+  FO PHDI: média = 91.0188 ± 9.9777 (min 74.5059, max 103.1103)
+  FO Aceitabilidade: média = 81.0420 ± 9.5518 (min 59.0726, max 90.3144)
+  Calorias totais: média = 1550.34 ± 13.46
+  Pareto front: 12 indivíduos
+
+=== Geração 83 ===
+  FO PHDI: média = 91.2454 ± 10.1120 (min 76.1483, max 103.1103)
+  FO Aceitabilidade: média = 80.4819 ± 9.9720 (min 59.0726, max 90.3197)
+  Calorias totais: média = 1551.54 ± 13.42
+  Pareto front: 13 indivíduos
+
+=== Geração 84 ===
+  FO PHDI: média = 91.0090 ± 9.8209 (min 76.1483, max 103.3269)
+  FO Aceitabilidade: média = 81.2426 ± 9.2618 (min 59.0726, max 90.3197)
+  Calorias totais: média = 1550.59 ± 11.76
+  Pareto front: 10 indivíduos
+
+=== Geração 85 ===
+  FO PHDI: média = 90.2108 ± 9.8615 (min 76.1483, max 103.3269)
+  FO Aceitabilidade: média = 82.2217 ± 8.9150 (min 59.0726, max 90.3197)
+  Calorias totais: média = 1549.38 ± 11.28
+  Pareto front: 12 indivíduos
+
+=== Geração 86 ===
+  FO PHDI: média = 90.6848 ± 9.5591 (min 76.1612, max 103.3269)
+  FO Aceitabilidade: média = 82.1635 ± 8.5891 (min 60.9860, max 90.3542)
+  Calorias totais: média = 1549.45 ± 11.15
+  Pareto front: 13 indivíduos
+
+=== Geração 87 ===
+  FO PHDI: média = 90.9517 ± 9.5422 (min 76.1612, max 103.3269)
+  FO Aceitabilidade: média = 82.0621 ± 8.5810 (min 60.9860, max 90.3542)
+  Calorias totais: média = 1549.46 ± 11.47
+  Pareto front: 13 indivíduos
+
+=== Geração 88 ===
+  FO PHDI: média = 91.9529 ± 9.1224 (min 76.1612, max 103.3269)
+  FO Aceitabilidade: média = 81.4762 ± 9.1751 (min 60.9860, max 90.3542)
+  Calorias totais: média = 1550.17 ± 10.67
+  Pareto front: 9 indivíduos
+
+=== Geração 89 ===
+  FO PHDI: média = 90.8470 ± 9.0329 (min 74.7862, max 103.4635)
+  FO Aceitabilidade: média = 83.2114 ± 7.5106 (min 61.1863, max 90.5732)
+  Calorias totais: média = 1549.89 ± 11.80
+  Pareto front: 11 indivíduos
+
+=== Geração 90 ===
+  FO PHDI: média = 91.6539 ± 8.6469 (min 74.7862, max 103.4635)
+  FO Aceitabilidade: média = 82.8562 ± 8.0636 (min 61.1863, max 90.5732)
+  Calorias totais: média = 1548.96 ± 11.49
+  Pareto front: 12 indivíduos
+
+=== Geração 91 ===
+  FO PHDI: média = 91.4428 ± 8.5984 (min 74.7862, max 103.4635)
+  FO Aceitabilidade: média = 83.0323 ± 7.9990 (min 61.1863, max 90.5732)
+  Calorias totais: média = 1549.02 ± 11.32
+  Pareto front: 12 indivíduos
+
+=== Geração 92 ===
+  FO PHDI: média = 93.9552 ± 7.9610 (min 74.7862, max 103.4635)
+  FO Aceitabilidade: média = 82.1984 ± 8.3694 (min 61.2048, max 90.5732)
+  Calorias totais: média = 1546.32 ± 8.43
+  Pareto front: 13 indivíduos
+
+=== Geração 93 ===
+  FO PHDI: média = 93.4564 ± 7.6779 (min 74.7862, max 103.4635)
+  FO Aceitabilidade: média = 83.1514 ± 7.9947 (min 62.0943, max 90.5732)
+  Calorias totais: média = 1545.37 ± 7.67
+  Pareto front: 13 indivíduos
+
+=== Geração 94 ===
+  FO PHDI: média = 93.4599 ± 8.1502 (min 74.7862, max 103.5877)
+  FO Aceitabilidade: média = 82.6968 ± 8.8364 (min 62.0943, max 90.5732)
+  Calorias totais: média = 1545.94 ± 5.11
+  Pareto front: 16 indivíduos
+
+=== Geração 95 ===
+  FO PHDI: média = 93.6400 ± 7.7630 (min 74.7862, max 103.5877)
+  FO Aceitabilidade: média = 83.0451 ± 8.5767 (min 62.0943, max 90.5916)
+  Calorias totais: média = 1544.04 ± 5.65
+  Pareto front: 16 indivíduos
+
+=== Geração 96 ===
+  FO PHDI: média = 93.4158 ± 7.7155 (min 74.7862, max 103.5877)
+  FO Aceitabilidade: média = 83.3202 ± 8.5247 (min 62.0943, max 90.5916)
+  Calorias totais: média = 1544.59 ± 5.23
+  Pareto front: 15 indivíduos
+
+=== Geração 97 ===
+  FO PHDI: média = 93.7107 ± 7.3958 (min 74.7862, max 103.9850)
+  FO Aceitabilidade: média = 83.3881 ± 8.3827 (min 62.1643, max 90.5916)
+  Calorias totais: média = 1544.65 ± 5.11
+  Pareto front: 16 indivíduos
+
+=== Geração 98 ===
+  FO PHDI: média = 93.4335 ± 7.5108 (min 74.7862, max 103.9850)
+  FO Aceitabilidade: média = 83.7364 ± 8.2514 (min 62.1643, max 90.5916)
+  Calorias totais: média = 1544.64 ± 5.23
+  Pareto front: 18 indivíduos
+
+=== Geração 99 ===
+  FO PHDI: média = 93.5025 ± 7.4031 (min 74.7862, max 103.9850)
+  FO Aceitabilidade: média = 83.8100 ± 8.1325 (min 62.1643, max 90.5916)
+  Calorias totais: média = 1544.38 ± 5.37
+  Pareto front: 19 indivíduos
+
+=== Geração 100 ===
+  FO PHDI: média = 93.8815 ± 7.2404 (min 74.7862, max 103.9850)
+  FO Aceitabilidade: média = 83.8619 ± 7.9189 (min 62.1643, max 90.5916)
+  Calorias totais: média = 1543.94 ± 5.36
+  Pareto front: 21 indivíduos
+
+=== Geração 101 ===
+  FO PHDI: média = 94.5549 ± 6.3703 (min 81.3321, max 103.9850)
+  FO Aceitabilidade: média = 83.7073 ± 7.6029 (min 62.1643, max 91.0820)
+  Calorias totais: média = 1544.39 ± 5.91
+  Pareto front: 24 indivíduos
+
+=== Geração 102 ===
+  FO PHDI: média = 94.4807 ± 6.2712 (min 81.3321, max 103.9850)
+  FO Aceitabilidade: média = 84.0078 ± 7.4010 (min 62.1643, max 91.0820)
+  Calorias totais: média = 1544.74 ± 5.96
+  Pareto front: 23 indivíduos
+
+=== Geração 103 ===
+  FO PHDI: média = 94.3968 ± 6.7118 (min 81.3321, max 104.0323)
+  FO Aceitabilidade: média = 83.9960 ± 7.6897 (min 62.2292, max 91.0820)
+  Calorias totais: média = 1543.91 ± 5.17
+  Pareto front: 20 indivíduos
+
+=== Geração 104 ===
+  FO PHDI: média = 94.5132 ± 6.5916 (min 81.3321, max 104.4540)
+  FO Aceitabilidade: média = 84.0908 ± 7.4961 (min 62.2627, max 91.0820)
+  Calorias totais: média = 1543.78 ± 5.25
+  Pareto front: 21 indivíduos
+
+=== Geração 105 ===
+  FO PHDI: média = 94.7361 ± 6.5875 (min 81.3321, max 104.4540)
+  FO Aceitabilidade: média = 83.6733 ± 7.9746 (min 62.2627, max 91.0820)
+  Calorias totais: média = 1544.23 ± 5.57
+  Pareto front: 22 indivíduos
+
+=== Geração 106 ===
+  FO PHDI: média = 94.9072 ± 6.5581 (min 81.3321, max 104.4540)
+  FO Aceitabilidade: média = 83.5717 ± 7.9621 (min 62.2627, max 91.0820)
+  Calorias totais: média = 1544.38 ± 5.50
+  Pareto front: 25 indivíduos
+
+=== Geração 107 ===
+  FO PHDI: média = 93.8853 ± 7.0690 (min 81.3321, max 104.4540)
+  FO Aceitabilidade: média = 84.1553 ± 7.9281 (min 62.2627, max 91.4177)
+  Calorias totais: média = 1544.41 ± 5.28
+  Pareto front: 28 indivíduos
+
+=== Geração 108 ===
+  FO PHDI: média = 93.3769 ± 7.2582 (min 81.4082, max 104.4540)
+  FO Aceitabilidade: média = 84.2964 ± 7.9573 (min 62.2627, max 91.4177)
+  Calorias totais: média = 1544.71 ± 5.29
+  Pareto front: 32 indivíduos
+
+=== Geração 109 ===
+  FO PHDI: média = 93.0284 ± 7.7263 (min 74.6876, max 104.4540)
+  FO Aceitabilidade: média = 84.4181 ± 7.9246 (min 62.2627, max 92.5227)
+  Calorias totais: média = 1545.38 ± 5.78
+  Pareto front: 33 indivíduos
+
+=== Geração 110 ===
+  FO PHDI: média = 92.6893 ± 7.8480 (min 74.6876, max 104.4540)
+  FO Aceitabilidade: média = 84.5365 ± 7.9454 (min 62.3541, max 92.5227)
+  Calorias totais: média = 1545.52 ± 6.94
+  Pareto front: 32 indivíduos
+
+=== Geração 111 ===
+  FO PHDI: média = 91.9049 ± 8.4923 (min 73.4367, max 104.4540)
+  FO Aceitabilidade: média = 84.6038 ± 8.4120 (min 62.3541, max 93.2761)
+  Calorias totais: média = 1546.73 ± 7.69
+  Pareto front: 38 indivíduos
+
+=== Geração 112 ===
+  FO PHDI: média = 91.9252 ± 8.8033 (min 73.4367, max 104.4540)
+  FO Aceitabilidade: média = 84.4948 ± 8.6491 (min 62.3541, max 94.4605)
+  Calorias totais: média = 1546.81 ± 8.00
+  Pareto front: 31 indivíduos
+
+=== Geração 113 ===
+  FO PHDI: média = 92.2493 ± 8.7992 (min 73.4367, max 104.4540)
+  FO Aceitabilidade: média = 84.2145 ± 8.7494 (min 62.3541, max 94.4605)
+  Calorias totais: média = 1546.69 ± 8.17
+  Pareto front: 32 indivíduos
+
+=== Geração 114 ===
+  FO PHDI: média = 92.9394 ± 8.9548 (min 73.4367, max 104.4540)
+  FO Aceitabilidade: média = 83.8143 ± 8.9608 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.65 ± 8.43
+  Pareto front: 31 indivíduos
+
+=== Geração 115 ===
+  FO PHDI: média = 92.7127 ± 9.1930 (min 73.4367, max 104.4540)
+  FO Aceitabilidade: média = 84.1083 ± 8.7942 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.08 ± 9.07
+  Pareto front: 34 indivíduos
+
+=== Geração 116 ===
+  FO PHDI: média = 92.8570 ± 8.9367 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 84.1804 ± 8.8435 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.16 ± 8.54
+  Pareto front: 32 indivíduos
+
+=== Geração 117 ===
+  FO PHDI: média = 92.7938 ± 9.1150 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 84.1256 ± 8.8814 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.25 ± 8.51
+  Pareto front: 33 indivíduos
+
+=== Geração 118 ===
+  FO PHDI: média = 92.9083 ± 9.6553 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 83.5942 ± 9.1741 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.71 ± 8.70
+  Pareto front: 31 indivíduos
+
+=== Geração 119 ===
+  FO PHDI: média = 92.5010 ± 9.7718 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 84.0351 ± 9.0502 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.68 ± 8.53
+  Pareto front: 33 indivíduos
+
+=== Geração 120 ===
+  FO PHDI: média = 92.9963 ± 9.6676 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 83.7073 ± 9.2592 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1545.58 ± 8.19
+  Pareto front: 27 indivíduos
+
+=== Geração 121 ===
+  FO PHDI: média = 93.4352 ± 9.4890 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 83.6032 ± 9.2042 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1545.54 ± 8.57
+  Pareto front: 28 indivíduos
+
+=== Geração 122 ===
+  FO PHDI: média = 93.3845 ± 9.7962 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 82.8091 ± 10.0141 (min 62.3541, max 94.5637)
+  Calorias totais: média = 1546.03 ± 8.92
+  Pareto front: 32 indivíduos
+
+=== Geração 123 ===
+  FO PHDI: média = 93.4076 ± 9.9704 (min 74.0887, max 104.4540)
+  FO Aceitabilidade: média = 82.5800 ± 10.3015 (min 62.3541, max 94.6203)
+  Calorias totais: média = 1545.52 ± 8.26
+  Pareto front: 35 indivíduos
+
+=== Geração 124 ===
+  FO PHDI: média = 93.4995 ± 9.5823 (min 74.3484, max 104.4540)
+  FO Aceitabilidade: média = 82.7681 ± 10.1433 (min 62.3541, max 94.6203)
+  Calorias totais: média = 1545.68 ± 8.45
+  Pareto front: 38 indivíduos
+
+=== Geração 125 ===
+  FO PHDI: média = 93.9696 ± 9.5982 (min 72.2915, max 104.4540)
+  FO Aceitabilidade: média = 82.4965 ± 10.2409 (min 62.4262, max 96.3221)
+  Calorias totais: média = 1545.93 ± 8.87
+  Pareto front: 41 indivíduos
+
+=== Geração 126 ===
+  FO PHDI: média = 93.3927 ± 9.6118 (min 72.2915, max 104.4540)
+  FO Aceitabilidade: média = 83.2472 ± 10.0985 (min 62.5209, max 96.3221)
+  Calorias totais: média = 1546.31 ± 9.38
+  Pareto front: 41 indivíduos
+
+=== Geração 127 ===
+  FO PHDI: média = 92.9868 ± 9.7746 (min 72.2915, max 104.4540)
+  FO Aceitabilidade: média = 83.9658 ± 10.0415 (min 62.5209, max 97.6210)
+  Calorias totais: média = 1546.83 ± 9.86
+  Pareto front: 40 indivíduos
+
+=== Geração 128 ===
+  FO PHDI: média = 92.1167 ± 9.8294 (min 71.7812, max 104.4540)
+  FO Aceitabilidade: média = 85.1026 ± 9.8111 (min 62.5209, max 97.6210)
+  Calorias totais: média = 1549.02 ± 10.89
+  Pareto front: 32 indivíduos
+
+=== Geração 129 ===
+  FO PHDI: média = 92.0362 ± 10.3538 (min 71.7812, max 104.4540)
+  FO Aceitabilidade: média = 84.7972 ± 10.3357 (min 62.5209, max 97.6210)
+  Calorias totais: média = 1549.15 ± 10.92
+  Pareto front: 28 indivíduos
+
+=== Geração 130 ===
+  FO PHDI: média = 91.4218 ± 10.4418 (min 71.7812, max 104.4540)
+  FO Aceitabilidade: média = 85.4373 ± 10.2414 (min 62.5209, max 97.6210)
+  Calorias totais: média = 1548.72 ± 11.21
+  Pareto front: 29 indivíduos
+
+=== Geração 131 ===
+  FO PHDI: média = 91.9200 ± 10.9288 (min 69.8983, max 104.4540)
+  FO Aceitabilidade: média = 85.1970 ± 10.6915 (min 62.5209, max 97.6210)
+  Calorias totais: média = 1548.29 ± 12.10
+  Pareto front: 25 indivíduos
+
+=== Geração 132 ===
+  FO PHDI: média = 94.0701 ± 9.6826 (min 73.1855, max 104.4540)
+  FO Aceitabilidade: média = 83.7485 ± 10.9898 (min 62.5209, max 97.6394)
+  Calorias totais: média = 1547.59 ± 12.81
+  Pareto front: 28 indivíduos
+
+=== Geração 133 ===
+  FO PHDI: média = 96.8226 ± 7.5118 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.5247 ± 11.4495 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1545.65 ± 11.32
+  Pareto front: 27 indivíduos
+
+=== Geração 134 ===
+  FO PHDI: média = 96.8452 ± 7.4291 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.9733 ± 11.1131 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1545.90 ± 11.23
+  Pareto front: 27 indivíduos
+
+=== Geração 135 ===
+  FO PHDI: média = 96.9780 ± 7.5268 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.8550 ± 11.2001 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1546.28 ± 10.94
+  Pareto front: 22 indivíduos
+
+=== Geração 136 ===
+  FO PHDI: média = 97.3946 ± 7.4197 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.3676 ± 11.3594 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1546.73 ± 11.26
+  Pareto front: 26 indivíduos
+
+=== Geração 137 ===
+  FO PHDI: média = 97.9072 ± 6.5993 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.3981 ± 10.9994 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1546.16 ± 9.56
+  Pareto front: 28 indivíduos
+
+=== Geração 138 ===
+  FO PHDI: média = 97.8357 ± 6.8548 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.2531 ± 11.4141 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1545.72 ± 9.63
+  Pareto front: 28 indivíduos
+
+=== Geração 139 ===
+  FO PHDI: média = 97.9731 ± 6.6324 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 81.2187 ± 11.5202 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1546.41 ± 9.59
+  Pareto front: 31 indivíduos
+
+=== Geração 140 ===
+  FO PHDI: média = 98.0107 ± 6.9317 (min 73.2708, max 104.4540)
+  FO Aceitabilidade: média = 80.7513 ± 11.9629 (min 62.5206, max 97.6851)
+  Calorias totais: média = 1547.35 ± 8.65
+  Pareto front: 31 indivíduos
+
+=== Geração 141 ===
+  FO PHDI: média = 98.2620 ± 6.7935 (min 73.2708, max 104.5100)
+  FO Aceitabilidade: média = 80.5462 ± 11.7809 (min 62.5209, max 97.6851)
+  Calorias totais: média = 1547.50 ± 8.53
+  Pareto front: 32 indivíduos
+
+=== Geração 142 ===
+  FO PHDI: média = 97.9332 ± 7.1050 (min 73.2708, max 104.5100)
+  FO Aceitabilidade: média = 80.7806 ± 12.0398 (min 62.5209, max 97.6851)
+  Calorias totais: média = 1547.65 ± 8.49
+  Pareto front: 33 indivíduos
+
+=== Geração 143 ===
+  FO PHDI: média = 97.8252 ± 7.2197 (min 73.2708, max 104.5100)
+  FO Aceitabilidade: média = 80.9907 ± 12.1060 (min 62.5209, max 97.6851)
+  Calorias totais: média = 1547.52 ± 8.46
+  Pareto front: 33 indivíduos
+
+=== Geração 144 ===
+  FO PHDI: média = 96.8718 ± 8.4208 (min 73.2708, max 104.5100)
+  FO Aceitabilidade: média = 81.4042 ± 12.8439 (min 62.5209, max 97.7071)
+  Calorias totais: média = 1547.42 ± 9.00
+  Pareto front: 30 indivíduos
+
+=== Geração 145 ===
+  FO PHDI: média = 96.5082 ± 8.7109 (min 73.2708, max 104.5100)
+  FO Aceitabilidade: média = 81.5710 ± 13.2394 (min 62.5209, max 97.7071)
+  Calorias totais: média = 1548.33 ± 8.77
+  Pareto front: 29 indivíduos
+
+=== Geração 146 ===
+  FO PHDI: média = 95.0932 ± 9.3777 (min 73.1553, max 104.5100)
+  FO Aceitabilidade: média = 83.5837 ± 13.1951 (min 62.5209, max 97.8063)
+  Calorias totais: média = 1549.11 ± 7.91
+  Pareto front: 24 indivíduos
+
+=== Geração 147 ===
+  FO PHDI: média = 95.2109 ± 8.9422 (min 73.1553, max 104.5100)
+  FO Aceitabilidade: média = 83.8712 ± 12.9722 (min 62.5209, max 97.8063)
+  Calorias totais: média = 1547.78 ± 7.96
+  Pareto front: 24 indivíduos
+
+=== Geração 148 ===
+  FO PHDI: média = 95.6421 ± 8.9332 (min 73.1553, max 104.5100)
+  FO Aceitabilidade: média = 83.0284 ± 13.2657 (min 62.5209, max 97.8063)
+  Calorias totais: média = 1547.64 ± 7.83
+  Pareto front: 24 indivíduos
+
+=== Geração 149 ===
+  FO PHDI: média = 94.5874 ± 9.2481 (min 73.1553, max 104.5778)
+  FO Aceitabilidade: média = 84.9399 ± 12.4178 (min 62.5232, max 97.8578)
+  Calorias totais: média = 1548.13 ± 8.81
+  Pareto front: 14 indivíduos
+
+=== Geração 150 ===
+  FO PHDI: média = 93.5220 ± 9.4439 (min 73.1553, max 104.5778)
+  FO Aceitabilidade: média = 86.5387 ± 11.7808 (min 62.5232, max 97.8578)
+  Calorias totais: média = 1548.69 ± 9.34
+  Pareto front: 14 indivíduos
+
+=== Geração 151 ===
+  FO PHDI: média = 93.0993 ± 9.6613 (min 73.1553, max 104.5778)
+  FO Aceitabilidade: média = 86.8552 ± 11.6868 (min 62.5232, max 97.8578)
+  Calorias totais: média = 1548.70 ± 9.18
+  Pareto front: 15 indivíduos
+
+=== Geração 152 ===
+  FO PHDI: média = 93.1480 ± 9.5266 (min 73.1553, max 104.5778)
+  FO Aceitabilidade: média = 87.1332 ± 11.3962 (min 62.5232, max 97.8578)
+  Calorias totais: média = 1549.43 ± 8.61
+  Pareto front: 19 indivíduos
+
+=== Geração 153 ===
+  FO PHDI: média = 94.2726 ± 9.0995 (min 73.5954, max 104.5778)
+  FO Aceitabilidade: média = 86.3187 ± 11.4234 (min 62.5232, max 98.0614)
+  Calorias totais: média = 1549.14 ± 8.29
+  Pareto front: 19 indivíduos
+
+=== Geração 154 ===
+  FO PHDI: média = 95.3585 ± 8.1842 (min 74.0668, max 104.5778)
+  FO Aceitabilidade: média = 85.8554 ± 11.1465 (min 62.5232, max 98.5068)
+  Calorias totais: média = 1549.89 ± 7.59
+  Pareto front: 18 indivíduos
+
+=== Geração 155 ===
+  FO PHDI: média = 96.6162 ± 7.2663 (min 83.7125, max 104.5778)
+  FO Aceitabilidade: média = 84.3951 ± 11.8937 (min 62.5232, max 98.6105)
+  Calorias totais: média = 1550.31 ± 6.83
+  Pareto front: 16 indivíduos
+
+=== Geração 156 ===
+  FO PHDI: média = 96.9179 ± 7.1594 (min 83.7125, max 104.5778)
+  FO Aceitabilidade: média = 84.5475 ± 11.5371 (min 62.5232, max 98.6105)
+  Calorias totais: média = 1550.38 ± 5.96
+  Pareto front: 18 indivíduos
+
+=== Geração 157 ===
+  FO PHDI: média = 97.1905 ± 6.9896 (min 83.7125, max 104.5778)
+  FO Aceitabilidade: média = 84.2928 ± 11.5303 (min 62.5232, max 98.6105)
+  Calorias totais: média = 1549.88 ± 5.68
+  Pareto front: 18 indivíduos
+
+=== Geração 158 ===
+  FO PHDI: média = 97.0987 ± 6.9257 (min 83.7125, max 104.5778)
+  FO Aceitabilidade: média = 85.0530 ± 10.9643 (min 62.5232, max 98.6105)
+  Calorias totais: média = 1550.33 ± 6.72
+  Pareto front: 19 indivíduos
+
+=== Geração 159 ===
+  FO PHDI: média = 96.3842 ± 6.8423 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.5103 ± 6.0602 (min 73.4705, max 98.6105)
+  Calorias totais: média = 1550.82 ± 7.47
+  Pareto front: 19 indivíduos
+
+=== Geração 160 ===
+  FO PHDI: média = 96.1768 ± 6.8295 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.6785 ± 5.9441 (min 73.4705, max 98.6105)
+  Calorias totais: média = 1551.67 ± 8.34
+  Pareto front: 21 indivíduos
+
+=== Geração 161 ===
+  FO PHDI: média = 96.2351 ± 6.8698 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.6576 ± 5.9257 (min 73.4705, max 98.6105)
+  Calorias totais: média = 1550.98 ± 8.82
+  Pareto front: 23 indivíduos
+
+=== Geração 162 ===
+  FO PHDI: média = 96.1174 ± 6.9008 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.4814 ± 6.4155 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.46 ± 8.84
+  Pareto front: 24 indivíduos
+
+=== Geração 163 ===
+  FO PHDI: média = 96.3630 ± 7.0251 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.4483 ± 6.3843 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1551.10 ± 8.67
+  Pareto front: 29 indivíduos
+
+=== Geração 164 ===
+  FO PHDI: média = 96.6178 ± 7.1816 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.3168 ± 6.4403 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1552.10 ± 8.74
+  Pareto front: 29 indivíduos
+
+=== Geração 165 ===
+  FO PHDI: média = 96.8647 ± 7.1560 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.1744 ± 6.3571 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1552.44 ± 8.81
+  Pareto front: 31 indivíduos
+
+=== Geração 166 ===
+  FO PHDI: média = 96.6691 ± 7.1524 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.5497 ± 6.0638 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1552.84 ± 8.92
+  Pareto front: 31 indivíduos
+
+=== Geração 167 ===
+  FO PHDI: média = 96.7679 ± 7.2648 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.4682 ± 6.2612 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1552.03 ± 8.29
+  Pareto front: 20 indivíduos
+
+=== Geração 168 ===
+  FO PHDI: média = 96.3159 ± 7.2873 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.8098 ± 6.2019 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1551.64 ± 8.10
+  Pareto front: 23 indivíduos
+
+=== Geração 169 ===
+  FO PHDI: média = 95.9146 ± 7.1620 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 89.2292 ± 6.3248 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1551.36 ± 8.28
+  Pareto front: 19 indivíduos
+
+=== Geração 170 ===
+  FO PHDI: média = 96.1685 ± 7.1437 (min 83.7125, max 105.9774)
+  FO Aceitabilidade: média = 88.9039 ± 6.4550 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1551.35 ± 8.08
+  Pareto front: 20 indivíduos
+
+=== Geração 171 ===
+  FO PHDI: média = 95.9167 ± 7.1672 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 89.0867 ± 6.5396 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.64 ± 8.58
+  Pareto front: 20 indivíduos
+
+=== Geração 172 ===
+  FO PHDI: média = 96.0622 ± 7.0888 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 89.2380 ± 6.1102 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.89 ± 8.11
+  Pareto front: 22 indivíduos
+
+=== Geração 173 ===
+  FO PHDI: média = 95.8985 ± 6.8420 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 89.3503 ± 5.9528 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.29 ± 7.78
+  Pareto front: 22 indivíduos
+
+=== Geração 174 ===
+  FO PHDI: média = 96.0206 ± 6.7674 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 89.3099 ± 5.8560 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.16 ± 7.69
+  Pareto front: 22 indivíduos
+
+=== Geração 175 ===
+  FO PHDI: média = 96.1680 ± 6.7397 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 89.0720 ± 5.9462 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.28 ± 8.08
+  Pareto front: 25 indivíduos
+
+=== Geração 176 ===
+  FO PHDI: média = 96.4335 ± 6.8017 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 88.7656 ± 6.1910 (min 70.6963, max 98.6105)
+  Calorias totais: média = 1550.34 ± 7.94
+  Pareto front: 25 indivíduos
+
+=== Geração 177 ===
+  FO PHDI: média = 96.8751 ± 6.7443 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 88.6799 ± 5.9924 (min 74.1459, max 98.6105)
+  Calorias totais: média = 1550.55 ± 7.73
+  Pareto front: 29 indivíduos
+
+=== Geração 178 ===
+  FO PHDI: média = 97.0168 ± 6.8364 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 88.4751 ± 6.2334 (min 74.1459, max 98.6105)
+  Calorias totais: média = 1550.87 ± 7.40
+  Pareto front: 30 indivíduos
+
+=== Geração 179 ===
+  FO PHDI: média = 96.8071 ± 6.8427 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 88.5869 ± 6.1725 (min 74.1459, max 98.6105)
+  Calorias totais: média = 1550.78 ± 7.39
+  Pareto front: 31 indivíduos
+
+=== Geração 180 ===
+  FO PHDI: média = 96.6840 ± 6.9752 (min 83.7125, max 106.1427)
+  FO Aceitabilidade: média = 88.8033 ± 6.3457 (min 74.1459, max 98.7211)
+  Calorias totais: média = 1551.43 ± 7.65
+  Pareto front: 30 indivíduos
+
+=== Geração 181 ===
+  FO PHDI: média = 96.8942 ± 6.8983 (min 83.7125, max 106.5413)
+  FO Aceitabilidade: média = 88.5364 ± 6.5498 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1550.52 ± 6.39
+  Pareto front: 32 indivíduos
+
+=== Geração 182 ===
+  FO PHDI: média = 97.0250 ± 7.0113 (min 83.7125, max 106.5413)
+  FO Aceitabilidade: média = 88.2511 ± 6.9344 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1550.32 ± 5.89
+  Pareto front: 35 indivíduos
+
+=== Geração 183 ===
+  FO PHDI: média = 97.5665 ± 7.0492 (min 83.7125, max 106.5413)
+  FO Aceitabilidade: média = 87.9445 ± 7.3074 (min 72.4584, max 98.7211)
+  Calorias totais: média = 1550.49 ± 5.47
+  Pareto front: 34 indivíduos
+
+=== Geração 184 ===
+  FO PHDI: média = 97.7329 ± 7.0637 (min 83.7125, max 106.5413)
+  FO Aceitabilidade: média = 87.8102 ± 7.3435 (min 72.4584, max 98.7211)
+  Calorias totais: média = 1550.72 ± 5.34
+  Pareto front: 37 indivíduos
+
+=== Geração 185 ===
+  FO PHDI: média = 98.1648 ± 6.8964 (min 83.7125, max 106.5763)
+  FO Aceitabilidade: média = 87.5109 ± 7.2819 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1550.43 ± 5.56
+  Pareto front: 37 indivíduos
+
+=== Geração 186 ===
+  FO PHDI: média = 98.6939 ± 6.7603 (min 83.7125, max 106.5763)
+  FO Aceitabilidade: média = 87.3557 ± 7.4940 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1550.34 ± 4.74
+  Pareto front: 36 indivíduos
+
+=== Geração 187 ===
+  FO PHDI: média = 98.4172 ± 6.7932 (min 83.7125, max 106.5763)
+  FO Aceitabilidade: média = 87.4740 ± 7.5766 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1550.07 ± 4.55
+  Pareto front: 38 indivíduos
+
+=== Geração 188 ===
+  FO PHDI: média = 98.5732 ± 6.8768 (min 83.7125, max 106.5763)
+  FO Aceitabilidade: média = 87.2941 ± 7.7427 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.69 ± 4.72
+  Pareto front: 37 indivíduos
+
+=== Geração 189 ===
+  FO PHDI: média = 98.6137 ± 6.8554 (min 83.7125, max 106.5763)
+  FO Aceitabilidade: média = 87.1649 ± 7.7837 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.64 ± 4.60
+  Pareto front: 35 indivíduos
+
+=== Geração 190 ===
+  FO PHDI: média = 99.0067 ± 6.8047 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 86.7802 ± 7.8111 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.57 ± 4.25
+  Pareto front: 39 indivíduos
+
+=== Geração 191 ===
+  FO PHDI: média = 99.0859 ± 6.7638 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 86.6807 ± 7.8478 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.45 ± 4.27
+  Pareto front: 41 indivíduos
+
+=== Geração 192 ===
+  FO PHDI: média = 98.9584 ± 6.7255 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 86.8377 ± 7.7978 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.65 ± 4.29
+  Pareto front: 44 indivíduos
+
+=== Geração 193 ===
+  FO PHDI: média = 99.0410 ± 6.7205 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 86.6922 ± 7.8634 (min 72.6152, max 98.7211)
+  Calorias totais: média = 1549.56 ± 4.46
+  Pareto front: 44 indivíduos
+
+=== Geração 194 ===
+  FO PHDI: média = 98.7308 ± 6.7438 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 87.1807 ± 7.7794 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.44 ± 4.41
+  Pareto front: 44 indivíduos
+
+=== Geração 195 ===
+  FO PHDI: média = 98.7985 ± 6.7801 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 87.1501 ± 7.9862 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.50 ± 4.19
+  Pareto front: 40 indivíduos
+
+=== Geração 196 ===
+  FO PHDI: média = 98.4394 ± 6.8523 (min 83.7125, max 106.6822)
+  FO Aceitabilidade: média = 87.5285 ± 7.9144 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.69 ± 4.14
+  Pareto front: 45 indivíduos
+
+=== Geração 197 ===
+  FO PHDI: média = 98.9016 ± 6.5122 (min 87.1692, max 106.6822)
+  FO Aceitabilidade: média = 87.2405 ± 7.7357 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.66 ± 4.20
+  Pareto front: 48 indivíduos
+
+=== Geração 198 ===
+  FO PHDI: média = 98.7483 ± 6.5186 (min 87.1692, max 106.6822)
+  FO Aceitabilidade: média = 87.5125 ± 7.6383 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.80 ± 4.11
+  Pareto front: 52 indivíduos
+
+=== Geração 199 ===
+  FO PHDI: média = 98.7278 ± 6.5316 (min 87.1692, max 106.6822)
+  FO Aceitabilidade: média = 87.5940 ± 7.6178 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.56 ± 4.10
+  Pareto front: 53 indivíduos
+
+=== Geração 200 ===
+  FO PHDI: média = 98.9269 ± 6.5346 (min 87.1692, max 106.6822)
+  FO Aceitabilidade: média = 87.4003 ± 7.6353 (min 73.8373, max 98.7211)
+  Calorias totais: média = 1549.55 ± 4.14
+  Pareto front: 53 indivíduos
+
+CPU time: 5.230603 seconds
 
