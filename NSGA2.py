@@ -4,7 +4,6 @@ import time
 import copy
 import numpy as np
 import os
-import math
 from models import Problema, Otimizacao
 import pandas as pd
 import json
@@ -21,6 +20,7 @@ class Solucao:
         self.crowding_distance = -1
 
 def mutacao_polinomial(individuo, limites, chance_mutacao):
+    from dieta import LIMITES_ACEITABILIDADE
     # pequeno(5-10) pulos maiores
     # medio(20) balanceado
     # grande (50+) pequenas mutacoes locais
@@ -28,6 +28,9 @@ def mutacao_polinomial(individuo, limites, chance_mutacao):
     
     # individuo[i] representa um gene
     for i, (min_lim, max_lim) in enumerate(limites):
+        if 'valor_fixo' in LIMITES_ACEITABILIDADE[i]:
+            continue
+        
         if random.random() < chance_mutacao:
             u = random.random()
             mutation_strenght = None
@@ -40,6 +43,7 @@ def mutacao_polinomial(individuo, limites, chance_mutacao):
             individuo[i] = individuo[i] + mutation_strenght * (max_lim - min_lim)
 
 def SBX(parent1: Solucao, parent2: Solucao) -> list:
+    from dieta import LIMITES_ACEITABILIDADE
     # pequeno(2-5) exploracao agressiva
     # medio(10-20) balanceado
     # grande (50+) filho bem proximo aos pais
@@ -49,7 +53,12 @@ def SBX(parent1: Solucao, parent2: Solucao) -> list:
     filho0 = []
     filho1 = []
     
-    for gene_p1, gene_p2 in zip(parent1.x, parent2.x):
+    for i, (gene_p1, gene_p2) in enumerate(zip(parent1.x, parent2.x)):
+        if 'valor_fixo' in LIMITES_ACEITABILIDADE[i]:
+            filho0.append(gene_p1)
+            filho1.append(gene_p2)
+            continue
+        
         u = random.random()
         if u <= 0.5:
             spread_factor = (2*u) ** ( 1/(crossover_index+1) )
@@ -249,15 +258,6 @@ def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
         stats[f"min_{nome0}"] = float(mins[0])
         stats[f"max_{nome1}"] = float(maxs[1])
         stats[f"min_{nome1}"] = float(mins[1])
-
-        stats["media_autonomia"] = float(medias[0])
-        stats["desvio_autonomia"] = float(desvios[0])
-        stats["media_aceleracao"] = float(medias[1])
-        stats["desvio_aceleracao"] = float(desvios[1])
-        stats["max_autonomia"] = float(maxs[0])
-        stats["min_autonomia"] = float(mins[0])
-        stats["max_aceleracao"] = float(maxs[1])
-        stats["min_aceleracao"] = float(mins[1])
     else:
         print(f"Aviso: {n_obj} objetivos detectados. Foram calculadas estatísticas genéricas 'media_obj_i', etc.")
 
@@ -267,7 +267,6 @@ import pandas as pd
 import json
 
 def exportar_pareto_csv(pareto, caminho_csv):
-
     rows = []
 
     for i, individuo in enumerate(pareto):
@@ -309,8 +308,8 @@ def exportar_pareto_csv(pareto, caminho_csv):
     df.to_csv(caminho_csv, index=False)
 
 def main(
-    NUM_INDIVIDUOS=130,
-    GERACOES=200,
+    NUM_INDIVIDUOS=400,
+    GERACOES=700,
     CHANCE_CROSSOVER=1.0,
     CHANCE_MUTACAO=0.2,
     SEED=42,

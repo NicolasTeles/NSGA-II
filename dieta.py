@@ -2,6 +2,25 @@ from models import Problema, Otimizacao
 from typing import List, Optional, Dict
 import pandas as pd
 
+# --- Índices dos grupos alimentares no vetor de decisão ---
+IDX_NUTS            = 0
+IDX_LEGUMES         = 1
+IDX_FRUITS          = 2
+IDX_VEGETABLES      = 3
+IDX_WHOLE_CEREALS   = 4
+IDX_EGGS            = 5
+IDX_FISH            = 6
+IDX_TUBERS          = 7
+IDX_DAIRY           = 8
+IDX_OILS            = 9
+IDX_DGV             = 10
+IDX_REV             = 11
+IDX_RED_MEAT        = 12
+IDX_CHICKEN         = 13
+IDX_ANIMAL_FATS     = 14
+IDX_ADDED_SUGARS    = 15
+IDX_REFINED_CEREALS = 16
+
 """
 Dicionário global com a definição completa dos grupos alimentares do PHDI.
 """
@@ -18,8 +37,8 @@ COMPONENTES_PHDI = [
     {'grupo': 'Dairy', 'limite_inferior': 0.0, 'limite_otimo': 6.1, 'limite_superior': 12.2, 'tipo': 'otimo'},
     {'grupo': 'Vegetable oils', 'limite_inferior': 0.0, 'limite_otimo': 16.5, 'limite_superior': 30.7, 'tipo': 'otimo'},
 
-    {'grupo': 'DGV', 'limite_inferior': 0.0, 'limite_otimo': 29.5, 'limite_superior': 100.0, 'tipo': 'otimo'},
-    {'grupo': 'REV', 'limite_inferior': 0.0, 'limite_otimo': 38.5, 'limite_superior': 100.0, 'tipo': 'otimo'},
+    {'grupo': 'DGV', 'limite_inferior': 0.0, 'limite_otimo': 29.5, 'limite_superior': 100.0, 'tipo': 'razao'},
+    {'grupo': 'REV', 'limite_inferior': 0.0, 'limite_otimo': 38.5, 'limite_superior': 100.0, 'tipo': 'razao'},
 
     {'grupo': 'Red meat', 'limite': 2.4, 'tipo': 'moderacao'},
     {'grupo': 'Chicken and substitutes', 'limite': 5.0, 'tipo': 'moderacao'},
@@ -36,42 +55,49 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
         {
             "grupo": "Nuts and peanuts", 
             "minimo": row.p5_nozes_amendoim_kcal, 
-            "p25": row.p25_nozes_amendoim_kcal, 
+            "p25": max(row.p25_nozes_amendoim_kcal, row.kcal_totais_nozes_amendoim), 
             "p75": row.p75_nozes_amendoim_kcal, 
             "maximo": row.p95_nozes_amendoim_kcal,
-            "custo": row.preco_nozes_amendoim_por_kcal
+            "custo": row.preco_nozes_amendoim_por_kcal,
+            "kcal_total": row.kcal_consumo_total,
+            "valor_fixo": 11.6
         },
         {
             "grupo": "Legumes", 
             "minimo": row.p5_leguminosas_kcal, 
-            "p25": row.p25_leguminosas_kcal, 
+            "p25": max(row.p25_leguminosas_kcal, row.kcal_totais_leguminosas), 
             "p75": row.p75_leguminosas_kcal, 
             "maximo": row.p95_leguminosas_kcal,
-            "custo": row.preco_leguminosas_por_kcal
+            "custo": row.preco_leguminosas_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Fruits", 
             "minimo": row.p5_frutas_kcal, 
-            "p25": row.p25_frutas_kcal, 
+            "p25": max(row.p25_frutas_kcal, row.kcal_totais_frutas), 
             "p75": row.p75_frutas_kcal, 
             "maximo": row.p95_frutas_kcal,
-            "custo": row.preco_frutas_por_kcal
+            "custo": row.preco_frutas_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Vegetables", 
             "minimo": row.p5_veg_total_kcal, 
-            "p25": row.p25_veg_total_kcal, 
+            "p25": max(row.p25_veg_total_kcal, row.kcal_totais_veg_totais), 
             "p75": row.p75_veg_total_kcal, 
             "maximo": row.p95_veg_total_kcal,
-            "custo": row.preco_veg_totais_por_kcal
+            "custo": row.preco_veg_totais_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Whole cereals", 
             "minimo": row.p5_cereais_integrais_kcal, 
-            "p25": row.p25_cereais_integrais_kcal, 
+            "p25": max(row.p25_cereais_integrais_kcal, row.kcal_totais_cereais_integrais), 
             "p75": row.p75_cereais_integrais_kcal, 
             "maximo": row.p95_cereais_integrais_kcal,
-            "custo": row.preco_cereais_integrais_por_kcal
+            "custo": row.preco_cereais_integrais_por_kcal,
+            "kcal_total": row.kcal_consumo_total,
+            "valor_fixo": 0.8
         },
         {
             "grupo": "Eggs", 
@@ -79,7 +105,8 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_ovos_kcal, 
             "p75": row.p75_ovos_kcal, 
             "maximo": row.p95_ovos_kcal,
-            "custo": row.preco_ovos_por_kcal
+            "custo": row.preco_ovos_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Fish and seafood", 
@@ -87,7 +114,9 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_peixes_kcal, 
             "p75": row.p75_peixes_kcal, 
             "maximo": row.p95_peixes_kcal,
-            "custo": row.preco_peixes_por_kcal
+            "custo": row.preco_peixes_por_kcal,
+            "kcal_total": row.kcal_consumo_total,
+            "valor_fixo": 1.27
         },
         {
             "grupo": "Tubers and potatoes", 
@@ -95,7 +124,8 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_batatas_tuber_kcal, 
             "p75": row.p75_batatas_tuber_kcal, 
             "maximo": row.p95_batatas_tuber_kcal,
-            "custo": row.preco_batatas_tuber_por_kcal
+            "custo": row.preco_batatas_tuber_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Dairy", 
@@ -103,7 +133,8 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_laticinios_kcal, 
             "p75": row.p75_laticinios_kcal, 
             "maximo": row.p95_laticinios_kcal,
-            "custo": row.preco_laticinios_por_kcal
+            "custo": row.preco_laticinios_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Vegetable oils", 
@@ -111,7 +142,8 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_oleos_insat_kcal, 
             "p75": row.p75_oleos_insat_kcal, 
             "maximo": row.p95_oleos_insat_kcal,
-            "custo": row.preco_oleos_insat_por_kcal
+            "custo": row.preco_oleos_insat_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "DGV", 
@@ -119,7 +151,9 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_veg_verde_kcal, 
             "p75": row.p75_veg_verde_kcal, 
             "maximo": row.p95_veg_verde_kcal,
-            "custo": row.preco_veg_verde_por_kcal
+            "custo": row.preco_veg_verde_por_kcal,
+            "kcal_total": row.kcal_consumo_total,
+            "valor_fixo": 0.11
         },
         {
             "grupo": "REV", 
@@ -127,39 +161,54 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "p25": row.p25_veg_vermelho_kcal, 
             "p75": row.p75_veg_vermelho_kcal, 
             "maximo": row.p95_veg_vermelho_kcal,
-            "custo": row.preco_veg_vermelho_por_kcal
+            "custo": row.preco_veg_vermelho_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Red meat", 
             "minimo": row.p5_carne_vermelha_kcal, 
             "p25": row.p25_carne_vermelha_kcal, 
-            "p75": row.p75_carne_vermelha_kcal, 
+            "p75": min(row.p75_carne_vermelha_kcal, row.kcal_totais_carne_vermelha), 
             "maximo": row.p95_carne_vermelha_kcal,
-            "custo": row.preco_carne_vermelha_por_kcal
+            "custo": row.preco_carne_vermelha_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Chicken and substitutes", 
             "minimo": row.p5_aves_frango_kcal, 
             "p25": row.p25_aves_frango_kcal, 
-            "p75": row.p75_aves_frango_kcal, 
+            "p75": min(row.p75_aves_frango_kcal, row.kcal_totais_aves_frango), 
             "maximo": row.p95_aves_frango_kcal,
-            "custo": row.preco_aves_frango_por_kcal
+            "custo": row.preco_aves_frango_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Animal fats", 
             "minimo": row.p5_gord_animal_kcal, 
             "p25": row.p25_gord_animal_kcal, 
-            "p75": row.p75_gord_animal_kcal, 
+            "p75": min(row.p75_gord_animal_kcal, row.kcal_totais_gord_animal), 
             "maximo": row.p95_gord_animal_kcal,
-            "custo": row.preco_gord_animal_por_kcal
+            "custo": row.preco_gord_animal_por_kcal,
+            "kcal_total": row.kcal_consumo_total
         },
         {
             "grupo": "Added sugars", 
             "minimo": row.p5_acucares_kcal, 
             "p25": row.p25_acucares_kcal, 
-            "p75": row.p75_acucares_kcal, 
+            "p75": min(row.p75_acucares_kcal, row.kcal_totais_acucares), 
             "maximo": row.p95_acucares_kcal,
-            "custo": row.preco_acucares_por_kcal
+            "custo": row.preco_acucares_por_kcal,
+            "kcal_total": row.kcal_consumo_total
+        },
+        {
+            "grupo": "Refined Cereals",
+            "minimo": row.p5_cereais_refinados_kcal, 
+            "p25": row.p25_cereais_refinados_kcal, 
+            "p75": row.p75_cereais_refinados_kcal, 
+            "maximo": row.p95_cereais_refinados_kcal,
+            "custo": row.preco_cereais_refinados_por_kcal,
+            "kcal_total": row.kcal_consumo_total,
+            # "valor_fixo": 30
         }
     ])
 
@@ -223,7 +272,8 @@ class GrupoAlimentar:
         componente = next((c for c in COMPONENTES_PHDI if c['grupo'].lower() == self.nome.lower()), None)
         
         if componente is None:
-            raise ValueError(f"Grupo '{self.nome}' não encontrado em COMPONENTES_PHDI.")
+            self.pontuacao_phdi = 0.0
+            return
         
         valor = self.percentual_calorico
 
@@ -241,38 +291,48 @@ class GrupoAlimentar:
 
             case 'moderacao':
                 self.pontuacao_phdi = min(max(10 - (valor / componente['limite']) * 10, 0), 10)
+                
+            case 'razao':
+                if valor <= componente['limite_otimo']:
+                    self.pontuacao_phdi = min((valor / componente['limite_otimo']) * 5, 5)
+                else:
+                    faixa = componente['limite_superior'] - componente['limite_otimo']
+                    excesso = valor - componente['limite_otimo']
+                    self.pontuacao_phdi = min(max(5 - (excesso / faixa) * 5, 0), 5)
     
-    def calculaAceitabilidadeCultural(self):
+    
+    def calculaAceitabilidadeCultural(self, kcal_ref=None, max_pts=10):
         componente = next((c for c in LIMITES_ACEITABILIDADE if c['grupo'].lower() == self.nome.lower()), None)
 
         if componente is None:
             raise ValueError(f"Grupo '{self.nome}' não encontrado em LIMITES_ACEITABILIDADE.")
 
         valor = self.percentual_calorico
+        ref = kcal_ref if kcal_ref is not None else componente["kcal_total"]
 
-        minimo = componente["minimo"]
-        p25 = componente["p25"]
-        p75 = componente["p75"]
-        maximo = componente["maximo"]
+        minimo = componente["minimo"] / ref * 100
+        p25 = componente["p25"]    / ref * 100
+        p75 = componente["p75"]    / ref * 100
+        maximo = componente["maximo"] / ref * 100
 
-        # Fora dos limites absolutos → 0
+         # Fora dos limites absolutos → 0
         if valor <= minimo or valor >= maximo:
             self.pontuacao_aceitabilidade = 0
             return
 
-        # Região ideal → 10
+        # Região ideal → max
         if p25 <= valor <= p75:
-            self.pontuacao_aceitabilidade = 10
+            self.pontuacao_aceitabilidade = max_pts
             return
 
         # Crescimento linear (min → p25)
         if minimo < valor < p25:
-            self.pontuacao_aceitabilidade = (valor - minimo) / (p25 - minimo) * 10
+            self.pontuacao_aceitabilidade = (valor - minimo) / (p25 - minimo) * max_pts
             return
 
         # Decaimento linear (p75 → max)
         if p75 < valor < maximo:
-            self.pontuacao_aceitabilidade = (maximo - valor) / (maximo - p75) * 10
+            self.pontuacao_aceitabilidade = (maximo - valor) / (maximo - p75) * max_pts
             return
 
 class Dieta:
@@ -326,7 +386,7 @@ class Dieta:
             for grupo in self.grupos_alimentares:
                 if grupo.nome == 'Vegetables':
                     calorias_outros_vegetais = grupo.calorias - (
-                        self.grupos_alimentares[10].calorias + self.grupos_alimentares[11].calorias
+                        self.grupos_alimentares[IDX_DGV].calorias + self.grupos_alimentares[IDX_REV].calorias
                     )
                     self.custo_total += calorias_outros_vegetais * grupo.valor_componente
                 else:
@@ -396,15 +456,19 @@ class Dieta:
         - percentual_calorico já calculado
         """
         total = 0.0
+        veg = next(g for g in self.grupos_alimentares if g.nome == 'Vegetables')
 
         for grupo in self.grupos_alimentares:
-            grupo.calculaAceitabilidadeCultural()
+            if grupo.nome in ('DGV', 'REV'):
+                grupo.calculaAceitabilidadeCultural(kcal_ref=veg.calorias, max_pts=5)
+            else:
+                grupo.calculaAceitabilidadeCultural()
             total += grupo.pontuacao_aceitabilidade or 0.0
 
         self.pontuacao_aceitabilidade = total
 
 def _avaliar_dieta(variaveis: list, alvo_calorico: float=None, alvo_custo: float = None) -> tuple:
-    nomes_grupos = [c['grupo'] for c in COMPONENTES_PHDI]
+    nomes_grupos = [c['grupo'] for c in LIMITES_ACEITABILIDADE]
     custos_grupos = [c['custo'] for c in LIMITES_ACEITABILIDADE]
     grupos = [
         GrupoAlimentar(nome=nome, calorias=cal, valor_componente=custo)
@@ -440,8 +504,8 @@ def _avaliar_dieta(variaveis: list, alvo_calorico: float=None, alvo_custo: float
     )
 
 def construir_dieta(x: list) -> Dieta:
-
-    nomes_grupos = [c['grupo'] for c in COMPONENTES_PHDI]
+    
+    nomes_grupos = [c['grupo'] for c in LIMITES_ACEITABILIDADE]
     custos_grupos = [c['custo'] for c in LIMITES_ACEITABILIDADE]
 
     grupos = [
@@ -469,7 +533,7 @@ def calcular_custo_individuo(x: list) -> float:
     custo_total = 0.0
     
     for i, calorias in enumerate(x):
-        nome_grupo = COMPONENTES_PHDI[i]['grupo']
+        nome_grupo = LIMITES_ACEITABILIDADE[i]['grupo']
         custo_unitario = custos_unitarios[i]
         
         if nome_grupo == 'Vegetables':
@@ -508,18 +572,27 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
 
     def gerar_individuo_dieta():
         import random
-        # 1. Gera aleatório respeitando os limites do CSV
-        x = [random.uniform(lim[0], lim[1]) for lim in limites]
+        x = []
+        for grupo, lim in zip(LIMITES_ACEITABILIDADE, limites):
+            if 'valor_fixo' in grupo:
+                kcal_fixo = (grupo['valor_fixo'] / 100) * alvo_calorico
+                x.append(kcal_fixo)
+            else:
+                x.append(random.uniform(lim[0], lim[1]))
         
         # 2. Normaliza calorias (idêntico ao que você já tinha)
-        indices_excluidos = {10, 11}
-        indices_caloricos = [i for i in range(len(x)) if i not in indices_excluidos]
-        total_kcal = sum(x[i] for i in indices_caloricos)
+        indices_excluidos = {IDX_REV}  # DGV is now fixed, not just excluded
+        indices_fixos = {i for i, e in enumerate(LIMITES_ACEITABILIDADE) if 'valor_fixo' in e}
+        indices_caloricos = [i for i in range(len(x)) if i not in indices_excluidos and i not in indices_fixos]
+
+        total_livre = sum(x[i] for i in indices_caloricos)
+        total_fixo = sum(x[i] for i in indices_fixos if i not in indices_excluidos)
         
-        if total_kcal > 0:
-            fator_kcal = alvo_calorico / total_kcal
+        if total_livre > 0:
+            alvo_restante = alvo_calorico - total_fixo
+            fator = alvo_restante / total_livre
             for i in indices_caloricos:
-                x[i] *= fator_kcal
+                x[i] *= fator
                 x[i] = min(max(x[i], limites[i][0]), limites[i][1])
         
         # 3. OPCIONAL: forçar o custo aqui também, 
