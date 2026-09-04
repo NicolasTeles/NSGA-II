@@ -1,0 +1,19 @@
+Conjunto 1: N=100 G=200 C=0.7 M=0.1 | tempo médio = 7.94s
+Conjunto 2: N=100 G=200 C=0.7 M=0.3 | tempo médio = 21.82s
+Conjunto 3: N=100 G=200 C=1.0 M=0.1 | tempo médio = 3.07s
+Conjunto 4: N=100 G=200 C=1.0 M=0.3 | tempo médio = 2.20s
+Conjunto 5: N=100 G=500 C=0.7 M=0.1 | tempo médio = 41.67s
+Conjunto 6: N=100 G=500 C=0.7 M=0.3 | tempo médio = 58.96s
+Conjunto 7: N=100 G=500 C=1.0 M=0.1 | tempo médio = 37.32s
+Conjunto 8: N=100 G=500 C=1.0 M=0.3 | tempo médio = 18.27s
+Conjunto 9: N=300 G=200 C=0.7 M=0.1 | tempo médio = 14.50s
+Conjunto 10: N=300 G=200 C=0.7 M=0.3 | tempo médio = 123.81s
+Conjunto 11: N=300 G=200 C=1.0 M=0.1 | tempo médio = 3.93s
+Conjunto 12: N=300 G=200 C=1.0 M=0.3 | tempo médio = 1.90s
+Conjunto 13: N=300 G=500 C=0.7 M=0.1 | tempo médio = 250.59s
+Conjunto 14: N=300 G=500 C=0.7 M=0.3 | tempo médio = 408.78s
+Conjunto 15: N=300 G=500 C=1.0 M=0.1 | tempo médio = 131.09s
+Conjunto 16: N=300 G=500 C=1.0 M=0.3 | tempo médio = 13.02s
+
+Run 1 concluído.
+

@@ -3,66 +3,57 @@ import os
 import shutil
 
 def clear():
-    diretorio = "./img"
+    for diretorio in ["./img", "./stats"]:
+        shutil.rmtree(diretorio)
+        os.makedirs(diretorio)
 
-    shutil.rmtree(diretorio)
-    os.makedirs(diretorio)
-
-    diretorio = "./stats"
-
-    shutil.rmtree(diretorio)
-    os.makedirs(diretorio)
-    
 def main():
-    QTDS_INDIVIDUOS_SIMPLES = [50, 100, 200]
-    QTDS_GERACOES_SIMPLES = [5, 10, 20]
-    CHANCES_CROSS = [0.6, 0.8, 1.0]
-    CHANCES_MUT = [0.01, 0.05, 0.1]
-    SEEDS = range(42, 46)
+    # --- Run 1: algorithm parameters, crossover hyperparameters fixed at neutral ---
+    NUMS_INDIVIDUOS = [100, 300]
+    NUMS_GERACOES   = [200, 500]
+    CHANCES_CROSS   = [0.7, 1.0]
+    CHANCES_MUT     = [0.1, 0.3]
+    SEEDS           = [42, 43, 44]
 
-    QTDS_INDIVIDUOS_COMPLEXO = [200, 500, 700]
-    QTDS_GERACOES_COMPLEXO = [10, 20, 35]
+    CROSSOVER_INDEX_FIXO    = 20
+    DISTRIBUTION_INDEX_FIXO = 20
 
     clear()
 
-    arquivo_tempos = open(f"./stats/tempo.txt", "w")
+    conjunto = 0
+    arquivo_tempos = open("./stats/tempo.txt", "w")
 
-    input_text = """Selecione a opcao que deseja:
-    1: Funcoes e valores simples
-    2: Funcoes e valores complexos
-    3: Funcoes simples e valores complexos
-    4: Funcoes complexas e valores simples\n"""
+    for n in NUMS_INDIVIDUOS:
+        for g in NUMS_GERACOES:
+            for c in CHANCES_CROSS:
+                for m in CHANCES_MUT:
+                    conjunto += 1
+                    tempo_total = 0.0
 
-    opcao = int(input(input_text))
+                    for execucao, s in enumerate(SEEDS, start=1):
+                        print(f"[Conjunto {conjunto}] N={n} G={g} C={c} M={m} SEED={s}")
+                        tempo = NSGA2.main(
+                            NUM_INDIVIDUOS=n,
+                            GERACOES=g,
+                            CHANCE_CROSSOVER=c,
+                            CHANCE_MUTACAO=m,
+                            SEED=s,
+                            CROSSOVER_INDEX=CROSSOVER_INDEX_FIXO,
+                            DISTRIBUTION_INDEX=DISTRIBUTION_INDEX_FIXO,
+                            execucao=execucao,
+                            conjunto=conjunto
+                        )
+                        tempo_total += tempo
 
-    match opcao:
-        case 1:
-            QTDS_INDIVIDUOS = QTDS_INDIVIDUOS_SIMPLES
-            QTDS_GERACOES = QTDS_GERACOES_SIMPLES
-            FUNCS_COMPLEXAS = False
-        case 2:
-            QTDS_INDIVIDUOS = QTDS_INDIVIDUOS_COMPLEXO
-            QTDS_GERACOES = QTDS_GERACOES_COMPLEXO
-            FUNCS_COMPLEXAS = True
-        case 3:
-            QTDS_INDIVIDUOS = QTDS_INDIVIDUOS_COMPLEXO
-            QTDS_GERACOES = QTDS_GERACOES_COMPLEXO
-            FUNCS_COMPLEXAS = False
-        case 4:
-            QTDS_INDIVIDUOS = QTDS_INDIVIDUOS_SIMPLES
-            QTDS_GERACOES = QTDS_GERACOES_SIMPLES
-            FUNCS_COMPLEXAS = True
-            
-    for i in QTDS_INDIVIDUOS:
-        for g in QTDS_GERACOES:
-            tempo_execucao = 0
-            cont=0
-            for s in SEEDS:
-                for c in CHANCES_CROSS:
-                    for m in CHANCES_MUT:
-                        tempo_execucao += NSGA2.main(i, g, c, m, s, FUNCS_COMPLEXAS)
-                        cont += 1
-            arquivo_tempos.write(f"Media de tempo de execucao para {i} individuos e {g} geracoes: {(tempo_execucao / cont):.6f} segundos\n\n")
-            
+                    media_tempo = tempo_total / len(SEEDS)
+                    arquivo_tempos.write(
+                        f"Conjunto {conjunto}: N={n} G={g} C={c} M={m} | "
+                        f"tempo médio = {media_tempo:.2f}s\n"
+                    )
+
+    arquivo_tempos.write("\nRun 1 concluído.\n\n")
+    arquivo_tempos.close()
+    print("Run 1 concluído. CSVs em ./stats/pareto_final.csv e ./stats/pareto_evolucao.csv")
+
 if __name__ == '__main__':
     main()

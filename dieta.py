@@ -208,7 +208,7 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
             "maximo": row.p95_cereais_refinados_kcal,
             "custo": row.preco_cereais_refinados_por_kcal,
             "kcal_total": row.kcal_consumo_total,
-            # "valor_fixo": 30
+            "valor_fixo": 30
         }
     ])
 

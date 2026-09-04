@@ -19,12 +19,12 @@ class Solucao:
         self.front = 0
         self.crowding_distance = -1
 
-def mutacao_polinomial(individuo, limites, chance_mutacao):
-    from dieta import LIMITES_ACEITABILIDADE
+def mutacao_polinomial(individuo, limites, chance_mutacao, distribution_index: int = 20):
+    # dicionario para distribution index
     # pequeno(5-10) pulos maiores
     # medio(20) balanceado
     # grande (50+) pequenas mutacoes locais
-    distribution_index = 6
+    from dieta import LIMITES_ACEITABILIDADE
     
     # individuo[i] representa um gene
     for i, (min_lim, max_lim) in enumerate(limites):
@@ -42,12 +42,12 @@ def mutacao_polinomial(individuo, limites, chance_mutacao):
             
             individuo[i] = individuo[i] + mutation_strenght * (max_lim - min_lim)
 
-def SBX(parent1: Solucao, parent2: Solucao) -> list:
-    from dieta import LIMITES_ACEITABILIDADE
+def SBX(parent1: Solucao, parent2: Solucao, crossover_index: int = 20) -> list:
+    # dicionario para crossover index
     # pequeno(2-5) exploracao agressiva
     # medio(10-20) balanceado
     # grande (50+) filho bem proximo aos pais
-    crossover_index = 55
+    from dieta import LIMITES_ACEITABILIDADE
     spread_factor = None
     
     filho0 = []
@@ -90,10 +90,10 @@ def blx_alpha_beta(parent1: Solucao, parent2: Solucao) -> list:
     
     return filho
 
-def crossover(p1: Solucao, p2: Solucao, problema: Problema, chance_mutacao: float):
-    x, y = SBX(p1, p2)
-    mutacao_polinomial(x, problema.limites, chance_mutacao)
-    mutacao_polinomial(y, problema.limites, chance_mutacao)
+def crossover(p1, p2, problema, chance_mutacao, crossover_index=20, distribution_index=20):
+    x, y = SBX(p1, p2, crossover_index)
+    mutacao_polinomial(x, problema.limites, chance_mutacao, distribution_index)
+    mutacao_polinomial(y, problema.limites, chance_mutacao, distribution_index)
     return [Solucao(x, problema), Solucao(y, problema)]
 
 def domina(a: Solucao, b: Solucao, problema: Problema):
@@ -266,55 +266,117 @@ def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
 import pandas as pd
 import json
 
-def exportar_pareto_csv(pareto, caminho_csv):
+def exportar_pareto_csv(pareto, caminho_csv, uf, faixa_renda, execucao, conjunto,
+                         num_individuos, geracoes, chance_crossover, chance_mutacao,
+                         crossover_index=20, distribution_index=20,
+                         tempo_execucao=None, alvo_calorico=None, alvo_custo=None):
     rows = []
 
     for i, individuo in enumerate(pareto):
-
         dieta = construir_dieta(individuo.x)
 
         row = {
-            "id": i,
-
-            "fo_phdi": individuo.objetivos[0],
-            "fo_aceitabilidade": individuo.objetivos[1],
-
-            "kcal_total": dieta.calorias_totais,
-            "custo_total": dieta.custo_total,
-
-            "phdi_total": dieta.pontuacao_phdi,
-            "aceitabilidade_total": dieta.pontuacao_aceitabilidade,
-
-            "genes": json.dumps(individuo.x)
+            'UF': uf,
+            'Faixa de Renda': faixa_renda,
+            'Alvo Calorico': alvo_calorico,
+            'Custo Alvo': alvo_custo,
+            'Conjunto': conjunto,
+            'Execucao': execucao,
+            'Tempo de Execucao (s)': tempo_execucao,
+            'Numero de Individuos': num_individuos,
+            'Numero de Geracoes': geracoes,
+            'Taxa de Cruzamento': chance_crossover,
+            'Taxa de Mutacao': chance_mutacao,
+            'Crossover Index': crossover_index,
+            'Distribution Index': distribution_index,
+            'Pareto ID': i,
+            'Crowding Distance': individuo.crowding_distance,
+            'fo_phdi': individuo.objetivos[0],
+            'fo_aceitabilidade': individuo.objetivos[1],
+            'Calorias Totais': dieta.calorias_totais,
+            'Custo Total': dieta.custo_total,
+            'Pontuacao PHDI': dieta.pontuacao_phdi,
+            'Pontuacao Aceitabilidade': dieta.pontuacao_aceitabilidade,
         }
 
-        # adiciona informações de cada grupo alimentar
         for grupo in dieta.grupos_alimentares:
-
-            nome = grupo.nome.lower().replace(" ", "_")
-
-            row[f"{nome}_kcal"] = grupo.calorias
-
-            row[f"{nome}_pct"] = grupo.percentual_calorico
-
-            row[f"{nome}_phdi"] = grupo.pontuacao_phdi
-
-            row[f"{nome}_aceitabilidade"] = grupo.pontuacao_aceitabilidade
+            nome = grupo.nome.replace(' ', '_').replace('(', '').replace(')', '').lower()
+            row[f'{nome}_kcal'] = grupo.calorias
+            row[f'{nome}_perc'] = grupo.percentual_calorico
+            row[f'{nome}_phdi'] = grupo.pontuacao_phdi
+            row[f'{nome}_aceitabilidade'] = grupo.pontuacao_aceitabilidade
 
         rows.append(row)
 
     df = pd.DataFrame(rows)
+    if not os.path.exists(caminho_csv):
+        df.to_csv(caminho_csv, index=False)
+    else:
+        df.to_csv(caminho_csv, mode='a', index=False, header=False)
 
-    df.to_csv(caminho_csv, index=False)
+
+def exportar_pareto_evolucao_csv(historico_pareto, caminho_csv, uf, faixa_renda, execucao, conjunto,
+                                  num_individuos, geracoes, chance_crossover, chance_mutacao,
+                                  crossover_index=20, distribution_index=20,
+                                  tempo_execucao=None, alvo_calorico=None, alvo_custo=None):
+    rows = []
+
+    for g, pareto in enumerate(historico_pareto):
+        for i, individuo in enumerate(pareto):
+            dieta = construir_dieta(individuo.x)
+
+            row = {
+                'UF': uf,
+                'Faixa de Renda': faixa_renda,
+                'Alvo Calorico': alvo_calorico,
+                'Custo Alvo': alvo_custo,
+                'Conjunto': conjunto,
+                'Execucao': execucao,
+                'Tempo de Execucao (s)': tempo_execucao,
+                'Geracao': g + 1,
+                'Numero de Individuos': num_individuos,
+                'Numero de Geracoes': geracoes,
+                'Taxa de Cruzamento': chance_crossover,
+                'Taxa de Mutacao': chance_mutacao,
+                'Crossover Index': crossover_index,
+                'Distribution Index': distribution_index,
+                'Pareto ID': i,
+                'Crowding Distance': individuo.crowding_distance,
+                'fo_phdi': individuo.objetivos[0],
+                'fo_aceitabilidade': individuo.objetivos[1],
+                'Calorias Totais': dieta.calorias_totais,
+                'Custo Total': dieta.custo_total,
+                'Pontuacao PHDI': dieta.pontuacao_phdi,
+                'Pontuacao Aceitabilidade': dieta.pontuacao_aceitabilidade,
+            }
+
+            for grupo in dieta.grupos_alimentares:
+                nome = grupo.nome.replace(' ', '_').replace('(', '').replace(')', '').lower()
+                row[f'{nome}_kcal'] = grupo.calorias
+                row[f'{nome}_perc'] = grupo.percentual_calorico
+                row[f'{nome}_phdi'] = grupo.pontuacao_phdi
+                row[f'{nome}_aceitabilidade'] = grupo.pontuacao_aceitabilidade
+
+            rows.append(row)
+
+    df = pd.DataFrame(rows)
+    if not os.path.exists(caminho_csv):
+        df.to_csv(caminho_csv, index=False)
+    else:
+        df.to_csv(caminho_csv, mode='a', index=False, header=False)
 
 def main(
-    NUM_INDIVIDUOS=400,
-    GERACOES=700,
-    CHANCE_CROSSOVER=1.0,
-    CHANCE_MUTACAO=0.2,
-    SEED=42,
-    problema=problema_dieta
-):
+        NUM_INDIVIDUOS=400,
+        GERACOES=700,
+        CHANCE_CROSSOVER=1.0,
+        CHANCE_MUTACAO=0.2,
+        SEED=42,
+        CROSSOVER_INDEX=20,
+        DISTRIBUTION_INDEX=20,
+        execucao=1,
+        conjunto=1,
+        problema=problema_dieta
+    ):
     random.seed(SEED)
     np.random.seed(SEED)
 
@@ -352,6 +414,7 @@ def main(
         plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
         plt.close()
 
+    historico_pareto = []
     historico_medias = {nome: [] for nome in objective_names}
     historico_desvios = {nome: [] for nome in objective_names}
 
@@ -374,7 +437,7 @@ def main(
                 p1 = torneio_binario(populacao)
                 p2 = torneio_binario(populacao)
                 if random.random() <= CHANCE_CROSSOVER:
-                    novos_filhos = crossover(p1, p2, problema, CHANCE_MUTACAO)
+                    novos_filhos = crossover(p1, p2, problema, CHANCE_MUTACAO, CROSSOVER_INDEX, DISTRIBUTION_INDEX)
                 else:
                     novos_filhos = [copy.deepcopy(random.choice([p1, p2])), copy.deepcopy(random.choice([p1, p2]))]
                 filhos.extend(novos_filhos)
@@ -410,6 +473,7 @@ def main(
         # --- tamanho do Pareto front ---
         pareto = [ind for ind in populacao if ind.front == 1]
         arquivo_texto.write(f"  Pareto front: {len(pareto)} indivíduos\n\n")
+        historico_pareto.append(pareto[:])
 
         # --- históricos ---
         for j, nome in enumerate(objective_names):
@@ -432,9 +496,24 @@ def main(
     pareto = [ind for ind in populacao if ind.front == 1]
     print(f"Pareto front size: {len(pareto)}")
     
+    from dieta import UF, FAIXA_RENDA, alvo_calorico, custo_alvo
+
     exportar_pareto_csv(
-        pareto,
-        f"./stats/seed{SEED}/pareto_final.csv"
+        pareto, f"./stats/pareto_final.csv",
+        uf=UF, faixa_renda=FAIXA_RENDA, execucao=execucao, conjunto=conjunto,
+        num_individuos=NUM_INDIVIDUOS, geracoes=GERACOES,
+        chance_crossover=CHANCE_CROSSOVER, chance_mutacao=CHANCE_MUTACAO,
+        crossover_index=CROSSOVER_INDEX, distribution_index=DISTRIBUTION_INDEX,
+        tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo
+    )
+
+    exportar_pareto_evolucao_csv(
+        historico_pareto, f"./stats/pareto_evolucao.csv",
+        uf=UF, faixa_renda=FAIXA_RENDA, execucao=execucao, conjunto=conjunto,
+        num_individuos=NUM_INDIVIDUOS, geracoes=GERACOES,
+        chance_crossover=CHANCE_CROSSOVER, chance_mutacao=CHANCE_MUTACAO,
+        crossover_index=CROSSOVER_INDEX, distribution_index=DISTRIBUTION_INDEX,
+        tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo
     )
 
     if len(problema.funcoes_objetivo) == 2:
