@@ -366,12 +366,12 @@ def exportar_pareto_evolucao_csv(historico_pareto, caminho_csv, uf, faixa_renda,
         df.to_csv(caminho_csv, mode='a', index=False, header=False)
 
 def main(
-        NUM_INDIVIDUOS=400,
-        GERACOES=700,
+        NUM_INDIVIDUOS=300,
+        GERACOES=500,
         CHANCE_CROSSOVER=1.0,
-        CHANCE_MUTACAO=0.2,
+        CHANCE_MUTACAO=0.1,
         SEED=42,
-        CROSSOVER_INDEX=20,
+        CROSSOVER_INDEX=5,
         DISTRIBUTION_INDEX=20,
         execucao=1,
         conjunto=1,
