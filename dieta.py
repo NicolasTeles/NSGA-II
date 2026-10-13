@@ -46,8 +46,6 @@ COMPONENTES_PHDI = [
     {'grupo': 'Added sugars', 'limite': 4.8, 'tipo': 'moderacao'},
 ]
 
-UF = 31
-FAIXA_RENDA = 1
 LIMITES_ACEITABILIDADE = []
 
 def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
@@ -215,14 +213,14 @@ def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
 df_INA = pd.read_csv('banco_INA_estratificado_ag.csv')
 
 for row in df_INA.itertuples():
-    if row.uf == UF and row.faixa_renda_per_capita == FAIXA_RENDA:
-                alvo_calorico = row.kcal_consumo_phdi
+    if pd.isna(row.uf) and pd.isna(row.faixa_renda_per_capita):
+        alvo_calorico = row.kcal_consumo_phdi
+        print(f'Alvo calorico: {alvo_calorico}')
 
-                print(f'Alvo calorico: {alvo_calorico}')
-                custo_alvo = row.preco_total_phdi
-                print(f"Valor alvo: {custo_alvo}")
+        custo_alvo = row.preco_total_phdi
+        print(f"Valor alvo: {custo_alvo}")
 
-                extrai_da_linha(LIMITES_ACEITABILIDADE, row)
+        extrai_da_linha(LIMITES_ACEITABILIDADE, row)
 
 class GrupoAlimentar:
     def __init__(self, nome, valor_componente: Optional[float] = None, calorias: Optional[float] = None):

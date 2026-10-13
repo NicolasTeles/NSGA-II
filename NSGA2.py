@@ -366,8 +366,8 @@ def exportar_pareto_evolucao_csv(historico_pareto, caminho_csv, uf, faixa_renda,
         df.to_csv(caminho_csv, mode='a', index=False, header=False)
 
 def main(
-        NUM_INDIVIDUOS=300,
-        GERACOES=500,
+        NUM_INDIVIDUOS=100,
+        GERACOES=300,
         CHANCE_CROSSOVER=1.0,
         CHANCE_MUTACAO=0.1,
         SEED=42,
@@ -496,7 +496,13 @@ def main(
     pareto = [ind for ind in populacao if ind.front == 1]
     print(f"Pareto front size: {len(pareto)}")
     
-    from dieta import UF, FAIXA_RENDA, alvo_calorico, custo_alvo
+    from dieta import alvo_calorico, custo_alvo
+
+    try:
+        from dieta import UF, FAIXA_RENDA
+    except ImportError:
+        UF = 100
+        FAIXA_RENDA = 100
 
     exportar_pareto_csv(
         pareto, f"./stats/pareto_final.csv",
