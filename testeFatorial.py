@@ -4,7 +4,7 @@ import shutil
 
 def clear():
     for diretorio in ["./img", "./stats"]:
-        shutil.rmtree(diretorio)
+        shutil.rmtree(diretorio, ignore_errors=True)
         os.makedirs(diretorio)
 
 def run1():
