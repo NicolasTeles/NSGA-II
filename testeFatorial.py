@@ -150,7 +150,7 @@ def run3():
     print("Run 3 concluído. CSVs em ./stats/pareto_final.csv e ./stats/pareto_evolucao.csv")
 
 def main():
-    run3()
+    run1()
 
 if __name__ == '__main__':
     main()

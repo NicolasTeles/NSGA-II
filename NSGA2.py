@@ -34,7 +34,7 @@ def mutacao_polinomial(individuo, limites, chance_mutacao, distribution_index: i
             mutation_strenght = None
             
             if u < 0.5:
-                mutation_strenght = (2*u) ** ( 1/(2*distribution_index+1) ) - 1
+                mutation_strenght = (2*u) ** ( 1/(distribution_index+1) ) - 1
             else:
                 mutation_strenght = 1 - ( 2*(1-u) ) ** ( 1/(distribution_index+1) )
             
@@ -157,12 +157,14 @@ def non_dominated_sorting(pop: list[Solucao], problema: Problema):
                 if q.domination_count == 0:
                     q.front = i + 2
                     next_front.append(q)
-        i += 1
-        fronts.append(next_front)
         
-        if fronts and not fronts[-1]:
-            fronts.pop()
-        return fronts
+        if not next_front:
+            break
+        
+        fronts.append(next_front)
+        i += 1
+        
+    return fronts
 
 def crowding_distance_sorting(front: list[Solucao], problema: Problema):
     if not front:
@@ -446,11 +448,33 @@ def main(
             while len(filhos) < len(populacao):
                 p1 = torneio_binario(populacao)
                 p2 = torneio_binario(populacao)
+                
                 if random.random() <= CHANCE_CROSSOVER:
-                    novos_filhos = crossover(p1, p2, problema, CHANCE_MUTACAO, CROSSOVER_INDEX, DISTRIBUTION_INDEX)
+                    # Gera descendentes por crossover SBX
+                    x, y = SBX(
+                        p1, p2, problema.limites, CROSSOVER_INDEX
+                    )
                 else:
-                    novos_filhos = [copy.deepcopy(random.choice([p1, p2])), copy.deepcopy(random.choice([p1, p2]))]
+                    # Sem crossover: cada descendente copia um dos pais
+                    x = copy.deepcopy(p1.x)
+                    y = copy.deepcopy(p2.x)
+
+                # Mutação independente da ocorrência de crossover
+                mutacao_polinomial(
+                    x, problema.limites, CHANCE_MUTACAO, DISTRIBUTION_INDEX
+                )
+                mutacao_polinomial(
+                    y, problema.limites, CHANCE_MUTACAO, DISTRIBUTION_INDEX
+                )
+
+                # Recalcula os objetivos após a mutação
+                novos_filhos = [
+                    Solucao(x, problema),
+                    Solucao(y, problema)
+                ]
+
                 filhos.extend(novos_filhos)
+
             populacao = populacao + filhos
 
         resetar_valores(populacao)
