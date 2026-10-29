@@ -14,6 +14,11 @@ class Problema:
         import random
         return [random.uniform(l[0], l[1]) for l in self.limites]
 
+    def aplicar_limites(self, variaveis):
+        return [
+            min(max(val, lim[0]), lim[1])
+            for val, lim in zip(variaveis, self.limites)
+        ]
+
     def avaliar(self, variaveis):
         return [f(variaveis) for f in self.funcoes_objetivo]
-    

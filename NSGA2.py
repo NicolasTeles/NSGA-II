@@ -10,9 +10,12 @@ import json
 
 class Solucao:
     def __init__(self, x, problema: Problema):
+        # Trava de segurança: garante que x respeite os limites antes de avaliar
+        if hasattr(problema, 'aplicar_limites'):
+            x = problema.aplicar_limites(x)
         self.x = x
-        self.objetivos = problema.avaliar(x)
-        self.calorias_totais = problema.get_calorias(x) if hasattr(problema, 'get_calorias') else None
+        self.objetivos = problema.avaliar(self.x)
+        self.calorias_totais = problema.get_calorias(self.x) if hasattr(problema, 'get_calorias') else None
 
         self.domination_count = 0
         self.dominates = []
@@ -20,13 +23,8 @@ class Solucao:
         self.crowding_distance = -1
 
 def mutacao_polinomial(individuo, limites, chance_mutacao, distribution_index: int = 20):
-    # dicionario para distribution index
-    # pequeno(5-10) pulos maiores
-    # medio(20) balanceado
-    # grande (50+) pequenas mutacoes locais
     from dieta import LIMITES_ACEITABILIDADE
     
-    # individuo[i] representa um gene
     for i, (min_lim, max_lim) in enumerate(limites):
         if 'valor_fixo' in LIMITES_ACEITABILIDADE[i]:
             continue
@@ -40,13 +38,11 @@ def mutacao_polinomial(individuo, limites, chance_mutacao, distribution_index: i
             else:
                 mutation_strenght = 1 - ( 2*(1-u) ) ** ( 1/(distribution_index+1) )
             
-            individuo[i] = individuo[i] + mutation_strenght * (max_lim - min_lim)
+            novo_valor = individuo[i] + mutation_strenght * (max_lim - min_lim)
+            # Clamp estrito dentro dos limites [min_lim, max_lim]
+            individuo[i] = min(max(novo_valor, min_lim), max_lim)
 
-def SBX(parent1: Solucao, parent2: Solucao, crossover_index: int = 20) -> list:
-    # dicionario para crossover index
-    # pequeno(2-5) exploracao agressiva
-    # medio(10-20) balanceado
-    # grande (50+) filho bem proximo aos pais
+def SBX(parent1: Solucao, parent2: Solucao, limites: list, crossover_index: int = 20) -> tuple:
     from dieta import LIMITES_ACEITABILIDADE
     spread_factor = None
     
@@ -59,39 +55,53 @@ def SBX(parent1: Solucao, parent2: Solucao, crossover_index: int = 20) -> list:
             filho1.append(gene_p2)
             continue
         
+        min_lim, max_lim = limites[i]
         u = random.random()
         if u <= 0.5:
             spread_factor = (2*u) ** ( 1/(crossover_index+1) )
         else:
             spread_factor = ( 1/(2*(1-u)) ) ** ( 1/(crossover_index+1) )
-        gene_f0 = (1/2)*( (1+spread_factor)*gene_p1 + (1-spread_factor)*gene_p2 )
-        gene_f1 = (1/2)*( (1-spread_factor)*gene_p1 + (1+spread_factor)*gene_p2 )
+            
+        gene_f0 = 0.5 * ((1 + spread_factor)*gene_p1 + (1 - spread_factor)*gene_p2)
+        gene_f1 = 0.5 * ((1 - spread_factor)*gene_p1 + (1 + spread_factor)*gene_p2)
+        
+        # Clamp estrito dentro dos limites [min_lim, max_lim]
+        gene_f0 = min(max(gene_f0, min_lim), max_lim)
+        gene_f1 = min(max(gene_f1, min_lim), max_lim)
         
         filho0.append(gene_f0)
         filho1.append(gene_f1)
         
     return filho0, filho1
 
-def blx_alpha_beta(parent1: Solucao, parent2: Solucao) -> list:
+def blx_alpha_beta(parent1: Solucao, parent2: Solucao, limites: list = None) -> list:
+    from dieta import LIMITES_ACEITABILIDADE
     filho = []
     alpha = 0.75
     beta = 0.25
     
-    for gene_p1, gene_p2 in zip(parent1.x, parent2.x):
+    for i, (gene_p1, gene_p2) in enumerate(zip(parent1.x, parent2.x)):
+        if 'valor_fixo' in LIMITES_ACEITABILIDADE[i]:
+            filho.append(gene_p1)
+            continue
+            
         dist = abs(gene_p1 - gene_p2)
         min_gene, max_gene = sorted((gene_p1, gene_p2))
         
         lower = min_gene - alpha * dist
         upper = max_gene + beta * dist
-        
         valor = random.uniform(lower, upper)
         
+        if limites is not None:
+            min_lim, max_lim = limites[i]
+            valor = min(max(valor, min_lim), max_lim)
+            
         filho.append(valor)
     
     return filho
 
 def crossover(p1, p2, problema, chance_mutacao, crossover_index=20, distribution_index=20):
-    x, y = SBX(p1, p2, crossover_index)
+    x, y = SBX(p1, p2, problema.limites, crossover_index)
     mutacao_polinomial(x, problema.limites, chance_mutacao, distribution_index)
     mutacao_polinomial(y, problema.limites, chance_mutacao, distribution_index)
     return [Solucao(x, problema), Solucao(y, problema)]
@@ -499,8 +509,10 @@ def main(
     from dieta import alvo_calorico, custo_alvo
 
     try:
+        # caso receba uma uf e faixa de renda especifica
         from dieta import UF, FAIXA_RENDA
     except ImportError:
+        # caso nao: media do país
         UF = 100
         FAIXA_RENDA = 100
 

@@ -550,14 +550,12 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
     _cache = {'x': None, 'result': None}
 
     def _avaliar_com_cache(x):
-        # Convertemos para tupla para o cache funcionar (listas não são hashable)
         xt = tuple(x)
         if _cache['x'] != xt:
             _cache['x'] = xt
             _cache['result'] = _avaliar_dieta(x, alvo_calorico, alvo_custo)
         return _cache['result']
 
-    # Funções para o Problema extraírem dados do retorno de _avaliar_dieta
     def obj_phdi(x): return _avaliar_com_cache(x)[0]
     def obj_aceitabilidade(x): return _avaliar_com_cache(x)[1]
     def get_calorias(x): return _avaliar_com_cache(x)[2]
@@ -567,6 +565,25 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
     
     def fo_phdi(x): return obj_phdi(x) * penalidade_calorica(x) * penalidade_custo(x)
     def fo_aceitabilidade(x): return obj_aceitabilidade(x) * penalidade_calorica(x) * penalidade_custo(x) 
+
+    def aplicar_limites_dieta(x: list) -> list:
+        x_lim = list(x)
+        for i, (grupo, lim) in enumerate(zip(LIMITES_ACEITABILIDADE, limites)):
+            if 'valor_fixo' in grupo:
+                x_lim[i] = (grupo['valor_fixo'] / 100) * alvo_calorico
+            else:
+                x_lim[i] = min(max(x_lim[i], lim[0]), lim[1])
+
+        # Garante consistência física dos subgrupos: DGV + REV <= Vegetables
+        soma_sub_veg = x_lim[IDX_DGV] + x_lim[IDX_REV]
+        if x_lim[IDX_VEGETABLES] < soma_sub_veg:
+            # Se possível, eleva Vegetables até soma_sub_veg (respeitando o máximo de Vegetables)
+            x_lim[IDX_VEGETABLES] = min(soma_sub_veg, limites[IDX_VEGETABLES][1])
+            # Se ainda assim DGV + REV superar Vegetables, reduz REV até caber em Vegetables
+            if x_lim[IDX_VEGETABLES] < soma_sub_veg:
+                x_lim[IDX_REV] = max(limites[IDX_REV][0], x_lim[IDX_VEGETABLES] - x_lim[IDX_DGV])
+
+        return x_lim
 
     def gerar_individuo_dieta():
         import random
@@ -578,8 +595,8 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
             else:
                 x.append(random.uniform(lim[0], lim[1]))
         
-        # 2. Normaliza calorias (idêntico ao que você já tinha)
-        indices_excluidos = {IDX_REV}  # DGV is now fixed, not just excluded
+        # 2. Normaliza calorias
+        indices_excluidos = {IDX_REV}
         indices_fixos = {i for i, e in enumerate(LIMITES_ACEITABILIDADE) if 'valor_fixo' in e}
         indices_caloricos = [i for i in range(len(x)) if i not in indices_excluidos and i not in indices_fixos]
 
@@ -592,12 +609,8 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
             for i in indices_caloricos:
                 x[i] *= fator
                 x[i] = min(max(x[i], limites[i][0]), limites[i][1])
-        
-        # 3. OPCIONAL: forçar o custo aqui também, 
-        # a lógica é mais complexa pois mexer no custo altera as calorias.
 
-        return x
-
+        return aplicar_limites_dieta(x)
 
     problema = Problema(
         funcoes_objetivo=[fo_phdi, fo_aceitabilidade],
@@ -608,7 +621,8 @@ def createDietProblem(alvo_calorico: float, alvo_custo: float) -> Problema:
     problema.nomes_objetivos = ["FO PHDI", "FO Aceitabilidade"]
     problema.get_calorias = get_calorias
     problema.get_custo = get_custo
-    problema.gerar_individuo = gerar_individuo_dieta 
+    problema.gerar_individuo = gerar_individuo_dieta
+    problema.aplicar_limites = aplicar_limites_dieta
     
     return problema
 

@@ -3,7 +3,7 @@ import os
 import shutil
 
 def clear():
-    for diretorio in ["./img", "./stats"]:
+    for diretorio in ["./img", "./stats", "./analise_resultados"]:
         shutil.rmtree(diretorio, ignore_errors=True)
         os.makedirs(diretorio)
 
