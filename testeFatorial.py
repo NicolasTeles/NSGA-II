@@ -98,7 +98,7 @@ def run2():
                             f"tempo médio = {media_tempo:.2f}s\n"
                         )
     
-        arquivo_tempos.write("\nRun 1 concluído.\n\n")
+        arquivo_tempos.write("\nRun 2 concluído.\n\n")
         arquivo_tempos.close()
         print("Run 2 concluído. CSVs em ./stats/pareto_final.csv e ./stats/pareto_evolucao.csv")
 

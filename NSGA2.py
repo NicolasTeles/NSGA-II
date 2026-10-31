@@ -201,21 +201,28 @@ def crowding_distance_sorting(front: list[Solucao], problema: Problema):
     front.sort(key=lambda s: s.crowding_distance, reverse=True)
     return front
 
-def gerar_prox_geracao(fronts: list[list[Solucao]], tam_pop_inicial, problema: Problema):
+def gerar_prox_geracao(fronts, tam_pop_inicial, problema):
     tam_pop_atual = 0
     nova_pop = []
+
     for front in fronts:
         if tam_pop_atual + len(front) <= tam_pop_inicial:
+            crowding_distance_sorting(front, problema)
+
             nova_pop.extend(front)
             tam_pop_atual += len(front)
+
         else:
             frente_com_cd = crowding_distance_sorting(front, problema)
+
             i = 0
             while tam_pop_atual < tam_pop_inicial and i < len(frente_com_cd):
                 nova_pop.append(frente_com_cd[i])
                 tam_pop_atual += 1
                 i += 1
+
             break
+
     return nova_pop
 
 def resetar_valores(pop: list[Solucao]):
