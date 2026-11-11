@@ -2,3 +2,5 @@ img/
 __pycache__/
 stats/
 .venv/
+teste_validacao/
+analise_resultados/

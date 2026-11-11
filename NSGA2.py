@@ -4,6 +4,7 @@ import time
 import copy
 import numpy as np
 import os
+import shutil
 from models import Problema, Otimizacao
 import pandas as pd
 import json
@@ -16,6 +17,8 @@ class Solucao:
         self.x = x
         self.objetivos = problema.avaliar(self.x)
         self.calorias_totais = problema.get_calorias(self.x) if hasattr(problema, 'get_calorias') else None
+        # (novo) o custo sai do mesmo cache de avaliação: não recalcula a dieta
+        self.custo_total = problema.get_custo(self.x) if hasattr(problema, 'get_custo') else None
 
         self.domination_count = 0
         self.dominates = []
@@ -282,15 +285,65 @@ def calcular_estatisticas(pop: list[Solucao], nomes_objetivos=None):
 
     return stats
 
-import pandas as pd
-import json
+# ======================================================================================
+# SAÍDAS COMPACTAS
+#
+# Princípio: guardar apenas o genoma (os 17 genes em kcal) e os números que a análise usa;
+# todo o resto (percentuais, pontuações por grupo) pode ser recalculado com construir_dieta(x).
+#
+#   pareto_final.csv       1 linha por indivíduo do front final de cada execução
+#   evolucao_agregada.csv  1 linha por (execução, geração): resumo do front (poucos números)
+#   pareto_snapshots.csv   fo_phdi/fo_aceitabilidade do front em gerações selecionadas
+#   pareto_evolucao.csv    (OPCIONAL, evolucao_completa=True) formato antigo, enorme: só p/ depuração
+# ======================================================================================
+# 15 algarismos significativos: o CSV fica fiel aos genes. Com 8 (valor anterior) o arredondamento deixava dietas
+# que estão exatamente na fronteira DGV + REV = Vegetables com folga de ~ -7e-7 kcal, e conferências estritas
+# (tolerância 1e-9) que leem o CSV as marcavam como violação (falso positivo).
+FLOAT_FMT = "%.15g"
+_CHECAGEM_GENES = {"feita": False}
+
+def _anexar_csv(df, caminho_csv):
+    if not os.path.exists(caminho_csv):
+        df.to_csv(caminho_csv, index=False, float_format=FLOAT_FMT)
+    else:
+        df.to_csv(caminho_csv, mode='a', index=False, header=False, float_format=FLOAT_FMT)
+
+def _nome_coluna(nome_grupo):
+    return nome_grupo.replace(' ', '_').replace('(', '').replace(')', '').lower()
+
+def limpar_pastas(*pastas):
+    """Apaga as pastas de saída de uma execução AVULSA, para começar do zero.
+    Proteções: nunca apaga a pasta atual, a raiz, o home, nem qualquer pasta que contenha arquivos .py."""
+    protegidas = {os.path.abspath(os.getcwd()), os.path.abspath(os.sep), os.path.expanduser("~")}
+    for p in pastas:
+        ap = os.path.abspath(p)
+        if ap in protegidas:
+            raise ValueError(f"Recusei apagar '{ap}' (pasta atual, raiz ou home). Use uma subpasta, ex.: ./stats")
+        if os.path.isdir(ap) and any(f.endswith(".py") for f in os.listdir(ap)):
+            raise ValueError(f"Recusei apagar '{ap}': contém arquivos .py (parece pasta de código).")
+        shutil.rmtree(ap, ignore_errors=True)
+
+
+def hipervolume_2d(x, y, ref=(0.0, 0.0)):
+    """Hipervolume 2D exato (maximização das duas fo) em relação a `ref`."""
+    pts = np.column_stack([np.asarray(x, float), np.asarray(y, float)])
+    pts = pts[(pts[:, 0] > ref[0]) & (pts[:, 1] > ref[1])]
+    if len(pts) == 0:
+        return 0.0
+    pts = pts[np.lexsort((-pts[:, 1], -pts[:, 0]))]
+    hv, max_y = 0.0, ref[1]
+    for px, py in pts:
+        if py > max_y:
+            hv += (px - ref[0]) * (py - max_y)
+            max_y = py
+    return float(hv)
 
 def exportar_pareto_csv(pareto, caminho_csv, uf, faixa_renda, execucao, conjunto,
                          num_individuos, geracoes, chance_crossover, chance_mutacao,
                          crossover_index=20, distribution_index=20,
-                         tempo_execucao=None, alvo_calorico=None, alvo_custo=None):
+                         tempo_execucao=None, alvo_calorico=None, alvo_custo=None, seed=None):
+    """Front final (formato compacto): identificação + objetivos + totais + 17 genes em kcal."""
     rows = []
-
     for i, individuo in enumerate(pareto):
         dieta = construir_dieta(individuo.x)
 
@@ -301,6 +354,7 @@ def exportar_pareto_csv(pareto, caminho_csv, uf, faixa_renda, execucao, conjunto
             'Custo Alvo': alvo_custo,
             'Conjunto': conjunto,
             'Execucao': execucao,
+            'Seed': seed,
             'Tempo de Execucao (s)': tempo_execucao,
             'Numero de Individuos': num_individuos,
             'Numero de Geracoes': geracoes,
@@ -317,27 +371,75 @@ def exportar_pareto_csv(pareto, caminho_csv, uf, faixa_renda, execucao, conjunto
             'Pontuacao PHDI': dieta.pontuacao_phdi,
             'Pontuacao Aceitabilidade': dieta.pontuacao_aceitabilidade,
         }
-
-        for grupo in dieta.grupos_alimentares:
-            nome = grupo.nome.replace(' ', '_').replace('(', '').replace(')', '').lower()
-            row[f'{nome}_kcal'] = grupo.calorias
-            row[f'{nome}_perc'] = grupo.percentual_calorico
-            row[f'{nome}_phdi'] = grupo.pontuacao_phdi
-            row[f'{nome}_aceitabilidade'] = grupo.pontuacao_aceitabilidade
-
+        for gene, grupo in zip(individuo.x, dieta.grupos_alimentares):
+            row[f'{_nome_coluna(grupo.nome)}_kcal'] = grupo.calorias
+            if not _CHECAGEM_GENES["feita"]:
+                # os genes DEVEM ser as kcal de cada grupo (a análise de validade depende disso)
+                if abs(gene - grupo.calorias) > 1e-6:
+                    print(f"[AVISO] gene ({gene}) difere de kcal do grupo {grupo.nome} ({grupo.calorias}).")
+        _CHECAGEM_GENES["feita"] = True
         rows.append(row)
 
-    df = pd.DataFrame(rows)
-    if not os.path.exists(caminho_csv):
-        df.to_csv(caminho_csv, index=False)
-    else:
-        df.to_csv(caminho_csv, mode='a', index=False, header=False)
+    _anexar_csv(pd.DataFrame(rows), caminho_csv)
 
+def metricas_geracao(populacao, geracao, alvo_cal, alvo_custo, idx_audit):
+    """Resumo do front (F1) e da população numa geração. Custo O(N): sem avaliar dietas de novo."""
+    pareto = [ind for ind in populacao if ind.front == 1]
+    f = np.array([ind.objetivos for ind in pareto], dtype=float)
+
+    ec = np.array([abs(ind.calorias_totais - alvo_cal) / alvo_cal for ind in pareto
+                   if ind.calorias_totais is not None], dtype=float)
+    eu = np.array([abs(ind.custo_total - alvo_custo) / alvo_custo for ind in pareto
+                   if ind.custo_total is not None], dtype=float)
+    if len(ec) and len(ec) == len(eu):
+        pen = float(np.mean(np.maximum(1 - ec, 0) * np.maximum(1 - eu, 0)))
+    else:
+        pen = float('nan')
+
+    n_inv = -1
+    if idx_audit is not None:
+        iv, idg, ir = idx_audit
+        n_inv = sum(1 for ind in populacao
+                    if min(ind.x) < -1e-9 or (ind.x[iv] - ind.x[idg] - ind.x[ir]) < -1e-9)
+
+    return {
+        'Geracao': geracao,
+        'tam_pop': len(populacao),
+        'n_front': len(pareto),
+        'n_unicos_front': len({(round(a, 9), round(b, 9)) for a, b in f}),
+        'media_phdi': float(f[:, 0].mean()), 'media_ace': float(f[:, 1].mean()),
+        'max_phdi': float(f[:, 0].max()),    'max_ace': float(f[:, 1].max()),
+        'min_phdi': float(f[:, 0].min()),    'min_ace': float(f[:, 1].min()),
+        'hv': hipervolume_2d(f[:, 0], f[:, 1]),
+        'erro_cal_medio': float(ec.mean()) if len(ec) else float('nan'),
+        'erro_cal_max': float(ec.max()) if len(ec) else float('nan'),
+        'erro_custo_medio': float(eu.mean()) if len(eu) else float('nan'),
+        'erro_custo_max': float(eu.max()) if len(eu) else float('nan'),
+        'pen_media': pen,
+        'n_invalidas': n_inv,
+    }
+
+def exportar_evolucao_agregada_csv(registros, caminho_csv, conjunto, execucao, seed):
+    df = pd.DataFrame(registros)
+    df.insert(0, 'Seed', seed)
+    df.insert(0, 'Execucao', execucao)
+    df.insert(0, 'Conjunto', conjunto)
+    _anexar_csv(df, caminho_csv)
+
+def exportar_snapshots_csv(snapshots, caminho_csv, conjunto, execucao, seed):
+    if not snapshots:
+        return
+    df = pd.DataFrame(snapshots, columns=['Geracao', 'fo_phdi', 'fo_aceitabilidade'])
+    df.insert(0, 'Seed', seed)
+    df.insert(0, 'Execucao', execucao)
+    df.insert(0, 'Conjunto', conjunto)
+    _anexar_csv(df, caminho_csv)
 
 def exportar_pareto_evolucao_csv(historico_pareto, caminho_csv, uf, faixa_renda, execucao, conjunto,
                                   num_individuos, geracoes, chance_crossover, chance_mutacao,
                                   crossover_index=20, distribution_index=20,
                                   tempo_execucao=None, alvo_calorico=None, alvo_custo=None):
+    """FORMATO ANTIGO (enorme: ~90 colunas por indivíduo por geração). Só para depuração."""
     rows = []
 
     for g, pareto in enumerate(historico_pareto):
@@ -370,7 +472,7 @@ def exportar_pareto_evolucao_csv(historico_pareto, caminho_csv, uf, faixa_renda,
             }
 
             for grupo in dieta.grupos_alimentares:
-                nome = grupo.nome.replace(' ', '_').replace('(', '').replace(')', '').lower()
+                nome = _nome_coluna(grupo.nome)
                 row[f'{nome}_kcal'] = grupo.calorias
                 row[f'{nome}_perc'] = grupo.percentual_calorico
                 row[f'{nome}_phdi'] = grupo.pontuacao_phdi
@@ -394,16 +496,38 @@ def main(
         DISTRIBUTION_INDEX=20,
         execucao=1,
         conjunto=1,
-        problema=problema_dieta
+        problema=problema_dieta,
+        # --- saídas (padrões = comportamento de uma execução avulsa, como antes) ---
+        pasta_saida="./stats",     # onde vão os CSVs (e o log .txt)
+        pasta_img="./img",         # onde vão os gráficos por execução
+        salvar_graficos=True,      # PNGs por execução (desligar em runs fatoriais)
+        salvar_log_txt=True,       # stats{SEED}.txt com estatísticas por geração
+        verbose=True,              # prints no console
+        snapshot_a_cada=100,       # fronts salvos a cada N gerações (+ primeira e última); 0 = não salva
+        evolucao_completa=False,   # True = também grava o pareto_evolucao.csv antigo (ENORME)
+        retornar_info=False,       # True = devolve dict {tempo, n_pareto, tam_pop_final}
+        limpar_saida=False         # True = apaga pasta_saida e pasta_img ANTES de rodar (só p/ execução avulsa!)
     ):
     random.seed(SEED)
     np.random.seed(SEED)
 
+    def _p(*args, **kwargs):
+        if verbose:
+            print(*args, **kwargs)
+
+    from dieta import alvo_calorico, custo_alvo
+    try:
+        from dieta import IDX_VEGETABLES, IDX_DGV, IDX_REV
+        idx_audit = (IDX_VEGETABLES, IDX_DGV, IDX_REV)
+    except ImportError:
+        idx_audit = None
+    hv_ok = all(t == Otimizacao.MAX for t in problema.tipos_otimizacao) and len(problema.tipos_otimizacao) == 2
+
     populacao_inicial = [Solucao(problema.gerar_individuo(), problema) for _ in range(NUM_INDIVIDUOS)]
     populacao = populacao_inicial[:]
     
-    print([ind.calorias_totais for ind in populacao_inicial])
-    print([ind.objetivos for ind in populacao_inicial])
+    _p([ind.calorias_totais for ind in populacao_inicial])
+    _p([ind.objetivos for ind in populacao_inicial])
 
     if hasattr(problema, 'nomes_objetivos') and problema.nomes_objetivos:
         objective_names = list(problema.nomes_objetivos)
@@ -411,16 +535,17 @@ def main(
         objective_names = [f"obj_{i}" for i in range(len(populacao_inicial[0].objetivos))]
 
     # --- pastas ---
-    folder_pop_original = f"./img/seed{SEED}"
-    folder_img = f"./img/seed{SEED}"
-    folder_stats = f"./stats/seed{SEED}"
-    os.makedirs(folder_pop_original, exist_ok=True)
-    os.makedirs(folder_img, exist_ok=True)
-    os.makedirs(folder_stats, exist_ok=True)
-    os.makedirs("./stats", exist_ok=True)
+    if limpar_saida:
+        limpar_pastas(pasta_saida, pasta_img)
+    os.makedirs(pasta_saida, exist_ok=True)
+    folder_img = f"{pasta_img}/seed{SEED}"
+    folder_stats = f"{pasta_saida}/seed{SEED}"
+    if salvar_graficos:
+        os.makedirs(folder_img, exist_ok=True)
+        os.makedirs(folder_stats, exist_ok=True)
 
     # --- plot população inicial ---
-    if len(problema.funcoes_objetivo) == 2:
+    if salvar_graficos and len(problema.funcoes_objetivo) == 2:
         xs_init = [ind.objetivos[0] for ind in populacao_inicial]
         ys_init = [ind.objetivos[1] for ind in populacao_inicial]
         plt.figure(figsize=(8, 6))
@@ -430,15 +555,20 @@ def main(
         plt.title("População inicial")
         plt.grid(True)
         plt.legend()
-        plt.savefig(f"{folder_pop_original}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
+        plt.savefig(f"{folder_img}/pop_original_{NUM_INDIVIDUOS}-{SEED}.png")
         plt.close()
 
-    historico_pareto = []
+    historico_pareto = []          # só usado se evolucao_completa=True
+    registros_evolucao = []
+    snapshots = []
     historico_medias = {nome: [] for nome in objective_names}
     historico_desvios = {nome: [] for nome in objective_names}
 
-    arquivo_texto = open(f"./stats/stats{SEED}.txt", "a")
-    arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes, {CHANCE_CROSSOVER} chance de crossover, {CHANCE_MUTACAO} chance de mutacao\n\n")
+    arquivo_texto = None
+    if salvar_log_txt:
+        arquivo_texto = open(f"{pasta_saida}/stats{SEED}.txt", "a")
+        arquivo_texto.write(f"{NUM_INDIVIDUOS} individuos, {GERACOES} geracoes, {CHANCE_CROSSOVER} chance de crossover, {CHANCE_MUTACAO} chance de mutacao\n\n")
+    calcular_stats_pop = salvar_log_txt or salvar_graficos
 
     start = time.process_time()
 
@@ -489,55 +619,62 @@ def main(
         nova_pop = gerar_prox_geracao(frentes, NUM_INDIVIDUOS, problema)
         populacao = nova_pop[:]
 
-        print(f"\nFIM DA GERAÇÃO {g+1}\n")
+        _p(f"\nFIM DA GERAÇÃO {g+1}\n")
 
-        # --- estatísticas dos objetivos ---
-        stats = calcular_estatisticas(populacao, problema.nomes_objetivos if hasattr(problema, 'nomes_objetivos') else None)
+        # --- resumo desta geração (vai para evolucao_agregada.csv) ---
+        reg = metricas_geracao(populacao, g + 1, alvo_calorico, custo_alvo, idx_audit)
+        if not hv_ok:
+            reg['hv'] = float('nan')
+        registros_evolucao.append(reg)
 
-        arquivo_texto.write(f"=== Geração {g+1} ===\n")
-
-        if len(objective_names) >= 2 and f"media_{objective_names[0]}" in stats:
-            for nome in objective_names:
-                arquivo_texto.write(f"  {nome}: média = {stats[f'media_{nome}']:.4f} ± {stats[f'desvio_{nome}']:.4f} (min {stats[f'min_{nome}']:.4f}, max {stats[f'max_{nome}']:.4f})\n")
-        else:
-            n_obj = len(populacao[0].objetivos)
-            for j in range(n_obj):
-                arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']:.4f}, max {stats[f'max_obj_{j}']:.4f})\n")
-
-        # --- estatísticas de calorias ---
-        if hasattr(problema, 'get_calorias'):
-            calorias_pop = [ind.calorias_totais for ind in populacao if ind.calorias_totais is not None]
-            media_cal = np.mean(calorias_pop)
-            desvio_cal = np.std(calorias_pop, ddof=1)
-            arquivo_texto.write(f"  Calorias totais: média = {media_cal:.2f} ± {desvio_cal:.2f}\n")
-
-        # --- tamanho do Pareto front ---
         pareto = [ind for ind in populacao if ind.front == 1]
-        arquivo_texto.write(f"  Pareto front: {len(pareto)} indivíduos\n\n")
-        historico_pareto.append(pareto[:])
+        if snapshot_a_cada and (g == 0 or (g + 1) % snapshot_a_cada == 0 or g + 1 == GERACOES):
+            snapshots.extend((g + 1, ind.objetivos[0], ind.objetivos[1]) for ind in pareto)
+        if evolucao_completa:
+            historico_pareto.append(pareto[:])
 
-        # --- históricos ---
-        for j, nome in enumerate(objective_names):
-            key_media = f"media_{nome}"
-            key_desvio = f"desvio_{nome}"
-            if key_media in stats:
-                historico_medias[nome].append(stats[key_media])
-                historico_desvios[nome].append(stats[key_desvio])
-            else:
-                historico_medias[nome].append(stats[f"media_obj_{j}"])
-                historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
+        # --- estatísticas da população (log .txt e gráficos por execução) ---
+        if calcular_stats_pop:
+            stats = calcular_estatisticas(populacao, problema.nomes_objetivos if hasattr(problema, 'nomes_objetivos') else None)
+
+            if arquivo_texto:
+                arquivo_texto.write(f"=== Geração {g+1} ===\n")
+                if len(objective_names) >= 2 and f"media_{objective_names[0]}" in stats:
+                    for nome in objective_names:
+                        arquivo_texto.write(f"  {nome}: média = {stats[f'media_{nome}']:.4f} ± {stats[f'desvio_{nome}']:.4f} (min {stats[f'min_{nome}']:.4f}, max {stats[f'max_{nome}']:.4f})\n")
+                else:
+                    n_obj = len(populacao[0].objetivos)
+                    for j in range(n_obj):
+                        arquivo_texto.write(f"  Objetivo {j}: média = {stats[f'media_obj_{j}']:.4f} ± {stats[f'desvio_obj_{j}']:.4f} (min {stats[f'min_obj_{j}']:.4f}, max {stats[f'max_obj_{j}']:.4f})\n")
+
+                if hasattr(problema, 'get_calorias'):
+                    calorias_pop = [ind.calorias_totais for ind in populacao if ind.calorias_totais is not None]
+                    media_cal = np.mean(calorias_pop)
+                    desvio_cal = np.std(calorias_pop, ddof=1)
+                    arquivo_texto.write(f"  Calorias totais: média = {media_cal:.2f} ± {desvio_cal:.2f}\n")
+
+                arquivo_texto.write(f"  Pareto front: {len(pareto)} indivíduos\n\n")
+
+            for j, nome in enumerate(objective_names):
+                key_media = f"media_{nome}"
+                key_desvio = f"desvio_{nome}"
+                if key_media in stats:
+                    historico_medias[nome].append(stats[key_media])
+                    historico_desvios[nome].append(stats[key_desvio])
+                else:
+                    historico_medias[nome].append(stats[f"media_obj_{j}"])
+                    historico_desvios[nome].append(stats[f"desvio_obj_{j}"])
 
     end = time.process_time()
 
-    print(f"CPU time: {end - start:.6f} seconds")
-    arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
-    arquivo_texto.close()
+    _p(f"CPU time: {end - start:.6f} seconds")
+    if arquivo_texto:
+        arquivo_texto.write(f"CPU time: {end - start:.6f} seconds\n\n")
+        arquivo_texto.close()
 
-    # --- plot Pareto front final ---
+    # --- front final ---
     pareto = [ind for ind in populacao if ind.front == 1]
-    print(f"Pareto front size: {len(pareto)}")
-    
-    from dieta import alvo_calorico, custo_alvo
+    _p(f"Pareto front size: {len(pareto)}")
 
     try:
         # caso receba uma uf e faixa de renda especifica
@@ -548,57 +685,98 @@ def main(
         FAIXA_RENDA = 100
 
     exportar_pareto_csv(
-        pareto, f"./stats/pareto_final.csv",
+        pareto, f"{pasta_saida}/pareto_final.csv",
         uf=UF, faixa_renda=FAIXA_RENDA, execucao=execucao, conjunto=conjunto,
         num_individuos=NUM_INDIVIDUOS, geracoes=GERACOES,
         chance_crossover=CHANCE_CROSSOVER, chance_mutacao=CHANCE_MUTACAO,
         crossover_index=CROSSOVER_INDEX, distribution_index=DISTRIBUTION_INDEX,
-        tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo
+        tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo, seed=SEED
     )
 
-    exportar_pareto_evolucao_csv(
-        historico_pareto, f"./stats/pareto_evolucao.csv",
-        uf=UF, faixa_renda=FAIXA_RENDA, execucao=execucao, conjunto=conjunto,
-        num_individuos=NUM_INDIVIDUOS, geracoes=GERACOES,
-        chance_crossover=CHANCE_CROSSOVER, chance_mutacao=CHANCE_MUTACAO,
-        crossover_index=CROSSOVER_INDEX, distribution_index=DISTRIBUTION_INDEX,
-        tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo
-    )
+    exportar_evolucao_agregada_csv(registros_evolucao, f"{pasta_saida}/evolucao_agregada.csv",
+                                   conjunto=conjunto, execucao=execucao, seed=SEED)
+    exportar_snapshots_csv(snapshots, f"{pasta_saida}/pareto_snapshots.csv",
+                           conjunto=conjunto, execucao=execucao, seed=SEED)
 
-    if len(problema.funcoes_objetivo) == 2:
-        xs_pareto = [ind.objetivos[0] for ind in pareto]
-        ys_pareto = [ind.objetivos[1] for ind in pareto]
-        plt.figure(figsize=(8, 6))
-        plt.scatter(xs_pareto, ys_pareto, label="Pareto Front", color='red')
-        plt.xlabel(objective_names[0])
-        plt.ylabel(objective_names[1])
-        plt.title(f"Pareto Front: {objective_names[0]} vs {objective_names[1]}")
-        plt.grid(True)
-        plt.legend()
-        plt.savefig(f"{folder_img}/pareto_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
-        plt.close()
-    else:
-        print("Mais de 2 objetivos — gráfico de Pareto desativado.")
+    if evolucao_completa:
+        exportar_pareto_evolucao_csv(
+            historico_pareto, f"{pasta_saida}/pareto_evolucao.csv",
+            uf=UF, faixa_renda=FAIXA_RENDA, execucao=execucao, conjunto=conjunto,
+            num_individuos=NUM_INDIVIDUOS, geracoes=GERACOES,
+            chance_crossover=CHANCE_CROSSOVER, chance_mutacao=CHANCE_MUTACAO,
+            crossover_index=CROSSOVER_INDEX, distribution_index=DISTRIBUTION_INDEX,
+            tempo_execucao=end - start, alvo_calorico=alvo_calorico, alvo_custo=custo_alvo
+        )
 
-    # --- gráficos de médias e desvios por objetivo ---
-    for nome in objective_names:
-        medias = historico_medias[nome]
-        desvios = historico_desvios[nome]
-        plt.figure()
-        plt.plot(range(1, len(medias) + 1), medias, label=f"{nome} média")
-        lower = np.array(medias) - np.array(desvios)
-        upper = np.array(medias) + np.array(desvios)
-        plt.fill_between(range(1, len(medias) + 1), lower, upper, alpha=0.2)
-        plt.xlabel("Geração")
-        plt.ylabel(nome)
-        plt.title(f"Evolução da média e desvio padrão de {nome}")
-        plt.legend()
-        plt.grid(True)
-        plt.savefig(f"{folder_stats}/{nome}_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
-        plt.close()
+    # --- gráficos por execução (opcional) ---
+    if salvar_graficos:
+        if len(problema.funcoes_objetivo) == 2:
+            xs_pareto = [ind.objetivos[0] for ind in pareto]
+            ys_pareto = [ind.objetivos[1] for ind in pareto]
+            plt.figure(figsize=(8, 6))
+            plt.scatter(xs_pareto, ys_pareto, label="Pareto Front", color='red')
+            plt.xlabel(objective_names[0])
+            plt.ylabel(objective_names[1])
+            plt.title(f"Pareto Front: {objective_names[0]} vs {objective_names[1]}")
+            plt.grid(True)
+            plt.legend()
+            plt.savefig(f"{folder_img}/pareto_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+            plt.close()
+        else:
+            _p("Mais de 2 objetivos — gráfico de Pareto desativado.")
 
+        for nome in objective_names:
+            medias = historico_medias[nome]
+            desvios = historico_desvios[nome]
+            plt.figure()
+            plt.plot(range(1, len(medias) + 1), medias, label=f"{nome} média")
+            lower = np.array(medias) - np.array(desvios)
+            upper = np.array(medias) + np.array(desvios)
+            plt.fill_between(range(1, len(medias) + 1), lower, upper, alpha=0.2)
+            plt.xlabel("Geração")
+            plt.ylabel(nome)
+            plt.title(f"Evolução da média e desvio padrão de {nome}")
+            plt.legend()
+            plt.grid(True)
+            plt.savefig(f"{folder_stats}/{nome}_{NUM_INDIVIDUOS}-{GERACOES}-{CHANCE_CROSSOVER}-{CHANCE_MUTACAO}.png")
+            plt.close()
+
+    if retornar_info:
+        return {'tempo': end - start, 'n_pareto': len(pareto), 'tam_pop_final': len(populacao)}
     return (end - start)
 
 
 if __name__ == '__main__':
-    main()
+    # Execução avulsa (um teste simples). Por padrão COMEÇA LIMPO: apaga ./stats e ./img antes de rodar.
+    #   python3 NSGA2.py                       -> limpa e roda com os parâmetros padrão
+    #   python3 NSGA2.py --N 60 --G 100 --seed 7
+    #   python3 NSGA2.py --manter              -> NÃO apaga; acrescenta aos CSVs existentes
+    import argparse
+    ap = argparse.ArgumentParser(description="Uma execução avulsa do NSGA-II (começa com as pastas de saída vazias).")
+    ap.add_argument("--N", type=int, default=100, help="indivíduos")
+    ap.add_argument("--G", type=int, default=300, help="gerações")
+    ap.add_argument("--C", type=float, default=1.0, help="chance de crossover")
+    ap.add_argument("--M", type=float, default=0.1, help="chance de mutação")
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--ci", type=int, default=5, help="crossover index (SBX)")
+    ap.add_argument("--di", type=int, default=20, help="distribution index (mutação)")
+    ap.add_argument("--saida", default="./stats", help="pasta dos CSVs")
+    ap.add_argument("--img", default="./img", help="pasta dos gráficos")
+    ap.add_argument("--manter", action="store_true",
+                    help="não apaga as pastas de saída antes de rodar (os resultados são acrescentados)")
+    ap.add_argument("--limpar", action="store_true", help="(já é o padrão; mantido por compatibilidade)")
+    ap.add_argument("--silencioso", action="store_true", help="sem prints por geração")
+    a = ap.parse_args()
+
+    limpar = not a.manter
+    if limpar:
+        existentes = [p for p in (a.saida, a.img) if os.path.isdir(p) and os.listdir(p)]
+        if existentes:
+            print(f"[info] limpando {', '.join(existentes)} antes de rodar (use --manter para não apagar).")
+    else:
+        for pasta in (a.saida, a.img):
+            if os.path.isdir(pasta) and os.listdir(pasta):
+                print(f"[aviso] '{pasta}' não está vazia: os resultados serão ACRESCENTADOS aos CSVs existentes.")
+    main(NUM_INDIVIDUOS=a.N, GERACOES=a.G, CHANCE_CROSSOVER=a.C, CHANCE_MUTACAO=a.M, SEED=a.seed,
+         CROSSOVER_INDEX=a.ci, DISTRIBUTION_INDEX=a.di, pasta_saida=a.saida, pasta_img=a.img,
+         verbose=not a.silencioso, limpar_saida=limpar)
