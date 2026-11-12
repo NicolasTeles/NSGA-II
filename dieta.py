@@ -48,179 +48,93 @@ COMPONENTES_PHDI = [
 
 LIMITES_ACEITABILIDADE = []
 
-def extrai_da_linha(LIMITES_ACEITABILIDADE, row):
-    LIMITES_ACEITABILIDADE.extend([
-        {
-            "grupo": "Nuts and peanuts", 
-            "minimo": row.p5_nozes_amendoim_kcal, 
-            "p25": max(row.p25_nozes_amendoim_kcal, row.kcal_totais_nozes_amendoim), 
-            "p75": row.p75_nozes_amendoim_kcal, 
-            "maximo": row.p95_nozes_amendoim_kcal,
-            "custo": row.preco_nozes_amendoim_por_kcal,
-            "kcal_total": row.kcal_consumo_total,
-            "valor_fixo": 11.6
-        },
-        {
-            "grupo": "Legumes", 
-            "minimo": row.p5_leguminosas_kcal, 
-            "p25": max(row.p25_leguminosas_kcal, row.kcal_totais_leguminosas), 
-            "p75": row.p75_leguminosas_kcal, 
-            "maximo": row.p95_leguminosas_kcal,
-            "custo": row.preco_leguminosas_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Fruits", 
-            "minimo": row.p5_frutas_kcal, 
-            "p25": max(row.p25_frutas_kcal, row.kcal_totais_frutas), 
-            "p75": row.p75_frutas_kcal, 
-            "maximo": row.p95_frutas_kcal,
-            "custo": row.preco_frutas_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Vegetables", 
-            "minimo": row.p5_veg_total_kcal, 
-            "p25": max(row.p25_veg_total_kcal, row.kcal_totais_veg_totais), 
-            "p75": row.p75_veg_total_kcal, 
-            "maximo": row.p95_veg_total_kcal,
-            "custo": row.preco_veg_totais_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Whole cereals", 
-            "minimo": row.p5_cereais_integrais_kcal, 
-            "p25": max(row.p25_cereais_integrais_kcal, row.kcal_totais_cereais_integrais), 
-            "p75": row.p75_cereais_integrais_kcal, 
-            "maximo": row.p95_cereais_integrais_kcal,
-            "custo": row.preco_cereais_integrais_por_kcal,
-            "kcal_total": row.kcal_consumo_total,
-            "valor_fixo": 0.8
-        },
-        {
-            "grupo": "Eggs", 
-            "minimo": row.p5_ovos_kcal, 
-            "p25": row.p25_ovos_kcal, 
-            "p75": row.p75_ovos_kcal, 
-            "maximo": row.p95_ovos_kcal,
-            "custo": row.preco_ovos_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Fish and seafood", 
-            "minimo": row.p5_peixes_kcal, 
-            "p25": row.p25_peixes_kcal, 
-            "p75": row.p75_peixes_kcal, 
-            "maximo": row.p95_peixes_kcal,
-            "custo": row.preco_peixes_por_kcal,
-            "kcal_total": row.kcal_consumo_total,
-            "valor_fixo": 1.27
-        },
-        {
-            "grupo": "Tubers and potatoes", 
-            "minimo": row.p5_batatas_tuber_kcal, 
-            "p25": row.p25_batatas_tuber_kcal, 
-            "p75": row.p75_batatas_tuber_kcal, 
-            "maximo": row.p95_batatas_tuber_kcal,
-            "custo": row.preco_batatas_tuber_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Dairy", 
-            "minimo": row.p5_laticinios_kcal, 
-            "p25": row.p25_laticinios_kcal, 
-            "p75": row.p75_laticinios_kcal, 
-            "maximo": row.p95_laticinios_kcal,
-            "custo": row.preco_laticinios_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Vegetable oils", 
-            "minimo": row.p5_oleos_insat_kcal, 
-            "p25": row.p25_oleos_insat_kcal, 
-            "p75": row.p75_oleos_insat_kcal, 
-            "maximo": row.p95_oleos_insat_kcal,
-            "custo": row.preco_oleos_insat_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "DGV", 
-            "minimo": row.p5_veg_verde_kcal, 
-            "p25": row.p25_veg_verde_kcal, 
-            "p75": row.p75_veg_verde_kcal, 
-            "maximo": row.p95_veg_verde_kcal,
-            "custo": row.preco_veg_verde_por_kcal,
-            "kcal_total": row.kcal_consumo_total,
-            "valor_fixo": 0.11
-        },
-        {
-            "grupo": "REV", 
-            "minimo": row.p5_veg_vermelho_kcal, 
-            "p25": row.p25_veg_vermelho_kcal, 
-            "p75": row.p75_veg_vermelho_kcal, 
-            "maximo": row.p95_veg_vermelho_kcal,
-            "custo": row.preco_veg_vermelho_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Red meat", 
-            "minimo": row.p5_carne_vermelha_kcal, 
-            "p25": row.p25_carne_vermelha_kcal, 
-            "p75": min(row.p75_carne_vermelha_kcal, row.kcal_totais_carne_vermelha), 
-            "maximo": row.p95_carne_vermelha_kcal,
-            "custo": row.preco_carne_vermelha_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Chicken and substitutes", 
-            "minimo": row.p5_aves_frango_kcal, 
-            "p25": row.p25_aves_frango_kcal, 
-            "p75": min(row.p75_aves_frango_kcal, row.kcal_totais_aves_frango), 
-            "maximo": row.p95_aves_frango_kcal,
-            "custo": row.preco_aves_frango_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Animal fats", 
-            "minimo": row.p5_gord_animal_kcal, 
-            "p25": row.p25_gord_animal_kcal, 
-            "p75": min(row.p75_gord_animal_kcal, row.kcal_totais_gord_animal), 
-            "maximo": row.p95_gord_animal_kcal,
-            "custo": row.preco_gord_animal_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Added sugars", 
-            "minimo": row.p5_acucares_kcal, 
-            "p25": row.p25_acucares_kcal, 
-            "p75": min(row.p75_acucares_kcal, row.kcal_totais_acucares), 
-            "maximo": row.p95_acucares_kcal,
-            "custo": row.preco_acucares_por_kcal,
-            "kcal_total": row.kcal_consumo_total
-        },
-        {
-            "grupo": "Refined Cereals",
-            "minimo": row.p5_cereais_refinados_kcal, 
-            "p25": row.p25_cereais_refinados_kcal, 
-            "p75": row.p75_cereais_refinados_kcal, 
-            "maximo": row.p95_cereais_refinados_kcal,
-            "custo": row.preco_cereais_refinados_por_kcal,
-            "kcal_total": row.kcal_consumo_total,
-            "valor_fixo": 30
+# Grupo do código -> (sufixo das colunas no banco INA, ajuste do p25/p75, valor fixo em % do alvo calórico).
+# ajuste: 'adequacao' => p25 = max(p25, média); 'moderacao' => p75 = min(p75, média); None => sem ajuste.
+GRUPOS_BANCO = [
+    ("Nuts and peanuts",        "nozes",       "adequacao", 11.6),
+    ("Legumes",                 "leguminosas", "adequacao", None),
+    ("Fruits",                  "frutas",      "adequacao", None),
+    ("Vegetables",              "veg_totais",  "adequacao", None),
+    ("Whole cereals",           "cereais_int", "adequacao", 0.8),
+    ("Eggs",                    "ovos",        None,        None),
+    ("Fish and seafood",        "peixes",      None,        1.27),
+    ("Tubers and potatoes",     "batatas",     None,        None),
+    ("Dairy",                   "laticinios",  None,        None),
+    ("Vegetable oils",          "oleos",       None,        None),
+    ("DGV",                     "veg_verde",   None,        0.11),
+    ("REV",                     "veg_verm",    None,        None),
+    ("Red meat",                "carnes_verm", "moderacao", None),
+    ("Chicken and substitutes", "frango",      "moderacao", None),
+    ("Animal fats",             "gordura",     "moderacao", None),
+    ("Added sugars",            "acucar",      "moderacao", None),
+    ("Refined Cereals",         "cereais_ref", None,        30),
+]
+
+
+def custo_por_kcal(row, sufixo):
+    """
+    Custo por kcal do grupo: preco_<sufixo> é o custo TOTAL do consumo médio (R$/pessoa/dia),
+    então basta dividir pelas kcal médias do grupo.
+
+    Exceção para Vegetables: o cálculo do custo da dieta multiplica esse valor apenas pelas kcal
+    de "outros vegetais" (Vegetables - DGV - REV), logo preço e kcal precisam excluir os subgrupos.
+    """
+    if sufixo == "veg_totais":
+        preco = row["preco_veg_totais"] - row["preco_veg_verde"] - row["preco_veg_verm"]
+        kcal = row["veg_totais_kcal"] - row["veg_verde_kcal"] - row["veg_verm_kcal"]
+    else:
+        preco = row[f"preco_{sufixo}"]
+        kcal = row[f"{sufixo}_kcal"]
+    return float(preco) / float(kcal)
+
+
+def extrai_da_linha(LIMITES_ACEITABILIDADE, row, alvo_calorico):
+    for grupo, sufixo, ajuste, valor_fixo in GRUPOS_BANCO:
+        media = float(row[f"{sufixo}_kcal"])
+        p25 = float(row[f"p25_{sufixo}_kcal"])
+        p75 = float(row[f"p75_{sufixo}_kcal"])
+
+        if ajuste == "adequacao":
+            p25 = max(p25, media)
+        elif ajuste == "moderacao":
+            p75 = min(p75, media)
+
+        entrada = {
+            "grupo": grupo,
+            "minimo": float(row[f"p10_{sufixo}_kcal"]),
+            "p25": p25,
+            "p75": p75,
+            "maximo": float(row[f"p90_{sufixo}_kcal"]),
+            "custo": custo_por_kcal(row, sufixo),
+            "kcal_total": alvo_calorico,
         }
-    ])
+        if valor_fixo is not None:
+            entrada["valor_fixo"] = valor_fixo
+
+        LIMITES_ACEITABILIDADE.append(entrada)
+
 
 df_INA = pd.read_csv('banco_INA_estratificado_ag.csv')
 
-for row in df_INA.itertuples():
-    if pd.isna(row.uf) and pd.isna(row.faixa_renda_per_capita):
-        alvo_calorico = row.kcal_consumo_phdi
-        print(f'Alvo calorico: {alvo_calorico}')
+# Linha nacional: uf = 99 e faixa_renda_per_capita vazia. A faixa de renda vazia é o identificador.
+_nacional = df_INA[df_INA["faixa_renda_per_capita"].isna()]
+if len(_nacional) != 1:
+    raise ValueError(
+        f"linha nacional não encontrada no banco: esperava exatamente 1 linha com "
+        f"faixa_renda_per_capita vazia em 'banco_INA_estratificado_ag.csv'; encontrei {len(_nacional)}."
+    )
 
-        custo_alvo = row.preco_total_phdi
-        print(f"Valor alvo: {custo_alvo}")
+row = _nacional.iloc[0]
 
-        extrai_da_linha(LIMITES_ACEITABILIDADE, row)
+# veg_totais já inclui veg_verde e veg_verm, então kcal_totais/preco_total contam os subgrupos
+# duas vezes (uma dentro de veg_totais e outra como subgrupo). Descontamos a duplicata.
+alvo_calorico = float(row["kcal_totais"] - row["veg_verde_kcal"] - row["veg_verm_kcal"])
+print(f'Alvo calorico: {alvo_calorico}')
+
+custo_alvo = float(row["preco_total"] - row["preco_veg_verde"] - row["preco_veg_verm"])
+print(f"Valor alvo: {custo_alvo}")
+
+extrai_da_linha(LIMITES_ACEITABILIDADE, row, alvo_calorico)
 
 class GrupoAlimentar:
     def __init__(self, nome, valor_componente: Optional[float] = None, calorias: Optional[float] = None):

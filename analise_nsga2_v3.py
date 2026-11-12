@@ -11,12 +11,12 @@ Entradas (geradas por NSGA2.py)
   --filtrar   "N=200,300;G=400"          (opcional)    analisa só uma sub-grade do fatorial
   Conjuntos com menos execuções que o máximo são EXCLUÍDOS automaticamente (use --manter-incompletos para evitar).
   --limites   limites.csv                (opcional)    colunas: grupo,min_kcal,max_kcal
-                                         (limites [p5,p95] dos genes; habilita a auditoria
+                                         (limites [p10,p90] dos genes; habilita a auditoria
                                           de genes fora do intervalo)
   --limpar                               (opcional)    apaga a pasta --saida antes (pede 'sim'; recusa se ela contiver entradas)
   --banco     banco_INA_estratificado_ag.csv  (opcional)  alternativa a --limites: monta os limites direto do banco
-                                         (linha da média nacional: p5/p95 de cada grupo; grupos de valor fixo
-                                          = % fixo x kcal_consumo_phdi). Grava tabelas/limites_usados.csv
+                                         (linha da média nacional: p10/p90 de cada grupo; grupos de valor fixo
+                                          = % fixo x alvo calórico). Grava tabelas/limites_usados.csv
 
 Saídas (pasta --saida): tabelas/*.csv, graficos/*.png e relatorio.html (autocontido)
 
@@ -203,43 +203,45 @@ def carregar_limites(caminho):
     return lim
 
 
-# Grupo (nome usado nas colunas {grupo}_kcal do pareto_final) -> sufixo das colunas p5_/p95_ no banco INA.
+# Grupo (nome usado nas colunas {grupo}_kcal do pareto_final) -> sufixo das colunas p10_/p90_ no banco INA.
 # Espelha LIMITES_ACEITABILIDADE do código; valor fixo (% do alvo calórico) nos grupos de dieta fixa.
 GRUPOS_BANCO = [
-    ("nuts_and_peanuts", "nozes_amendoim", 11.6),
+    ("nuts_and_peanuts", "nozes", 11.6),
     ("legumes", "leguminosas", None),
     ("fruits", "frutas", None),
-    ("vegetables", "veg_total", None),
-    ("whole_cereals", "cereais_integrais", 0.8),
+    ("vegetables", "veg_totais", None),
+    ("whole_cereals", "cereais_int", 0.8),
     ("eggs", "ovos", None),
     ("fish_and_seafood", "peixes", 1.27),
-    ("tubers_and_potatoes", "batatas_tuber", None),
+    ("tubers_and_potatoes", "batatas", None),
     ("dairy", "laticinios", None),
-    ("vegetable_oils", "oleos_insat", None),
+    ("vegetable_oils", "oleos", None),
     ("dgv", "veg_verde", 0.11),
-    ("rev", "veg_vermelho", None),
-    ("red_meat", "carne_vermelha", None),
-    ("chicken_and_substitutes", "aves_frango", None),
-    ("animal_fats", "gord_animal", None),
-    ("added_sugars", "acucares", None),
-    ("refined_cereals", "cereais_refinados", 30.0),
+    ("rev", "veg_verm", None),
+    ("red_meat", "carnes_verm", None),
+    ("chicken_and_substitutes", "frango", None),
+    ("animal_fats", "gordura", None),
+    ("added_sugars", "acucar", None),
+    ("refined_cereals", "cereais_ref", 30.0),
 ]
 
 
 def carregar_limites_banco(caminho):
-    """Monta (grupo, min_kcal, max_kcal) a partir da linha nacional do banco INA (uf e faixa_renda vazias)."""
+    """Monta (grupo, min_kcal, max_kcal) a partir da linha nacional do banco INA (faixa_renda vazia)."""
     banco = pd.read_csv(caminho)
-    nac = banco[banco["uf"].isna() & banco["faixa_renda_per_capita"].isna()]
+    nac = banco[banco["faixa_renda_per_capita"].isna()]
     if len(nac) != 1:
-        sys.exit(f"ERRO: esperava 1 linha nacional (uf e faixa_renda_per_capita vazias) em {caminho}; achei {len(nac)}.")
+        sys.exit(f"ERRO: linha nacional não encontrada no banco: esperava 1 linha com "
+                 f"faixa_renda_per_capita vazia em {caminho}; achei {len(nac)}.")
     row = nac.iloc[0]
-    alvo = float(row["kcal_consumo_phdi"])
+    # veg_totais já inclui veg_verde/veg_verm, então kcal_totais conta os subgrupos duas vezes.
+    alvo = float(row["kcal_totais"] - row["veg_verde_kcal"] - row["veg_verm_kcal"])
     linhas = []
     for grupo, suf, fixo in GRUPOS_BANCO:
         if fixo is not None:
             lo = hi = fixo / 100.0 * alvo
         else:
-            lo, hi = float(row[f"p5_{suf}_kcal"]), float(row[f"p95_{suf}_kcal"])
+            lo, hi = float(row[f"p10_{suf}_kcal"]), float(row[f"p90_{suf}_kcal"])
         linhas.append({"grupo": grupo, "min_kcal": lo, "max_kcal": hi, "fixo": fixo is not None})
     return pd.DataFrame(linhas)
 
@@ -877,7 +879,7 @@ def main():
         blocos.append(f"<div class='alerta'>Violações físicas encontradas: {n_neg} (kcal negativa), {n_veg} (DGV+REV &gt; "
                       f"Vegetables), {n_lim} (gene fora de limites). Essas dietas são excluídas da escolha final.</div>")
     if limites is None:
-        blocos.append("<div class='nota'>Sem <code>--limites</code>/<code>--banco</code>, genes fora de [p5, p95] não são auditados.</div>")
+        blocos.append("<div class='nota'>Sem <code>--limites</code>/<code>--banco</code>, genes fora de [p10, p90] não são auditados.</div>")
 
     # ---- 2. métricas e ranking
     log("[2/6] Métricas por execução e ranking ...")
