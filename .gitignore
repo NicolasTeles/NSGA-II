@@ -4,3 +4,4 @@ stats/
 .venv/
 teste_validacao/
 analise_resultados/
+*_console.log
