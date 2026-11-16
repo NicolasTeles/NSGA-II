@@ -59,8 +59,14 @@ RUNS = {
               eixos=[("CI", [2, 5, 10, 20, 40]), ("DI", [5, 10, 20, 35, 65])],
               fixos={"N": 300, "G": 500, "C": 1.0, "M": 0.3}, seeds=list(range(30))),
     "3": dict(nome="Run 3",
-            eixos=[("M",  [0.1, 0.3, 0.6]), ("CI", [10, 40]), ("DI", [20, 35, 65, 120])],
-            fixos={"N": 300, "G": 500, "C": 1.0}, seeds=list(range(30, 60))),
+              eixos=[("M", [0.1, 0.3, 0.6]), ("CI", [10, 40]), ("DI", [20, 35, 65, 120])],
+              fixos={"N": 300, "G": 500, "C": 1.0}, seeds=list(range(30, 60))),
+    # Run 3b: o G=500 limita as configurações de DI alto? (na Run 3 o máx. de fo_phdi ainda subia na geração 500 com DI=120)
+    #   G=500 com DI 65/120 repete os conjuntos 11 e 12 da Run 3 (mesmas seeds 30-59: se o código não mudou, os
+    #   resultados saem idênticos, o que serve de controle).
+    "3b": dict(nome="Run 3b",
+               eixos=[("G", [500, 1000]), ("DI", [65, 120, 200])],
+               fixos={"N": 300, "C": 1.0, "M": 0.3, "CI": 10}, seeds=list(range(30, 60))),
     "teste": dict(nome="Teste rápido",
                   eixos=[("N", [40, 60]), ("G", [30]), ("CI", [5, 15]), ("DI", [20])],
                   fixos={"C": 1.0, "M": 0.1}, seeds=[1, 2, 3]),

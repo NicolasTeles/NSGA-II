@@ -17,6 +17,8 @@ Entradas (geradas por NSGA2.py)
   --banco     banco_INA_estratificado_ag.csv  (opcional)  alternativa a --limites: monta os limites direto do banco
                                          (linha da média nacional: p10/p90 de cada grupo; grupos de valor fixo
                                           = % fixo x alvo calórico). Grava tabelas/limites_usados.csv
+  --referencia pareto_final.csv [...]    (opcional)    fronts de OUTRAS análises (ex.: runs anteriores) somados à frente
+                                         de referência do IGD, para o IGD ser comparável entre runs
 
 Saídas (pasta --saida): tabelas/*.csv, graficos/*.png e relatorio.html (autocontido)
 
@@ -25,8 +27,13 @@ Métrica principal: médias de fo_phdi e fo_aceitabilidade do front em cada exec
   A normalização usa os máximos teóricos (--max-phdi, --max-ace), e não min-max dos dados,
   para que o score seja comparável entre runs diferentes.
 Métrica secundária: hipervolume 2D (ref. (0,0)) normalizado por MAX_PHDI x MAX_ACE.
-O critério do ranking é escolhido por --criterio (score | hv); o outro é reportado
-com a concordância (Spearman) entre os dois rankings.
+Métrica de cobertura: IGD (distância média da frente de referência ao front da execução; menor = melhor).
+  A frente de referência é o conjunto não dominado de todas as dietas viáveis analisadas (+ --referencia).
+  Objetivos normalizados pela amplitude da referência. Diferente da média do front (score), o IGD penaliza
+  front que não alcança as pontas (extremos de PHDI ou de aceitabilidade), que a média não enxerga.
+  O IGD é relativo à referência: só compare IGDs de análises que usaram a mesma referência.
+O critério do ranking é escolhido por --criterio (score | hv | igd; no igd o critério é 1 − IGD);
+os outros são reportados com a concordância (Spearman) entre os rankings.
 
 Uso
   python analise_nsga2_v2.py --final stats/pareto_final.csv \
@@ -133,6 +140,45 @@ def hipervolume_2d(x, y, ref=(0.0, 0.0)):
             hv += (px - ref[0]) * (py - max_y)
             max_y = py
     return float(hv)
+
+
+def mascara_viavel(df, tol):
+    """Dietas fisicamente válidas com erro de calorias e custo <= tol (mesma regra das dietas finais)."""
+    return (df["valida"] & (df["erro_cal"] <= tol) & (df["erro_custo"] <= tol)).fillna(False).to_numpy(bool)
+
+
+def montar_referencia(df, tol, extras=(), limites=None):
+    """Frente de referência do IGD: dietas não dominadas entre todas as viáveis de `df` (+ arquivos extras).
+    Devolve (pontos Nx2 [fo_phdi, fo_ace], n_dietas_viaveis_usadas)."""
+    partes = [df.loc[mascara_viavel(df, tol), [OBJ_PHDI, OBJ_ACE]].to_numpy(float)]
+    for caminho in extras:
+        log(f"  lendo referência extra: {caminho}")
+        e = carregar_final(caminho, limites)
+        partes.append(e.loc[mascara_viavel(e, tol), [OBJ_PHDI, OBJ_ACE]].to_numpy(float))
+    pts = np.vstack(partes)
+    if len(pts) == 0:
+        return None, 0
+    return pts[mascara_nao_dominada(pts[:, 0], pts[:, 1])], len(pts)
+
+
+def igd_por_execucao(df, tol, ref):
+    """IGD de cada execução: média, sobre os pontos da frente de referência, da distância ao ponto mais próximo
+    do front da execução (só dietas viáveis). Distância euclidiana com os dois objetivos normalizados pela
+    amplitude da referência. Menor = melhor. `igd_gap` = maior dessas distâncias (o maior trecho não coberto)."""
+    from scipy.spatial import cKDTree
+    colunas = CHAVE + ["igd", "igd_gap"]
+    if ref is None or len(ref) == 0:
+        return pd.DataFrame(columns=colunas)
+    lo = ref.min(axis=0)
+    amp = ref.max(axis=0) - lo
+    amp = np.where(amp > 0, amp, 1.0)
+    ref_n = (ref - lo) / amp
+    linhas = []
+    for (c, e), g in df[mascara_viavel(df, tol)].groupby(CHAVE):
+        f_n = (g[[OBJ_PHDI, OBJ_ACE]].to_numpy(float) - lo) / amp
+        d, _ = cKDTree(f_n).query(ref_n)
+        linhas.append({"Conjunto": c, "Execucao": e, "igd": float(d.mean()), "igd_gap": float(d.max())})
+    return pd.DataFrame(linhas, columns=colunas)
 
 
 def salvar_fig(fig, caminho):
@@ -247,10 +293,11 @@ def carregar_limites_banco(caminho):
 
 
 # ---------------------------------------------------------------- métricas
-def metricas_por_execucao(df, max_phdi, max_ace, criterio):
+def metricas_por_execucao(df, max_phdi, max_ace, criterio, igd=None):
     m = df.groupby(CHAVE).agg(
         media_phdi=(OBJ_PHDI, "mean"), media_ace=(OBJ_ACE, "mean"),
         max_phdi=(OBJ_PHDI, "max"), max_ace=(OBJ_ACE, "max"),
+        min_phdi=(OBJ_PHDI, "min"), min_ace=(OBJ_ACE, "min"),
         n_pareto=(OBJ_PHDI, "size"),
         tempo=("Tempo de Execucao (s)", "first") if "Tempo de Execucao (s)" in df else (OBJ_PHDI, "size"),
         erro_cal=("erro_cal", "mean"), erro_cal_max=("erro_cal", "max"),
@@ -273,7 +320,19 @@ def metricas_por_execucao(df, max_phdi, max_ace, criterio):
     m["n_unicos"] = [uni[k] for k in ks]
     m["hv_norm"] = m["hipervolume"] / (max_phdi * max_ace)
     m["score"] = 0.5 * (m["media_phdi"] / max_phdi + m["media_ace"] / max_ace)
-    m["crit"] = m["score"] if criterio == "score" else m["hv_norm"]
+    if igd is not None:
+        m = m.merge(igd, on=CHAVE, how="left")
+    else:
+        m["igd"] = np.nan
+        m["igd_gap"] = np.nan
+    if criterio == "score":
+        m["crit"] = m["score"]
+    elif criterio == "hv":
+        m["crit"] = m["hv_norm"]
+    else:  # igd: "maior é melhor" como os demais critérios
+        if m["igd"].isna().any():
+            sys.exit("ERRO: --criterio igd exige IGD em todas as execuções (alguma não tem dieta viável).")
+        m["crit"] = 1.0 - m["igd"]
     return m
 
 
@@ -291,11 +350,17 @@ def tabela_configs(m, df):
         tempo_medio_s=("tempo", "mean"),
         erro_cal_max=("erro_cal_max", "max"), erro_custo_max=("erro_custo_max", "max"),
         pen_media=("pen", "mean"), pct_validas=("pct_validas", "mean"),
+        max_phdi_medio=("max_phdi", "mean"), min_ace_medio=("min_ace", "mean"),
+        igd_medio=("igd", "mean"), igd_ic95=("igd", ic95), igd_gap_medio=("igd_gap", "mean"),
     ).reset_index()
     cfg = params.merge(cfg, on="Conjunto")
     cfg["ranking"] = cfg["crit_media"].rank(ascending=False, method="min").astype(int)
     cfg["rank_score"] = cfg["score_media"].rank(ascending=False, method="min").astype(int)
     cfg["rank_hv"] = cfg["hv_norm_media"].rank(ascending=False, method="min").astype(int)
+    if cfg["igd_medio"].notna().all():
+        cfg["rank_igd"] = cfg["igd_medio"].rank(ascending=True, method="min").astype(int)
+    else:
+        cfg["rank_igd"] = np.nan
     cfg["nao_dominada"] = mascara_nao_dominada(cfg["phdi_media"], cfg["ace_media"])
     return cfg.sort_values("ranking").reset_index(drop=True)
 
@@ -735,8 +800,10 @@ def main():
     ap.add_argument("--limpar", action="store_true",
                     help="APAGA a pasta --saida antes de analisar (pede confirmação; recusa se ela contiver os arquivos de entrada)")
     ap.add_argument("--rotulo", default="Execução")
-    ap.add_argument("--criterio", choices=["score", "hv"], default="score",
-                    help="critério do ranking (padrão: score = médias normalizadas)")
+    ap.add_argument("--criterio", choices=["score", "hv", "igd"], default="score",
+                    help="critério do ranking (padrão: score = médias normalizadas; igd = 1 − IGD, cobertura do front)")
+    ap.add_argument("--referencia", nargs="+", default=None, metavar="PARETO_FINAL.csv",
+                    help="pareto_final.csv de outras análises, somados à frente de referência do IGD")
     ap.add_argument("--max-phdi", type=float, default=150.0, help="máximo teórico de fo_phdi")
     ap.add_argument("--max-ace", type=float, default=160.0, help="máximo teórico de fo_aceitabilidade")
     ap.add_argument("--tol", type=float, default=0.05, help="erro relativo máx. de calorias/custo p/ dieta viável")
@@ -748,7 +815,7 @@ def main():
     if a.limpar and os.path.isdir(a.saida):
         saida_abs = os.path.realpath(a.saida)
         protegidos = {os.path.realpath(os.getcwd()), os.path.realpath(os.path.expanduser("~")), os.path.realpath(os.sep)}
-        entradas = [x for x in (a.final, a.evolucao, a.snapshots, a.execucoes, a.limites, a.banco) if x]
+        entradas = [x for x in (a.final, a.evolucao, a.snapshots, a.execucoes, a.limites, a.banco, *(a.referencia or [])) if x]
         dentro = [x for x in entradas
                   if os.path.realpath(x) == saida_abs or os.path.realpath(x).startswith(saida_abs + os.sep)]
         if saida_abs in protegidos or any(pr.startswith(saida_abs + os.sep) for pr in protegidos):
@@ -766,7 +833,7 @@ def main():
     if not os.path.exists(gi):
         with open(gi, "w") as f:
             f.write("*\n")
-    nome_crit = "Score" if a.criterio == "score" else "Hipervolume normalizado"
+    nome_crit = {"score": "Score", "hv": "Hipervolume normalizado", "igd": "1 − IGD"}[a.criterio]
     pasta_final = os.path.dirname(os.path.abspath(a.final))
     blocos = []
 
@@ -820,6 +887,10 @@ def main():
     n_neg, n_veg = int(df["tem_kcal_negativa"].sum()), int(df["viol_veg"].sum())
     n_lim = int((df["n_fora_limite"] > 0).sum())
 
+    # frente de referência e IGD por execução (usa só dietas viáveis)
+    ref, n_viaveis_ref = montar_referencia(df, a.tol, a.referencia or [], limites)
+    igd_df = igd_por_execucao(df, a.tol, ref)
+
     caminho_exec = a.execucoes or os.path.join(pasta_final, "execucoes.csv")
     versoes = []
     if os.path.exists(caminho_exec):
@@ -845,6 +916,9 @@ def main():
         ("Dietas com DGV + REV > Vegetables", f"{n_veg:,}"),
         ("Dietas com algum gene fora de [min, max]", f"{n_lim:,}" if limites is not None else "não auditado (sem --limites/--banco)"),
         ("Dietas fisicamente válidas", f"{df['valida'].mean():.2%}"),
+        ("Frente de referência do IGD",
+         f"{0 if ref is None else len(ref):,} pontos não dominados (de {n_viaveis_ref:,} dietas viáveis"
+         + (f"; inclui {len(a.referencia)} arquivo(s) de --referencia" if a.referencia else "") + ")"),
     ]
     blocos.append("<h2>1. Verificações dos dados</h2>" + tabela_html(pd.DataFrame(verif, columns=["Item", "Valor"])))
     if len(incompletos) or modo_balanceamento != "nenhum":
@@ -883,7 +957,7 @@ def main():
 
     # ---- 2. métricas e ranking
     log("[2/6] Métricas por execução e ranking ...")
-    m = metricas_por_execucao(df, a.max_phdi, a.max_ace, a.criterio)
+    m = metricas_por_execucao(df, a.max_phdi, a.max_ace, a.criterio, igd_df)
     cfg = tabela_configs(m, df)
     m.to_csv(os.path.join(pt, "metricas_por_execucao.csv"), index=False)
     cfg.to_csv(os.path.join(pt, "ranking_configuracoes.csv"), index=False)
@@ -913,16 +987,35 @@ def main():
         rho = stats.spearmanr(cfg["score_media"], cfg["hv_norm_media"])[0]
         conc = (f"<p>Concordância entre os rankings por score e por hipervolume (Spearman): <b>{rho:.3f}</b>. "
                 "Valores baixos indicam que a escolha do critério muda a conclusão.</p>")
-    cols_rank = ["ranking", "rank_score", "rank_hv", "Conjunto"] + [c for c in PARAMS if c in fatores] + [
-        "phdi_media", "ace_media", "score_media", "hv_norm_media", "crit_ic95", "pct_validas",
-        "n_pareto_medio", "tempo_medio_s", "nao_dominada"]
+        if cfg["igd_medio"].notna().all():
+            r_si = stats.spearmanr(cfg["score_media"], -cfg["igd_medio"])[0]
+            r_hi = stats.spearmanr(cfg["hv_norm_media"], -cfg["igd_medio"])[0]
+            conc += (f"<p>Concordância com o IGD (Spearman com o sinal do IGD trocado; +1 = mesma ordem): "
+                     f"score × IGD <b>{r_si:.3f}</b>; hipervolume × IGD <b>{r_hi:.3f}</b>.</p>")
+            melhor_crit = cfg.iloc[0]
+            melhor_igd = cfg.sort_values("igd_medio").iloc[0]
+            limiar = max(3, math.ceil(0.25 * len(cfg)))
+            if (a.criterio != "igd" and int(melhor_igd["Conjunto"]) != int(melhor_crit["Conjunto"])
+                    and int(melhor_crit["rank_igd"]) > limiar):
+                conc += (f"<div class='alerta'>O 1º por {nome_crit} (#{int(melhor_crit['Conjunto'])}) é só o "
+                         f"{int(melhor_crit['rank_igd'])}º em IGD (melhor IGD: #{int(melhor_igd['Conjunto'])}). A média do front "
+                         "pode estar premiando um front que não alcança as pontas (PHDI alto ou aceitabilidade alta) ou que "
+                         "ainda não convergiu. Compare as colunas <i>max_phdi_medio</i> e <i>min_ace_medio</i> e a "
+                         "convergência (seção 4) antes de escolher.</div>")
+    cols_rank = ["ranking", "rank_score", "rank_hv", "rank_igd", "Conjunto"] + [c for c in PARAMS if c in fatores] + [
+        "phdi_media", "ace_media", "score_media", "hv_norm_media", "igd_medio", "max_phdi_medio", "min_ace_medio",
+        "crit_ic95", "pct_validas", "n_pareto_medio", "tempo_medio_s", "nao_dominada"]
     blocos.append(
         "<h2>2. Ranking das configurações</h2>"
         f"<div class='nota'>Critério do ranking: <b>{nome_crit}</b>. Score = (média fo_phdi / {a.max_phdi:g} + "
         f"média fo_aceitabilidade / {a.max_ace:g}) / 2, com as médias calculadas sobre os indivíduos do front de cada "
         f"execução. Hipervolume com referência (0,0), normalizado por {a.max_phdi:g}×{a.max_ace:g}. A média do front "
         "não mede espalhamento: um front concentrado numa região boa pode pontuar mais que um front bem distribuído; "
-        "o hipervolume captura os dois aspectos.</div>"
+        "o hipervolume captura os dois aspectos. <b>IGD</b>: distância média da frente de referência (não dominados de "
+        "todas as dietas viáveis analisadas, mais --referencia, se houver) ao front da execução, com os objetivos "
+        "normalizados pela amplitude da referência; menor = melhor. Ele penaliza front que não cobre as pontas, "
+        "coisa que a média do front (score) não vê; é relativo à referência e só é comparável entre análises que "
+        "usaram a mesma. <i>max_phdi_medio</i> e <i>min_ace_medio</i> mostram até onde o front chega em cada ponta.</div>"
         + txt + conc + tabela_html(cfg[cols_rank], 20)
         + img_tag(p_rank, "Ranking (barras de erro: IC95% entre seeds)")
         + "<div class='grid'>" + img_tag(p_box, "Distribuição entre seeds") + img_tag(p_disp, "Médias por configuração") + "</div>")
